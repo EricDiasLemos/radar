@@ -647,8 +647,8 @@ let filterState = {
   scoreMin: 0,
 };
 
-const GITHUB_OWNER = 'seu-usuario';   // ← Edite com seu GitHub username
-const GITHUB_REPO  = 'job-radar';     // ← Nome do repositório
+const GITHUB_OWNER = 'EricDiasLemos';
+const GITHUB_REPO  = 'radar';
 const WORKFLOW_ID  = 'daily-scan.yml';
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
@@ -660,11 +660,7 @@ async function init() {
 
 async function loadData() {
   try {
-    // Em GitHub Pages: ../data/jobs.json | Localmente (nginx): /data/jobs.json
-    const dataPath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-      ? '/data/jobs.json'
-      : '../data/jobs.json';
-    const res = await fetch(dataPath + '?ts=' + Date.now());
+    const res = await fetch('./data/jobs.json?ts=' + Date.now());
     const data = await res.json();
     allJobs = data.jobs || [];
     updateHeader(data);

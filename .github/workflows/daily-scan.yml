@@ -44,20 +44,19 @@ jobs:
         # este passo existe para re-runs isolados se necessário.
         # Para habilitar auto-apply completo, remova a flag acima.
 
+      - name: Sincronizar data/ para docs/data/ (GitHub Pages)
+        run: |
+          mkdir -p docs/data
+          cp data/jobs.json docs/data/jobs.json
+          cp data/sent.json docs/data/sent.json
+
       - name: Commit dados atualizados
         run: |
           git config user.name  "Job Radar Bot"
           git config user.email "actions@github.com"
-          git add data/jobs.json data/sent.json
+          git add data/jobs.json data/sent.json docs/data/jobs.json docs/data/sent.json
           git diff --cached --quiet || git commit -m "chore: update jobs data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
           git push
-
-      - name: Deploy dashboard para GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: docs
-          branch: gh-pages
-          clean: false
 
       - name: Summary
         if: always()
