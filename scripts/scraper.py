@@ -1,7 +1,12 @@
 """
 Job Radar — Scraper de vagas DevOps
-Fontes: LinkedIn Jobs, Gupy, Vagas.com, Catho
-(Indeed removido — bloqueia IPs de datacenter/CI com 403)
+Fontes validadas localmente: LinkedIn, Vagas.com, Programathor
+
+Fontes removidas (bloqueiam IPs de CI/container):
+  - Indeed    → 403 em todos os IPs de datacenter
+  - Catho     → 404 em container
+  - Gupy      → carrega vagas via JavaScript (sem API pública)
+  - InfoJobs  → API retorna 404
 """
 
 import hashlib
@@ -106,7 +111,7 @@ def _get_headers(extra: dict = None) -> dict:
         "User-Agent": random.choice(USER_AGENTS),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
-        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
     }
     if extra:
@@ -133,12 +138,13 @@ def _safe_get(url: str, timeout: int = 20, extra_headers: dict = None, **kwargs)
 # ─── LinkedIn ─────────────────────────────────────────────────────────────────
 
 def scrape_linkedin(query: str, location: str) -> list[Job]:
+    """API pública guest do LinkedIn — validada: retorna ~10 vagas por query."""
     jobs: list[Job] = []
     url = (
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
         f"?keywords={quote_plus(query)}"
         f"&location={quote_plus(location + ', Brasil')}"
-        "&f_TPR=r604800"
+        "&f_TPR=r604800"  # últimos 7 dias
         "&start=0"
     )
 
@@ -148,9 +154,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
         return jobs
 
     soup = BeautifulSoup(resp.text, "html.parser")
-    cards = soup.select("li")
-
-    for card in cards[:15]:
+    for card in soup.select("li"):
         try:
             title_el = card.select_one(".base-search-card__title, h3")
             company_el = card.select_one(".base-search-card__subtitle, h4")
@@ -191,150 +195,64 @@ def _fetch_linkedin_description(url: str) -> str:
     return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
 
 
-# ─── Gupy ─────────────────────────────────────────────────────────────────────
+# ─── Vagas.com ────────────────────────────────────────────────────────────────
 
-def scrape_gupy(query: str) -> list[Job]:
-    """Scraping da página de busca do Gupy com extração via __NEXT_DATA__."""
+def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
+    """
+    Vagas.com — validada: 18 vagas sem filtro de cidade, 1 com cidade.
+    Usa busca nacional e o scorer filtra localização depois.
+    """
     jobs: list[Job] = []
+    slug_query = query.lower().replace(" ", "-")
 
-    url = f"https://portal.gupy.io/job-search/term/{quote_plus(query)}"
-    log.info("[Gupy] query=%r", query)
+    # Busca nacional primeiro (mais resultados), depois com cidade
+    urls = [f"https://www.vagas.com.br/vagas-de-{slug_query}"]
+    if location:
+        slug_loc = location.lower().replace(" ", "-")
+        urls.append(f"https://www.vagas.com.br/vagas-de-{slug_query}-em-{slug_loc}")
 
-    resp = _safe_get(url, extra_headers={
-        "Accept": "text/html,application/xhtml+xml",
-        "Referer": "https://portal.gupy.io/",
-    })
-    if not resp:
-        return jobs
+    for url in urls:
+        log.info("[Vagas.com] %s", url)
+        resp = _safe_get(url)
+        if not resp:
+            continue
 
-    soup = BeautifulSoup(resp.text, "html.parser")
-    script = soup.find("script", {"id": "__NEXT_DATA__"})
+        soup = BeautifulSoup(resp.text, "html.parser")
+        cards = soup.select("li.vaga")
 
-    if script and script.string:
-        try:
-            next_data = json.loads(script.string)
-            # Navega pela estrutura do Next.js para achar a lista de vagas
-            queries = (
-                next_data.get("props", {})
-                .get("pageProps", {})
-                .get("dehydratedState", {})
-                .get("queries", [])
-            )
-            job_list = []
-            for q in queries:
-                data = q.get("state", {}).get("data", {})
-                if isinstance(data, dict) and "data" in data:
-                    job_list = data["data"]
-                    break
-                if isinstance(data, list):
-                    job_list = data
-                    break
-
-            for item in job_list[:20]:
-                job_id = item.get("id", "")
-                city = item.get("city", "")
-                state = item.get("state", "")
-                location = f"{city}, {state}".strip(", ") or "Brasil"
-                workplace = item.get("workplaceType", "")
-                if workplace == "remote":
-                    location = "Remoto"
-                elif workplace == "hybrid":
-                    location = f"Híbrido — {location}"
-
-                company = item.get("company", {})
-                company_name = company.get("name", "N/A") if isinstance(company, dict) else str(company)
-
-                jobs.append(Job(
-                    title=item.get("name", ""),
-                    company=company_name,
-                    location=location,
-                    url=f"https://portal.gupy.io/job/{job_id}" if job_id else "",
-                    source="Gupy",
-                    description=str(item.get("description", ""))[:3000],
-                    published_at=item.get("publishedDate", ""),
-                ))
-        except Exception as e:
-            log.warning("[Gupy] Erro ao extrair __NEXT_DATA__: %s", e)
-
-    if not jobs:
-        # Fallback: tenta extrair cards do HTML diretamente
-        cards = soup.select("article, [data-testid='job-card'], .job-card")
         for card in cards[:20]:
             try:
-                title_el = card.select_one("h2, h3, [data-testid='job-name']")
-                company_el = card.select_one("[data-testid='company-name'], .company-name")
-                loc_el = card.select_one("[data-testid='job-location'], .location")
-                link_el = card.select_one("a")
+                title_el = card.select_one("h2.cargo a, .vaga-title")
+                company_el = card.select_one(".empresa, span.nome-empresa")
+                loc_el = card.select_one(".vaga-local, .localidade")
+                date_el = card.select_one(".data-publicacao, time")
+                link_el = card.select_one("h2.cargo a, a.link-detalhes-vaga")
 
                 if not title_el or not link_el:
                     continue
 
                 href = link_el.get("href", "")
                 if href.startswith("/"):
-                    href = "https://portal.gupy.io" + href
+                    href = "https://www.vagas.com.br" + href
 
+                desc = _fetch_vagas_description(href)
                 jobs.append(Job(
                     title=title_el.get_text(strip=True),
                     company=company_el.get_text(strip=True) if company_el else "N/A",
-                    location=loc_el.get_text(strip=True) if loc_el else "Brasil",
+                    location=loc_el.get_text(strip=True) if loc_el else location,
                     url=href,
-                    source="Gupy",
+                    source="Vagas.com",
+                    description=desc,
+                    published_at=date_el.get_text(strip=True) if date_el else "",
                 ))
+                _sleep(1.5, 3.0)
             except Exception as e:
-                log.warning("[Gupy HTML] Erro: %s", e)
+                log.warning("[Vagas.com] Erro ao processar card: %s", e)
 
-    log.info("[Gupy] %d vagas encontradas", len(jobs))
-    _sleep(2.0, 4.0)
-    return jobs
+        log.info("[Vagas.com] %d vagas encontradas em %s", len(jobs), url)
+        if jobs:
+            break  # se achou na busca nacional, não precisa buscar por cidade
 
-
-# ─── Vagas.com ────────────────────────────────────────────────────────────────
-
-def scrape_vagas_com(query: str, location: str) -> list[Job]:
-    jobs: list[Job] = []
-    slug_query = query.lower().replace(" ", "-")
-    slug_loc = location.lower().replace(" ", "-")
-    url = f"https://www.vagas.com.br/vagas-de-{slug_query}-em-{slug_loc}"
-
-    log.info("[Vagas.com] query=%r location=%r", query, location)
-    resp = _safe_get(url)
-    if not resp:
-        return jobs
-
-    soup = BeautifulSoup(resp.text, "html.parser")
-    cards = soup.select("li.vaga")
-
-    for card in cards[:15]:
-        try:
-            title_el = card.select_one("h2.cargo a, .vaga-title")
-            company_el = card.select_one(".empresa, span.nome-empresa")
-            loc_el = card.select_one(".vaga-local, .localidade")
-            date_el = card.select_one(".data-publicacao, time")
-            link_el = card.select_one("h2.cargo a, a.link-detalhes-vaga")
-
-            if not title_el or not link_el:
-                continue
-
-            href = link_el.get("href", "")
-            if href.startswith("/"):
-                href = "https://www.vagas.com.br" + href
-
-            desc = _fetch_vagas_description(href)
-
-            jobs.append(Job(
-                title=title_el.get_text(strip=True),
-                company=company_el.get_text(strip=True) if company_el else "N/A",
-                location=loc_el.get_text(strip=True) if loc_el else location,
-                url=href,
-                source="Vagas.com",
-                description=desc,
-                published_at=date_el.get_text(strip=True) if date_el else "",
-            ))
-            _sleep(2.0, 4.0)
-        except Exception as e:
-            log.warning("[Vagas.com] Erro ao processar card: %s", e)
-
-    log.info("[Vagas.com] %d vagas encontradas", len(jobs))
     return jobs
 
 
@@ -348,93 +266,93 @@ def _fetch_vagas_description(url: str) -> str:
     return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
 
 
-# ─── Catho ────────────────────────────────────────────────────────────────────
+# ─── Programathor ─────────────────────────────────────────────────────────────
 
-def scrape_catho(query: str, location: str) -> list[Job]:
-    """Catho via página de busca."""
+def scrape_programathor(query: str) -> list[Job]:
+    """
+    Programathor — validada: retorna cards no HTML.
+    Foco em tech/remote — scorer filtra relevância para DevOps.
+    """
     jobs: list[Job] = []
-    url = f"https://www.catho.com.br/vagas/?q={quote_plus(query)}&where={quote_plus(location)}"
+    url = f"https://programathor.com.br/jobs?filters%5Bpesquisa%5D={quote_plus(query)}"
 
-    log.info("[Catho] query=%r location=%r", query, location)
+    log.info("[Programathor] query=%r", query)
     resp = _safe_get(url)
     if not resp:
         return jobs
 
     soup = BeautifulSoup(resp.text, "html.parser")
+    links = soup.select("a[href*='/jobs/']")
 
-    # Tenta extrair do JSON embutido
-    for script in soup.find_all("script", type="application/json"):
+    seen_hrefs = set()
+    for link in links[:20]:
         try:
-            data = json.loads(script.string or "")
-            job_list = None
+            href = link.get("href", "")
+            if not href or href in seen_hrefs or "/jobs/" not in href:
+                continue
+            seen_hrefs.add(href)
 
-            # Estrutura pode variar — procura lista de vagas
-            if isinstance(data, dict):
-                job_list = (
-                    data.get("jobs")
-                    or data.get("vacancies")
-                    or data.get("results")
-                )
-            if job_list and isinstance(job_list, list):
-                for item in job_list[:15]:
-                    title = item.get("title") or item.get("name") or item.get("jobTitle", "")
-                    company = item.get("company") or item.get("companyName", "N/A")
-                    if isinstance(company, dict):
-                        company = company.get("name", "N/A")
-                    job_url = item.get("url") or item.get("link") or item.get("applyUrl", "")
-                    if not job_url.startswith("http"):
-                        job_url = "https://www.catho.com.br" + job_url
+            if not href.startswith("http"):
+                href = "https://programathor.com.br" + href
 
-                    if title:
-                        jobs.append(Job(
-                            title=title,
-                            company=str(company),
-                            location=item.get("location") or item.get("city") or location,
-                            url=job_url,
-                            source="Catho",
-                            salary=str(item.get("salary") or item.get("wage", "")),
-                            published_at=str(item.get("publishedAt") or item.get("date", "")),
-                        ))
-                if jobs:
-                    break
-        except (json.JSONDecodeError, AttributeError):
-            continue
+            # Extrai dados do card
+            text = link.get_text(" ", strip=True)
+            lines = [l.strip() for l in text.split("\n") if l.strip()]
 
-    # Fallback: HTML scraping
-    if not jobs:
-        selectors = [
-            "article.sc-",
-            "[data-testid='job-card']",
-            ".job-list-item",
-            "li[class*='JobCard']",
-        ]
-        for sel in selectors:
-            cards = soup.select(sel)
-            if cards:
-                for card in cards[:15]:
-                    try:
-                        title_el = card.select_one("h2, h3, [class*='title'], [class*='Title']")
-                        company_el = card.select_one("[class*='company'], [class*='Company']")
-                        link_el = card.select_one("a")
-                        if not title_el or not link_el:
-                            continue
-                        href = link_el.get("href", "")
-                        if href.startswith("/"):
-                            href = "https://www.catho.com.br" + href
-                        jobs.append(Job(
-                            title=title_el.get_text(strip=True),
-                            company=company_el.get_text(strip=True) if company_el else "N/A",
-                            location=location,
-                            url=href,
-                            source="Catho",
-                        ))
-                    except Exception:
-                        continue
-                break
+            title = lines[0] if lines else ""
+            # Remove badge "NOVA" do título se presente
+            title = title.replace("NOVA", "").strip()
 
-    log.info("[Catho] %d vagas encontradas", len(jobs))
-    _sleep(2.0, 4.0)
+            if not title or len(title) < 5:
+                continue
+
+            # Tenta extrair empresa e localização do texto do card
+            company = "N/A"
+            location = "Remoto"
+            salary = ""
+
+            full_text = " ".join(lines)
+            if "Remoto" in full_text:
+                location = "Remoto"
+            elif "Híbrido" in full_text or "Hibrido" in full_text:
+                location = "Híbrido"
+
+            # Extrai salário se presente
+            import re
+            sal_match = re.search(r"R\$\s*[\d.,]+", full_text)
+            if sal_match:
+                salary = sal_match.group(0)
+
+            desc = _fetch_programathor_description(href)
+
+            jobs.append(Job(
+                title=title,
+                company=company,
+                location=location,
+                url=href,
+                source="Programathor",
+                description=desc,
+                salary=salary,
+            ))
+            _sleep(1.0, 2.5)
+        except Exception as e:
+            log.warning("[Programathor] Erro ao processar link: %s", e)
+
+    log.info("[Programathor] %d vagas encontradas", len(jobs))
     return jobs
+
+
+def _fetch_programathor_description(url: str) -> str:
+    _sleep(1.0, 2.0)
+    resp = _safe_get(url)
+    if not resp:
+        return ""
+    soup = BeautifulSoup(resp.text, "html.parser")
+    desc_el = soup.select_one(
+        ".job-description, .description, [class*='description'], "
+        "[class*='content'], article section, .job-content"
+    )
+    return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
 
 
 # ─── Orquestração ─────────────────────────────────────────────────────────────
@@ -463,33 +381,36 @@ def run_scraper() -> list[Job]:
     new_jobs: list[Job] = []
 
     for query in SEARCH_QUERIES:
+        # LinkedIn — por localização
         for location in LOCATIONS[:3]:
-            for fn, needs_location in [
-                (scrape_linkedin, True),
-                (scrape_vagas_com, True),
-                (scrape_catho, True),
-            ]:
-                try:
-                    batch = fn(query, location) if needs_location else fn(query)
-                    for job in batch:
-                        if _is_new(job, existing_ids, seen_signatures):
-                            new_jobs.append(job)
-                            existing_ids.add(job.id)
-                            seen_signatures.add(_job_signature(job.title, job.company))
-                except Exception as e:
-                    log.error("[%s] Falha: %s", fn.__name__, e)
+            try:
+                for job in scrape_linkedin(query, location):
+                    if _is_new(job, existing_ids, seen_signatures):
+                        new_jobs.append(job)
+                        _register(job, existing_ids, seen_signatures)
+            except Exception as e:
+                log.error("[LinkedIn] Falha em query=%r: %s", query, e)
+            _sleep(3.0, 5.0)
 
-            _sleep(2.0, 4.0)
-
-        # Gupy — não filtra por localização, retorna nacional
+        # Vagas.com — busca nacional (mais resultados)
         try:
-            for job in scrape_gupy(query):
+            for job in scrape_vagas_com(query):
                 if _is_new(job, existing_ids, seen_signatures):
                     new_jobs.append(job)
-                    existing_ids.add(job.id)
-                    seen_signatures.add(_job_signature(job.title, job.company))
+                    _register(job, existing_ids, seen_signatures)
         except Exception as e:
-            log.error("[Gupy] Falha: %s", e)
+            log.error("[Vagas.com] Falha em query=%r: %s", query, e)
+
+        # Programathor — busca por query
+        try:
+            for job in scrape_programathor(query):
+                if _is_new(job, existing_ids, seen_signatures):
+                    new_jobs.append(job)
+                    _register(job, existing_ids, seen_signatures)
+        except Exception as e:
+            log.error("[Programathor] Falha em query=%r: %s", query, e)
+
+        _sleep(3.0, 6.0)
 
     log.info("Total de vagas novas encontradas: %d", len(new_jobs))
     return new_jobs
@@ -502,6 +423,11 @@ def _is_new(job: Job, existing_ids: set, seen_sigs: set) -> bool:
         log.debug("Duplicata cross-fonte: %s @ %s", job.title, job.company)
         return False
     return True
+
+
+def _register(job: Job, existing_ids: set, seen_sigs: set) -> None:
+    existing_ids.add(job.id)
+    seen_sigs.add(_job_signature(job.title, job.company))
 
 
 def _job_signature(title: str, company: str) -> str:
