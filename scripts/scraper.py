@@ -351,12 +351,9 @@ def _fetch_vagas_description(url: str) -> str:
 # ─── Catho ────────────────────────────────────────────────────────────────────
 
 def scrape_catho(query: str, location: str) -> list[Job]:
-    """Catho via API pública de busca."""
+    """Catho via página de busca."""
     jobs: list[Job] = []
-    url = (
-        f"https://www.catho.com.br/vagas/{quote_plus(query.lower().replace(' ', '-'))}"
-        f"/{quote_plus(location.lower().replace(' ', '-'))}/"
-    )
+    url = f"https://www.catho.com.br/vagas/?q={quote_plus(query)}&where={quote_plus(location)}"
 
     log.info("[Catho] query=%r location=%r", query, location)
     resp = _safe_get(url)
