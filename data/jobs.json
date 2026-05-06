@@ -3293,9 +3293,9 @@
         "zabbix"
       ],
       "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null
+      "status": "enviada",
+      "applied_at": "2026-05-06T20:06:11.795489+00:00",
+      "cover_letter": "Prezados da N/A,\n\nTenho interesse na vaga de Analista de Qualidade Jr e acredito que minha experiência em  se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com"
     },
     {
       "id": "034d21f3bebc6674",
@@ -4381,12 +4381,12 @@
       "cover_letter": null
     }
   ],
-  "last_updated": "2026-05-06T20:05:41.907647+00:00",
+  "last_updated": "2026-05-06T20:06:11.795498+00:00",
   "stats": {
     "total": 112,
     "alto_fit": 2,
     "medio_fit": 4,
     "baixo_fit": 106,
-    "enviadas": 2
+    "enviadas": 3
   }
 }
