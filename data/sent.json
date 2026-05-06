@@ -8,6 +8,15 @@
       "url": "https://exemplo.com/vaga/1",
       "sent_at": "2026-05-06T18:36:01.008644+00:00",
       "score": 82
+    },
+    {
+      "job_id": "b32cade90afb81ed",
+      "title": "Analista de Infraestrutura Pleno",
+      "company": "Oculta Confidencial",
+      "source": "LinkedIn",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-pleno-at-oculta-confidencial-4410740999",
+      "sent_at": "2026-05-06T20:05:41.907150+00:00",
+      "score": 75
     }
   ]
 }

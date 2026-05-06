@@ -1852,9 +1852,9 @@
         "wireguard"
       ],
       "fit_level": "alto",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null
+      "status": "enviada",
+      "applied_at": "2026-05-06T20:05:41.907640+00:00",
+      "cover_letter": "Prezados da Oculta Confidencial,\n\nTenho interesse na vaga de Analista de Infraestrutura Pleno e acredito que minha experiência em ansible, aws, bash se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com"
     },
     {
       "id": "cd860caf84c02f50",
@@ -4381,12 +4381,12 @@
       "cover_letter": null
     }
   ],
-  "last_updated": "2026-05-06T20:00:39.016039+00:00",
+  "last_updated": "2026-05-06T20:05:41.907647+00:00",
   "stats": {
     "total": 112,
     "alto_fit": 2,
     "medio_fit": 4,
     "baixo_fit": 106,
-    "enviadas": 1
+    "enviadas": 2
   }
 }
