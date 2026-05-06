@@ -118,9 +118,10 @@ def _sleep(min_s: float = 2.0, max_s: float = 5.0) -> None:
     time.sleep(random.uniform(min_s, max_s))
 
 
-def _safe_get(url: str, timeout: int = 15, **kwargs) -> Optional[requests.Response]:
+def _safe_get(url: str, timeout: int = 15, extra_headers: dict = None, **kwargs) -> Optional[requests.Response]:
+    headers = _get_headers(extra_headers)
     try:
-        resp = requests.get(url, headers=_get_headers(), timeout=timeout, **kwargs)
+        resp = requests.get(url, headers=headers, timeout=timeout, **kwargs)
         if resp.status_code == 200:
             return resp
         log.warning("HTTP %s ao buscar %s", resp.status_code, url)
@@ -141,7 +142,7 @@ def scrape_indeed_rss(query: str, location: str) -> list[Job]:
     )
 
     log.info("[Indeed RSS] query=%r location=%r", query, location)
-    resp = _safe_get(url, headers={"Accept": "application/rss+xml, text/xml, */*"})
+    resp = _safe_get(url, extra_headers={"Accept": "application/rss+xml, text/xml, */*"})
     if not resp:
         return jobs
 
