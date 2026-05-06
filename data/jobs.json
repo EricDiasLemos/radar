@@ -35,9 +35,9 @@
         "helm"
       ],
       "fit_level": "alto",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null
+      "status": "enviada",
+      "applied_at": "2026-05-06T18:36:01.009095+00:00",
+      "cover_letter": "Prezados da Empresa Exemplo,\n\nTenho interesse na vaga de Analista DevOps Pleno e acredito que minha experiência em docker, kubernetes, terraform se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com"
     },
     {
       "id": "59f85fb634545379",
@@ -1658,12 +1658,12 @@
       "cover_letter": null
     }
   ],
-  "last_updated": "2026-05-06T18:33:13.383823+00:00",
+  "last_updated": "2026-05-06T18:36:01.009102+00:00",
   "stats": {
     "total": 60,
     "alto_fit": 1,
     "medio_fit": 1,
     "baixo_fit": 58,
-    "enviadas": 0
+    "enviadas": 1
   }
 }
