@@ -29,11 +29,14 @@ POSITIVE_KEYWORDS = {
     "infraestrutura", "infrastructure", "automação", "automation",
     "telecom", "plataforma", "platform", "devops", "devsecops",
     "cloud", "on-premise", "on premise", "noc",
+    "analista de infraestrutura", "engenheiro de infraestrutura",
+    "suporte linux", "administrador linux", "linux admin",
 }
 
 NEGATIVE_KEYWORDS = {
     "arquiteto", "architect", "manager", "diretor", "director",
-    "cto", "vp de", "head de", "mobile", "ios", "android",
+    "cto", "vp de", "head de", "ios developer", "android developer",
+    "mobile developer", "mobile engineer",
     "data scientist", "machine learning", "ml engineer",
 }
 

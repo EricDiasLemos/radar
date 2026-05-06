@@ -38,10 +38,13 @@ SEARCH_QUERIES = [
     "DevOps",
     "DevOps Engineer",
     "Analista Infraestrutura Linux",
+    "Analista de Infraestrutura",
     "SRE",
     "Engenheiro DevOps",
     "DevOps Pleno",
     "DevOps Junior",
+    "Analista de Infraestrutura Junior",
+    "Analista de Infraestrutura Pleno",
 ]
 
 LOCATIONS = [
