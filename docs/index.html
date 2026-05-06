@@ -449,6 +449,7 @@
 
     <div class="header-actions">
       <button class="btn btn-ghost" onclick="refreshData()">↻ Atualizar</button>
+      <button class="btn btn-ghost" id="token-btn" onclick="openTokenModal()" title="Configurar GitHub Token">🔑 Token</button>
       <button class="btn btn-primary" onclick="triggerWorkflow()">⚡ Forçar scan</button>
     </div>
   </div>
@@ -587,6 +588,47 @@
   </div>
 </div>
 
+<!-- ── Modal token ───────────────────────────────────────────── -->
+<div class="modal-backdrop" id="token-modal">
+  <div class="modal" style="max-width:480px">
+    <div class="modal-header">
+      <h2>🔑 GitHub Token</h2>
+      <button class="modal-close" onclick="closeTokenModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:16px;line-height:1.6">
+        O token permite que o dashboard dispare os workflows de scan e candidatura.<br>
+        Ele fica salvo <strong>apenas no seu browser</strong> e nunca é enviado a nenhum servidor.
+      </p>
+
+      <label style="font-size:0.82rem;color:var(--text-muted);display:block;margin-bottom:6px">
+        Personal Access Token (scope: <code>workflow</code>)
+      </label>
+      <div style="display:flex;gap:8px">
+        <input id="token-input" type="password"
+               class="search-input" style="flex:1"
+               placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+               oninput="updateTokenStatus()" />
+        <button class="btn btn-ghost" onclick="toggleTokenVisibility()" id="toggle-vis" style="padding:7px 10px">👁</button>
+      </div>
+
+      <div id="token-status" style="font-size:0.78rem;margin-top:8px;min-height:18px"></div>
+
+      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:16px">
+        Não tem um token? Crie em
+        <a href="https://github.com/settings/tokens/new?scopes=workflow&description=Job+Radar"
+           target="_blank" style="color:var(--blue)">github.com/settings/tokens</a>
+        — marque apenas o scope <strong>workflow</strong>.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-danger" onclick="clearToken()">🗑 Remover token</button>
+      <button class="btn btn-ghost" onclick="closeTokenModal()">Cancelar</button>
+      <button class="btn btn-primary" onclick="saveToken()">💾 Salvar</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── Toasts ─────────────────────────────────────────────────── -->
 <div class="toast-container" id="toast-container"></div>
 
@@ -613,6 +655,7 @@ const WORKFLOW_ID  = 'daily-scan.yml';
 async function init() {
   await loadData();
   setupChipFilters();
+  updateTokenBtn(!!localStorage.getItem('gh_token'));
 }
 
 async function loadData() {
@@ -879,6 +922,66 @@ function openApplyModal(jobId) {
   document.getElementById('apply-modal').classList.add('open');
 }
 
+// ─── Token modal ──────────────────────────────────────────────────────────────
+function openTokenModal() {
+  const saved = localStorage.getItem('gh_token') || '';
+  document.getElementById('token-input').value = saved;
+  updateTokenStatus();
+  document.getElementById('token-modal').classList.add('open');
+}
+
+function closeTokenModal() {
+  document.getElementById('token-modal').classList.remove('open');
+}
+
+function saveToken() {
+  const val = document.getElementById('token-input').value.trim();
+  if (!val.startsWith('ghp_') && !val.startsWith('github_pat_')) {
+    toast('Token inválido — deve começar com ghp_ ou github_pat_', 'error');
+    return;
+  }
+  localStorage.setItem('gh_token', val);
+  updateTokenBtn(true);
+  toast('Token salvo com sucesso!', 'success');
+  closeTokenModal();
+}
+
+function clearToken() {
+  localStorage.removeItem('gh_token');
+  document.getElementById('token-input').value = '';
+  updateTokenStatus();
+  updateTokenBtn(false);
+  toast('Token removido.', 'info');
+}
+
+function toggleTokenVisibility() {
+  const input = document.getElementById('token-input');
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+
+function updateTokenStatus() {
+  const val = document.getElementById('token-input').value.trim();
+  const el = document.getElementById('token-status');
+  if (!val) {
+    el.textContent = '';
+  } else if (val.startsWith('ghp_') || val.startsWith('github_pat_')) {
+    el.style.color = 'var(--green)';
+    el.textContent = '✓ Formato válido';
+  } else {
+    el.style.color = 'var(--red)';
+    el.textContent = '✗ Deve começar com ghp_ ou github_pat_';
+  }
+}
+
+function updateTokenBtn(hasToken) {
+  const btn = document.getElementById('token-btn');
+  if (btn) {
+    btn.textContent = hasToken ? '🔑 Token ✓' : '🔑 Token';
+    btn.style.color = hasToken ? 'var(--green)' : '';
+    btn.style.borderColor = hasToken ? 'var(--green)' : '';
+  }
+}
+
 function closeModal() {
   document.getElementById('apply-modal').classList.remove('open');
   currentApplyJobId = null;
@@ -908,7 +1011,9 @@ async function triggerApplyWorkflow(jobId) {
   // Dispara o workflow manual-apply via GitHub API
   const token = localStorage.getItem('gh_token');
   if (!token) {
-    throw new Error('GitHub token não configurado. Abra o console e execute:\nlocalStorage.setItem("gh_token", "ghp_SEU_TOKEN")');
+    closeModal();
+    openTokenModal();
+    throw new Error('Token não configurado');
   }
 
   const resp = await fetch(
@@ -933,7 +1038,7 @@ async function triggerApplyWorkflow(jobId) {
 async function triggerWorkflow() {
   const token = localStorage.getItem('gh_token');
   if (!token) {
-    toast('Configure seu GitHub token primeiro: localStorage.setItem("gh_token", "ghp_...")', 'error');
+    openTokenModal();
     return;
   }
 
@@ -983,14 +1088,17 @@ function toast(msg, type = 'info') {
   setTimeout(() => el.remove(), 4000);
 }
 
-// Fecha modal ao clicar fora
+// Fecha modais ao clicar fora
 document.getElementById('apply-modal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
+document.getElementById('token-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeTokenModal();
+});
 
-// Keyboard: Esc fecha modal
+// Keyboard: Esc fecha qualquer modal aberto
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') { closeModal(); closeTokenModal(); }
 });
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
