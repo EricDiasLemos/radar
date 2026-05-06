@@ -19,20 +19,73 @@
         "keywords": 8,
         "salary": 10
       },
-      "skills_match": ["docker", "kubernetes", "terraform", "aws", "prometheus", "grafana", "linux", "github actions", "jenkins"],
-      "skills_gap": ["argocd", "helm"],
+      "skills_match": [
+        "docker",
+        "kubernetes",
+        "terraform",
+        "aws",
+        "prometheus",
+        "grafana",
+        "linux",
+        "github actions",
+        "jenkins"
+      ],
+      "skills_gap": [
+        "argocd",
+        "helm"
+      ],
       "fit_level": "alto",
       "status": "nova",
       "applied_at": null,
       "cover_letter": null
+    },
+    {
+      "id": "59f85fb634545379",
+      "title": "Senior DevOps / Platform Engineer (AWS | Terraform | Full Stack Exposure)",
+      "company": "Oowlish",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Join Our Team Oowlish, one of Latin America's rapidly expanding software development companies, is seeking experienced technology professionals to enhance our diverse and vibrant team. As a valued member of Oowlish, you will collaborate with premier clients from the United States and Europe, contributing to pioneering digital solutions. Our commitment to creating a nurturing work environment is recognized by our certification as a Great Place to Work, where you will have opportunities for professional development, growth, and a chance to make a significant international impact. We offer the convenience of remote work, allowing you to craft a work-life balance that suits your personal and professional needs. We're looking for candidates who are passionate about technology, proficient in English, and excited to engage in remote collaboration for a worldwide presence. About the Role: We are looking for a Senior DevOps / Platform Engineer to join a high-impact engineering team building and scaling a mission-critical platform used by nonprofits, government agencies, and correctional systems nationwide. This role goes beyond traditional DevOps. We are looking for an engineer who not only understands infrastructure and cloud environments, but is also comfortable working with application code when needed. You will play a key role in designing, building, and scaling reliable systems in a real production environment, working across infrastructure, backend services, and platform-level decisions. This is a hands-on role for someone who enjoys ownership, operates with autonomy, and can balance infrastructure excellence with practical engineering execution. Key Responsibilities: Design and manage infrastructure using Terraform (Infrastructure as Code) Build and scale cloud environments on AWS Implement and manage containerized systems using Docker and Kubernetes Contribute to backend services and APIs using NestJS and TypeScript Support frontend integrations when needed (React-based applications) Improve system reliability, scalability, and deployment processes Collaborate with engineering teams to ensure smooth delivery and system performance Must Have: 5+ years of experience in DevOps, Platform Engineering, or similar roles Strong experience with AWS and cloud architecture Hands-on experience with Terraform (Infrastructure as Code) Experience with Docker and Kubernetes in production environments Strong experience with TypeScript and backend development (NestJS or similar frameworks) Experience working with React-based applications (at least at an integration level) Ability to work across infrastructure and application layers Nice to have: Experience with React Native Experience with Python Experience with Google Cloud Platform (GCP) Exposure to AI / LLM-based solutions Benefits & Perks: Home office; Competitive compensation based on experience; Career plans to allow for extensive growth in the company; International Projects; Oowlish English Program (Technic",
+      "url": "https://br.linkedin.com/jobs/view/senior-devops-platform-engineer-aws-terraform-full-stack-exposure-at-oowlish-4401318978",
+      "source": "LinkedIn",
+      "published_at": "2026-05-06",
+      "found_at": "2026-05-06T13:17:49.001698+00:00",
+      "score": 0,
+      "score_breakdown": {},
+      "skills_match": [],
+      "skills_gap": [],
+      "fit_level": "baixo",
+      "status": "arquivada",
+      "applied_at": null,
+      "cover_letter": null
+    },
+    {
+      "id": "1171c4fd7f070456",
+      "title": "11203 - Arquiteto(a) de Soluções Sênior (pré-Vendas) - Belo Horizonte/ MG",
+      "company": "N/A",
+      "location": "Belo Horizonte / MGA empresa aceita candidaturas de Belo Horizonte e cidades próximas",
+      "salary": "",
+      "description": "Faixa salarial a combinar Belo Horizonte A empresa aceita candidaturas de Belo Horizonte e cidades próximas Pessoa Jurídica Descrição Empresa Descrição : Uma das principais consultorias de Cloud Computing do Brasil e Parceira Premier AWS está em busca de um profissional para compor o seu time: Arquiteto(a) de Soluções Sênior (Pré-vendas) - Belo Horizonte/ MG. Buscamos um(a) profissional para atuar como referência técnica em um território e segmento específico (Belo Horizonte – MG), em parceria com um Account Manager. Você será responsável por apoiar o time Comercial na identificação de oportunidades, traduzir dores de negócio em soluções técnicas e conduzir propostas técnicas de ponta a ponta, com foco em serviços AWS. Tem os requisitos da vaga? Venha fazer parte desse time! REQUISITOS TÉCNICOS: Graduação completa em Tecnologia ou áreas correlatas; Experiência sólida em pré-vendas e arquiteturas técnicas com boas práticas e análises de custos; Sólida experiência em serviços e arquiteturas de nuvem com foco em AWS, em ambientes complexos contendo serviços gerenciados, IaaS, PaaS, SaaS e/ou serverless; Sólida experiência em boas práticas Well-Architected, FinOps e segurança em nuvem; Conhecimento em boas práticas Well-Architected, FinOps e segurança em nuvem; Conhecimento para estruturação de pitches de vendas nas áreas de: Infraestrutura, Network e Migrações; CI/CD, DevOps, Kubernetes, IaC (Terraform) e pipelines; Bancos de Dados e Segurança; AI/ML, GenAI e Data Analytics; Backup, performance e Disaster Recovery. Inglês técnico para leitura e escrita. OBS: Haverá apoio técnico de especialistas para áreas que não sejam de pleno domínio do profissional. DIFERENCIAIS/ DESEJÁVEIS: Experiência prática (como cliente) em serviços AWS e ambientes on-premise; Conhecimento em multicloud (Azure, GCP, OCI, Nutanix, Hyper-V e VMware); Participação em projetos de média complexidade com integração entre equipes; Conhecimento em soluções de VDI (Citrix, Terminal Server, AVD e equivalentes); Conhecimento em soluções de segurança: firewall, SOC, SD-WAN, CNAPP, DAST/SAST, Pentest e compliance; Conhecimento em observabilidade; Conhecimento em produtos e serviços Microsoft, Fortinet e CrowdStrike; Familiaridade com processos de RFI/RFP; Certificações AWS (Solutions Architect Associate) ou certificações equivalentes em outras clouds; Inglês e/ou espanhol fluente para conversação e apresentações. SOFT SKILLS: Capacidade de mapear requisitos de negócio e transformá-los em soluções escaláveis, seguras e resilientes; Boa comunicação verbal e escrita, com sólida habilidade de interlocução entre áreas técnicas e executivas; Bom relacionamento interpessoal. PRINCIPAIS RESPONSABILIDADES: Atuação comercial e estratégica (perfil hunter) Atuar como referência técnica e estratégica de arquitetura e pré-vendas em um território e segmento específico em Belo Horizonte/ MG; Trabalhar em parceria com um Account Manager no desenvolvimento do território e identificação de novas oportunid",
+      "url": "https://www.vagas.com.br/vagas/v2806574/11203-arquiteto-a-de-solucoes-senior-pre-vendas-belo-horizonte-mg",
+      "source": "Vagas.com",
+      "published_at": "08/04/2026",
+      "found_at": "2026-05-06T13:23:33.284887+00:00",
+      "score": 0,
+      "score_breakdown": {},
+      "skills_match": [],
+      "skills_gap": [],
+      "fit_level": "baixo",
+      "status": "arquivada",
+      "applied_at": null,
+      "cover_letter": null
     }
   ],
-  "last_updated": "2026-05-06T08:00:00Z",
+  "last_updated": "2026-05-06T13:32:29.474327+00:00",
   "stats": {
-    "total": 1,
+    "total": 3,
     "alto_fit": 1,
     "medio_fit": 0,
-    "baixo_fit": 0,
+    "baixo_fit": 2,
     "enviadas": 0
   }
 }
