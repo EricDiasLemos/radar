@@ -1952,9 +1952,9 @@
         "zabbix"
       ],
       "fit_level": "baixo",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null
+      "status": "enviada",
+      "applied_at": "2026-05-06T20:06:46.731453+00:00",
+      "cover_letter": "Prezados da Mamtech Tecnologia,\n\nTenho interesse na vaga de Analista de Suporte Pleno l Belo Horizonte e acredito que minha experiência em fortigate, linux se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com"
     },
     {
       "id": "f69d1d8ca4635f5b",
@@ -4381,12 +4381,12 @@
       "cover_letter": null
     }
   ],
-  "last_updated": "2026-05-06T20:06:11.795498+00:00",
+  "last_updated": "2026-05-06T20:06:46.731463+00:00",
   "stats": {
     "total": 112,
     "alto_fit": 2,
     "medio_fit": 4,
     "baixo_fit": 106,
-    "enviadas": 3
+    "enviadas": 4
   }
 }
