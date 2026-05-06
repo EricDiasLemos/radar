@@ -1,11 +1,12 @@
 """
-Job Radar — Geração de carta de apresentação via Claude API
+Job Radar — Geração de carta de apresentação via Groq (gratuito)
+Modelo: llama-3.1-70b-versatile
 """
 
 import logging
 import os
 
-import anthropic
+from groq import Groq
 
 log = logging.getLogger(__name__)
 
@@ -19,17 +20,19 @@ Regras obrigatórias:
 - Não começar com "Prezados" ou frases genéricas
 - Destacar sempre 2-3 skills técnicas que coincidem com a vaga
 - Não mencionar habilidades que Eric não possui
-- Finalizar com disponibilidade para entrevista e link do GitHub implícito
+- Finalizar com disponibilidade para entrevista
 - Escrever em português brasileiro formal-técnico"""
+
+GROQ_MODEL = "llama-3.1-70b-versatile"
 
 
 def generate_cover_letter(job: dict) -> str:
     """Gera carta personalizada para a vaga. Retorna texto da carta."""
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY não configurada")
+        raise ValueError("GROQ_API_KEY não configurada")
 
-    client = anthropic.Anthropic(api_key=api_key)
+    client = Groq(api_key=api_key)
 
     title = job.get("title", "")
     company = job.get("company", "")
@@ -48,16 +51,19 @@ Skills da vaga que Eric não possui: {', '.join(skills_gap[:5]) if skills_gap el
 Escreva uma carta de apresentação personalizada e objetiva para Eric se candidatar \
 a esta vaga. Foque nas skills coincidentes e no valor que ele pode agregar à empresa."""
 
-    log.info("Gerando carta para: %s @ %s", title, company)
+    log.info("Gerando carta para: %s @ %s (Groq/%s)", title, company, GROQ_MODEL)
 
-    message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+    response = client.chat.completions.create(
+        model=GROQ_MODEL,
         max_tokens=600,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_prompt}],
+        temperature=0.7,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
+        ],
     )
 
-    letter = message.content[0].text.strip()
+    letter = response.choices[0].message.content.strip()
     log.info("Carta gerada: %d caracteres", len(letter))
     return letter
 
