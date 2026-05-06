@@ -55,7 +55,7 @@ jobs:
       - name: Deploy dashboard para GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dashboard
+          folder: docs
           branch: gh-pages
           clean: false
 
