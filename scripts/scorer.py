@@ -83,7 +83,8 @@ def score_job(job_dict: dict) -> ScoreResult:
             )
 
     for kw in NEGATIVE_KEYWORDS:
-        if kw in text_lower:
+        pattern = r"\b" + re.escape(kw) + r"\b"
+        if re.search(pattern, text_lower):
             return ScoreResult(
                 total=0, skills=0, location=0, level=0,
                 keywords=0, salary=0,

@@ -13,6 +13,7 @@ import hashlib
 import json
 import logging
 import random
+import re
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -237,9 +238,9 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
 
                 desc = _fetch_vagas_description(href)
                 jobs.append(Job(
-                    title=title_el.get_text(strip=True),
-                    company=company_el.get_text(strip=True) if company_el else "N/A",
-                    location=loc_el.get_text(strip=True) if loc_el else location,
+                    title=title_el.get_text(separator=" ", strip=True),
+                    company=company_el.get_text(separator=" ", strip=True) if company_el else "N/A",
+                    location=loc_el.get_text(separator=" ", strip=True) if loc_el else location,
                     url=href,
                     source="Vagas.com",
                     description=desc,
@@ -317,8 +318,6 @@ def scrape_programathor(query: str) -> list[Job]:
             elif "Híbrido" in full_text or "Hibrido" in full_text:
                 location = "Híbrido"
 
-            # Extrai salário se presente
-            import re
             sal_match = re.search(r"R\$\s*[\d.,]+", full_text)
             if sal_match:
                 salary = sal_match.group(0)
@@ -431,9 +430,8 @@ def _register(job: Job, existing_ids: set, seen_sigs: set) -> None:
 
 
 def _job_signature(title: str, company: str) -> str:
-    return hashlib.md5(
-        f"{title.lower().strip()}|{company.lower().strip()}".encode()
-    ).hexdigest()
+    norm = lambda s: re.sub(r"\s+", "", s.lower().strip())
+    return hashlib.md5(f"{norm(title)}|{norm(company)}".encode()).hexdigest()
 
 
 if __name__ == "__main__":
