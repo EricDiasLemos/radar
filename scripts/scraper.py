@@ -1,6 +1,7 @@
 """
 Job Radar — Scraper de vagas DevOps
-Fontes: Indeed (RSS), LinkedIn Jobs, Gupy, Vagas.com
+Fontes: LinkedIn Jobs, Gupy, Vagas.com, Catho
+(Indeed removido — bloqueia IPs de datacenter/CI com 403)
 """
 
 import hashlib
@@ -8,7 +9,6 @@ import json
 import logging
 import random
 import time
-import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -118,10 +118,9 @@ def _sleep(min_s: float = 2.0, max_s: float = 5.0) -> None:
     time.sleep(random.uniform(min_s, max_s))
 
 
-def _safe_get(url: str, timeout: int = 15, extra_headers: dict = None, **kwargs) -> Optional[requests.Response]:
-    headers = _get_headers(extra_headers)
+def _safe_get(url: str, timeout: int = 20, extra_headers: dict = None, **kwargs) -> Optional[requests.Response]:
     try:
-        resp = requests.get(url, headers=headers, timeout=timeout, **kwargs)
+        resp = requests.get(url, headers=_get_headers(extra_headers), timeout=timeout, **kwargs)
         if resp.status_code == 200:
             return resp
         log.warning("HTTP %s ao buscar %s", resp.status_code, url)
@@ -129,71 +128,6 @@ def _safe_get(url: str, timeout: int = 15, extra_headers: dict = None, **kwargs)
     except requests.RequestException as e:
         log.error("Erro ao buscar %s: %s", url, e)
         return None
-
-
-# ─── Indeed via RSS (não bloqueia) ────────────────────────────────────────────
-
-def scrape_indeed_rss(query: str, location: str) -> list[Job]:
-    """Usa o feed RSS do Indeed — mais estável que scraping direto."""
-    jobs: list[Job] = []
-    url = (
-        f"https://br.indeed.com/rss"
-        f"?q={quote_plus(query)}&l={quote_plus(location)}&sort=date&limit=20"
-    )
-
-    log.info("[Indeed RSS] query=%r location=%r", query, location)
-    resp = _safe_get(url, extra_headers={"Accept": "application/rss+xml, text/xml, */*"})
-    if not resp:
-        return jobs
-
-    try:
-        root = ET.fromstring(resp.content)
-    except ET.ParseError as e:
-        log.warning("[Indeed RSS] XML inválido: %s", e)
-        return jobs
-
-    ns = {"content": "http://purl.org/rss/1.0/modules/content/"}
-    items = root.findall(".//item")
-
-    for item in items[:15]:
-        try:
-            title = item.findtext("title", "").strip()
-            link = item.findtext("link", "").strip()
-            company_loc = item.findtext("source", "").strip()
-            pub_date = item.findtext("pubDate", "").strip()
-            description_raw = (
-                item.findtext("description", "")
-                or item.findtext("content:encoded", "", ns)
-            )
-            desc = BeautifulSoup(description_raw, "html.parser").get_text(" ", strip=True)[:3000]
-
-            # Indeed RSS: título geralmente é "Cargo - Empresa"
-            if " - " in title:
-                parts = title.rsplit(" - ", 1)
-                job_title = parts[0].strip()
-                company = parts[1].strip() if len(parts) > 1 else "N/A"
-            else:
-                job_title = title
-                company = company_loc or "N/A"
-
-            if not job_title or not link:
-                continue
-
-            jobs.append(Job(
-                title=job_title,
-                company=company,
-                location=location,
-                url=link,
-                source="Indeed",
-                description=desc,
-                published_at=pub_date,
-            ))
-        except Exception as e:
-            log.warning("[Indeed RSS] Erro ao processar item: %s", e)
-
-    log.info("[Indeed RSS] %d vagas encontradas", len(jobs))
-    _sleep(2.0, 4.0)
-    return jobs
 
 
 # ─── LinkedIn ─────────────────────────────────────────────────────────────────
@@ -204,7 +138,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
         f"?keywords={quote_plus(query)}"
         f"&location={quote_plus(location + ', Brasil')}"
-        "&f_TPR=r604800"  # últimos 7 dias
+        "&f_TPR=r604800"
         "&start=0"
     )
 
@@ -239,7 +173,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
                 description=desc,
                 published_at=date_el.get("datetime", "") if date_el else "",
             ))
-            _sleep(2.0, 4.0)
+            _sleep(1.5, 3.0)
         except Exception as e:
             log.warning("[LinkedIn] Erro ao processar card: %s", e)
 
@@ -248,7 +182,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
 
 
 def _fetch_linkedin_description(url: str) -> str:
-    _sleep(1.5, 3.0)
+    _sleep(1.0, 2.5)
     resp = _safe_get(url)
     if not resp:
         return ""
@@ -257,107 +191,100 @@ def _fetch_linkedin_description(url: str) -> str:
     return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
 
 
-# ─── Gupy (API correta) ───────────────────────────────────────────────────────
+# ─── Gupy ─────────────────────────────────────────────────────────────────────
 
 def scrape_gupy(query: str) -> list[Job]:
-    """Usa a API pública do Gupy com headers corretos."""
+    """Scraping da página de busca do Gupy com extração via __NEXT_DATA__."""
     jobs: list[Job] = []
 
-    # Endpoint atual do Gupy
-    url = f"https://portal.gupy.io/api/job?name={quote_plus(query)}&limit=20"
-    headers = {
-        "Accept": "application/json, text/plain, */*",
-        "Referer": "https://portal.gupy.io/",
-        "Origin": "https://portal.gupy.io",
-    }
-
-    log.info("[Gupy] query=%r", query)
-    try:
-        resp = requests.get(url, headers={**_get_headers(), **headers}, timeout=20)
-        if resp.status_code != 200:
-            log.warning("[Gupy] HTTP %s", resp.status_code)
-            return jobs
-        data = resp.json()
-    except (requests.RequestException, json.JSONDecodeError) as e:
-        log.warning("[Gupy] Falha: %s — tentando endpoint alternativo", e)
-        return _scrape_gupy_search_page(query)
-
-    items = data.get("data", []) if isinstance(data, dict) else data
-    if not isinstance(items, list):
-        log.warning("[Gupy] Formato inesperado, tentando endpoint alternativo")
-        return _scrape_gupy_search_page(query)
-
-    for item in items[:15]:
-        try:
-            job_id = item.get("id", "")
-            job_url = f"https://portal.gupy.io/job/{job_id}" if job_id else item.get("jobUrl", "")
-            city = item.get("city", "")
-            state = item.get("state", "")
-            location = f"{city}, {state}".strip(", ") or "Brasil"
-            workplace = item.get("workplaceType", "")
-            if workplace == "remote":
-                location = "Remoto"
-            elif workplace == "hybrid":
-                location = f"Híbrido — {location}"
-
-            jobs.append(Job(
-                title=item.get("name", ""),
-                company=item.get("company", {}).get("name", "N/A") if isinstance(item.get("company"), dict) else str(item.get("company", "N/A")),
-                location=location,
-                url=job_url,
-                source="Gupy",
-                description=str(item.get("description", ""))[:3000],
-                published_at=item.get("publishedDate", ""),
-            ))
-            _sleep(0.5, 1.0)
-        except Exception as e:
-            log.warning("[Gupy] Erro ao processar item: %s", e)
-
-    log.info("[Gupy] %d vagas encontradas", len(jobs))
-    return jobs
-
-
-def _scrape_gupy_search_page(query: str) -> list[Job]:
-    """Fallback: scraping da página de busca do Gupy."""
-    jobs: list[Job] = []
     url = f"https://portal.gupy.io/job-search/term/{quote_plus(query)}"
-    log.info("[Gupy Fallback] scraping página: %r", query)
+    log.info("[Gupy] query=%r", query)
 
-    resp = _safe_get(url)
+    resp = _safe_get(url, extra_headers={
+        "Accept": "text/html,application/xhtml+xml",
+        "Referer": "https://portal.gupy.io/",
+    })
     if not resp:
         return jobs
 
     soup = BeautifulSoup(resp.text, "html.parser")
-
-    # Tenta extrair dados do JSON embutido na página (Next.js __NEXT_DATA__)
     script = soup.find("script", {"id": "__NEXT_DATA__"})
+
     if script and script.string:
         try:
             next_data = json.loads(script.string)
-            job_list = (
+            # Navega pela estrutura do Next.js para achar a lista de vagas
+            queries = (
                 next_data.get("props", {})
                 .get("pageProps", {})
                 .get("dehydratedState", {})
-                .get("queries", [{}])[0]
-                .get("state", {})
-                .get("data", {})
-                .get("data", [])
+                .get("queries", [])
             )
-            for item in job_list[:15]:
+            job_list = []
+            for q in queries:
+                data = q.get("state", {}).get("data", {})
+                if isinstance(data, dict) and "data" in data:
+                    job_list = data["data"]
+                    break
+                if isinstance(data, list):
+                    job_list = data
+                    break
+
+            for item in job_list[:20]:
                 job_id = item.get("id", "")
+                city = item.get("city", "")
+                state = item.get("state", "")
+                location = f"{city}, {state}".strip(", ") or "Brasil"
+                workplace = item.get("workplaceType", "")
+                if workplace == "remote":
+                    location = "Remoto"
+                elif workplace == "hybrid":
+                    location = f"Híbrido — {location}"
+
+                company = item.get("company", {})
+                company_name = company.get("name", "N/A") if isinstance(company, dict) else str(company)
+
                 jobs.append(Job(
                     title=item.get("name", ""),
-                    company=item.get("company", {}).get("name", "N/A") if isinstance(item.get("company"), dict) else "N/A",
-                    location=item.get("city", "Brasil"),
-                    url=f"https://portal.gupy.io/job/{job_id}",
+                    company=company_name,
+                    location=location,
+                    url=f"https://portal.gupy.io/job/{job_id}" if job_id else "",
                     source="Gupy",
                     description=str(item.get("description", ""))[:3000],
                     published_at=item.get("publishedDate", ""),
                 ))
         except Exception as e:
-            log.warning("[Gupy Fallback] Erro ao extrair __NEXT_DATA__: %s", e)
+            log.warning("[Gupy] Erro ao extrair __NEXT_DATA__: %s", e)
 
-    log.info("[Gupy Fallback] %d vagas encontradas", len(jobs))
+    if not jobs:
+        # Fallback: tenta extrair cards do HTML diretamente
+        cards = soup.select("article, [data-testid='job-card'], .job-card")
+        for card in cards[:20]:
+            try:
+                title_el = card.select_one("h2, h3, [data-testid='job-name']")
+                company_el = card.select_one("[data-testid='company-name'], .company-name")
+                loc_el = card.select_one("[data-testid='job-location'], .location")
+                link_el = card.select_one("a")
+
+                if not title_el or not link_el:
+                    continue
+
+                href = link_el.get("href", "")
+                if href.startswith("/"):
+                    href = "https://portal.gupy.io" + href
+
+                jobs.append(Job(
+                    title=title_el.get_text(strip=True),
+                    company=company_el.get_text(strip=True) if company_el else "N/A",
+                    location=loc_el.get_text(strip=True) if loc_el else "Brasil",
+                    url=href,
+                    source="Gupy",
+                ))
+            except Exception as e:
+                log.warning("[Gupy HTML] Erro: %s", e)
+
+    log.info("[Gupy] %d vagas encontradas", len(jobs))
+    _sleep(2.0, 4.0)
     return jobs
 
 
@@ -412,13 +339,105 @@ def scrape_vagas_com(query: str, location: str) -> list[Job]:
 
 
 def _fetch_vagas_description(url: str) -> str:
-    _sleep(1.5, 3.0)
+    _sleep(1.0, 2.5)
     resp = _safe_get(url)
     if not resp:
         return ""
     soup = BeautifulSoup(resp.text, "html.parser")
     desc_el = soup.select_one(".job-description, #job-description, .descricao")
     return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
+
+
+# ─── Catho ────────────────────────────────────────────────────────────────────
+
+def scrape_catho(query: str, location: str) -> list[Job]:
+    """Catho via API pública de busca."""
+    jobs: list[Job] = []
+    url = (
+        f"https://www.catho.com.br/vagas/{quote_plus(query.lower().replace(' ', '-'))}"
+        f"/{quote_plus(location.lower().replace(' ', '-'))}/"
+    )
+
+    log.info("[Catho] query=%r location=%r", query, location)
+    resp = _safe_get(url)
+    if not resp:
+        return jobs
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    # Tenta extrair do JSON embutido
+    for script in soup.find_all("script", type="application/json"):
+        try:
+            data = json.loads(script.string or "")
+            job_list = None
+
+            # Estrutura pode variar — procura lista de vagas
+            if isinstance(data, dict):
+                job_list = (
+                    data.get("jobs")
+                    or data.get("vacancies")
+                    or data.get("results")
+                )
+            if job_list and isinstance(job_list, list):
+                for item in job_list[:15]:
+                    title = item.get("title") or item.get("name") or item.get("jobTitle", "")
+                    company = item.get("company") or item.get("companyName", "N/A")
+                    if isinstance(company, dict):
+                        company = company.get("name", "N/A")
+                    job_url = item.get("url") or item.get("link") or item.get("applyUrl", "")
+                    if not job_url.startswith("http"):
+                        job_url = "https://www.catho.com.br" + job_url
+
+                    if title:
+                        jobs.append(Job(
+                            title=title,
+                            company=str(company),
+                            location=item.get("location") or item.get("city") or location,
+                            url=job_url,
+                            source="Catho",
+                            salary=str(item.get("salary") or item.get("wage", "")),
+                            published_at=str(item.get("publishedAt") or item.get("date", "")),
+                        ))
+                if jobs:
+                    break
+        except (json.JSONDecodeError, AttributeError):
+            continue
+
+    # Fallback: HTML scraping
+    if not jobs:
+        selectors = [
+            "article.sc-",
+            "[data-testid='job-card']",
+            ".job-list-item",
+            "li[class*='JobCard']",
+        ]
+        for sel in selectors:
+            cards = soup.select(sel)
+            if cards:
+                for card in cards[:15]:
+                    try:
+                        title_el = card.select_one("h2, h3, [class*='title'], [class*='Title']")
+                        company_el = card.select_one("[class*='company'], [class*='Company']")
+                        link_el = card.select_one("a")
+                        if not title_el or not link_el:
+                            continue
+                        href = link_el.get("href", "")
+                        if href.startswith("/"):
+                            href = "https://www.catho.com.br" + href
+                        jobs.append(Job(
+                            title=title_el.get_text(strip=True),
+                            company=company_el.get_text(strip=True) if company_el else "N/A",
+                            location=location,
+                            url=href,
+                            source="Catho",
+                        ))
+                    except Exception:
+                        continue
+                break
+
+    log.info("[Catho] %d vagas encontradas", len(jobs))
+    _sleep(2.0, 4.0)
+    return jobs
 
 
 # ─── Orquestração ─────────────────────────────────────────────────────────────
@@ -440,49 +459,32 @@ def save_jobs(data: dict) -> None:
 def run_scraper() -> list[Job]:
     existing = load_existing_jobs()
     existing_ids = {j["id"] for j in existing.get("jobs", [])}
-
     seen_signatures: set[str] = set()
     for j in existing.get("jobs", []):
-        sig = _job_signature(j["title"], j["company"])
-        seen_signatures.add(sig)
+        seen_signatures.add(_job_signature(j["title"], j["company"]))
 
     new_jobs: list[Job] = []
 
     for query in SEARCH_QUERIES:
         for location in LOCATIONS[:3]:
-            # Indeed RSS
-            try:
-                for job in scrape_indeed_rss(query, location):
-                    if _is_new(job, existing_ids, seen_signatures):
-                        new_jobs.append(job)
-                        existing_ids.add(job.id)
-                        seen_signatures.add(_job_signature(job.title, job.company))
-            except Exception as e:
-                log.error("[Indeed RSS] Falha: %s", e)
+            for fn, needs_location in [
+                (scrape_linkedin, True),
+                (scrape_vagas_com, True),
+                (scrape_catho, True),
+            ]:
+                try:
+                    batch = fn(query, location) if needs_location else fn(query)
+                    for job in batch:
+                        if _is_new(job, existing_ids, seen_signatures):
+                            new_jobs.append(job)
+                            existing_ids.add(job.id)
+                            seen_signatures.add(_job_signature(job.title, job.company))
+                except Exception as e:
+                    log.error("[%s] Falha: %s", fn.__name__, e)
 
-            # LinkedIn
-            try:
-                for job in scrape_linkedin(query, location):
-                    if _is_new(job, existing_ids, seen_signatures):
-                        new_jobs.append(job)
-                        existing_ids.add(job.id)
-                        seen_signatures.add(_job_signature(job.title, job.company))
-            except Exception as e:
-                log.error("[LinkedIn] Falha: %s", e)
+            _sleep(2.0, 4.0)
 
-            # Vagas.com
-            try:
-                for job in scrape_vagas_com(query, location):
-                    if _is_new(job, existing_ids, seen_signatures):
-                        new_jobs.append(job)
-                        existing_ids.add(job.id)
-                        seen_signatures.add(_job_signature(job.title, job.company))
-            except Exception as e:
-                log.error("[Vagas.com] Falha: %s", e)
-
-            _sleep(3.0, 6.0)
-
-        # Gupy — não depende de localização
+        # Gupy — não filtra por localização, retorna nacional
         try:
             for job in scrape_gupy(query):
                 if _is_new(job, existing_ids, seen_signatures):
@@ -498,18 +500,17 @@ def run_scraper() -> list[Job]:
 
 def _is_new(job: Job, existing_ids: set, seen_sigs: set) -> bool:
     if job.id in existing_ids:
-        log.debug("Duplicata (ID): %s @ %s", job.title, job.company)
         return False
-    sig = _job_signature(job.title, job.company)
-    if sig in seen_sigs:
-        log.debug("Duplicata (assinatura): %s @ %s", job.title, job.company)
+    if _job_signature(job.title, job.company) in seen_sigs:
+        log.debug("Duplicata cross-fonte: %s @ %s", job.title, job.company)
         return False
     return True
 
 
 def _job_signature(title: str, company: str) -> str:
-    normalized = f"{title.lower().strip()}|{company.lower().strip()}"
-    return hashlib.md5(normalized.encode()).hexdigest()
+    return hashlib.md5(
+        f"{title.lower().strip()}|{company.lower().strip()}".encode()
+    ).hexdigest()
 
 
 if __name__ == "__main__":
