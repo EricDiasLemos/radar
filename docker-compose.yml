@@ -1,0 +1,33 @@
+services:
+
+  # ── Dashboard (nginx) ───────────────────────────────────────────────────────
+  dashboard:
+    image: nginx:1.27-alpine
+    container_name: job-radar-dashboard
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./dashboard:/usr/share/nginx/html:ro
+      - ./data:/srv/data:ro
+      - ./assets:/srv/assets:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ── Scanner Python ──────────────────────────────────────────────────────────
+  scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: job-radar-scanner
+    volumes:
+      - ./data:/app/data
+      - ./assets:/app/assets:ro
+      - ./scripts:/app/scripts:ro
+    env_file:
+      - .env
+    restart: unless-stopped

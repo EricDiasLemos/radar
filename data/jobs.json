@@ -1,0 +1,38 @@
+{
+  "jobs": [
+    {
+      "id": "exemplo000000001",
+      "title": "Analista DevOps Pleno",
+      "company": "Empresa Exemplo",
+      "location": "Belo Horizonte, MG",
+      "salary": "R$ 5.000 - R$ 7.000",
+      "description": "Buscamos Analista DevOps Pleno para atuar com Docker, Kubernetes, Terraform, AWS, monitoramento com Prometheus e Grafana, pipelines CI/CD com GitHub Actions e Jenkins. Experiência com Linux obrigatória. Trabalho remoto/híbrido.",
+      "url": "https://exemplo.com/vaga/1",
+      "source": "Indeed",
+      "published_at": "2026-05-06",
+      "found_at": "2026-05-06T08:00:00Z",
+      "score": 82,
+      "score_breakdown": {
+        "skills": 37,
+        "location": 20,
+        "level": 15,
+        "keywords": 8,
+        "salary": 10
+      },
+      "skills_match": ["docker", "kubernetes", "terraform", "aws", "prometheus", "grafana", "linux", "github actions", "jenkins"],
+      "skills_gap": ["argocd", "helm"],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null
+    }
+  ],
+  "last_updated": "2026-05-06T08:00:00Z",
+  "stats": {
+    "total": 1,
+    "alto_fit": 1,
+    "medio_fit": 0,
+    "baixo_fit": 0,
+    "enviadas": 0
+  }
+}

@@ -1,0 +1,81 @@
+name: Job Radar — Daily Scan
+
+on:
+  schedule:
+    - cron: '0 11 * * 1-5'  # 08h BRT (UTC-3) seg a sex
+  workflow_dispatch:         # trigger manual pelo dashboard ou CLI
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          PYTHONPATH: scripts
+        run: python scripts/main.py scan
+        continue-on-error: false
+
+      - name: Auto-candidatar vagas alto fit
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          CANDIDATE_EMAIL: ${{ secrets.CANDIDATE_EMAIL }}
+          PYTHONPATH: scripts
+        run: python scripts/main.py scan --no-auto-apply
+        # Nota: auto-apply já ocorre no passo anterior;
+        # este passo existe para re-runs isolados se necessário.
+        # Para habilitar auto-apply completo, remova a flag acima.
+
+      - name: Commit dados atualizados
+        run: |
+          git config user.name  "Job Radar Bot"
+          git config user.email "actions@github.com"
+          git add data/jobs.json data/sent.json
+          git diff --cached --quiet || git commit -m "chore: update jobs data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          git push
+
+      - name: Deploy dashboard para GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dashboard
+          branch: gh-pages
+          clean: false
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Job Radar — Resultado do Scan" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          python - <<'EOF'
+          import json, pathlib
+          p = pathlib.Path("data/jobs.json")
+          if p.exists():
+              d = json.loads(p.read_text())
+              s = d.get("stats", {})
+              print(f"| Métrica | Valor |")
+              print(f"|---------|-------|")
+              print(f"| Total de vagas | {s.get('total', 0)} |")
+              print(f"| Alto fit 🟢 | {s.get('alto_fit', 0)} |")
+              print(f"| Médio fit 🟡 | {s.get('medio_fit', 0)} |")
+              print(f"| Enviadas 📤 | {s.get('enviadas', 0)} |")
+              print(f"| Última atualização | {d.get('last_updated', 'N/A')} |")
+          EOF
+          >> $GITHUB_STEP_SUMMARY

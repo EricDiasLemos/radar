@@ -1,0 +1,76 @@
+name: Job Radar — Manual Apply
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: 'ID da vaga (campo "id" do jobs.json)'
+        required: true
+        type: string
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Gerar carta e enviar candidatura
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          CANDIDATE_EMAIL: ${{ secrets.CANDIDATE_EMAIL }}
+          PYTHONPATH: scripts
+        run: python scripts/main.py apply "${{ github.event.inputs.job_id }}"
+
+      - name: Commit status atualizado
+        run: |
+          git config user.name  "Job Radar Bot"
+          git config user.email "actions@github.com"
+          git add data/jobs.json data/sent.json
+          git diff --cached --quiet || git commit -m "chore: apply job ${{ github.event.inputs.job_id }}"
+          git push
+
+      - name: Deploy dashboard atualizado
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dashboard
+          branch: gh-pages
+          clean: false
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Candidatura — ${{ github.event.inputs.job_id }}" >> $GITHUB_STEP_SUMMARY
+          python - <<'EOF'
+          import json, pathlib, sys
+          job_id = "${{ github.event.inputs.job_id }}"
+          p = pathlib.Path("data/jobs.json")
+          if p.exists():
+              jobs = json.loads(p.read_text()).get("jobs", [])
+              job = next((j for j in jobs if j.get("id") == job_id), None)
+              if job:
+                  print(f"| Campo | Valor |")
+                  print(f"|-------|-------|")
+                  print(f"| Título | {job.get('title')} |")
+                  print(f"| Empresa | {job.get('company')} |")
+                  print(f"| Score | {job.get('score')}/100 |")
+                  print(f"| Status | {job.get('status')} |")
+                  print(f"| Aplicado em | {job.get('applied_at', 'N/A')} |")
+              else:
+                  print(f"Job ID não encontrado: {job_id}")
+          EOF
+          >> $GITHUB_STEP_SUMMARY
