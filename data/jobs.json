@@ -5622,14 +5622,35 @@
       "status": "nova",
       "applied_at": null,
       "cover_letter": null
+    },
+    {
+      "id": "433b24c12dadf001",
+      "title": "Desenvolvedor Backend Java Senior",
+      "company": "EY",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Desenvolvedor (a) Backend Java Sênior Na EY, estamos comprometidos em moldar seu futuro com confiança. Nós ajudaremos você a ter sucesso em um ambiente globalmente conectado, repleto de equipes diversas, e a levar sua carreira para onde você desejar. Venha para EY e ajude-nos a construir um mundo de negócios melhor. Sobre a oportunidade: Em Financial Services (FSO), estamos construindo um mundo de negócios melhor apoiando as necessidades e desafios dos nossos clientes do segmento financeiro (Mercado de Capitais, Bancos, Seguros e Gestão de Ativos) através de uma única área/linha de serviço que une nossas diferentes especialidades (Auditoria, Consultoria, Tecnologia, etc) para atender este setor de forma abrangente e customizada. #FSOEY Você assumirá as seguintes responsabilidades: Como Pessoa Desenvolvedora Backend Java Sênior, você será responsável por desenvolver e manter aplicações web utilizando Java e frameworks relacionados, colaborando com equipes de design e produto para criar interfaces intuitivas. Atuará na implementação de APIs RESTful, integração com serviços de terceiros, realização de testes e garantia da qualidade do código, além de participar de revisões e contribuir para a melhoria contínua dos processos de desenvolvimento. Desenvolver e manter aplicações web utilizando Java e frameworks relacionados. Colaborar com equipes de design e produto para criar interfaces de usuário intuitivas. Implementar APIs RESTful e integrar com serviços de terceiros. Realizar testes e garantir a qualidade do código. Participar de revisões de código e contribuir para a melhoria contínua dos processos de desenvolvimento. Requisitos e habilidades que buscamos: Graduação em Ciência da Computação, Tecnologia da Informação ou área relacionada. Experiência sólida em desenvolvimento com Java. Conhecimento e experiência no uso do Quarkus ou Spring para desenvolvimento de aplicações. Habilidade em criar e manter APIs Restful. Compreensão profunda dos conceitos e práticas de backend. Proficiência no uso de Git para controle de versões. Experiência na configuração e manutenção de pipelines de CI/CD utilizando Jenkins e Argo. Conhecimento em desenvolvimento de back-end utilizando arquitetura de microsserviços e tecnologias de cloud. Experiência em práticas DevOps, incluindo o uso de Kubernetes e Docker. Habilidade em criar e executar testes de integração e unitários. Banco de Dados relacional com utilização de linguagem SQL. Conhecimento em práticas de engenharia de confiabilidade de sites (SRE). Experiência em monitoração utilizando Grafana e Prometheus, incluindo a emissão de alertas. Desejável pós-graduação em tecnologia ou gestão. Acesse go.ey.com/beneficios e conheça nosso universo de benefícios . O que oferecemos: Na EY, você se desenvolve com habilidades voltadas para o futuro e se abastece de experiências de classe mundial. Nós capacitaremos você em um ambiente flexível e potencializaremos seus talentos extraordinários em uma cultura diversa e inclusiva",
+      "url": "https://br.linkedin.com/jobs/view/desenvolvedor-backend-java-senior-at-ey-4408415038",
+      "source": "LinkedIn",
+      "published_at": "2026-05-05",
+      "found_at": "2026-05-07T20:57:24.243924+00:00",
+      "score": 0,
+      "score_breakdown": {},
+      "skills_match": [],
+      "skills_gap": [],
+      "fit_level": "baixo",
+      "status": "arquivada",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null
     }
   ],
-  "last_updated": "2026-05-07T19:12:24.888407+00:00",
+  "last_updated": "2026-05-07T21:37:04.099227+00:00",
   "stats": {
-    "total": 135,
+    "total": 136,
     "alto_fit": 2,
     "medio_fit": 7,
-    "baixo_fit": 126,
+    "baixo_fit": 127,
     "enviadas": 5
   }
 }
