@@ -548,9 +548,10 @@
     <main>
       <div class="jobs-header">
         <h2>Vagas <span class="jobs-count" id="jobs-count"></span></h2>
-        <div style="display:flex;gap:8px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('score')">↓ Score</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('date')">↓ Data</button>
+          <button class="btn btn-danger" style="font-size:0.75rem" onclick="deleteAllBaixoFit()">🗑 Limpar baixo fit</button>
         </div>
       </div>
       <div id="jobs-grid" class="jobs-grid">
@@ -808,6 +809,8 @@ function renderCard(job) {
     ? `<span>📅 ${job.published_at}</span>`
     : '';
 
+  const deleteBtn = `<button class="btn btn-ghost" onclick="deleteJob('${job.id}')" title="Apagar vaga" style="color:var(--red)">🗑</button>`;
+
   const actionButtons = status === 'enviada'
     ? `<span style="color:var(--green);font-size:0.78rem">✅ Enviada</span>`
     : status === 'arquivada'
@@ -865,6 +868,7 @@ function renderCard(job) {
         <div class="card-actions">
           <a href="${escHtml(job.url)}" target="_blank" class="btn btn-ghost" title="Ver vaga">👁 Ver</a>
           ${actionButtons}
+          ${deleteBtn}
         </div>
       </div>
     </div>
@@ -1095,6 +1099,70 @@ document.getElementById('token-modal').addEventListener('click', function(e) {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeModal(); closeTokenModal(); }
 });
+
+// ─── Delete jobs ──────────────────────────────────────────────────────────────
+function deleteJob(jobId) {
+  if (!confirm('Remover esta vaga permanentemente?')) return;
+  allJobs = allJobs.filter(j => j.id !== jobId);
+  document.getElementById('card-' + jobId)?.remove();
+  document.getElementById('jobs-count').textContent = `(${filteredJobs.filter(j => j.id !== jobId).length})`;
+  saveJobsToGitHub()
+    .then(() => toast('Vaga removida!', 'success'))
+    .catch(e => toast('Erro ao salvar: ' + e.message + ' — mudança só local.', 'error'));
+}
+
+function deleteAllBaixoFit() {
+  const toDelete = allJobs.filter(j => j.fit_level === 'baixo');
+  if (toDelete.length === 0) { toast('Nenhuma vaga de baixo fit para remover.', 'info'); return; }
+  if (!confirm(`Remover ${toDelete.length} vagas de baixo fit permanentemente?`)) return;
+  allJobs = allJobs.filter(j => j.fit_level !== 'baixo');
+  saveJobsToGitHub()
+    .then(() => { applyFilters(); toast(`${toDelete.length} vagas removidas!`, 'success'); })
+    .catch(e => { applyFilters(); toast('Erro ao salvar no GitHub: ' + e.message, 'error'); });
+}
+
+async function saveJobsToGitHub() {
+  const token = localStorage.getItem('gh_token');
+  if (!token) { openTokenModal(); throw new Error('Token não configurado'); }
+
+  const stats = {
+    total: allJobs.length,
+    alto_fit:  allJobs.filter(j => j.fit_level === 'alto'  && j.status !== 'arquivada').length,
+    medio_fit: allJobs.filter(j => j.fit_level === 'medio' && j.status !== 'arquivada').length,
+    baixo_fit: allJobs.filter(j => j.fit_level === 'baixo' || j.status === 'arquivada').length,
+    enviadas:  allJobs.filter(j => j.status === 'enviada').length,
+  };
+
+  const payload = { jobs: allJobs, last_updated: new Date().toISOString(), stats };
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+
+  // Atualiza os dois arquivos (data/ e docs/data/) para ficar em sync
+  await _ghPutFile('data/jobs.json',      encoded, token);
+  await _ghPutFile('docs/data/jobs.json', encoded, token);
+}
+
+async function _ghPutFile(path, content, token) {
+  const base = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+  const getR = await fetch(base, {
+    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
+  });
+  if (!getR.ok) throw new Error(`Não foi possível ler ${path}: HTTP ${getR.status}`);
+  const { sha } = await getR.json();
+
+  const putR = await fetch(base, {
+    method: 'PUT',
+    headers: {
+      Authorization: `token ${token}`,
+      'Content-Type': 'application/json',
+      Accept: 'application/vnd.github.v3+json',
+    },
+    body: JSON.stringify({ message: 'chore: remove jobs via dashboard', content, sha, branch: 'main' }),
+  });
+  if (!putR.ok) {
+    const err = await putR.json().catch(() => ({}));
+    throw new Error(err.message || `HTTP ${putR.status}`);
+  }
+}
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 init();
