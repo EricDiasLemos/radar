@@ -81,6 +81,7 @@ class Job:
     status: str = "nova"
     applied_at: Optional[str] = None
     cover_letter: Optional[str] = None
+    contact_email: Optional[str] = None
 
     @property
     def id(self) -> str:
@@ -107,6 +108,7 @@ class Job:
             "status": self.status,
             "applied_at": self.applied_at,
             "cover_letter": self.cover_letter,
+            "contact_email": self.contact_email,
         }
 
 

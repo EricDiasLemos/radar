@@ -60,17 +60,28 @@ def already_applied_to_company(company: str, sent_history: dict) -> bool:
 def build_email(job: dict, cover_letter: str) -> MIMEMultipart:
     msg = MIMEMultipart()
     msg["From"] = GMAIL_USER
-    msg["To"] = CANDIDATE_EMAIL  # Para si mesmo — encaminhar manualmente ou usar email da empresa
-    msg["Subject"] = f"Candidatura — {job['title']} | Eric Dias Lemos"
 
-    body = f"""{cover_letter}
+    contact_email = job.get("contact_email")
+    if contact_email:
+        # Envia direto para o recrutador, cópia para o candidato
+        msg["To"] = contact_email
+        msg["Cc"] = CANDIDATE_EMAIL
+        msg["Subject"] = f"Candidatura — {job['title']} | Eric Dias Lemos"
+        body = cover_letter  # email profissional: só a carta
+        log.info("Destino: recrutador <%s> (cc: %s)", contact_email, CANDIDATE_EMAIL)
+    else:
+        # Sem email de contato: envia para o próprio candidato revisar
+        msg["To"] = CANDIDATE_EMAIL
+        msg["Subject"] = f"[Job Radar] {job['title']} @ {job.get('company', '')} | Score {job.get('score', 0)}/100"
+        body = f"""{cover_letter}
 
 ---
-Vaga: {job.get('url', '')}
-Fonte: {job.get('source', '')}
-Score: {job.get('score', 0)}/100 ({job.get('fit_level', '').upper()} FIT)
-Skills match: {', '.join(job.get('skills_match', []))}
+Vaga:   {job.get('url', '')}
+Fonte:  {job.get('source', '')}
+Score:  {job.get('score', 0)}/100 ({job.get('fit_level', '').upper()} FIT)
+Skills: {', '.join(job.get('skills_match', []))}
 """
+        log.info("Destino: candidato <%s> (sem email de contato na vaga)", CANDIDATE_EMAIL)
 
     msg.attach(MIMEText(body, "plain", "utf-8"))
 

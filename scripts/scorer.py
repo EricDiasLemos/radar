@@ -6,6 +6,7 @@ Score 0–100 calculado com base em skills, localização, nível e keywords.
 import logging
 import re
 from dataclasses import dataclass
+from typing import Optional
 
 log = logging.getLogger(__name__)
 
@@ -54,6 +55,23 @@ LOCATION_KEYWORDS_REMOTE = {"remoto", "remote", "home office", "híbrido", "hibr
 
 SALARY_PATTERN = re.compile(r"r\$\s*([\d.,]+)", re.IGNORECASE)
 
+# ─── Extração de email de contato ─────────────────────────────────────────────
+_EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
+_SKIP_EMAIL_LOCALS = {
+    "noreply", "no-reply", "support", "contato", "info", "contact",
+    "jobs", "vagas", "careers", "rh", "recrutamento", "selecao",
+    "cadastro", "candidatos", "aplicacao", "apply",
+}
+
+def extract_contact_email(text: str) -> Optional[str]:
+    """Retorna o primeiro email de contato humano encontrado no texto."""
+    for match in _EMAIL_RE.finditer(text):
+        email = match.group(0).lower()
+        local = email.split("@")[0].rstrip(".")
+        if local not in _SKIP_EMAIL_LOCALS and len(local) > 2:
+            return email
+    return None
+
 
 @dataclass
 class ScoreResult:
@@ -68,11 +86,15 @@ class ScoreResult:
     fit_level: str
     rejected: bool
     rejection_reason: str = ""
+    contact_email: Optional[str] = None
 
 
 def score_job(job_dict: dict) -> ScoreResult:
     text = _full_text(job_dict)
     text_lower = text.lower()
+
+    # ── Email de contato ────────────────────────────────────────────────────
+    contact_email = extract_contact_email(text)
 
     # ── Rejeição automática ─────────────────────────────────────────────────
     for pattern in SENIOR_PATTERNS:
@@ -83,6 +105,7 @@ def score_job(job_dict: dict) -> ScoreResult:
                 skills_match=[], skills_gap=[],
                 fit_level="baixo", rejected=True,
                 rejection_reason=f"Padrão sênior detectado: {pattern}",
+                contact_email=contact_email,
             )
 
     for kw in NEGATIVE_KEYWORDS:
@@ -94,6 +117,7 @@ def score_job(job_dict: dict) -> ScoreResult:
                 skills_match=[], skills_gap=[],
                 fit_level="baixo", rejected=True,
                 rejection_reason=f"Keyword negativa: {kw}",
+                contact_email=contact_email,
             )
 
     # ── Skills match (cap 40) ───────────────────────────────────────────────
@@ -160,6 +184,9 @@ def score_job(job_dict: dict) -> ScoreResult:
     else:
         fit_level = "baixo"
 
+    if contact_email:
+        log.info("Email de contato detectado: %s → %s", contact_email, job_dict.get("title", ""))
+
     return ScoreResult(
         total=total,
         skills=skills_score,
@@ -171,6 +198,7 @@ def score_job(job_dict: dict) -> ScoreResult:
         skills_gap=sorted(skills_missing),
         fit_level=fit_level,
         rejected=False,
+        contact_email=contact_email,
     )
 
 
@@ -183,13 +211,13 @@ def apply_scores(jobs: list[dict]) -> list[dict]:
             log.info("REJEITADO [%s]: %s @ %s — %s",
                      result.rejection_reason, job.get("title"), job.get("company"), job.get("url"))
             rejected += 1
-            # Ainda salva com score 0 e status arquivado
             job["score"] = 0
             job["score_breakdown"] = {}
             job["skills_match"] = []
             job["skills_gap"] = []
             job["fit_level"] = "baixo"
             job["status"] = "arquivada"
+            job["contact_email"] = result.contact_email
         else:
             log.info("Score %d [%s] — %s @ %s",
                      result.total, result.fit_level, job.get("title"), job.get("company"))
@@ -204,6 +232,7 @@ def apply_scores(jobs: list[dict]) -> list[dict]:
             job["skills_match"] = result.skills_match
             job["skills_gap"] = result.skills_gap
             job["fit_level"] = result.fit_level
+            job["contact_email"] = result.contact_email
             if job.get("status") == "nova":
                 pass  # mantém "nova"
         scored.append(job)

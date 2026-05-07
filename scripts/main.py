@@ -46,13 +46,21 @@ def run_daily_scan(auto_apply: bool = True) -> None:
     # 4. Mescla com banco existente
     all_jobs = existing_jobs + scored_new
 
-    # 5. Auto-candidatura (score >= 70, status nova)
+    # 5. Auto-candidatura:
+    #    - Alto fit (score >= 70): sempre
+    #    - Médio fit (score >= 50) COM email de contato: envia direto ao recrutador
     if auto_apply:
         alto_fit = [
             j for j in scored_new
-            if j.get("fit_level") == "alto" and j.get("status") == "nova"
+            if j.get("status") == "nova" and (
+                j.get("fit_level") == "alto"
+                or (j.get("fit_level") == "medio" and j.get("contact_email"))
+            )
         ]
-        log.info("Vagas alto fit para auto-candidatura: %d", len(alto_fit))
+        email_vagas = [j for j in alto_fit if j.get("contact_email")]
+        sem_email   = [j for j in alto_fit if not j.get("contact_email")]
+        log.info("Vagas para auto-candidatura: %d total (%d com email direto, %d sem)",
+                 len(alto_fit), len(email_vagas), len(sem_email))
 
         if alto_fit:
             letters = generate_letter_batch(alto_fit)
