@@ -15,23 +15,44 @@ log = logging.getLogger(__name__)
 CANDIDATE_SKILLS = {
     # Core (valem +3)
     "python", "docker", "linux", "prometheus", "grafana",
-    # Extras (valem +2)
-    "zabbix", "loki", "kubernetes", "k3s", "jenkins", "terraform",
-    "gcp", "aws", "wireguard", "mikrotik", "fortigate", "vmware",
-    "n8n", "flask", "rest", "api", "github actions", "ci/cd",
-    "ansible", "nginx", "bash", "shell", "git", "elk",
-    "alertmanager", "grafana loki", "datadog",
+    # Cloud — AWS (valem +2)
+    "aws", "ec2", "s3", "rds", "lambda", "cloudwatch", "cloudformation",
+    "eks", "ecs", "iam", "vpc", "route53",
+    # Cloud — GCP (valem +2)
+    "gcp", "google cloud", "gke", "cloud run", "bigquery", "cloud storage",
+    # Cloud — Azure (valem +2)
+    "azure", "aks", "azure devops",
+    # IaC / Orquestração (valem +2)
+    "terraform", "ansible", "kubernetes", "helm", "argocd", "pulumi",
+    # CI/CD (valem +2)
+    "github actions", "ci/cd", "jenkins", "gitlab ci", "circleci",
+    # Observabilidade (valem +2)
+    "zabbix", "datadog", "loki", "alertmanager", "grafana loki", "elk",
+    "newrelic", "dynatrace",
+    # Infra / Rede (valem +2)
+    "nginx", "bash", "shell", "git", "rest", "api",
+    "k3s", "wireguard", "mikrotik", "fortigate", "vmware",
+    "n8n", "flask",
 }
 
 CORE_SKILLS = {"python", "docker", "linux", "prometheus", "grafana"}
 
 POSITIVE_KEYWORDS = {
+    # Área
     "observabilidade", "observability", "sre", "monitoramento", "monitoring",
     "infraestrutura", "infrastructure", "automação", "automation",
     "telecom", "plataforma", "platform", "devops", "devsecops",
-    "cloud", "on-premise", "on premise", "noc",
+    "on-premise", "on premise", "noc",
+    # Cloud genérico
+    "cloud", "nuvem", "cloud computing", "computação em nuvem",
+    "cloud native", "multicloud", "multi-cloud", "hybrid cloud",
+    "cloud operations", "cloudops", "finops",
+    "migração para nuvem", "cloud migration",
+    # Cargos alvo
     "analista de infraestrutura", "engenheiro de infraestrutura",
+    "engenheiro cloud", "analista cloud", "cloud engineer",
     "suporte linux", "administrador linux", "linux admin",
+    "administrador cloud", "cloud administrator",
 }
 
 NEGATIVE_KEYWORDS = {

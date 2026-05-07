@@ -35,16 +35,29 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 JOBS_FILE = DATA_DIR / "jobs.json"
 
 SEARCH_QUERIES = [
+    # DevOps
     "DevOps",
     "DevOps Engineer",
-    "Analista Infraestrutura Linux",
-    "Analista de Infraestrutura",
-    "SRE",
     "Engenheiro DevOps",
     "DevOps Pleno",
     "DevOps Junior",
+    # SRE / Infra
+    "SRE",
+    "Analista Infraestrutura Linux",
+    "Analista de Infraestrutura",
     "Analista de Infraestrutura Junior",
     "Analista de Infraestrutura Pleno",
+    # Cloud
+    "Cloud Engineer",
+    "Engenheiro Cloud",
+    "Analista Cloud",
+    "Cloud Junior",
+    "AWS Engineer",
+    "GCP Engineer",
+    "Cloud Computing",
+    "Computação em Nuvem",
+    "Administrador Cloud",
+    "Cloud Operations",
 ]
 
 LOCATIONS = [
