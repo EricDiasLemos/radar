@@ -4496,9 +4496,9 @@
         "zabbix"
       ],
       "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null
+      "status": "enviada",
+      "applied_at": "2026-05-07T14:04:45.300781+00:00",
+      "cover_letter": "Prezados da remopt,\n\nTenho interesse na vaga de Estagiário de Desenvolvimento em GO e acredito que minha experiência em api, aws, ci/cd se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com"
     },
     {
       "id": "0017d5a68bb1e112",
@@ -5309,12 +5309,12 @@
       "cover_letter": null
     }
   ],
-  "last_updated": "2026-05-07T13:15:12.892427+00:00",
+  "last_updated": "2026-05-07T14:04:45.300794+00:00",
   "stats": {
     "total": 129,
     "alto_fit": 2,
     "medio_fit": 7,
     "baixo_fit": 120,
-    "enviadas": 4
+    "enviadas": 5
   }
 }
