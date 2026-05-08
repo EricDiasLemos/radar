@@ -41,12 +41,13 @@ jobs:
           mkdir -p docs/data
           cp data/jobs.json docs/data/jobs.json
           cp data/sent.json docs/data/sent.json
+          [ -f data/blacklist.json ] && cp data/blacklist.json docs/data/blacklist.json || true
 
       - name: Commit dados atualizados
         run: |
           git config user.name  "Job Radar Bot"
           git config user.email "actions@github.com"
-          git add data/jobs.json data/sent.json docs/data/jobs.json docs/data/sent.json
+          git add data/jobs.json data/sent.json data/blacklist.json docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "chore: update jobs data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
           git push
 

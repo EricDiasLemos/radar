@@ -636,6 +636,7 @@
 // ─── State ────────────────────────────────────────────────────────────────────
 let allJobs = [];
 let filteredJobs = [];
+let blacklistIds = new Set();   // IDs banidos permanentemente
 let currentSort = 'score';
 let currentApplyJobId = null;
 let filterState = {
@@ -669,6 +670,17 @@ async function loadData() {
   } catch (e) {
     document.getElementById('jobs-grid').innerHTML =
       '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Erro ao carregar jobs.json</p></div>';
+  }
+
+  // Blacklist carregada em paralelo — falha silenciosa (arquivo opcional)
+  try {
+    const r = await fetch('./data/blacklist.json?ts=' + Date.now());
+    if (r.ok) {
+      const b = await r.json();
+      blacklistIds = new Set(b.ids || []);
+    }
+  } catch (_) {
+    blacklistIds = new Set();
   }
 }
 
@@ -1101,24 +1113,43 @@ document.addEventListener('keydown', e => {
 });
 
 // ─── Delete jobs ──────────────────────────────────────────────────────────────
+// Exclusão permanente: adiciona o ID à blacklist (impede o scraper de
+// re-adicionar a vaga em runs futuros) e remove do jobs.json.
 function deleteJob(jobId) {
-  if (!confirm('Remover esta vaga permanentemente?')) return;
+  if (!confirm('Remover esta vaga permanentemente?\n\nA vaga será banida — o scraper não vai re-adicioná-la em runs futuros.')) return;
+  blacklistIds.add(jobId);
   allJobs = allJobs.filter(j => j.id !== jobId);
   document.getElementById('card-' + jobId)?.remove();
   document.getElementById('jobs-count').textContent = `(${filteredJobs.filter(j => j.id !== jobId).length})`;
-  saveJobsToGitHub()
-    .then(() => toast('Vaga removida!', 'success'))
+  Promise.all([saveJobsToGitHub(), saveBlacklistToGitHub()])
+    .then(() => toast('Vaga removida e banida da próxima coleta!', 'success'))
     .catch(e => toast('Erro ao salvar: ' + e.message + ' — mudança só local.', 'error'));
 }
 
 function deleteAllBaixoFit() {
   const toDelete = allJobs.filter(j => j.fit_level === 'baixo');
   if (toDelete.length === 0) { toast('Nenhuma vaga de baixo fit para remover.', 'info'); return; }
-  if (!confirm(`Remover ${toDelete.length} vagas de baixo fit permanentemente?`)) return;
+  if (!confirm(`Remover ${toDelete.length} vagas de baixo fit permanentemente?\n\nTodas serão banidas — o scraper não vai re-adicioná-las em runs futuros.`)) return;
+  toDelete.forEach(j => blacklistIds.add(j.id));
   allJobs = allJobs.filter(j => j.fit_level !== 'baixo');
-  saveJobsToGitHub()
-    .then(() => { applyFilters(); toast(`${toDelete.length} vagas removidas!`, 'success'); })
+  Promise.all([saveJobsToGitHub(), saveBlacklistToGitHub()])
+    .then(() => { applyFilters(); toast(`${toDelete.length} vagas removidas e banidas!`, 'success'); })
     .catch(e => { applyFilters(); toast('Erro ao salvar no GitHub: ' + e.message, 'error'); });
+}
+
+async function saveBlacklistToGitHub() {
+  const token = localStorage.getItem('gh_token');
+  if (!token) { openTokenModal(); throw new Error('Token não configurado'); }
+
+  const payload = {
+    ids: Array.from(blacklistIds).sort(),
+    updated_at: new Date().toISOString(),
+  };
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+
+  // Atualiza os dois arquivos (data/ e docs/data/) para ficar em sync
+  await _ghPutFile('data/blacklist.json',      encoded, token);
+  await _ghPutFile('docs/data/blacklist.json', encoded, token);
 }
 
 async function saveJobsToGitHub() {

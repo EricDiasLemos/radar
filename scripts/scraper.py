@@ -46,6 +46,7 @@ log = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 JOBS_FILE = DATA_DIR / "jobs.json"
+BLACKLIST_FILE = DATA_DIR / "blacklist.json"
 
 SEARCH_QUERIES = [
     # DevOps
@@ -543,10 +544,28 @@ def save_jobs(data: dict) -> None:
     log.info("jobs.json salvo com %d vagas", len(data["jobs"]))
 
 
+def load_blacklist() -> set[str]:
+    """
+    Carrega IDs de vagas excluídas permanentemente pelo dashboard.
+    Vagas com esses IDs nunca mais entram no banco mesmo se re-encontradas.
+    """
+    if not BLACKLIST_FILE.exists():
+        return set()
+    try:
+        with open(BLACKLIST_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        return set(data.get("ids", []))
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("Falha ao ler blacklist: %s", e)
+        return set()
+
+
 def run_scraper() -> list[Job]:
     existing = load_existing_jobs()
     existing_jobs = existing.get("jobs", [])
     existing_ids = {j["id"] for j in existing_jobs}
+    blacklist_ids = load_blacklist()
+    log.info("Blacklist carregada: %d IDs banidos", len(blacklist_ids))
     seen_signatures: set[str] = set()
     for j in existing_jobs:
         seen_signatures.add(_job_signature(j["title"], j["company"]))
@@ -562,14 +581,18 @@ def run_scraper() -> list[Job]:
 
     new_jobs: list[Job] = []
 
+    rejected_by_blacklist = 0
+
     for query in SEARCH_QUERIES:
         # LinkedIn — só BH + MG (Contagem é coberto por BH/MG)
         for location in LOCATIONS[:LINKEDIN_LOCATIONS_LIMIT]:
             try:
                 for job in scrape_linkedin(query, location):
-                    if _is_new(job, existing_ids, seen_signatures):
+                    if _is_new(job, existing_ids, seen_signatures, blacklist_ids):
                         new_jobs.append(job)
                         _register(job, existing_ids, seen_signatures)
+                    elif job.id in blacklist_ids:
+                        rejected_by_blacklist += 1
             except Exception as e:
                 log.error("[LinkedIn] Falha em query=%r: %s", query, e)
             _sleep(0.5, 1.5)
@@ -577,37 +600,46 @@ def run_scraper() -> list[Job]:
         # Vagas.com — busca nacional (mais resultados)
         try:
             for job in scrape_vagas_com(query):
-                if _is_new(job, existing_ids, seen_signatures):
+                if _is_new(job, existing_ids, seen_signatures, blacklist_ids):
                     new_jobs.append(job)
                     _register(job, existing_ids, seen_signatures)
+                elif job.id in blacklist_ids:
+                    rejected_by_blacklist += 1
         except Exception as e:
             log.error("[Vagas.com] Falha em query=%r: %s", query, e)
 
         # Programathor — RSS feed (1 chamada total por execução)
         try:
             for job in scrape_programathor(query):
-                if _is_new(job, existing_ids, seen_signatures):
+                if _is_new(job, existing_ids, seen_signatures, blacklist_ids):
                     new_jobs.append(job)
                     _register(job, existing_ids, seen_signatures)
+                elif job.id in blacklist_ids:
+                    rejected_by_blacklist += 1
         except Exception as e:
             log.error("[Programathor] Falha em query=%r: %s", query, e)
 
         # Gupy — API JSON agregada
         try:
             for job in scrape_gupy(query):
-                if _is_new(job, existing_ids, seen_signatures):
+                if _is_new(job, existing_ids, seen_signatures, blacklist_ids):
                     new_jobs.append(job)
                     _register(job, existing_ids, seen_signatures)
+                elif job.id in blacklist_ids:
+                    rejected_by_blacklist += 1
         except Exception as e:
             log.error("[Gupy] Falha em query=%r: %s", query, e)
 
         _sleep(1.0, 2.0)
 
-    log.info("Total de vagas novas encontradas: %d", len(new_jobs))
+    log.info("Total de vagas novas encontradas: %d (rejeitadas por blacklist: %d)",
+             len(new_jobs), rejected_by_blacklist)
     return new_jobs
 
 
-def _is_new(job: Job, existing_ids: set, seen_sigs: set) -> bool:
+def _is_new(job: Job, existing_ids: set, seen_sigs: set, blacklist_ids: set = None) -> bool:
+    if blacklist_ids and job.id in blacklist_ids:
+        return False
     if job.id in existing_ids:
         return False
     if _job_signature(job.title, job.company) in seen_sigs:
