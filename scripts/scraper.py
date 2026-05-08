@@ -1,6 +1,6 @@
 """
 Job Radar — Scraper de vagas DevOps
-Fontes validadas localmente: LinkedIn, Vagas.com, Programathor
+Fontes validadas: LinkedIn (HTML), Vagas.com (HTML), Programathor (RSS feed)
 
 Fontes removidas (bloqueiam IPs de CI/container):
   - Indeed    → 403 em todos os IPs de datacenter
@@ -15,6 +15,7 @@ import logging
 import random
 import re
 import time
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,6 +24,10 @@ from urllib.parse import quote_plus
 
 import requests
 from bs4 import BeautifulSoup
+
+# Cache do RSS do Programathor (uma chamada por execução)
+_PROGRAMATHOR_CACHE: Optional[list[dict]] = None
+_PROGRAMATHOR_FETCHED: bool = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -287,89 +292,107 @@ def _fetch_vagas_description(url: str) -> str:
 
 # ─── Programathor ─────────────────────────────────────────────────────────────
 
+def _fetch_programathor_rss() -> list[dict]:
+    """
+    Busca o feed RSS do Programathor uma única vez por execução.
+    O endpoint /jobs.rss retorna XML público com title/link/description/pubDate
+    e geralmente não é bloqueado por IPs de datacenter (GitHub Actions).
+    """
+    global _PROGRAMATHOR_CACHE, _PROGRAMATHOR_FETCHED
+    if _PROGRAMATHOR_FETCHED:
+        return _PROGRAMATHOR_CACHE or []
+
+    _PROGRAMATHOR_FETCHED = True
+    url = "https://programathor.com.br/jobs.rss"
+    log.info("[Programathor] Buscando RSS feed: %s", url)
+
+    resp = _safe_get(url, extra_headers={"Accept": "application/rss+xml, application/xml, text/xml"})
+    if not resp:
+        log.warning("[Programathor] RSS indisponível")
+        _PROGRAMATHOR_CACHE = []
+        return []
+
+    items: list[dict] = []
+    try:
+        root = ET.fromstring(resp.text)
+        for item in root.iter("item"):
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip().split("?")[0]
+            desc = (item.findtext("description") or "").strip()
+            pub = (item.findtext("pubDate") or "").strip()
+
+            # Limpa marcadores tipo "Vaga:" e hashtags do título
+            title = re.sub(r"^Vaga:\s*", "", title)
+            title = re.sub(r"\s*#\S+", "", title).strip()
+
+            if not title or not link:
+                continue
+
+            items.append({
+                "title": title,
+                "link": link,
+                "description": desc[:3000],
+                "pub_date": pub,
+            })
+    except ET.ParseError as e:
+        log.error("[Programathor] Falha ao parsear RSS: %s", e)
+        _PROGRAMATHOR_CACHE = []
+        return []
+
+    log.info("[Programathor] %d vagas no RSS", len(items))
+    _PROGRAMATHOR_CACHE = items
+    return items
+
+
 def scrape_programathor(query: str) -> list[Job]:
     """
-    Programathor — validada: retorna cards no HTML.
-    Foco em tech/remote — scorer filtra relevância para DevOps.
+    Programathor — usa RSS feed (/jobs.rss) ao invés de scraping HTML.
+    O feed lista todas as vagas ativas. Como é uma fonte única,
+    retornamos todas as vagas na primeira chamada e [] nas subsequentes
+    (o scorer filtra relevância depois).
     """
+    items = _fetch_programathor_rss()
+    if not items:
+        return []
+
+    # Snapshot + clear: na primeira chamada retorna todas as vagas;
+    # nas subsequentes (outras queries) o cache fica vazio e retorna [].
+    snapshot = list(items)
+    items.clear()
+
     jobs: list[Job] = []
-    url = f"https://programathor.com.br/jobs?filters%5Bpesquisa%5D={quote_plus(query)}"
+    for it in snapshot:
+        title = it["title"]
+        link = it["link"]
+        desc = it["description"]
 
-    log.info("[Programathor] query=%r", query)
-    resp = _safe_get(url)
-    if not resp:
-        return jobs
-
-    soup = BeautifulSoup(resp.text, "html.parser")
-    links = soup.select("a[href*='/jobs/']")
-
-    seen_hrefs = set()
-    for link in links[:20]:
-        try:
-            href = link.get("href", "")
-            if not href or href in seen_hrefs or "/jobs/" not in href:
-                continue
-            seen_hrefs.add(href)
-
-            if not href.startswith("http"):
-                href = "https://programathor.com.br" + href
-
-            # Extrai dados do card
-            text = link.get_text(" ", strip=True)
-            lines = [l.strip() for l in text.split("\n") if l.strip()]
-
-            title = lines[0] if lines else ""
-            # Remove badge "NOVA" do título se presente
-            title = title.replace("NOVA", "").strip()
-
-            if not title or len(title) < 5:
-                continue
-
-            # Tenta extrair empresa e localização do texto do card
-            company = "N/A"
+        # Localização: tenta detectar no texto
+        full_text = f"{title} {desc}".lower()
+        location = "N/A"
+        if "remoto" in full_text or "100% remote" in full_text or "home office" in full_text:
             location = "Remoto"
-            salary = ""
+        elif "híbrido" in full_text or "hibrido" in full_text:
+            location = "Híbrido"
 
-            full_text = " ".join(lines)
-            if "Remoto" in full_text:
-                location = "Remoto"
-            elif "Híbrido" in full_text or "Hibrido" in full_text:
-                location = "Híbrido"
+        # Salário, se mencionado
+        salary = ""
+        sal_match = re.search(r"R\$\s*[\d.,]+", desc)
+        if sal_match:
+            salary = sal_match.group(0)
 
-            sal_match = re.search(r"R\$\s*[\d.,]+", full_text)
-            if sal_match:
-                salary = sal_match.group(0)
+        jobs.append(Job(
+            title=title,
+            company="N/A",  # RSS não traz empresa de forma estruturada
+            location=location,
+            url=link,
+            source="Programathor",
+            description=desc,
+            salary=salary,
+            published_at=it.get("pub_date", ""),
+        ))
 
-            desc = _fetch_programathor_description(href)
-
-            jobs.append(Job(
-                title=title,
-                company=company,
-                location=location,
-                url=href,
-                source="Programathor",
-                description=desc,
-                salary=salary,
-            ))
-            _sleep(1.0, 2.5)
-        except Exception as e:
-            log.warning("[Programathor] Erro ao processar link: %s", e)
-
-    log.info("[Programathor] %d vagas encontradas", len(jobs))
+    log.info("[Programathor] %d vagas convertidas em Jobs", len(jobs))
     return jobs
-
-
-def _fetch_programathor_description(url: str) -> str:
-    _sleep(1.0, 2.0)
-    resp = _safe_get(url)
-    if not resp:
-        return ""
-    soup = BeautifulSoup(resp.text, "html.parser")
-    desc_el = soup.select_one(
-        ".job-description, .description, [class*='description'], "
-        "[class*='content'], article section, .job-content"
-    )
-    return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
 
 
 # ─── Orquestração ─────────────────────────────────────────────────────────────
