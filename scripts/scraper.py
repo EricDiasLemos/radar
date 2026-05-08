@@ -19,6 +19,7 @@ import random
 import re
 import time
 import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,6 +32,10 @@ from bs4 import BeautifulSoup
 # Cache do RSS do Programathor (uma chamada por execução)
 _PROGRAMATHOR_CACHE: Optional[list[dict]] = None
 _PROGRAMATHOR_FETCHED: bool = False
+
+# Cache de descrições (URL → texto): evita re-fetch de vagas já conhecidas.
+# Populado por run_scraper antes do loop principal.
+_DESCRIPTION_CACHE: dict[str, str] = {}
 
 logging.basicConfig(
     level=logging.INFO,
@@ -69,11 +74,12 @@ SEARCH_QUERIES = [
 ]
 
 LOCATIONS = [
-    "Belo Horizonte",
-    "Contagem",
-    "Minas Gerais",
+    "Belo Horizonte",  # cobre Grande BH (Contagem, Betim) na busca do LinkedIn
+    "Minas Gerais",    # captura MG inteiro
     "Remoto",
 ]
+# Quantas localizações usar no LinkedIn (BH + MG já cobrem Contagem)
+LINKEDIN_LOCATIONS_LIMIT = 2
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -166,7 +172,6 @@ def _safe_get(url: str, timeout: int = 20, extra_headers: dict = None, **kwargs)
 
 def scrape_linkedin(query: str, location: str) -> list[Job]:
     """API pública guest do LinkedIn — validada: retorna ~10 vagas por query."""
-    jobs: list[Job] = []
     url = (
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
         f"?keywords={quote_plus(query)}"
@@ -178,9 +183,12 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
     log.info("[LinkedIn] query=%r location=%r", query, location)
     resp = _safe_get(url)
     if not resp:
-        return jobs
+        return []
 
     soup = BeautifulSoup(resp.text, "html.parser")
+
+    # 1ª passada: extrai metadados e URLs novas (sem fetch ainda)
+    cards_data: list[dict] = []
     for card in soup.select("li"):
         try:
             title_el = card.select_one(".base-search-card__title, h3")
@@ -193,33 +201,67 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
                 continue
 
             href = link_el.get("href", "").split("?")[0]
-            desc = _fetch_linkedin_description(href)
-
-            jobs.append(Job(
-                title=title_el.get_text(strip=True),
-                company=company_el.get_text(strip=True) if company_el else "N/A",
-                location=loc_el.get_text(strip=True) if loc_el else location,
-                url=href,
-                source="LinkedIn",
-                description=desc,
-                published_at=date_el.get("datetime", "") if date_el else "",
-            ))
-            _sleep(1.5, 3.0)
+            cards_data.append({
+                "title": title_el.get_text(strip=True),
+                "company": company_el.get_text(strip=True) if company_el else "N/A",
+                "location": loc_el.get_text(strip=True) if loc_el else location,
+                "url": href,
+                "published_at": date_el.get("datetime", "") if date_el else "",
+            })
         except Exception as e:
             log.warning("[LinkedIn] Erro ao processar card: %s", e)
 
+    # 2ª passada: fetch paralelo das descrições (com cache)
+    urls = [c["url"] for c in cards_data]
+    descriptions = _fetch_descriptions_parallel(urls, _fetch_linkedin_description)
+
+    jobs = [
+        Job(
+            title=c["title"],
+            company=c["company"],
+            location=c["location"],
+            url=c["url"],
+            source="LinkedIn",
+            description=descriptions.get(c["url"], ""),
+            published_at=c["published_at"],
+        )
+        for c in cards_data
+    ]
     log.info("[LinkedIn] %d vagas encontradas", len(jobs))
     return jobs
 
 
 def _fetch_linkedin_description(url: str) -> str:
-    _sleep(1.0, 2.5)
+    """Fetch direto (sem sleep — paralelização cuida do throttling natural)."""
+    if url in _DESCRIPTION_CACHE:
+        return _DESCRIPTION_CACHE[url]
     resp = _safe_get(url)
     if not resp:
         return ""
     soup = BeautifulSoup(resp.text, "html.parser")
     desc_el = soup.select_one(".show-more-less-html__markup, .description__text")
-    return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
+    text = desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
+    _DESCRIPTION_CACHE[url] = text
+    return text
+
+
+def _fetch_descriptions_parallel(urls: list[str], fetcher, max_workers: int = 4) -> dict[str, str]:
+    """
+    Busca descrições em paralelo com ThreadPool. URLs já em cache retornam imediato.
+    """
+    if not urls:
+        return {}
+    results: dict[str, str] = {}
+    # Separa cached de novos pra evitar criar threads desnecessárias
+    new_urls = [u for u in urls if u not in _DESCRIPTION_CACHE]
+    for u in urls:
+        if u in _DESCRIPTION_CACHE:
+            results[u] = _DESCRIPTION_CACHE[u]
+    if new_urls:
+        with ThreadPoolExecutor(max_workers=max_workers) as ex:
+            for url, desc in zip(new_urls, ex.map(fetcher, new_urls)):
+                results[url] = desc
+    return results
 
 
 # ─── Vagas.com ────────────────────────────────────────────────────────────────
@@ -247,6 +289,7 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
         soup = BeautifulSoup(resp.text, "html.parser")
         cards = soup.select("li.vaga")
 
+        cards_data: list[dict] = []
         for card in cards[:20]:
             try:
                 title_el = card.select_one("h2.cargo a, .vaga-title")
@@ -262,19 +305,30 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
                 if href.startswith("/"):
                     href = "https://www.vagas.com.br" + href
 
-                desc = _fetch_vagas_description(href)
-                jobs.append(Job(
-                    title=title_el.get_text(separator=" ", strip=True),
-                    company=company_el.get_text(separator=" ", strip=True) if company_el else "N/A",
-                    location=loc_el.get_text(separator=" ", strip=True) if loc_el else location,
-                    url=href,
-                    source="Vagas.com",
-                    description=desc,
-                    published_at=date_el.get_text(strip=True) if date_el else "",
-                ))
-                _sleep(1.5, 3.0)
+                cards_data.append({
+                    "title": title_el.get_text(separator=" ", strip=True),
+                    "company": company_el.get_text(separator=" ", strip=True) if company_el else "N/A",
+                    "location": loc_el.get_text(separator=" ", strip=True) if loc_el else location,
+                    "url": href,
+                    "published_at": date_el.get_text(strip=True) if date_el else "",
+                })
             except Exception as e:
                 log.warning("[Vagas.com] Erro ao processar card: %s", e)
+
+        # Fetch paralelo das descrições (com cache)
+        descriptions = _fetch_descriptions_parallel(
+            [c["url"] for c in cards_data], _fetch_vagas_description
+        )
+        for c in cards_data:
+            jobs.append(Job(
+                title=c["title"],
+                company=c["company"],
+                location=c["location"],
+                url=c["url"],
+                source="Vagas.com",
+                description=descriptions.get(c["url"], ""),
+                published_at=c["published_at"],
+            ))
 
         log.info("[Vagas.com] %d vagas encontradas em %s", len(jobs), url)
         if jobs:
@@ -284,13 +338,17 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
 
 
 def _fetch_vagas_description(url: str) -> str:
-    _sleep(1.0, 2.5)
+    """Fetch direto (sem sleep — paralelização limita concorrência)."""
+    if url in _DESCRIPTION_CACHE:
+        return _DESCRIPTION_CACHE[url]
     resp = _safe_get(url)
     if not resp:
         return ""
     soup = BeautifulSoup(resp.text, "html.parser")
     desc_el = soup.select_one(".job-description, #job-description, .descricao")
-    return desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
+    text = desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
+    _DESCRIPTION_CACHE[url] = text
+    return text
 
 
 # ─── Programathor ─────────────────────────────────────────────────────────────
@@ -487,16 +545,26 @@ def save_jobs(data: dict) -> None:
 
 def run_scraper() -> list[Job]:
     existing = load_existing_jobs()
-    existing_ids = {j["id"] for j in existing.get("jobs", [])}
+    existing_jobs = existing.get("jobs", [])
+    existing_ids = {j["id"] for j in existing_jobs}
     seen_signatures: set[str] = set()
-    for j in existing.get("jobs", []):
+    for j in existing_jobs:
         seen_signatures.add(_job_signature(j["title"], j["company"]))
+
+    # Popula cache de descrições com vagas que já temos no banco.
+    # Evita re-fetch quando a mesma URL aparece nesta execução.
+    for j in existing_jobs:
+        url = j.get("url", "")
+        desc = j.get("description", "")
+        if url and desc:
+            _DESCRIPTION_CACHE[url] = desc
+    log.info("Cache de descrições pré-carregado com %d entradas", len(_DESCRIPTION_CACHE))
 
     new_jobs: list[Job] = []
 
     for query in SEARCH_QUERIES:
-        # LinkedIn — por localização
-        for location in LOCATIONS[:3]:
+        # LinkedIn — só BH + MG (Contagem é coberto por BH/MG)
+        for location in LOCATIONS[:LINKEDIN_LOCATIONS_LIMIT]:
             try:
                 for job in scrape_linkedin(query, location):
                     if _is_new(job, existing_ids, seen_signatures):
@@ -504,7 +572,7 @@ def run_scraper() -> list[Job]:
                         _register(job, existing_ids, seen_signatures)
             except Exception as e:
                 log.error("[LinkedIn] Falha em query=%r: %s", query, e)
-            _sleep(3.0, 5.0)
+            _sleep(0.5, 1.5)
 
         # Vagas.com — busca nacional (mais resultados)
         try:
@@ -515,7 +583,7 @@ def run_scraper() -> list[Job]:
         except Exception as e:
             log.error("[Vagas.com] Falha em query=%r: %s", query, e)
 
-        # Programathor — busca por query
+        # Programathor — RSS feed (1 chamada total por execução)
         try:
             for job in scrape_programathor(query):
                 if _is_new(job, existing_ids, seen_signatures):
@@ -533,7 +601,7 @@ def run_scraper() -> list[Job]:
         except Exception as e:
             log.error("[Gupy] Falha em query=%r: %s", query, e)
 
-        _sleep(3.0, 6.0)
+        _sleep(1.0, 2.0)
 
     log.info("Total de vagas novas encontradas: %d", len(new_jobs))
     return new_jobs

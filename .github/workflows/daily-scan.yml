@@ -26,23 +26,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run scraper
-        env:
-          PYTHONPATH: scripts
-        run: python scripts/main.py scan
-        continue-on-error: false
-
-      - name: Auto-candidatar vagas alto fit
+      - name: Run scraper + auto-apply
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           CANDIDATE_EMAIL: ${{ secrets.CANDIDATE_EMAIL }}
           PYTHONPATH: scripts
-        run: python scripts/main.py scan --no-auto-apply
-        # Nota: auto-apply já ocorre no passo anterior;
-        # este passo existe para re-runs isolados se necessário.
-        # Para habilitar auto-apply completo, remova a flag acima.
+        run: python scripts/main.py scan
+        continue-on-error: false
 
       - name: Sincronizar data/ para docs/data/ (GitHub Pages)
         run: |
