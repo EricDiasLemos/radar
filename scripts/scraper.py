@@ -1,12 +1,15 @@
 """
 Job Radar — Scraper de vagas DevOps
-Fontes validadas: LinkedIn (HTML), Vagas.com (HTML), Programathor (RSS feed)
+Fontes validadas:
+  - LinkedIn     (HTML — guest API pública)
+  - Vagas.com    (HTML — busca nacional)
+  - Programathor (RSS feed /jobs.rss)
+  - Gupy         (API JSON portal.api.gupy.io)
 
-Fontes removidas (bloqueiam IPs de CI/container):
-  - Indeed    → 403 em todos os IPs de datacenter
-  - Catho     → 404 em container
-  - Gupy      → carrega vagas via JavaScript (sem API pública)
-  - InfoJobs  → API retorna 404
+Fontes removidas (sem feed/API pública acessível):
+  - Indeed    → 403 em IPs de datacenter
+  - Catho     → 404 em sitemap/robots, sem RSS
+  - InfoJobs  → robots.txt sem sitemap, sem RSS
 """
 
 import hashlib
@@ -395,6 +398,77 @@ def scrape_programathor(query: str) -> list[Job]:
     return jobs
 
 
+# ─── Gupy ─────────────────────────────────────────────────────────────────────
+
+def scrape_gupy(query: str, limit: int = 30) -> list[Job]:
+    """
+    Gupy — API JSON pública agregadora (portal.api.gupy.io).
+    Retorna vagas de TODAS as empresas que usam Gupy como ATS.
+    """
+    jobs: list[Job] = []
+    url = (
+        "https://portal.api.gupy.io/api/job"
+        f"?name={quote_plus(query)}&limit={limit}"
+    )
+
+    log.info("[Gupy] query=%r", query)
+    resp = _safe_get(url, extra_headers={"Accept": "application/json"})
+    if not resp:
+        return jobs
+
+    try:
+        data = resp.json()
+    except ValueError as e:
+        log.error("[Gupy] Resposta não-JSON: %s", e)
+        return jobs
+
+    # API retorna {"data": [...]} ou lista direta dependendo do endpoint
+    items = data.get("data") if isinstance(data, dict) else data
+    if not isinstance(items, list):
+        log.warning("[Gupy] Formato inesperado: %s", type(items).__name__)
+        return jobs
+
+    for it in items:
+        try:
+            title = (it.get("name") or "").strip()
+            company = (it.get("careerPageName") or "N/A").strip()
+            description = (it.get("description") or "").strip()[:3000]
+            job_url = (it.get("jobUrl") or "").strip()
+            city = (it.get("city") or "").strip()
+            state = (it.get("state") or "").strip()
+            workplace = (it.get("workplaceType") or "").lower()
+            is_remote = bool(it.get("isRemoteWork"))
+            published = (it.get("publishedDate") or "").strip()
+
+            if not title or not job_url:
+                continue
+
+            # Localização: prioriza flag remoto, senão monta cidade/estado
+            if is_remote or workplace == "remote":
+                location = "Remoto"
+            elif workplace == "hybrid":
+                location = f"Híbrido — {city}/{state}".strip(" —/")
+            else:
+                location = f"{city}/{state}".strip("/")
+                if not location:
+                    location = "N/A"
+
+            jobs.append(Job(
+                title=title,
+                company=company,
+                location=location,
+                url=job_url,
+                source="Gupy",
+                description=description,
+                published_at=published,
+            ))
+        except Exception as e:
+            log.warning("[Gupy] Erro ao processar item: %s", e)
+
+    log.info("[Gupy] %d vagas encontradas", len(jobs))
+    return jobs
+
+
 # ─── Orquestração ─────────────────────────────────────────────────────────────
 
 def load_existing_jobs() -> dict:
@@ -449,6 +523,15 @@ def run_scraper() -> list[Job]:
                     _register(job, existing_ids, seen_signatures)
         except Exception as e:
             log.error("[Programathor] Falha em query=%r: %s", query, e)
+
+        # Gupy — API JSON agregada
+        try:
+            for job in scrape_gupy(query):
+                if _is_new(job, existing_ids, seen_signatures):
+                    new_jobs.append(job)
+                    _register(job, existing_ids, seen_signatures)
+        except Exception as e:
+            log.error("[Gupy] Falha em query=%r: %s", query, e)
 
         _sleep(3.0, 6.0)
 
