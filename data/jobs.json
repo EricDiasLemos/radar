@@ -6122,9 +6122,9 @@
         "zabbix"
       ],
       "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
+      "status": "enviada",
+      "applied_at": "2026-05-08T01:28:41.688257+00:00",
+      "cover_letter": "Prezados da Brivia,\n\nTenho interesse na vaga de Especialista em Cloud Computing e Devops e acredito que minha experiência em aws, ec2, ecs se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com",
       "contact_email": null
     },
     {
@@ -8703,12 +8703,12 @@
       "contact_email": null
     }
   ],
-  "last_updated": "2026-05-08T01:26:39.852Z",
+  "last_updated": "2026-05-08T01:28:41.688263+00:00",
   "stats": {
     "total": 186,
     "alto_fit": 3,
     "medio_fit": 14,
     "baixo_fit": 169,
-    "enviadas": 6
+    "enviadas": 7
   }
 }
