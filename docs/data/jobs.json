@@ -1,45 +1,6 @@
 {
   "jobs": [
     {
-      "id": "exemplo000000001",
-      "title": "Analista DevOps Pleno",
-      "company": "Empresa Exemplo",
-      "location": "Belo Horizonte, MG",
-      "salary": "R$ 5.000 - R$ 7.000",
-      "description": "Buscamos Analista DevOps Pleno para atuar com Docker, Kubernetes, Terraform, AWS, monitoramento com Prometheus e Grafana, pipelines CI/CD com GitHub Actions e Jenkins. Experiência com Linux obrigatória. Trabalho remoto/híbrido.",
-      "url": "https://exemplo.com/vaga/1",
-      "source": "Indeed",
-      "published_at": "2026-05-06",
-      "found_at": "2026-05-06T08:00:00Z",
-      "score": 82,
-      "score_breakdown": {
-        "skills": 37,
-        "location": 20,
-        "level": 15,
-        "keywords": 8,
-        "salary": 10
-      },
-      "skills_match": [
-        "docker",
-        "kubernetes",
-        "terraform",
-        "aws",
-        "prometheus",
-        "grafana",
-        "linux",
-        "github actions",
-        "jenkins"
-      ],
-      "skills_gap": [
-        "argocd",
-        "helm"
-      ],
-      "fit_level": "alto",
-      "status": "enviada",
-      "applied_at": "2026-05-06T18:36:01.009095+00:00",
-      "cover_letter": "Prezados da Empresa Exemplo,\n\nTenho interesse na vaga de Analista DevOps Pleno e acredito que minha experiência em docker, kubernetes, terraform se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com"
-    },
-    {
       "id": "59f85fb634545379",
       "title": "Senior DevOps / Platform Engineer (AWS | Terraform | Full Stack Exposure)",
       "company": "Oowlish",
@@ -8742,12 +8703,12 @@
       "contact_email": null
     }
   ],
-  "last_updated": "2026-05-08T01:20:33.623525+00:00",
+  "last_updated": "2026-05-08T01:26:39.852Z",
   "stats": {
-    "total": 187,
-    "alto_fit": 4,
+    "total": 186,
+    "alto_fit": 3,
     "medio_fit": 14,
     "baixo_fit": 169,
-    "enviadas": 7
+    "enviadas": 6
   }
 }
