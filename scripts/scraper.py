@@ -29,6 +29,25 @@ from urllib.parse import quote_plus
 import requests
 from bs4 import BeautifulSoup
 
+# Import do scorer para pré-filtro de títulos (evita fetch de descrições
+# de vagas que seriam rejeitadas no scoring). Tenta as duas formas de import
+# para funcionar tanto em runtime (PYTHONPATH=scripts) quanto em testes locais.
+try:
+    from scorer import is_obviously_rejected  # type: ignore
+except ImportError:
+    try:
+        from scripts.scorer import is_obviously_rejected  # type: ignore
+    except ImportError:
+        def is_obviously_rejected(_text: str) -> bool:
+            return False
+
+# Parser HTML: lxml é 3-5× mais rápido que html.parser. Fallback se não instalado.
+try:
+    import lxml  # noqa: F401
+    _HTML_PARSER = "lxml"
+except ImportError:
+    _HTML_PARSER = "html.parser"
+
 # Cache do RSS do Programathor (uma chamada por execução)
 _PROGRAMATHOR_CACHE: Optional[list[dict]] = None
 _PROGRAMATHOR_FETCHED: bool = False
@@ -186,10 +205,11 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
     if not resp:
         return []
 
-    soup = BeautifulSoup(resp.text, "html.parser")
+    soup = BeautifulSoup(resp.text, _HTML_PARSER)
 
     # 1ª passada: extrai metadados e URLs novas (sem fetch ainda)
     cards_data: list[dict] = []
+    skipped_obvious = 0
     for card in soup.select("li"):
         try:
             title_el = card.select_one(".base-search-card__title, h3")
@@ -201,9 +221,17 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
             if not title_el or not link_el:
                 continue
 
+            title = title_el.get_text(strip=True)
             href = link_el.get("href", "").split("?")[0]
+
+            # Pré-filtro: pula fetch de descrição se título já bate em padrão
+            # de rejeição (sênior, architect, mobile dev etc).
+            if is_obviously_rejected(title):
+                skipped_obvious += 1
+                continue
+
             cards_data.append({
-                "title": title_el.get_text(strip=True),
+                "title": title,
                 "company": company_el.get_text(strip=True) if company_el else "N/A",
                 "location": loc_el.get_text(strip=True) if loc_el else location,
                 "url": href,
@@ -211,6 +239,9 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
             })
         except Exception as e:
             log.warning("[LinkedIn] Erro ao processar card: %s", e)
+
+    if skipped_obvious:
+        log.info("[LinkedIn] %d vagas puladas no pré-filtro de título", skipped_obvious)
 
     # 2ª passada: fetch paralelo das descrições (com cache)
     urls = [c["url"] for c in cards_data]
@@ -239,7 +270,7 @@ def _fetch_linkedin_description(url: str) -> str:
     resp = _safe_get(url)
     if not resp:
         return ""
-    soup = BeautifulSoup(resp.text, "html.parser")
+    soup = BeautifulSoup(resp.text, _HTML_PARSER)
     desc_el = soup.select_one(".show-more-less-html__markup, .description__text")
     text = desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
     _DESCRIPTION_CACHE[url] = text
@@ -287,10 +318,11 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
         if not resp:
             continue
 
-        soup = BeautifulSoup(resp.text, "html.parser")
+        soup = BeautifulSoup(resp.text, _HTML_PARSER)
         cards = soup.select("li.vaga")
 
         cards_data: list[dict] = []
+        skipped_obvious = 0
         for card in cards[:20]:
             try:
                 title_el = card.select_one("h2.cargo a, .vaga-title")
@@ -302,12 +334,18 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
                 if not title_el or not link_el:
                     continue
 
+                title = title_el.get_text(separator=" ", strip=True)
                 href = link_el.get("href", "")
                 if href.startswith("/"):
                     href = "https://www.vagas.com.br" + href
 
+                # Pré-filtro: pula fetch se título obviamente rejeitado
+                if is_obviously_rejected(title):
+                    skipped_obvious += 1
+                    continue
+
                 cards_data.append({
-                    "title": title_el.get_text(separator=" ", strip=True),
+                    "title": title,
                     "company": company_el.get_text(separator=" ", strip=True) if company_el else "N/A",
                     "location": loc_el.get_text(separator=" ", strip=True) if loc_el else location,
                     "url": href,
@@ -315,6 +353,9 @@ def scrape_vagas_com(query: str, location: str = "") -> list[Job]:
                 })
             except Exception as e:
                 log.warning("[Vagas.com] Erro ao processar card: %s", e)
+
+        if skipped_obvious:
+            log.info("[Vagas.com] %d vagas puladas no pré-filtro de título", skipped_obvious)
 
         # Fetch paralelo das descrições (com cache)
         descriptions = _fetch_descriptions_parallel(
@@ -345,7 +386,7 @@ def _fetch_vagas_description(url: str) -> str:
     resp = _safe_get(url)
     if not resp:
         return ""
-    soup = BeautifulSoup(resp.text, "html.parser")
+    soup = BeautifulSoup(resp.text, _HTML_PARSER)
     desc_el = soup.select_one(".job-description, #job-description, .descricao")
     text = desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
     _DESCRIPTION_CACHE[url] = text

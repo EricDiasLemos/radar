@@ -76,6 +76,30 @@ LOCATION_KEYWORDS_REMOTE = {"remoto", "remote", "home office", "híbrido", "hibr
 
 SALARY_PATTERN = re.compile(r"r\$\s*([\d.,]+)", re.IGNORECASE)
 
+# ─── Regex pré-compilados (evita re-compilar por job) ────────────────────────
+_SENIOR_RE = [re.compile(p) for p in SENIOR_PATTERNS]
+_NEGATIVE_RE = [(kw, re.compile(r"\b" + re.escape(kw) + r"\b")) for kw in NEGATIVE_KEYWORDS]
+_SKILL_RE = [(skill, re.compile(r"\b" + re.escape(skill) + r"\b")) for skill in CANDIDATE_SKILLS]
+_LEVEL_JR_RE = re.compile(r"\bj[uú]nior\b|\bjr\b")
+_LEVEL_PL_RE = re.compile(r"\bpleno\b|\bpl\b\s+(?:devops|engenheiro|analista)")
+
+
+def is_obviously_rejected(text: str) -> bool:
+    """
+    Verifica rápido se um texto (geralmente só o título) bate em padrões de
+    rejeição automática (sênior / palavra-chave negativa).
+    Usado pelo scraper para pular fetch de descrições de vagas que serão
+    descartadas de qualquer jeito. Evita ~30-40% das requisições.
+    """
+    text_lower = text.lower()
+    for rx in _SENIOR_RE:
+        if rx.search(text_lower):
+            return True
+    for _, rx in _NEGATIVE_RE:
+        if rx.search(text_lower):
+            return True
+    return False
+
 # ─── Extração de email de contato ─────────────────────────────────────────────
 _EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
 _SKIP_EMAIL_LOCALS = {
@@ -118,20 +142,19 @@ def score_job(job_dict: dict) -> ScoreResult:
     contact_email = extract_contact_email(text)
 
     # ── Rejeição automática ─────────────────────────────────────────────────
-    for pattern in SENIOR_PATTERNS:
-        if re.search(pattern, text_lower):
+    for rx in _SENIOR_RE:
+        if rx.search(text_lower):
             return ScoreResult(
                 total=0, skills=0, location=0, level=0,
                 keywords=0, salary=0,
                 skills_match=[], skills_gap=[],
                 fit_level="baixo", rejected=True,
-                rejection_reason=f"Padrão sênior detectado: {pattern}",
+                rejection_reason=f"Padrão sênior detectado: {rx.pattern}",
                 contact_email=contact_email,
             )
 
-    for kw in NEGATIVE_KEYWORDS:
-        pattern = r"\b" + re.escape(kw) + r"\b"
-        if re.search(pattern, text_lower):
+    for kw, rx in _NEGATIVE_RE:
+        if rx.search(text_lower):
             return ScoreResult(
                 total=0, skills=0, location=0, level=0,
                 keywords=0, salary=0,
@@ -144,9 +167,8 @@ def score_job(job_dict: dict) -> ScoreResult:
     # ── Skills match (cap 40) ───────────────────────────────────────────────
     skills_found = []
     skills_missing = []
-    for skill in CANDIDATE_SKILLS:
-        pattern = r"\b" + re.escape(skill) + r"\b"
-        if re.search(pattern, text_lower):
+    for skill, rx in _SKILL_RE:
+        if rx.search(text_lower):
             skills_found.append(skill)
         else:
             skills_missing.append(skill)
@@ -167,9 +189,9 @@ def score_job(job_dict: dict) -> ScoreResult:
 
     # ── Nível (20) ──────────────────────────────────────────────────────────
     level_score = 10  # padrão: sem menção
-    if re.search(r"\bj[uú]nior\b|\bjr\b", text_lower):
+    if _LEVEL_JR_RE.search(text_lower):
         level_score = 20
-    elif re.search(r"\bpleno\b|\bpl\b\s+(?:devops|engenheiro|analista)", text_lower):
+    elif _LEVEL_PL_RE.search(text_lower):
         level_score = 15
     # sênior já foi rejeitado acima
 

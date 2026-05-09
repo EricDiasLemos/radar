@@ -25,6 +25,9 @@ log = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 JOBS_FILE = DATA_DIR / "jobs.json"
+ARCHIVE_FILE = DATA_DIR / "archive.json"
+ARCHIVE_DAYS_BAIXO_FIT = 30   # baixo fit: arquiva após 30 dias
+ARCHIVE_DAYS_OUTROS = 90      # médio/alto fit: só arquiva após 90 dias
 
 
 def run_daily_scan(auto_apply: bool = True) -> None:
@@ -75,7 +78,13 @@ def run_daily_scan(auto_apply: bool = True) -> None:
                     job["cover_letter"] = letters.get(job["id"], "")
             log.info("Candidaturas automáticas enviadas: %d", len(sent_ids))
 
-    # 6. Salva dados atualizados
+    # 6. Arquiva vagas antigas (baixo fit > 30 dias, outras > 90 dias)
+    all_jobs, archived = _split_for_archive(all_jobs)
+    if archived:
+        _append_to_archive(archived)
+        log.info("Arquivadas %d vagas antigas em archive.json", len(archived))
+
+    # 7. Salva dados atualizados
     stats = compute_stats(all_jobs)
     output = {
         "jobs": all_jobs,
@@ -85,6 +94,64 @@ def run_daily_scan(auto_apply: bool = True) -> None:
     save_jobs(output)
 
     log.info("=== Daily Scan concluído — Stats: %s ===", stats)
+
+
+def _split_for_archive(jobs: list[dict]) -> tuple[list[dict], list[dict]]:
+    """
+    Separa vagas ativas de vagas a arquivar:
+      - baixo fit ou status='arquivada' com found_at > 30 dias → arquivo
+      - médio/alto fit com found_at > 90 dias                  → arquivo
+      - status='enviada' nunca arquiva (mantém histórico de candidaturas)
+    """
+    now = datetime.now(timezone.utc)
+    active: list[dict] = []
+    archived: list[dict] = []
+
+    for j in jobs:
+        if j.get("status") == "enviada":
+            active.append(j)
+            continue
+
+        found_at_str = j.get("found_at", "")
+        if not found_at_str:
+            active.append(j)
+            continue
+
+        try:
+            found_at = datetime.fromisoformat(found_at_str.replace("Z", "+00:00"))
+        except ValueError:
+            active.append(j)
+            continue
+
+        age_days = (now - found_at).days
+        is_baixo = j.get("fit_level") == "baixo" or j.get("status") == "arquivada"
+        limit = ARCHIVE_DAYS_BAIXO_FIT if is_baixo else ARCHIVE_DAYS_OUTROS
+
+        if age_days >= limit:
+            archived.append(j)
+        else:
+            active.append(j)
+
+    return active, archived
+
+
+def _append_to_archive(jobs: list[dict]) -> None:
+    """Anexa vagas ao archive.json (mantém histórico em arquivo separado)."""
+    if ARCHIVE_FILE.exists():
+        try:
+            with open(ARCHIVE_FILE, encoding="utf-8") as f:
+                archive = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            archive = {"jobs": []}
+    else:
+        archive = {"jobs": []}
+
+    archive["jobs"] = archive.get("jobs", []) + jobs
+    archive["last_updated"] = datetime.now(timezone.utc).isoformat()
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    with open(ARCHIVE_FILE, "w", encoding="utf-8") as f:
+        json.dump(archive, f, ensure_ascii=False, indent=2)
 
 
 def apply_single_job(job_id: str) -> None:

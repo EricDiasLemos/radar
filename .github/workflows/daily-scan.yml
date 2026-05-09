@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name  "Job Radar Bot"
           git config user.email "actions@github.com"
-          git add data/jobs.json data/sent.json data/blacklist.json docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json 2>/dev/null || true
+          git add data/jobs.json data/sent.json data/blacklist.json data/archive.json docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "chore: update jobs data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
           git push
 
