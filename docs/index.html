@@ -1115,13 +1115,25 @@ document.addEventListener('keydown', e => {
 // ─── Delete jobs ──────────────────────────────────────────────────────────────
 // Exclusão permanente: adiciona o ID à blacklist (impede o scraper de
 // re-adicionar a vaga em runs futuros) e remove do jobs.json.
+
+// Fila de salvamento — serializa saves para evitar conflitos de SHA na
+// API do GitHub quando o usuário clica delete várias vezes rápido.
+let _saveQueue = Promise.resolve();
+function _enqueueSave(fn) {
+  _saveQueue = _saveQueue.then(fn, fn);  // mesma fila mesmo se anterior falhou
+  return _saveQueue;
+}
+
 function deleteJob(jobId) {
   if (!confirm('Remover esta vaga permanentemente?\n\nA vaga será banida — o scraper não vai re-adicioná-la em runs futuros.')) return;
   blacklistIds.add(jobId);
   allJobs = allJobs.filter(j => j.id !== jobId);
   document.getElementById('card-' + jobId)?.remove();
   document.getElementById('jobs-count').textContent = `(${filteredJobs.filter(j => j.id !== jobId).length})`;
-  Promise.all([saveJobsToGitHub(), saveBlacklistToGitHub()])
+  _enqueueSave(async () => {
+    await saveJobsToGitHub();
+    await saveBlacklistToGitHub();
+  })
     .then(() => toast('Vaga removida e banida da próxima coleta!', 'success'))
     .catch(e => toast('Erro ao salvar: ' + e.message + ' — mudança só local.', 'error'));
 }
@@ -1132,7 +1144,10 @@ function deleteAllBaixoFit() {
   if (!confirm(`Remover ${toDelete.length} vagas de baixo fit permanentemente?\n\nTodas serão banidas — o scraper não vai re-adicioná-las em runs futuros.`)) return;
   toDelete.forEach(j => blacklistIds.add(j.id));
   allJobs = allJobs.filter(j => j.fit_level !== 'baixo');
-  Promise.all([saveJobsToGitHub(), saveBlacklistToGitHub()])
+  _enqueueSave(async () => {
+    await saveJobsToGitHub();
+    await saveBlacklistToGitHub();
+  })
     .then(() => { applyFilters(); toast(`${toDelete.length} vagas removidas e banidas!`, 'success'); })
     .catch(e => { applyFilters(); toast('Erro ao salvar no GitHub: ' + e.message, 'error'); });
 }
@@ -1172,10 +1187,16 @@ async function saveJobsToGitHub() {
   await _ghPutFile('docs/data/jobs.json', encoded, token);
 }
 
-async function _ghPutFile(path, content, token) {
+async function _ghPutFile(path, content, token, attempt = 0) {
   const base = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+
+  // GET SHA atual (sempre fresh — sem cache)
   const getR = await fetch(base, {
-    headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+      'Cache-Control': 'no-cache',
+    },
   });
   if (!getR.ok) throw new Error(`Não foi possível ler ${path}: HTTP ${getR.status}`);
   const { sha } = await getR.json();
@@ -1189,10 +1210,25 @@ async function _ghPutFile(path, content, token) {
     },
     body: JSON.stringify({ message: 'chore: remove jobs via dashboard', content, sha, branch: 'main' }),
   });
-  if (!putR.ok) {
-    const err = await putR.json().catch(() => ({}));
-    throw new Error(err.message || `HTTP ${putR.status}`);
+
+  if (putR.ok) return;
+
+  // 409/422 = conflito de SHA (arquivo mudou entre GET e PUT).
+  // Acontece quando outro commit (cron, outra aba, click rápido) chegou
+  // primeiro. Retry com SHA fresco — até 3 tentativas, backoff 200/600ms.
+  const errBody = await putR.json().catch(() => ({}));
+  const isShaConflict =
+    putR.status === 409 ||
+    putR.status === 422 ||
+    /sha/i.test(errBody.message || '') ||
+    /is at .* but expected/i.test(errBody.message || '');
+
+  if (isShaConflict && attempt < 2) {
+    await new Promise(r => setTimeout(r, 200 * (attempt + 1) ** 2));
+    return _ghPutFile(path, content, token, attempt + 1);
   }
+
+  throw new Error(errBody.message || `HTTP ${putR.status}`);
 }
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
