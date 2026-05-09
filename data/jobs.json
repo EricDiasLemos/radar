@@ -1,66 +1,6 @@
 {
   "jobs": [
     {
-      "id": "8a48a732dc5505a5",
-      "title": "Analista de Infraestrutura Linux/Devops",
-      "company": "Centro Universitário FAMINAS BH",
-      "location": "Belo Horizonte e Região",
-      "salary": "",
-      "description": "Estamos em busca de um(a) Analista de Infraestrutura Linux/DevOps para integrar nosso time! Se você é apaixonado por tecnologia, ambientes escaláveis e busca atuar com alta disponibilidade e performance, essa oportunidade é para você. O seu papel no dia a dia:Hospedar e manter serviços em ambiente Linux, garantindo alta disponibilidade. Gerenciar o ciclo de vida de máquinas virtuais (provisionamento, backup e deleção). Monitorar a saúde de containers e clusters Kubernetes. Otimizar servidores web (Apache/Nginx) para melhor performance das aplicações. Documentar topologias e processos de deploy. O que buscamos em você:Sólida experiência com administração de Linux (Debian, Ubuntu Server ou CentOS/RHEL). Conhecimento em hardening, performance e automação (cron). Experiência com virtualização (Hyper-V ou VMware). Domínio em servidores web (Apache e Nginx). Experiência com Docker (Dockerfiles, Compose, redes e volumes). Conhecimento em Kubernetes (Pods, Deployments, Services e Ingress). Noções de segurança de redes (iptables/nftables). Diferenciais:Experiência com Cloudflare (Tunnel/Argo) Vivência com ferramentas de monitoramento (Zabbix, Grafana ou Prometheus) Valorizamos a diversidade e igualdade para todas as pessoas sem distinção de gênero, religião, orientação sexual, deficiências, raça, etnia, entre outras. Todos são bem vindos em nosso processo seletivo! #SomosEducacao #SomosInovacao #SomosFuturo #GoFAMINAS. Formação Acadêmica Não informado Salário A combinar Cargo Outros Empresa Faminas Instituição de ensino superior. Ramo Educação/ Treinamento/ Idiomas (DE) Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-linux-devops-at-centro-universit%C3%A1rio-faminas-bh-4408153534",
-      "source": "LinkedIn",
-      "published_at": "2026-05-05",
-      "found_at": "2026-05-06T17:21:17.123567+00:00",
-      "score": 65,
-      "score_breakdown": {
-        "skills": 20,
-        "location": 20,
-        "level": 10,
-        "keywords": 10,
-        "salary": 5
-      },
-      "skills_match": [
-        "docker",
-        "grafana",
-        "kubernetes",
-        "linux",
-        "nginx",
-        "prometheus",
-        "vmware",
-        "zabbix"
-      ],
-      "skills_gap": [
-        "alertmanager",
-        "ansible",
-        "api",
-        "aws",
-        "bash",
-        "ci/cd",
-        "datadog",
-        "elk",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "github actions",
-        "grafana loki",
-        "jenkins",
-        "k3s",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "python",
-        "rest",
-        "shell",
-        "terraform",
-        "wireguard"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null
-    },
-    {
       "id": "2a0e80d17947d719",
       "title": "Analista de Suporte Tecnico Jr",
       "company": "N/A",
@@ -12667,11 +12607,11 @@
       "contact_email": null
     }
   ],
-  "last_updated": "2026-05-09T16:28:17.014Z",
+  "last_updated": "2026-05-09T16:29:43.221Z",
   "stats": {
-    "total": 193,
+    "total": 192,
     "alto_fit": 5,
-    "medio_fit": 27,
+    "medio_fit": 26,
     "baixo_fit": 161,
     "enviadas": 8
   }
