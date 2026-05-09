@@ -82,30 +82,76 @@ TARGET_COMPANIES = {
     "nubank", "inter", "banco inter", "c6", "c6 bank", "picpay", "pagseguro",
     "pagbank", "cielo", "creditas", "sicredi", "sicoob", "stone", "xp", "xp inc",
     "b3", "méliuz", "meliuz", "original", "banco original",
+    "btg", "btg pactual", "neon", "banco neon", "modal", "modalmais",
+    "iti", "next", "agibank", "will bank", "willbank",
     # Bancos tradicionais (digital teams)
-    "itaú", "itau", "bradesco", "santander", "banco do brasil",
-    # E-commerce / marketplaces
+    "itaú", "itau", "itaú unibanco", "bradesco", "santander", "banco do brasil",
+    "caixa", "caixa econômica", "banco safra", "safra",
+    # E-commerce / marketplaces / varejo
     "mercado livre", "mercadolivre", "meli", "magalu", "magazine luiza",
     "americanas", "via varejo", "vtex", "olist", "amazon", "shopee",
-    # Delivery / logística
+    "casas bahia", "ponto frio", "riachuelo", "renner", "lojas renner",
+    "marisa", "c&a", "carrefour", "carrefour brasil", "grupo pão de açúcar",
+    "pão de açúcar", "gpa", "assaí", "atacadão", "havan",
+    # Delivery / logística / mobilidade
     "ifood", "rappi", "zé delivery", "ze delivery", "99", "99app", "loggi",
-    "uber", "uber brasil",
+    "uber", "uber brasil", "kovi", "buser", "movile",
+    "jadlog", "total express",
     # Imobiliária / proptech
-    "loft", "quintoandar", "quinto andar",
-    # Saúde
+    "loft", "quintoandar", "quinto andar", "imovelweb", "vivareal",
+    # Saúde / health-tech
     "rd saúde", "rd saude", "raia drogasil", "dasa", "hapvida", "fleury",
+    "amil", "notredame intermédica", "hospital albert einstein", "einstein",
+    "hospital sírio libanês", "sírio libanês", "drogaria pacheco", "drogasil",
     # Educação
-    "cogna", "hotmart", "kroton",
+    "cogna", "hotmart", "kroton", "ânima", "anima educação", "yduqs",
+    "estácio", "estacio", "ser educacional", "afya",
+    # Consultoria / serviços
+    "ey", "ernst young", "deloitte", "pwc", "kpmg", "accenture",
+    "everis", "ntt data", "ntt", "tcs", "tata consultancy", "wipro",
+    "capgemini", "atos", "stefanini", "ci&t", "ci and t", "ci t",
+    "thoughtworks", "indra",
+    # Indústria / energia
+    "embraer", "vale", "vale tech", "petrobras", "ambev", "br distribuidora",
+    "raízen", "raizen", "ultragaz", "ultrapar", "klabin", "suzano",
+    "gerdau", "csn", "usiminas", "votorantim", "weg",
     # Telecom
     "vivo", "telefônica", "telefonica", "claro", "tim", "tim brasil", "oi",
+    "nextel", "algar", "algar telecom", "embratel",
     # Software / SaaS BR
-    "totvs", "locaweb", "rd station", "resultados digitais", "movile",
-    "globo", "globo.com", "grupo globo",
+    "totvs", "locaweb", "rd station", "resultados digitais",
+    "globo", "globo.com", "grupo globo", "globoplay",
+    "movile", "blip", "nuvemshop", "loggi tech", "neoway",
+    # Outsourcing / digital consultancies
+    "compass uol", "luizalabs", "ze.tech", "zé tech",
+    # Tech BR / startups grandes
+    "qi tech", "qitech", "warren", "modalmais", "easynvest", "rico investimentos",
+    "rico", "inter pag", "mosyle", "vtex tech",
     # Wellness / outras
-    "wellhub", "gympass", "smart fit",
+    "wellhub", "gympass", "smart fit", "totalpass",
+    # Auto / mobilidade
+    "porto seguro", "porto", "azul seguros", "sulamerica", "sul america",
+    "bradesco seguros", "mapfre",
     # Globais com escritório/contratação no BR
     "google", "microsoft", "ibm", "oracle", "salesforce", "meta",
-    "apple", "sap", "aws",
+    "apple", "sap", "aws", "red hat", "redhat", "vmware", "cisco",
+    "dell", "hp", "hpe", "intel", "nvidia", "siemens", "schneider",
+    "ericsson", "nokia", "huawei", "lg cns", "samsung",
+    "ge", "general electric", "abb", "honeywell", "philips",
+    "thoughtworks", "globant", "epam", "endava",
+    "spotify", "netflix", "uber",
+}
+
+# ─── Skills prioritárias do candidato ─────────────────────────────────────────
+# Skills com prioridade (ex.: GCP — candidato vai ter certificação).
+# Vagas que mencionam essas skills recebem boost extra de +1 cada (cap +10).
+PRIORITY_SKILLS = {
+    # GCP — candidato vai ter cert GCP Associate
+    "gcp", "google cloud", "gke", "bigquery", "cloud run",
+    "cloud storage", "cloud functions", "gcs",
+    "google cloud platform", "google kubernetes engine",
+    "cloud sql", "pub/sub", "dataflow", "dataproc",
+    "firestore", "firebase",
 }
 
 SALARY_PATTERN = re.compile(r"r\$\s*([\d.,]+)", re.IGNORECASE)
@@ -116,6 +162,7 @@ _NEGATIVE_RE = [(kw, re.compile(r"\b" + re.escape(kw) + r"\b")) for kw in NEGATI
 _SKILL_RE = [(skill, re.compile(r"\b" + re.escape(skill) + r"\b")) for skill in CANDIDATE_SKILLS]
 _LEVEL_JR_RE = re.compile(r"\bj[uú]nior\b|\bjr\b")
 _LEVEL_PL_RE = re.compile(r"\bpleno\b|\bpl\b\s+(?:devops|engenheiro|analista)")
+_PRIORITY_SKILL_RE = [(s, re.compile(r"\b" + re.escape(s) + r"\b")) for s in PRIORITY_SKILLS]
 
 
 def is_target_company(company: str) -> bool:
@@ -185,6 +232,8 @@ class ScoreResult:
     contact_email: Optional[str] = None
     target_company: bool = False
     target_company_bonus: int = 0
+    priority_bonus: int = 0
+    priority_skills: list[str] = None
 
 
 def score_job(job_dict: dict) -> ScoreResult:
@@ -281,7 +330,17 @@ def score_job(job_dict: dict) -> ScoreResult:
         if is_remote:
             target_company_bonus += 5
 
-    total = skills_score + location_score + level_score + kw_score + salary_score + target_company_bonus
+    # ── Boost de skills prioritárias (GCP) ──────────────────────────────────
+    # +1 por skill prioritária encontrada na descrição (cap +10).
+    # Reflete áreas onde o candidato tem ou está adquirindo expertise.
+    priority_skills_found = []
+    for skill, rx in _PRIORITY_SKILL_RE:
+        if rx.search(text_lower):
+            priority_skills_found.append(skill)
+    priority_bonus = min(len(priority_skills_found), 10)
+
+    total = (skills_score + location_score + level_score + kw_score +
+             salary_score + target_company_bonus + priority_bonus)
     total = min(total, 100)
 
     # Threshold mais baixo de alto fit quando é big tech (60 vs 70)
@@ -315,6 +374,8 @@ def score_job(job_dict: dict) -> ScoreResult:
         contact_email=contact_email,
         target_company=target_company,
         target_company_bonus=target_company_bonus,
+        priority_bonus=priority_bonus,
+        priority_skills=sorted(priority_skills_found),
     )
 
 
@@ -345,12 +406,14 @@ def apply_scores(jobs: list[dict]) -> list[dict]:
                 "keywords": result.keywords,
                 "salary": result.salary,
                 "target_company": result.target_company_bonus,
+                "priority_skills": result.priority_bonus,
             }
             job["skills_match"] = result.skills_match
             job["skills_gap"] = result.skills_gap
             job["fit_level"] = result.fit_level
             job["contact_email"] = result.contact_email
             job["target_company"] = result.target_company
+            job["priority_skills"] = result.priority_skills or []
             if job.get("status") == "nova":
                 pass  # mantém "nova"
         scored.append(job)
