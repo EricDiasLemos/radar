@@ -278,6 +278,10 @@
     }
     .badge-source { background: rgba(88,166,255,0.15); color: var(--blue); }
     .badge-salary { background: rgba(63,185,80,0.12); color: var(--green); }
+    .badge-target {
+      background: linear-gradient(135deg, rgba(248,177,52,0.2), rgba(248,81,73,0.15));
+      color: #f8b134; border: 1px solid rgba(248,177,52,0.3); font-weight: 600;
+    }
     .badge-status-nova { background: rgba(88,166,255,0.15); color: var(--blue); }
     .badge-status-enviada { background: rgba(63,185,80,0.15); color: var(--green); }
     .badge-status-aprovada { background: rgba(210,153,34,0.15); color: var(--yellow); }
@@ -541,6 +545,14 @@
             Min: <span id="score-val">0</span>
           </div>
         </div>
+
+        <div class="filter-group">
+          <label>🎯 Big Tech</label>
+          <div class="chip-group" id="filter-target">
+            <span class="chip active" data-value="">Todas</span>
+            <span class="chip" data-value="1">Só Big Techs</span>
+          </div>
+        </div>
       </div>
     </aside>
 
@@ -644,6 +656,7 @@ let filterState = {
   source: '',
   location: '',
   status: '',
+  target: '',
   text: '',
   scoreMin: 0,
 };
@@ -708,7 +721,7 @@ function updateMetrics(stats) {
 
 // ─── Filtros ──────────────────────────────────────────────────────────────────
 function setupChipFilters() {
-  ['filter-fit', 'filter-source', 'filter-location', 'filter-status'].forEach(groupId => {
+  ['filter-fit', 'filter-source', 'filter-location', 'filter-status', 'filter-target'].forEach(groupId => {
     const group = document.getElementById(groupId);
     if (!group) return;
     group.querySelectorAll('.chip').forEach(chip => {
@@ -735,6 +748,7 @@ function applyFilters() {
     if (filterState.fit && job.fit_level !== filterState.fit) return false;
     if (filterState.source && job.source !== filterState.source) return false;
     if (filterState.status && job.status !== filterState.status) return false;
+    if (filterState.target === '1' && !job.target_company) return false;
     if (job.score < filterState.scoreMin) return false;
 
     if (filterState.location) {
@@ -809,6 +823,10 @@ function renderCard(job) {
     ? `<span class="badge badge-salary">💰 ${job.salary}</span>`
     : '';
 
+  const targetBadge = job.target_company
+    ? `<span class="badge badge-target" title="Big Tech alvo — boost +15 no score">🎯 Big Tech</span>`
+    : '';
+
   const statusClass = {
     nova: 'badge-status-nova',
     aprovada: 'badge-status-aprovada',
@@ -833,6 +851,7 @@ function renderCard(job) {
       <button class="btn btn-blue" onclick="openApplyModal('${job.id}')">📤 Candidatar</button>
     `;
 
+  const targetBonus = job.score_breakdown?.target_company || 0;
   const breakdown = job.score_breakdown ? `
     <div class="breakdown-grid">
       <span class="breakdown-label">Skills</span><span class="breakdown-value">${job.score_breakdown.skills || 0}/40</span>
@@ -840,6 +859,7 @@ function renderCard(job) {
       <span class="breakdown-label">Nível</span><span class="breakdown-value">${job.score_breakdown.level || 0}/20</span>
       <span class="breakdown-label">Keywords</span><span class="breakdown-value">${job.score_breakdown.keywords || 0}/10</span>
       <span class="breakdown-label">Salário</span><span class="breakdown-value">${job.score_breakdown.salary || 0}/10</span>
+      ${targetBonus ? `<span class="breakdown-label">🎯 Big Tech</span><span class="breakdown-value" style="color:#f8b134">+${targetBonus}</span>` : ''}
     </div>
   ` : '';
 
@@ -847,7 +867,7 @@ function renderCard(job) {
     <div class="job-card fit-${fit}" id="card-${job.id}">
       <div class="card-top">
         <div class="card-title-block">
-          <h3>${escHtml(job.title)}</h3>
+          <h3>${escHtml(job.title)} ${targetBadge}</h3>
           <div class="card-meta">
             <span>🏢 ${escHtml(job.company)}</span>
             <span>📍 ${escHtml(job.location)}</span>

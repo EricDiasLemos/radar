@@ -74,6 +74,40 @@ SENIOR_PATTERNS = [
 LOCATION_KEYWORDS_BH = {"belo horizonte", "bh", "contagem", "betim", "minas gerais", "mg"}
 LOCATION_KEYWORDS_REMOTE = {"remoto", "remote", "home office", "híbrido", "hibrido", "trabalho remoto"}
 
+# ─── Empresas alvo (Big Techs) ────────────────────────────────────────────────
+# Vagas dessas empresas recebem +15 no score e threshold mais baixo
+# para alto fit (60 em vez de 70). Match normaliza (lowercase, sem acento).
+TARGET_COMPANIES = {
+    # Fintechs / bancos digitais
+    "nubank", "inter", "banco inter", "c6", "c6 bank", "picpay", "pagseguro",
+    "pagbank", "cielo", "creditas", "sicredi", "sicoob", "stone", "xp", "xp inc",
+    "b3", "méliuz", "meliuz", "original", "banco original",
+    # Bancos tradicionais (digital teams)
+    "itaú", "itau", "bradesco", "santander", "banco do brasil",
+    # E-commerce / marketplaces
+    "mercado livre", "mercadolivre", "meli", "magalu", "magazine luiza",
+    "americanas", "via varejo", "vtex", "olist", "amazon", "shopee",
+    # Delivery / logística
+    "ifood", "rappi", "zé delivery", "ze delivery", "99", "99app", "loggi",
+    "uber", "uber brasil",
+    # Imobiliária / proptech
+    "loft", "quintoandar", "quinto andar",
+    # Saúde
+    "rd saúde", "rd saude", "raia drogasil", "dasa", "hapvida", "fleury",
+    # Educação
+    "cogna", "hotmart", "kroton",
+    # Telecom
+    "vivo", "telefônica", "telefonica", "claro", "tim", "tim brasil", "oi",
+    # Software / SaaS BR
+    "totvs", "locaweb", "rd station", "resultados digitais", "movile",
+    "globo", "globo.com", "grupo globo",
+    # Wellness / outras
+    "wellhub", "gympass", "smart fit",
+    # Globais com escritório/contratação no BR
+    "google", "microsoft", "ibm", "oracle", "salesforce", "meta",
+    "apple", "sap", "aws",
+}
+
 SALARY_PATTERN = re.compile(r"r\$\s*([\d.,]+)", re.IGNORECASE)
 
 # ─── Regex pré-compilados (evita re-compilar por job) ────────────────────────
@@ -82,6 +116,23 @@ _NEGATIVE_RE = [(kw, re.compile(r"\b" + re.escape(kw) + r"\b")) for kw in NEGATI
 _SKILL_RE = [(skill, re.compile(r"\b" + re.escape(skill) + r"\b")) for skill in CANDIDATE_SKILLS]
 _LEVEL_JR_RE = re.compile(r"\bj[uú]nior\b|\bjr\b")
 _LEVEL_PL_RE = re.compile(r"\bpleno\b|\bpl\b\s+(?:devops|engenheiro|analista)")
+
+
+def is_target_company(company: str) -> bool:
+    """
+    Verifica se o nome da empresa bate com a lista de big techs alvo.
+    Normaliza (lowercase, sem pontuação) e usa substring match.
+    """
+    if not company or company == "N/A":
+        return False
+    # Normaliza: lowercase + remove pontuação/separadores extras
+    norm = re.sub(r"[^\w\s]", " ", company.lower())
+    norm = re.sub(r"\s+", " ", norm).strip()
+    # Match exato OU como token isolado dentro do nome
+    for target in TARGET_COMPANIES:
+        if target == norm or f" {target} " in f" {norm} ":
+            return True
+    return False
 
 
 def is_obviously_rejected(text: str) -> bool:
@@ -132,6 +183,8 @@ class ScoreResult:
     rejected: bool
     rejection_reason: str = ""
     contact_email: Optional[str] = None
+    target_company: bool = False
+    target_company_bonus: int = 0
 
 
 def score_job(job_dict: dict) -> ScoreResult:
@@ -217,15 +270,25 @@ def score_job(job_dict: dict) -> ScoreResult:
             else:
                 salary_score = 0
 
-    total = skills_score + location_score + level_score + kw_score + salary_score
+    # ── Boost de empresa alvo (Big Tech) ────────────────────────────────────
+    company = job_dict.get("company", "")
+    target_company = is_target_company(company)
+    target_company_bonus = 15 if target_company else 0
+
+    total = skills_score + location_score + level_score + kw_score + salary_score + target_company_bonus
     total = min(total, 100)
 
-    if total >= 70:
+    # Threshold mais baixo de alto fit quando é big tech (60 vs 70)
+    alto_threshold = 60 if target_company else 70
+    if total >= alto_threshold:
         fit_level = "alto"
     elif total >= 50:
         fit_level = "medio"
     else:
         fit_level = "baixo"
+
+    if target_company:
+        log.info("🎯 Big Tech detectada: %s (boost +15, threshold alto=60)", company)
 
     if contact_email:
         log.info("Email de contato detectado: %s → %s", contact_email, job_dict.get("title", ""))
@@ -242,6 +305,8 @@ def score_job(job_dict: dict) -> ScoreResult:
         fit_level=fit_level,
         rejected=False,
         contact_email=contact_email,
+        target_company=target_company,
+        target_company_bonus=target_company_bonus,
     )
 
 
@@ -271,11 +336,13 @@ def apply_scores(jobs: list[dict]) -> list[dict]:
                 "level": result.level,
                 "keywords": result.keywords,
                 "salary": result.salary,
+                "target_company": result.target_company_bonus,
             }
             job["skills_match"] = result.skills_match
             job["skills_gap"] = result.skills_gap
             job["fit_level"] = result.fit_level
             job["contact_email"] = result.contact_email
+            job["target_company"] = result.target_company
             if job.get("status") == "nova":
                 pass  # mantém "nova"
         scored.append(job)
