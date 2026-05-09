@@ -75,6 +75,12 @@
     .btn-danger:hover { background: rgba(248,81,73,0.1); }
     .btn-blue { background: var(--blue); border-color: var(--blue); color: #000; }
     .btn-blue:hover { opacity: 0.85; }
+    .btn-top {
+      background: linear-gradient(135deg, #f8b134, #f85149);
+      border: 1px solid rgba(248,177,52,0.5); color: #fff;
+      font-weight: 600;
+    }
+    .btn-top:hover { opacity: 0.9; transform: translateY(-1px); }
 
     /* ── Counters ── */
     .counters {
@@ -565,6 +571,8 @@
       <div class="jobs-header">
         <h2>Vagas <span class="jobs-count" id="jobs-count"></span></h2>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-top" style="font-size:0.75rem" onclick="showTopOpportunities()" title="Atalho: aplica filtros otimizados para vagas com maior chance de retorno">✨ Top oportunidades</button>
+          <button class="btn btn-ghost" style="font-size:0.75rem" onclick="clearAllFilters()">🔄 Limpar filtros</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('score')">↓ Score</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('date')">↓ Data</button>
           <button class="btn btn-danger" style="font-size:0.75rem" onclick="deleteAllBaixoFit()">🗑 Limpar baixo fit</button>
@@ -783,6 +791,63 @@ function sortBy(field) {
   currentSort = field;
   sortJobs();
   renderJobs();
+}
+
+// ─── Top Oportunidades / Clear filters ────────────────────────────────────────
+// View otimizada que mostra vagas com maior chance de retorno
+// (mesmo critério do auto-candidatura no main.py):
+//   - Alto fit (score >= 70 ou >= 60 se big tech)
+//   - OU médio fit + big tech
+//   - OU médio fit + email de contato
+//   - Status != enviada (já candidatadas saem da lista)
+function showTopOpportunities() {
+  // Reset chips visualmente: todos voltam pra "Todos/Todas"
+  document.querySelectorAll('.chip-group').forEach(group => {
+    group.querySelectorAll('.chip').forEach(c => {
+      c.className = c.dataset.value === '' ? 'chip active' : 'chip';
+    });
+  });
+  // Reset estado de filtros + search
+  filterState = { fit: '', source: '', location: '', status: '', target: '', text: '', scoreMin: 0 };
+  document.getElementById('search-text').value = '';
+  document.getElementById('filter-score').value = 0;
+  document.getElementById('score-val').textContent = '0';
+
+  // Aplica filtro custom (sem usar applyFilters padrão)
+  filteredJobs = allJobs.filter(job => {
+    if (job.status === 'enviada' || job.status === 'arquivada') return false;
+    const isAlto = job.fit_level === 'alto';
+    const isMedio = job.fit_level === 'medio';
+    const isBigTech = !!job.target_company;
+    const hasEmail = !!job.contact_email;
+    return isAlto || (isMedio && (isBigTech || hasEmail));
+  });
+
+  // Ordena por score desc (top no topo)
+  filteredJobs.sort((a, b) => (b.score || 0) - (a.score || 0));
+  currentSort = 'score';
+
+  renderJobs();
+  document.getElementById('jobs-count').textContent = `(${filteredJobs.length})`;
+
+  const altos = filteredJobs.filter(j => j.fit_level === 'alto').length;
+  const bigTechs = filteredJobs.filter(j => j.target_company).length;
+  toast(`✨ ${filteredJobs.length} top oportunidades: ${altos} alto fit, ${bigTechs} big techs`, 'success');
+}
+
+function clearAllFilters() {
+  // Reset chips visualmente
+  document.querySelectorAll('.chip-group').forEach(group => {
+    group.querySelectorAll('.chip').forEach(c => {
+      c.className = c.dataset.value === '' ? 'chip active' : 'chip';
+    });
+  });
+  filterState = { fit: '', source: '', location: '', status: '', target: '', text: '', scoreMin: 0 };
+  document.getElementById('search-text').value = '';
+  document.getElementById('filter-score').value = 0;
+  document.getElementById('score-val').textContent = '0';
+  applyFilters();
+  toast('Filtros limpos', 'info');
 }
 
 function sortJobs() {
