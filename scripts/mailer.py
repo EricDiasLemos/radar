@@ -98,7 +98,11 @@ Skills: {', '.join(job.get('skills_match', []))}
         msg.attach(part)
         log.info("Currículo anexado")
     else:
-        log.warning("Currículo não encontrado em %s", RESUME_PATH)
+        log.warning(
+            "⚠️  Currículo não encontrado em %s — email enviado SEM anexo!\n"
+            "    Para anexar: faça commit do arquivo assets/curriculo.pdf no repo.",
+            RESUME_PATH,
+        )
 
     return msg
 

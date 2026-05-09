@@ -1,6 +1,6 @@
 """
 Job Radar — Geração de carta de apresentação via Groq (gratuito)
-Modelo: llama-3.1-70b-versatile
+Modelo: llama-3.3-70b-versatile (substituto do 3.1-70b descontinuado)
 """
 
 import logging
@@ -23,7 +23,7 @@ Regras obrigatórias:
 - Finalizar com disponibilidade para entrevista
 - Escrever em português brasileiro formal-técnico"""
 
-GROQ_MODEL = "llama-3.1-70b-versatile"
+GROQ_MODEL = "llama-3.3-70b-versatile"
 
 
 def generate_cover_letter(job: dict) -> str:

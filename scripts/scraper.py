@@ -411,7 +411,8 @@ def _fetch_programathor_rss() -> list[dict]:
 
     resp = _safe_get(url, extra_headers={"Accept": "application/rss+xml, application/xml, text/xml"})
     if not resp:
-        log.warning("[Programathor] RSS indisponível")
+        # 403 em datacenter (GitHub Actions) é esperado — fonte funciona localmente
+        log.info("[Programathor] RSS indisponível neste ambiente (bloqueio de IP de datacenter)")
         _PROGRAMATHOR_CACHE = []
         return []
 
