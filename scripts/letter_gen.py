@@ -85,7 +85,10 @@ def generate_letter_batch(jobs: list[dict]) -> dict[str, str]:
 def _fallback_letter(job: dict) -> str:
     title = job.get("title", "DevOps Engineer")
     company = job.get("company", "empresa")
-    skills = ", ".join(job.get("skills_match", ["Docker", "Linux", "Python"])[:3])
+    # dict.get(key, default) só retorna default se a chave não existir.
+    # Se for lista vazia [], retorna [] e o join vira "". Trata os dois casos.
+    skills_list = job.get("skills_match") or ["Docker", "Linux", "Python"]
+    skills = ", ".join(skills_list[:3])
     return f"""Prezados da {company},
 
 Tenho interesse na vaga de {title} e acredito que minha experiência em {skills} \
