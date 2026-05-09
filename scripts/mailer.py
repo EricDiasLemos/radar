@@ -24,6 +24,14 @@ GMAIL_USER = os.environ.get("GMAIL_USER", "")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
 CANDIDATE_EMAIL = os.environ.get("CANDIDATE_EMAIL", "ericdias0603@gmail.com")
 
+# Quando True (padrão): envia email-rascunho para si mesmo nas vagas sem
+# contact_email (assim você revisa e candidata manualmente).
+# Quando False: pula essas vagas — você só as vê no dashboard.
+# Vagas com contact_email continuam sendo enviadas direto pro recrutador.
+SEND_SELF_NOTIFICATIONS = os.environ.get("SEND_SELF_NOTIFICATIONS", "true").lower() in ("true", "1", "yes")
+
+DASHBOARD_URL = os.environ.get("DASHBOARD_URL", "https://ericdiaslemos.github.io/radar/")
+
 
 def load_sent_history() -> dict:
     if SENT_FILE.exists():
@@ -57,6 +65,28 @@ def already_applied_to_company(company: str, sent_history: dict) -> bool:
     return False
 
 
+def _build_subject(job: dict, is_recruiter_email: bool) -> str:
+    """
+    Gera subject escaneável:
+      - Recrutador:  'Candidatura — Eric Dias Lemos | DevOps Engineer'
+      - Auto-revisão: '🟢 [REVISE] Nubank — Staff IT Engineer 🎯 ☁️ (56/100) | LinkedIn'
+    """
+    if is_recruiter_email:
+        return f"Candidatura — Eric Dias Lemos | {job.get('title', '')}"
+
+    fit = (job.get("fit_level") or "").lower()
+    fit_emoji = {"alto": "🟢", "medio": "🟡", "baixo": "🔴"}.get(fit, "⚪")
+    bigtech = " 🎯" if job.get("target_company") else ""
+    gcp = " ☁️" if (job.get("priority_skills") or []) else ""
+    company = job.get("company") or "Empresa"
+    title = job.get("title") or ""
+    score = job.get("score", 0)
+    source = job.get("source", "")
+
+    # Empresa primeiro (mais escaneável no Gmail), depois título.
+    return f"{fit_emoji} [REVISE] {company} — {title}{bigtech}{gcp} ({score}/100) | {source}"
+
+
 def build_email(job: dict, cover_letter: str) -> MIMEMultipart:
     msg = MIMEMultipart()
     msg["From"] = GMAIL_USER
@@ -66,20 +96,31 @@ def build_email(job: dict, cover_letter: str) -> MIMEMultipart:
         # Envia direto para o recrutador, cópia para o candidato
         msg["To"] = contact_email
         msg["Cc"] = CANDIDATE_EMAIL
-        msg["Subject"] = f"Candidatura — {job['title']} | Eric Dias Lemos"
+        msg["Subject"] = _build_subject(job, is_recruiter_email=True)
         body = cover_letter  # email profissional: só a carta
         log.info("Destino: recrutador <%s> (cc: %s)", contact_email, CANDIDATE_EMAIL)
     else:
         # Sem email de contato: envia para o próprio candidato revisar
         msg["To"] = CANDIDATE_EMAIL
-        msg["Subject"] = f"[Job Radar] {job['title']} @ {job.get('company', '')} | Score {job.get('score', 0)}/100"
+        msg["Subject"] = _build_subject(job, is_recruiter_email=False)
+        skills = ", ".join(job.get("skills_match", [])[:8]) or "(nenhuma detectada)"
+        tags = []
+        if job.get("target_company"):
+            tags.append("🎯 Big Tech")
+        if job.get("priority_skills"):
+            tags.append("☁️ GCP: " + ", ".join(job["priority_skills"][:5]))
+        tags_line = "Tags:   " + " | ".join(tags) + "\n" if tags else ""
+
         body = f"""{cover_letter}
 
----
-Vaga:   {job.get('url', '')}
-Fonte:  {job.get('source', '')}
-Score:  {job.get('score', 0)}/100 ({job.get('fit_level', '').upper()} FIT)
-Skills: {', '.join(job.get('skills_match', []))}
+────────────────────────────────────────
+🔗 Candidatar:  {job.get('url', '')}
+📊 Dashboard:   {DASHBOARD_URL}
+
+Empresa:  {job.get('company', '')}
+Fonte:   {job.get('source', '')}
+Score:   {job.get('score', 0)}/100 ({(job.get('fit_level') or '').upper()} FIT)
+{tags_line}Skills:  {skills}
 """
         log.info("Destino: candidato <%s> (sem email de contato na vaga)", CANDIDATE_EMAIL)
 
@@ -116,6 +157,13 @@ def send_application(job: dict, cover_letter: str) -> bool:
     sent_history = load_sent_history()
 
     if already_applied_to_company(job.get("company", ""), sent_history):
+        return False
+
+    # Flag SEND_SELF_NOTIFICATIONS=false: pula vagas sem email do recrutador
+    # (você só revisa elas pelo dashboard)
+    if not job.get("contact_email") and not SEND_SELF_NOTIFICATIONS:
+        log.info("SEND_SELF_NOTIFICATIONS=false — pulando notificação para %s @ %s",
+                 job.get("title"), job.get("company"))
         return False
 
     msg = build_email(job, cover_letter)
