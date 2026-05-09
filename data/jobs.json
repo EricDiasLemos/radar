@@ -1433,9 +1433,9 @@
         "wireguard"
       ],
       "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
+      "status": "enviada",
+      "applied_at": "2026-05-09T16:52:29.851642+00:00",
+      "cover_letter": "Prezados da Drogaria Araujo S/A,\n\nTenho interesse na vaga de ANALISTA DE OBSERVABILIDADE SR e acredito que minha experiência em bash, dynatrace, grafana se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com",
       "contact_email": null
     },
     {
@@ -12259,12 +12259,12 @@
       "contact_email": null
     }
   ],
-  "last_updated": "2026-05-09T16:36:51.116Z",
+  "last_updated": "2026-05-09T16:52:29.851649+00:00",
   "stats": {
     "total": 188,
     "alto_fit": 5,
     "medio_fit": 22,
     "baixo_fit": 161,
-    "enviadas": 7
+    "enviadas": 8
   }
 }
