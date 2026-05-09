@@ -571,6 +571,7 @@
       <div class="jobs-header">
         <h2>Vagas <span class="jobs-count" id="jobs-count"></span></h2>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-blue" style="font-size:0.75rem" onclick="openAddJobModal()" title="Adicionar uma vaga manualmente ao Job Radar">➕ Adicionar vaga</button>
           <button class="btn btn-top" style="font-size:0.75rem" onclick="showTopOpportunities()" title="Atalho: aplica filtros otimizados para vagas com maior chance de retorno">✨ Top oportunidades</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="clearAllFilters()">🔄 Limpar filtros</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('score')">↓ Score</button>
@@ -607,6 +608,72 @@
       <button class="btn btn-ghost" onclick="closeModal()">Cancelar</button>
       <button class="btn btn-primary" id="modal-send-btn" onclick="confirmApply()">
         📤 Confirmar candidatura
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Modal adicionar vaga ──────────────────────────────────── -->
+<div class="modal-backdrop" id="addjob-modal">
+  <div class="modal" style="max-width:640px">
+    <div class="modal-header">
+      <h2>➕ Adicionar vaga manualmente</h2>
+      <button class="modal-close" onclick="closeAddJobModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5">
+        Cole a URL e os dados da vaga. O sistema vai pontuar e adicionar ao radar.
+        <br>Vagas com URLs já no banco ou na blacklist são ignoradas.
+      </p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div>
+          <label style="font-size:0.78rem;color:var(--text-muted)">URL da vaga *</label>
+          <input id="addjob-url" type="url" class="search-input" style="width:100%"
+                 placeholder="https://...">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;color:var(--text-muted)">Empresa *</label>
+          <input id="addjob-company" type="text" class="search-input" style="width:100%"
+                 placeholder="Ex: Nubank">
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px">
+        <label style="font-size:0.78rem;color:var(--text-muted)">Título da vaga *</label>
+        <input id="addjob-title" type="text" class="search-input" style="width:100%"
+               placeholder="Ex: DevOps Engineer Jr">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div>
+          <label style="font-size:0.78rem;color:var(--text-muted)">Localização</label>
+          <input id="addjob-location" type="text" class="search-input" style="width:100%"
+                 placeholder="Remoto / Belo Horizonte / ..." value="Remoto">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;color:var(--text-muted)">Salário (opcional)</label>
+          <input id="addjob-salary" type="text" class="search-input" style="width:100%"
+                 placeholder="Ex: R$ 5.000">
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px">
+        <label style="font-size:0.78rem;color:var(--text-muted)">
+          Descrição (cole o texto da vaga — quanto mais detalhes, melhor o scoring)
+        </label>
+        <textarea id="addjob-description" class="letter-textarea" style="min-height:120px"
+                  placeholder="Cole aqui a descrição/requisitos/skills da vaga..."></textarea>
+      </div>
+
+      <div id="addjob-preview" style="display:none;background:rgba(88,166,255,0.08);
+           border:1px solid rgba(88,166,255,0.3);border-radius:8px;padding:12px;font-size:0.82rem">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeAddJobModal()">Cancelar</button>
+      <button class="btn btn-blue" onclick="previewAndAddJob()">
+        🎯 Pontuar e adicionar
       </button>
     </div>
   </div>
@@ -1204,8 +1271,264 @@ document.getElementById('token-modal').addEventListener('click', function(e) {
 
 // Keyboard: Esc fecha qualquer modal aberto
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeModal(); closeTokenModal(); }
+  if (e.key === 'Escape') { closeModal(); closeTokenModal(); closeAddJobModal(); }
 });
+document.getElementById('addjob-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeAddJobModal();
+});
+
+// ─── Add Job manualmente ─────────────────────────────────────────────────────
+function openAddJobModal() {
+  // Reset campos
+  ['url', 'title', 'company', 'salary', 'description'].forEach(f => {
+    document.getElementById('addjob-' + f).value = '';
+  });
+  document.getElementById('addjob-location').value = 'Remoto';
+  document.getElementById('addjob-preview').style.display = 'none';
+  document.getElementById('addjob-modal').classList.add('active');
+  setTimeout(() => document.getElementById('addjob-url').focus(), 100);
+}
+function closeAddJobModal() {
+  document.getElementById('addjob-modal').classList.remove('active');
+}
+
+// Scoring local (porting simplificado do scorer.py)
+// Mantém paridade com Python para skills, big tech e bonus principais.
+const _JS_CORE_SKILLS = new Set(['python', 'docker', 'linux', 'prometheus', 'grafana']);
+const _JS_SKILLS = [
+  // Core
+  'python', 'docker', 'linux', 'prometheus', 'grafana',
+  // AWS
+  'aws', 'ec2', 's3', 'rds', 'lambda', 'cloudwatch', 'cloudformation', 'eks', 'ecs', 'iam', 'vpc', 'route53',
+  // GCP
+  'gcp', 'google cloud', 'gke', 'cloud run', 'bigquery', 'cloud storage',
+  // Azure
+  'azure', 'aks', 'azure devops',
+  // IaC
+  'terraform', 'ansible', 'kubernetes', 'helm', 'argocd', 'pulumi',
+  // CI/CD
+  'github actions', 'ci/cd', 'jenkins', 'gitlab ci', 'circleci',
+  // Observability
+  'zabbix', 'datadog', 'loki', 'alertmanager', 'elk', 'newrelic', 'dynatrace',
+  // Infra
+  'nginx', 'bash', 'shell', 'git', 'rest', 'api', 'k3s', 'wireguard', 'mikrotik', 'fortigate', 'vmware', 'n8n', 'flask',
+];
+const _JS_PRIORITY_SKILLS = ['gcp', 'google cloud', 'gke', 'bigquery', 'cloud run',
+  'cloud storage', 'cloud functions', 'gcs', 'cloud sql', 'firestore', 'firebase',
+  'pub/sub', 'dataflow', 'dataproc'];
+const _JS_BIG_TECHS = [
+  'nubank', 'ifood', 'itaú', 'itau', 'bradesco', 'santander', 'banco do brasil',
+  'magalu', 'magazine luiza', 'mercado livre', 'mercadolivre', 'meli',
+  'inter', 'banco inter', 'c6', 'picpay', 'pagseguro', 'pagbank', 'cielo',
+  'stone', 'xp', 'btg', 'b3', 'creditas', 'méliuz', 'meliuz',
+  'totvs', 'locaweb', 'globo', 'movile', 'rd station', 'hotmart',
+  'rappi', 'zé delivery', 'ze delivery', '99', 'loggi', 'uber',
+  'loft', 'quintoandar', 'quinto andar', 'vtex', 'olist',
+  'americanas', 'casas bahia', 'riachuelo', 'renner', 'carrefour',
+  'amazon', 'google', 'microsoft', 'ibm', 'oracle', 'salesforce', 'meta',
+  'embraer', 'vale', 'petrobras', 'ambev', 'klabin', 'weg', 'gerdau',
+  'ey', 'deloitte', 'pwc', 'kpmg', 'accenture', 'capgemini', 'stefanini',
+  'ci&t', 'thoughtworks', 'tcs', 'wipro', 'ntt data',
+  'vivo', 'claro', 'tim', 'telefônica', 'telefonica',
+  'rd saúde', 'dasa', 'einstein', 'cogna', 'wellhub', 'gympass',
+  'red hat', 'vmware', 'cisco', 'dell', 'nvidia', 'spotify', 'netflix',
+];
+const _JS_SENIOR_RE = [
+  /\bs[eê]nior\b/, /\bsr\.?\s+(devops|engenheiro|analista)/,
+  /\b8\+?\s*anos\b/, /\b10\+?\s*anos\b/,
+];
+const _JS_NEGATIVE = ['arquiteto', 'architect', 'manager', 'diretor', 'director',
+  'cto', 'vp de', 'head de', 'ios developer', 'android developer',
+  'mobile developer', 'mobile engineer', 'data scientist', 'machine learning', 'ml engineer'];
+const _JS_LOC_REMOTE = /(remoto|remote|home office|h[íi]brido|trabalho remoto)/;
+const _JS_LOC_BH = /\b(belo horizonte|bh|contagem|betim|minas gerais|mg)\b/;
+const _JS_POSITIVE = ['observabilidade', 'observability', 'sre', 'monitoramento', 'devops',
+  'infraestrutura', 'infrastructure', 'cloud', 'nuvem', 'automação', 'automation',
+  'cloud native', 'multicloud', 'finops', 'cloud migration', 'plataforma', 'platform'];
+
+function _wb(skill) {
+  return new RegExp('\\b' + skill.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b');
+}
+
+function scoreJobLocal(job) {
+  const text = `${job.title} ${job.company} ${job.description} ${job.location}`.toLowerCase();
+
+  // Rejeição por sênior
+  for (const rx of _JS_SENIOR_RE) {
+    if (rx.test(text)) {
+      return { rejected: true, reason: 'Padrão sênior detectado' };
+    }
+  }
+  // Rejeição por keyword negativa
+  for (const kw of _JS_NEGATIVE) {
+    if (_wb(kw).test(text)) {
+      return { rejected: true, reason: `Keyword negativa: ${kw}` };
+    }
+  }
+
+  // Skills (cap 40)
+  const found = [], missing = [];
+  let skillsScore = 0;
+  for (const s of _JS_SKILLS) {
+    if (_wb(s).test(text)) {
+      skillsScore += _JS_CORE_SKILLS.has(s) ? 3 : 2;
+      found.push(s);
+    } else {
+      missing.push(s);
+    }
+  }
+  skillsScore = Math.min(skillsScore, 40);
+
+  // Localização (20)
+  const locText = (job.location + ' ' + job.description).toLowerCase();
+  const isRemote = _JS_LOC_REMOTE.test(locText);
+  const isBH = _JS_LOC_BH.test(locText);
+  const locationScore = (isRemote || isBH) ? 20 : 0;
+
+  // Nível (20)
+  let levelScore = 10;
+  if (/\bj[uú]nior\b|\bjr\b/.test(text)) levelScore = 20;
+  else if (/\bpleno\b/.test(text)) levelScore = 15;
+
+  // Keywords positivas (cap 10)
+  let kwScore = 0;
+  for (const k of _JS_POSITIVE) if (text.includes(k)) kwScore += 2;
+  kwScore = Math.min(kwScore, 10);
+
+  // Salário (10)
+  let salaryScore = 5;
+  if (job.salary) {
+    const m = (job.salary.match(/r\$\s*([\d.,]+)/i) || [])[1];
+    if (m) {
+      const val = parseFloat(m.replace(/\./g, '').replace(',', '.'));
+      if (val >= 4000) salaryScore = 10;
+      else if (val >= 2000) salaryScore = 5;
+      else salaryScore = 0;
+    }
+  }
+
+  // Big Tech
+  const compNorm = (job.company || '').toLowerCase().replace(/[^\w\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  const isBigTech = _JS_BIG_TECHS.some(b => compNorm === b || (' ' + compNorm + ' ').includes(' ' + b + ' '));
+  let bigTechBonus = 0;
+  if (isBigTech) {
+    bigTechBonus = 15;
+    if (isRemote) bigTechBonus += 5;
+  }
+
+  // Priority Skills (GCP)
+  const priorityFound = _JS_PRIORITY_SKILLS.filter(s => _wb(s).test(text));
+  const priorityBonus = Math.min(priorityFound.length, 10);
+
+  let total = skillsScore + locationScore + levelScore + kwScore + salaryScore + bigTechBonus + priorityBonus;
+  total = Math.min(total, 100);
+
+  const altoThreshold = isBigTech ? 60 : 70;
+  let fitLevel = 'baixo';
+  if (total >= altoThreshold) fitLevel = 'alto';
+  else if (total >= 50) fitLevel = 'medio';
+
+  return {
+    rejected: false,
+    score: total,
+    fit_level: fitLevel,
+    score_breakdown: {
+      skills: skillsScore, location: locationScore, level: levelScore,
+      keywords: kwScore, salary: salaryScore,
+      target_company: bigTechBonus, priority_skills: priorityBonus,
+    },
+    skills_match: found.sort(),
+    skills_gap: missing.sort(),
+    target_company: isBigTech,
+    priority_skills: priorityFound.sort(),
+  };
+}
+
+function inferSource(url) {
+  const u = (url || '').toLowerCase();
+  if (u.includes('linkedin.com')) return 'LinkedIn';
+  if (u.includes('vagas.com')) return 'Vagas.com';
+  if (u.includes('gupy.io')) return 'Gupy';
+  if (u.includes('programathor')) return 'Programathor';
+  return 'Manual';
+}
+
+async function generateJobId(url, title, company) {
+  const raw = `${url}${title}${company}`;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
+  return Array.from(new Uint8Array(buf))
+    .map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
+}
+
+async function previewAndAddJob() {
+  const url = document.getElementById('addjob-url').value.trim();
+  const title = document.getElementById('addjob-title').value.trim();
+  const company = document.getElementById('addjob-company').value.trim();
+  const location = document.getElementById('addjob-location').value.trim() || 'Remoto';
+  const description = document.getElementById('addjob-description').value.trim();
+  const salary = document.getElementById('addjob-salary').value.trim();
+
+  if (!url || !title || !company) {
+    toast('Preencha URL, Título e Empresa.', 'error');
+    return;
+  }
+
+  const id = await generateJobId(url, title, company);
+
+  // Duplicata?
+  if (allJobs.some(j => j.id === id || j.url === url)) {
+    toast('Vaga já existe no banco (mesmo ID ou URL).', 'info');
+    return;
+  }
+  if (blacklistIds.has(id)) {
+    toast('Vaga está na blacklist — não será adicionada.', 'error');
+    return;
+  }
+
+  const job = { url, title, company, location, description, salary, source: inferSource(url) };
+  const score = scoreJobLocal(job);
+
+  if (score.rejected) {
+    if (!confirm(`⚠️ Esta vaga seria rejeitada automaticamente:\n\n${score.reason}\n\nAdicionar mesmo assim?`)) {
+      return;
+    }
+    // Adiciona com score 0
+    Object.assign(score, {
+      score: 0, fit_level: 'baixo',
+      score_breakdown: {}, skills_match: [], skills_gap: [],
+      target_company: false, priority_skills: [],
+    });
+  }
+
+  const newJob = {
+    id, url, title, company, location, description, salary,
+    source: job.source,
+    published_at: '',
+    found_at: new Date().toISOString(),
+    status: 'nova',
+    applied_at: null,
+    cover_letter: null,
+    contact_email: null,
+    score: score.score,
+    fit_level: score.fit_level,
+    score_breakdown: score.score_breakdown,
+    skills_match: score.skills_match,
+    skills_gap: score.skills_gap,
+    target_company: score.target_company,
+    priority_skills: score.priority_skills,
+  };
+
+  allJobs.unshift(newJob);
+  applyFilters();
+  closeAddJobModal();
+
+  _enqueueSave(() => saveJobsToGitHub())
+    .then(() => {
+      const tag = score.target_company ? '🎯 Big Tech' : '';
+      toast(`Vaga adicionada: ${score.score}/100 ${score.fit_level.toUpperCase()} ${tag}`, 'success');
+    })
+    .catch(e => toast('Erro ao salvar: ' + e.message + ' — só local.', 'error'));
+}
 
 // ─── Delete jobs ──────────────────────────────────────────────────────────────
 // Exclusão permanente: adiciona o ID à blacklist (impede o scraper de
