@@ -233,8 +233,9 @@ def score_job(job_dict: dict) -> ScoreResult:
 
     # ── Localização (20) ────────────────────────────────────────────────────
     loc_text = (job_dict.get("location", "") + " " + job_dict.get("description", "")).lower()
+    is_remote = any(kw in loc_text for kw in LOCATION_KEYWORDS_REMOTE)
     location_score = 0
-    if any(kw in loc_text for kw in LOCATION_KEYWORDS_REMOTE):
+    if is_remote:
         location_score = 20
     elif any(kw in loc_text for kw in LOCATION_KEYWORDS_BH):
         location_score = 20
@@ -273,7 +274,12 @@ def score_job(job_dict: dict) -> ScoreResult:
     # ── Boost de empresa alvo (Big Tech) ────────────────────────────────────
     company = job_dict.get("company", "")
     target_company = is_target_company(company)
-    target_company_bonus = 15 if target_company else 0
+    target_company_bonus = 0
+    if target_company:
+        target_company_bonus = 15
+        # Combo Big Tech + Remoto: combinação perfeita → +5 extra
+        if is_remote:
+            target_company_bonus += 5
 
     total = skills_score + location_score + level_score + kw_score + salary_score + target_company_bonus
     total = min(total, 100)
@@ -288,7 +294,9 @@ def score_job(job_dict: dict) -> ScoreResult:
         fit_level = "baixo"
 
     if target_company:
-        log.info("🎯 Big Tech detectada: %s (boost +15, threshold alto=60)", company)
+        combo = " +remoto" if is_remote else ""
+        log.info("🎯 Big Tech detectada: %s (boost +%d%s, threshold alto=60)",
+                 company, target_company_bonus, combo)
 
     if contact_email:
         log.info("Email de contato detectado: %s → %s", contact_email, job_dict.get("title", ""))
