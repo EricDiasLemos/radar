@@ -32,6 +32,10 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           CANDIDATE_EMAIL: ${{ secrets.CANDIDATE_EMAIL }}
+          # 'false' = não envia email-rascunho para o próprio candidato.
+          # Vagas sem contact_email ficam só no dashboard para revisão manual.
+          # Vagas com contact_email do recrutador continuam sendo enviadas.
+          SEND_SELF_NOTIFICATIONS: 'false'
           PYTHONPATH: scripts
         run: python scripts/main.py scan
         continue-on-error: false
