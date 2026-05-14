@@ -1542,9 +1542,10 @@ async function triggerWorkflow() {
       {
         method: 'POST',
         headers: {
-          Authorization: `token ${token}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
-          Accept: 'application/vnd.github.v3+json',
+          Accept: 'application/vnd.github+json',
+          'X-GitHub-Api-Version': '2022-11-28',
         },
         body: JSON.stringify({ ref: 'main' }),
       }
@@ -1552,11 +1553,33 @@ async function triggerWorkflow() {
 
     if (resp.ok || resp.status === 204) {
       toast('Scan iniciado! Aguarde ~2 minutos e atualize.', 'success');
-    } else {
-      toast('Erro ao disparar workflow.', 'error');
+      return;
     }
+
+    // Mensagens de erro específicas por status code
+    let detail = '';
+    try {
+      const err = await resp.json();
+      detail = err.message || JSON.stringify(err);
+    } catch (_) {
+      detail = await resp.text().catch(() => '');
+    }
+
+    let hint = '';
+    if (resp.status === 401) {
+      hint = ' — Token inválido ou expirado. Gere um novo em Settings → Tokens.';
+    } else if (resp.status === 403) {
+      hint = ' — Token sem scope necessário. Precisa de "workflow" (token clássico) OU "Actions: Read and write" (fine-grained).';
+    } else if (resp.status === 404) {
+      hint = ' — Workflow não encontrado. Verifique se daily-scan.yml existe na main.';
+    } else if (resp.status === 422) {
+      hint = ' — Parâmetros inválidos (ref errado?).';
+    }
+    toast(`HTTP ${resp.status}: ${detail.slice(0,120)}${hint}`, 'error');
+    console.error('[triggerWorkflow] HTTP', resp.status, detail);
   } catch (e) {
-    toast('Falha na requisição: ' + e.message, 'error');
+    toast('Falha de rede: ' + e.message, 'error');
+    console.error('[triggerWorkflow] exception:', e);
   }
 }
 
