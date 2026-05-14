@@ -764,12 +764,20 @@
         </svg>
         Token
       </button>
-      <button class="btn btn-primary" onclick="triggerWorkflow()" title="Disparar scan agora">
+      <button class="btn btn-primary" onclick="triggerWorkflow()" title="Disparar scan via API (precisa de token com scope workflow)">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M13 2 L3 14 H12 L11 22 L21 10 H12 Z"/>
         </svg>
         Forçar scan
       </button>
+      <a class="btn btn-ghost" href="https://github.com/EricDiasLemos/radar/actions/workflows/daily-scan.yml"
+         target="_blank" rel="noopener" title="Abrir página de Actions no GitHub (Run workflow manual)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <path d="M15 3h6v6"/><path d="M10 14 21 3"/>
+        </svg>
+        Actions
+      </a>
     </div>
   </div>
 </header>
@@ -1536,56 +1544,78 @@ async function triggerWorkflow() {
     return;
   }
 
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/${WORKFLOW_ID}/dispatches`;
+  console.group('[triggerWorkflow]');
+  console.log('URL:', url);
+  console.log('Token prefix:', token.slice(0, 10) + '...', '(len:', token.length, ')');
+
   try {
-    const resp = await fetch(
-      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/${WORKFLOW_ID}/dispatches`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
-        body: JSON.stringify({ ref: 'main' }),
-      }
-    );
+    const resp = await fetch(url, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+      body: JSON.stringify({ ref: 'main' }),
+    });
+
+    console.log('Status:', resp.status, resp.statusText);
+    console.log('Headers:', Object.fromEntries(resp.headers.entries()));
 
     if (resp.ok || resp.status === 204) {
+      console.groupEnd();
       toast('Scan iniciado! Aguarde ~2 minutos e atualize.', 'success');
       return;
     }
 
-    // Mensagens de erro específicas por status code
+    // Captura o body do erro pra debug
     let detail = '';
+    let bodyJson = null;
     try {
-      const err = await resp.json();
-      detail = err.message || JSON.stringify(err);
+      bodyJson = await resp.json();
+      detail = bodyJson.message || JSON.stringify(bodyJson);
+      console.log('Response body:', bodyJson);
     } catch (_) {
       detail = await resp.text().catch(() => '');
+      console.log('Response text:', detail);
     }
 
     let hint = '';
     if (resp.status === 401) {
-      hint = ' — Token inválido ou expirado. Gere um novo em Settings → Tokens.';
+      hint = ' — Token inválido/expirado.';
     } else if (resp.status === 403) {
-      hint = ' — Token sem scope necessário. Precisa de "workflow" (token clássico) OU "Actions: Read and write" (fine-grained).';
+      hint = ' — Token sem scope "workflow" (clássico) ou "Actions: write" (fine-grained).';
     } else if (resp.status === 404) {
-      hint = ' — Workflow não encontrado. Verifique se daily-scan.yml existe na main.';
+      hint = ' — Workflow ou repo não acessível. Token vê o repo?';
     } else if (resp.status === 422) {
-      hint = ' — Parâmetros inválidos (ref errado?).';
+      hint = ' — Parâmetro inválido (ref?).';
     }
-    toast(`HTTP ${resp.status}: ${detail.slice(0,120)}${hint}`, 'error');
-    console.error('[triggerWorkflow] HTTP', resp.status, detail);
+    console.groupEnd();
+
+    // Modal de erro com opção de fallback
+    showTriggerErrorModal(resp.status, detail, hint);
   } catch (e) {
-    let msg = e.message;
+    console.error('Exception:', e);
+    console.groupEnd();
     let extra = '';
     if (/failed to fetch|networkerror/i.test(e.message)) {
-      extra = ' — Browser bloqueou a requisição. Verifique: (1) extensões como uBlock/Privacy Badger; ' +
-              '(2) firewall corporativo; (3) tente em aba anônima.';
+      extra = ' — Browser bloqueou. Tente: (1) aba anônima, (2) desligar extensões, (3) outra rede.';
     }
-    toast('Erro de rede: ' + msg + extra, 'error');
-    console.error('[triggerWorkflow] exception:', e);
+    showTriggerErrorModal(0, e.message + extra, '');
+  }
+}
+
+// Modal com mensagem de erro + botão de fallback que abre Github Actions
+function showTriggerErrorModal(status, detail, hint) {
+  const url = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/${WORKFLOW_ID}`;
+  const statusLine = status ? `HTTP ${status}` : 'Erro de rede';
+  const msg = `${statusLine}\n\n${detail.slice(0, 200)}${hint}\n\n` +
+              `Como alternativa, clique em OK para abrir a página do GitHub Actions ` +
+              `e disparar o scan manualmente (botão "Run workflow").`;
+  if (confirm(msg)) {
+    window.open(url, '_blank');
   }
 }
 
