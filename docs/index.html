@@ -1578,7 +1578,13 @@ async function triggerWorkflow() {
     toast(`HTTP ${resp.status}: ${detail.slice(0,120)}${hint}`, 'error');
     console.error('[triggerWorkflow] HTTP', resp.status, detail);
   } catch (e) {
-    toast('Falha de rede: ' + e.message, 'error');
+    let msg = e.message;
+    let extra = '';
+    if (/failed to fetch|networkerror/i.test(e.message)) {
+      extra = ' — Browser bloqueou a requisição. Verifique: (1) extensões como uBlock/Privacy Badger; ' +
+              '(2) firewall corporativo; (3) tente em aba anônima.';
+    }
+    toast('Erro de rede: ' + msg + extra, 'error');
     console.error('[triggerWorkflow] exception:', e);
   }
 }
