@@ -45,11 +45,48 @@ jobs:
 
       - name: Commit dados atualizados
         run: |
+          set -e
           git config user.name  "Job Radar Bot"
           git config user.email "actions@github.com"
-          git add data/jobs.json data/sent.json data/blacklist.json data/archive.json docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "chore: update jobs data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-          git push
+
+          # Adiciona cada arquivo individualmente com log (alguns podem não existir)
+          for f in data/jobs.json data/sent.json data/blacklist.json data/archive.json \
+                   docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json; do
+            if [ -f "$f" ]; then
+              git add "$f" && echo "  + $f"
+            else
+              echo "  - $f (não existe, pulando)"
+            fi
+          done
+
+          echo ""
+          echo "=== git status (staged) ==="
+          git status --short --cached
+
+          if git diff --cached --quiet; then
+            echo "Nada para commitar — encerrando."
+            exit 0
+          fi
+
+          MSG="chore: update jobs data $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          git commit -m "$MSG"
+          echo "Commit criado: $MSG"
+
+          # Push com retry: pull --rebase antes em caso de conflito com
+          # commits paralelos (deletes do dashboard, outro workflow, etc).
+          for attempt in 1 2 3; do
+            echo ""
+            echo "=== Push tentativa $attempt/3 ==="
+            if git push origin HEAD; then
+              echo "Push OK"
+              exit 0
+            fi
+            echo "Push falhou — fazendo pull --rebase e tentando novamente"
+            git pull --rebase --autostash origin main || true
+            sleep 2
+          done
+          echo "ERRO: push falhou após 3 tentativas"
+          exit 1
 
       - name: Summary
         if: always()

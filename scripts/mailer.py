@@ -177,15 +177,25 @@ def send_application(job: dict, cover_letter: str) -> bool:
         log.error("Falha ao enviar email: %s", e)
         return False
 
-    # Registra envio
+    # Registra envio com dados completos da vaga (histórico independente
+    # do jobs.json — sobrevive a deletes pelo dashboard)
     record = {
         "job_id": job.get("id"),
         "title": job.get("title"),
         "company": job.get("company"),
+        "location": job.get("location"),
         "source": job.get("source"),
         "url": job.get("url"),
         "sent_at": datetime.now(timezone.utc).isoformat(),
         "score": job.get("score"),
+        "fit_level": job.get("fit_level"),
+        "target_company": job.get("target_company", False),
+        "contact_email": job.get("contact_email"),
+        "to_email": job.get("contact_email") or CANDIDATE_EMAIL,
+        "skills_match": job.get("skills_match", []),
+        "score_breakdown": job.get("score_breakdown", {}),
+        "cover_letter": cover_letter,
+        "description": (job.get("description") or "")[:2000],
     }
     sent_history.setdefault("sent", []).append(record)
     save_sent_history(sent_history)

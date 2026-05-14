@@ -1756,7 +1756,17 @@ function _enqueueSave(fn) {
 }
 
 function deleteJob(jobId) {
-  if (!confirm('Remover esta vaga permanentemente?\n\nA vaga será banida — o scraper não vai re-adicioná-la em runs futuros.')) return;
+  const job = allJobs.find(j => j.id === jobId);
+  if (!job) { toast('Vaga não encontrada.', 'error'); return; }
+
+  // Proteção: vagas com candidatura já enviada não podem ser deletadas
+  // (preserva o histórico). Use o status 'arquivada' se quiser ocultar.
+  if (job.status === 'enviada') {
+    if (!confirm(`⚠️ Esta vaga JÁ FOI CANDIDATADA em ${job.applied_at?.slice(0,10) || '?'}.\n\nRemover vai apagar o registro do envio do dashboard (o email já foi enviado e está no sent.json).\n\nTem certeza?`)) return;
+  } else {
+    if (!confirm('Remover esta vaga permanentemente?\n\nA vaga será banida — o scraper não vai re-adicioná-la em runs futuros.')) return;
+  }
+
   blacklistIds.add(jobId);
   allJobs = allJobs.filter(j => j.id !== jobId);
   document.getElementById('card-' + jobId)?.remove();
@@ -1770,11 +1780,16 @@ function deleteJob(jobId) {
 }
 
 function deleteAllBaixoFit() {
-  const toDelete = allJobs.filter(j => j.fit_level === 'baixo');
+  // Não remove vagas enviadas mesmo se estiverem como baixo fit
+  const toDelete = allJobs.filter(j => j.fit_level === 'baixo' && j.status !== 'enviada');
+  const enviadasBaixo = allJobs.filter(j => j.fit_level === 'baixo' && j.status === 'enviada').length;
   if (toDelete.length === 0) { toast('Nenhuma vaga de baixo fit para remover.', 'info'); return; }
-  if (!confirm(`Remover ${toDelete.length} vagas de baixo fit permanentemente?\n\nTodas serão banidas — o scraper não vai re-adicioná-las em runs futuros.`)) return;
+  let msg = `Remover ${toDelete.length} vagas de baixo fit permanentemente?\n\nTodas serão banidas — o scraper não vai re-adicioná-las.`;
+  if (enviadasBaixo > 0) msg += `\n\n(${enviadasBaixo} vagas baixo fit JÁ enviadas serão mantidas como histórico.)`;
+  if (!confirm(msg)) return;
   toDelete.forEach(j => blacklistIds.add(j.id));
-  allJobs = allJobs.filter(j => j.fit_level !== 'baixo');
+  const toDeleteIds = new Set(toDelete.map(j => j.id));
+  allJobs = allJobs.filter(j => !toDeleteIds.has(j.id));
   _enqueueSave(async () => {
     await saveJobsToGitHub();
     await saveBlacklistToGitHub();
