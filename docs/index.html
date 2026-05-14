@@ -83,13 +83,28 @@
       font-weight: 600;
       letter-spacing: -0.01em;
     }
-    .header-title h1 .accent { color: var(--accent); font-weight: 500; }
+    .header-title h1 .accent { color: var(--text-subtle); font-weight: 400; }
     .header-title .radar-icon {
-      font-size: 1.1rem;
-      width: 30px; height: 30px;
+      width: 34px; height: 34px;
       display: inline-flex; align-items: center; justify-content: center;
       background: var(--accent-soft);
-      border-radius: 8px;
+      border-radius: 9px;
+      color: var(--accent);
+      position: relative;
+    }
+    /* Pulse sutil no logo radar */
+    .header-title .radar-icon::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 9px;
+      box-shadow: 0 0 0 0 rgba(124,158,255,0.5);
+      animation: radarPulse 2.4s ease-out infinite;
+    }
+    @keyframes radarPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(124,158,255,0.3); }
+      70%  { box-shadow: 0 0 0 8px rgba(124,158,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(124,158,255,0); }
     }
 
     .header-meta {
@@ -103,7 +118,7 @@
 
     /* ── Buttons ── */
     .btn {
-      padding: 6px 12px;
+      padding: 7px 12px;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border);
       background: transparent;
@@ -117,7 +132,10 @@
       align-items: center;
       gap: 6px;
       line-height: 1;
+      white-space: nowrap;
     }
+    .btn svg { flex-shrink: 0; }
+    .btn:active { transform: scale(0.98); }
     .btn:hover {
       background: var(--surface);
       color: var(--text);
@@ -295,14 +313,11 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 18px 20px;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
       position: relative;
+      overflow: hidden;
     }
-    .job-card:hover {
-      border-color: var(--border-strong);
-      background: var(--surface-hover);
-    }
-    /* Indicador de fit: faixa colorida sutil no topo, não borda esquerda chamativa */
+    /* Indicador de fit: faixa colorida sutil no topo */
     .job-card::before {
       content: '';
       position: absolute;
@@ -310,11 +325,34 @@
       height: 2px;
       border-radius: var(--radius) var(--radius) 0 0;
       background: transparent;
+      transition: background 0.2s ease;
+    }
+    /* Glow accent no hover — sutil, vem do topo da cor do fit */
+    .job-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% -20%, transparent 0%, transparent 100%);
+      transition: background 0.3s ease;
+    }
+    .job-card:hover {
+      border-color: var(--border-strong);
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+    .job-card.fit-alto:hover::after {
+      background: radial-gradient(circle at 50% -20%, rgba(90,181,127,0.10) 0%, transparent 60%);
+    }
+    .job-card.fit-medio:hover::after {
+      background: radial-gradient(circle at 50% -20%, rgba(217,166,72,0.10) 0%, transparent 60%);
     }
     .job-card.fit-alto::before { background: var(--green); }
     .job-card.fit-medio::before { background: var(--yellow); }
     .job-card.fit-baixo { opacity: 0.72; }
     .job-card.fit-baixo:hover { opacity: 1; }
+    /* Conteúdo do card precisa ficar acima do glow */
+    .job-card > * { position: relative; z-index: 1; }
 
     .card-top {
       display: flex;
@@ -453,18 +491,27 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 16px 18px;
-      transition: border-color 0.15s ease;
+      padding: 16px 18px 14px;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .metric-card:hover { border-color: var(--border-strong); }
-    .metric-card .metric-value {
-      font-size: 1.9rem;
-      font-weight: 600;
-      font-feature-settings: 'tnum';
-      letter-spacing: -0.025em;
-      line-height: 1.05;
-      margin-bottom: 6px;
-      color: var(--text);
+    /* Faixa colorida fina à esquerda — indica categoria sem peso visual */
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 14px; bottom: 14px;
+      width: 2px;
+      border-radius: 2px;
+      background: var(--text-subtle);
+      opacity: 0.4;
+    }
+    .metric-card.accent-green::before { background: var(--green); opacity: 1; }
+    .metric-card.accent-blue::before  { background: var(--accent); opacity: 1; }
+    .metric-card.accent-yellow::before{ background: var(--yellow); opacity: 1; }
+    .metric-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
     }
     .metric-card .metric-label {
       font-size: 0.7rem;
@@ -472,7 +519,29 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-subtle);
+      margin-bottom: 8px;
     }
+    .metric-card .metric-value {
+      font-size: 1.95rem;
+      font-weight: 600;
+      font-feature-settings: 'tnum';
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .metric-card .metric-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+    }
+    .metric-card .metric-trend.green { color: var(--green); }
+    .metric-card .metric-trend.blue  { color: var(--accent); }
+    .metric-card .metric-trend.yellow{ color: var(--yellow); }
+    .metric-card .metric-trend svg { flex-shrink: 0; }
 
     /* ── Modal ── */
     .modal-backdrop {
@@ -660,24 +729,47 @@
 <header>
   <div class="header-row">
     <div class="header-title">
-      <span class="radar-icon">📡</span>
+      <span class="radar-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9" opacity="0.3"/>
+          <circle cx="12" cy="12" r="5" opacity="0.6"/>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+          <path d="M12 3 L12 12 L18 8" opacity="0.8"/>
+        </svg>
+      </span>
       <div>
-        <h1>Job Radar — Eric Dias Lemos</h1>
+        <h1>Job Radar <span class="accent">/ Eric Lemos</span></h1>
         <div class="header-meta" id="last-updated">Carregando...</div>
       </div>
     </div>
 
     <div class="counters" id="counters">
-      <div class="counter-badge green"><span>🟢</span> <span id="count-alto">0</span> alto fit</div>
-      <div class="counter-badge yellow"><span>🟡</span> <span id="count-medio">0</span> médio fit</div>
-      <div class="counter-badge blue"><span>📤</span> <span id="count-enviadas">0</span> enviadas</div>
-      <div class="counter-badge muted"><span>📦</span> <span id="count-total">0</span> total</div>
+      <div class="counter-badge green"><span class="dot"></span><strong id="count-alto">0</strong> alto fit</div>
+      <div class="counter-badge yellow"><span class="dot"></span><strong id="count-medio">0</strong> médio fit</div>
+      <div class="counter-badge blue"><span class="dot"></span><strong id="count-enviadas">0</strong> enviadas</div>
+      <div class="counter-badge muted"><span class="dot"></span><strong id="count-total">0</strong> total</div>
     </div>
 
     <div class="header-actions">
-      <button class="btn btn-ghost" onclick="refreshData()">↻ Atualizar</button>
-      <button class="btn btn-ghost" id="token-btn" onclick="openTokenModal()" title="Configurar GitHub Token">🔑 Token</button>
-      <button class="btn btn-primary" onclick="triggerWorkflow()">⚡ Forçar scan</button>
+      <button class="btn btn-ghost" onclick="refreshData()" title="Recarregar dados do servidor">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>
+        </svg>
+        Atualizar
+      </button>
+      <button class="btn btn-ghost" id="token-btn" onclick="openTokenModal()" title="Configurar GitHub Token">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="15" r="4"/><path d="m10.85 12.15 7.4-7.4M18 5l3 3M15 8l3 3"/>
+        </svg>
+        Token
+      </button>
+      <button class="btn btn-primary" onclick="triggerWorkflow()" title="Disparar scan agora">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2 L3 14 H12 L11 22 L21 10 H12 Z"/>
+        </svg>
+        Forçar scan
+      </button>
     </div>
   </div>
 </header>
@@ -688,20 +780,36 @@
   <!-- Métricas -->
   <div class="metrics-grid" id="metrics-grid">
     <div class="metric-card">
-      <div class="metric-value" id="m-total" style="color:var(--blue)">—</div>
       <div class="metric-label">Vagas encontradas</div>
+      <div class="metric-value" id="m-total">—</div>
+      <div class="metric-trend muted">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+        no banco
+      </div>
     </div>
-    <div class="metric-card">
-      <div class="metric-value" id="m-alto" style="color:var(--green)">—</div>
+    <div class="metric-card accent-green">
       <div class="metric-label">Alto fit</div>
+      <div class="metric-value" id="m-alto">—</div>
+      <div class="metric-trend green">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14l5-5 5 5"/></svg>
+        score ≥ 70 (60 big tech)
+      </div>
     </div>
-    <div class="metric-card">
-      <div class="metric-value" id="m-enviadas" style="color:var(--purple)">—</div>
+    <div class="metric-card accent-blue">
       <div class="metric-label">Candidaturas enviadas</div>
+      <div class="metric-value" id="m-enviadas">—</div>
+      <div class="metric-trend blue">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7 7L24 5" transform="scale(0.75) translate(2 2)"/></svg>
+        histórico
+      </div>
     </div>
-    <div class="metric-card">
-      <div class="metric-value" id="m-taxa" style="color:var(--yellow)">—</div>
+    <div class="metric-card accent-yellow">
       <div class="metric-label">Taxa de alto fit</div>
+      <div class="metric-value" id="m-taxa">—</div>
+      <div class="metric-trend yellow">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11 13 15 21 7"/><path d="M14 7h7v7"/></svg>
+        alto / total
+      </div>
     </div>
   </div>
 
