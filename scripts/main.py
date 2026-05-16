@@ -26,8 +26,12 @@ log = logging.getLogger(__name__)
 DATA_DIR = Path(__file__).parent.parent / "data"
 JOBS_FILE = DATA_DIR / "jobs.json"
 ARCHIVE_FILE = DATA_DIR / "archive.json"
-ARCHIVE_DAYS_BAIXO_FIT = 30   # baixo fit: arquiva após 30 dias
-ARCHIVE_DAYS_OUTROS = 90      # médio/alto fit: só arquiva após 90 dias
+
+# Política de arquivamento escalonada: vagas mais relevantes vivem mais.
+# Status 'enviada' e 'aprovada' NUNCA são arquivadas (histórico preservado).
+ARCHIVE_DAYS_BAIXO_FIT = 1    # baixo fit: 1 dia (pediu o user)
+ARCHIVE_DAYS_MEDIO_FIT = 7    # médio fit: 7 dias (1 semana pra revisar)
+ARCHIVE_DAYS_ALTO_FIT  = 30   # alto fit: 30 dias (não perde oportunidade)
 
 
 def run_daily_scan(auto_apply: bool = True) -> None:
@@ -101,17 +105,20 @@ def run_daily_scan(auto_apply: bool = True) -> None:
 
 def _split_for_archive(jobs: list[dict]) -> tuple[list[dict], list[dict]]:
     """
-    Separa vagas ativas de vagas a arquivar:
-      - baixo fit ou status='arquivada' com found_at > 30 dias → arquivo
-      - médio/alto fit com found_at > 90 dias                  → arquivo
-      - status='enviada' nunca arquiva (mantém histórico de candidaturas)
+    Separa vagas ativas de vagas a arquivar (política escalonada):
+      - status 'enviada' ou 'aprovada': NUNCA arquiva (preserva histórico)
+      - baixo fit ou status='arquivada' com idade ≥ 1 dia   → arquiva
+      - médio fit                       com idade ≥ 7 dias  → arquiva
+      - alto fit                        com idade ≥ 30 dias → arquiva
+    Vagas sem found_at válido também ficam ativas (não é seguro arquivar).
     """
     now = datetime.now(timezone.utc)
     active: list[dict] = []
     archived: list[dict] = []
 
     for j in jobs:
-        if j.get("status") == "enviada":
+        # Nunca arquiva vagas já candidatadas ou aprovadas
+        if j.get("status") in ("enviada", "aprovada"):
             active.append(j)
             continue
 
@@ -127,8 +134,16 @@ def _split_for_archive(jobs: list[dict]) -> tuple[list[dict], list[dict]]:
             continue
 
         age_days = (now - found_at).days
-        is_baixo = j.get("fit_level") == "baixo" or j.get("status") == "arquivada"
-        limit = ARCHIVE_DAYS_BAIXO_FIT if is_baixo else ARCHIVE_DAYS_OUTROS
+
+        # Determina limite escalonado por fit/status
+        if j.get("fit_level") == "baixo" or j.get("status") == "arquivada":
+            limit = ARCHIVE_DAYS_BAIXO_FIT
+        elif j.get("fit_level") == "medio":
+            limit = ARCHIVE_DAYS_MEDIO_FIT
+        elif j.get("fit_level") == "alto":
+            limit = ARCHIVE_DAYS_ALTO_FIT
+        else:
+            limit = ARCHIVE_DAYS_BAIXO_FIT  # fallback conservador
 
         if age_days >= limit:
             archived.append(j)
