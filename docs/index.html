@@ -44,14 +44,29 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       font-feature-settings: 'cv11', 'ss01', 'ss03';
       background: var(--bg);
-      background-image: radial-gradient(at 0% 0%, rgba(124,158,255,0.04) 0px, transparent 50%);
       color: var(--text);
       min-height: 100vh;
       font-size: 14px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      position: relative;
+      overflow-x: hidden;
     }
+    /* Mesh gradient sutil — adiciona profundidade sem distrair */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(at 15% 5%,  rgba(124,158,255,0.08) 0px, transparent 45%),
+        radial-gradient(at 85% 12%, rgba(240,185,72,0.04) 0px, transparent 40%),
+        radial-gradient(at 50% 95%, rgba(90,181,127,0.04) 0px, transparent 45%);
+    }
+    body > * { position: relative; z-index: 1; }
 
     code, .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 
@@ -684,15 +699,70 @@
     /* ── Empty state ── */
     .empty-state {
       text-align: center;
-      padding: 64px 20px;
+      padding: 80px 20px;
       color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
     }
     .empty-state .empty-icon {
-      font-size: 2.4rem;
-      margin-bottom: 16px;
-      opacity: 0.6;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-soft);
+      border-radius: 14px;
+      color: var(--accent);
     }
-    .empty-state p { font-size: 0.88rem; }
+    .empty-state p {
+      font-size: 0.92rem;
+      max-width: 340px;
+      line-height: 1.6;
+    }
+    .empty-state .empty-hint {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+    }
+
+    /* ── Skeleton loader (cards de vaga durante carregamento) ── */
+    .skeleton-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .skeleton-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255,255,255,0.025) 50%,
+        transparent 100%
+      );
+      animation: shimmer 1.6s infinite ease-in-out;
+    }
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    .skel-row {
+      height: 10px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .skel-row.title { height: 14px; width: 65%; margin-bottom: 14px; }
+    .skel-row.meta { height: 9px; width: 40%; margin-bottom: 18px; }
+    .skel-row.bar { height: 3px; width: 100%; margin-bottom: 14px; }
+    .skel-row.chip { height: 18px; width: 60px; border-radius: 4px; display: inline-block; margin-right: 6px; vertical-align: middle; }
 
     /* ── Loader ── */
     .loading { text-align: center; padding: 48px; color: var(--text-muted); font-size: 0.88rem; }
@@ -764,19 +834,17 @@
         </svg>
         Token
       </button>
-      <button class="btn btn-primary" onclick="triggerWorkflow()" title="Disparar scan via API (precisa de token com scope workflow)">
+      <a class="btn btn-primary" href="https://github.com/EricDiasLemos/radar/actions/workflows/daily-scan.yml"
+         target="_blank" rel="noopener"
+         title="Abre a página de Actions no GitHub — clique em 'Run workflow' lá pra disparar o scan">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M13 2 L3 14 H12 L11 22 L21 10 H12 Z"/>
         </svg>
         Forçar scan
-      </button>
-      <a class="btn btn-ghost" href="https://github.com/EricDiasLemos/radar/actions/workflows/daily-scan.yml"
-         target="_blank" rel="noopener" title="Abrir página de Actions no GitHub (Run workflow manual)">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.7">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
           <path d="M15 3h6v6"/><path d="M10 14 21 3"/>
         </svg>
-        Actions
       </a>
     </div>
   </div>
@@ -909,7 +977,25 @@
         </div>
       </div>
       <div id="jobs-grid" class="jobs-grid">
-        <div class="loading">Carregando vagas...</div>
+        <!-- Skeleton loader: 3 cards animados enquanto carrega -->
+        <div class="skeleton-card">
+          <div class="skel-row title"></div>
+          <div class="skel-row meta"></div>
+          <div class="skel-row bar"></div>
+          <div><span class="skel-row chip"></span><span class="skel-row chip"></span><span class="skel-row chip" style="width:80px"></span></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skel-row title" style="width:55%"></div>
+          <div class="skel-row meta" style="width:35%"></div>
+          <div class="skel-row bar"></div>
+          <div><span class="skel-row chip"></span><span class="skel-row chip" style="width:70px"></span></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skel-row title" style="width:70%"></div>
+          <div class="skel-row meta" style="width:45%"></div>
+          <div class="skel-row bar"></div>
+          <div><span class="skel-row chip"></span><span class="skel-row chip"></span></div>
+        </div>
       </div>
     </main>
 
@@ -1089,8 +1175,17 @@ async function loadData() {
     updateMetrics(data.stats || {});
     applyFilters();
   } catch (e) {
-    document.getElementById('jobs-grid').innerHTML =
-      '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Erro ao carregar jobs.json</p></div>';
+    document.getElementById('jobs-grid').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <p><strong>Erro ao carregar jobs.json</strong></p>
+        <span class="empty-hint">Verifique se o arquivo existe em data/jobs.json e tente recarregar.</span>
+      </div>`;
   }
 
   // Blacklist carregada em paralelo — falha silenciosa (arquivo opcional)
@@ -1264,7 +1359,16 @@ function renderJobs() {
   document.getElementById('jobs-count').textContent = `(${filteredJobs.length})`;
 
   if (filteredJobs.length === 0) {
-    grid.innerHTML = '<div class="empty-state"><div class="empty-icon">🔍</div><p>Nenhuma vaga encontrada com esses filtros.</p></div>';
+    grid.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+        </div>
+        <p><strong>Nenhuma vaga com esses filtros.</strong></p>
+        <span class="empty-hint">Ajuste os filtros na sidebar ou clique em <strong>"🔄 Limpar filtros"</strong> para ver todas.</span>
+      </div>`;
     return;
   }
 
@@ -1537,87 +1641,9 @@ async function triggerApplyWorkflow(jobId) {
   }
 }
 
-async function triggerWorkflow() {
-  const token = localStorage.getItem('gh_token');
-  if (!token) {
-    openTokenModal();
-    return;
-  }
-
-  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/${WORKFLOW_ID}/dispatches`;
-  console.group('[triggerWorkflow]');
-  console.log('URL:', url);
-  console.log('Token prefix:', token.slice(0, 10) + '...', '(len:', token.length, ')');
-
-  try {
-    const resp = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        Accept: 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-      body: JSON.stringify({ ref: 'main' }),
-    });
-
-    console.log('Status:', resp.status, resp.statusText);
-    console.log('Headers:', Object.fromEntries(resp.headers.entries()));
-
-    if (resp.ok || resp.status === 204) {
-      console.groupEnd();
-      toast('Scan iniciado! Aguarde ~2 minutos e atualize.', 'success');
-      return;
-    }
-
-    // Captura o body do erro pra debug
-    let detail = '';
-    let bodyJson = null;
-    try {
-      bodyJson = await resp.json();
-      detail = bodyJson.message || JSON.stringify(bodyJson);
-      console.log('Response body:', bodyJson);
-    } catch (_) {
-      detail = await resp.text().catch(() => '');
-      console.log('Response text:', detail);
-    }
-
-    let hint = '';
-    if (resp.status === 401) {
-      hint = ' — Token inválido/expirado.';
-    } else if (resp.status === 403) {
-      hint = ' — Token sem scope "workflow" (clássico) ou "Actions: write" (fine-grained).';
-    } else if (resp.status === 404) {
-      hint = ' — Workflow ou repo não acessível. Token vê o repo?';
-    } else if (resp.status === 422) {
-      hint = ' — Parâmetro inválido (ref?).';
-    }
-    console.groupEnd();
-
-    // Modal de erro com opção de fallback
-    showTriggerErrorModal(resp.status, detail, hint);
-  } catch (e) {
-    console.error('Exception:', e);
-    console.groupEnd();
-    let extra = '';
-    if (/failed to fetch|networkerror/i.test(e.message)) {
-      extra = ' — Browser bloqueou. Tente: (1) aba anônima, (2) desligar extensões, (3) outra rede.';
-    }
-    showTriggerErrorModal(0, e.message + extra, '');
-  }
-}
-
-// Modal com mensagem de erro + botão de fallback que abre Github Actions
-function showTriggerErrorModal(status, detail, hint) {
-  const url = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/${WORKFLOW_ID}`;
-  const statusLine = status ? `HTTP ${status}` : 'Erro de rede';
-  const msg = `${statusLine}\n\n${detail.slice(0, 200)}${hint}\n\n` +
-              `Como alternativa, clique em OK para abrir a página do GitHub Actions ` +
-              `e disparar o scan manualmente (botão "Run workflow").`;
-  if (confirm(msg)) {
-    window.open(url, '_blank');
-  }
-}
+// triggerWorkflow removida — botão 'Forçar scan' agora é um <a> que abre
+// direto a página de Actions do GitHub (mais confiável, sem dependência
+// da api.github.com que pode ser bloqueada por ISPs/firewalls).
 
 function refreshData() {
   loadData().then(() => toast('Dados atualizados!', 'success'));
