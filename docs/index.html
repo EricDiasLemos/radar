@@ -491,6 +491,60 @@
     .badge-status-rejeitada { background: var(--red-soft); color: var(--red); }
     .badge-status-arquivada { background: rgba(255,255,255,0.04); color: var(--text-subtle); }
 
+    /* Badge 'NEW' — pulse animation pra destacar vagas frescas (<48h) */
+    .badge-new {
+      background: var(--accent);
+      color: #0a0b0d;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      position: relative;
+    }
+    .badge-new::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+      box-shadow: 0 0 0 0 var(--accent);
+      animation: newPulse 2s ease-out infinite;
+    }
+    @keyframes newPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(124,158,255,0.6); }
+      70%  { box-shadow: 0 0 0 6px rgba(124,158,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(124,158,255,0); }
+    }
+
+    /* Skills overflow indicator */
+    .skill-more {
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-muted);
+      cursor: help;
+    }
+
+    /* Keyboard shortcut hint na busca */
+    .search-input-wrap { position: relative; }
+    .search-kbd {
+      position: absolute;
+      right: 8px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-subtle);
+      border: 1px solid var(--border);
+      pointer-events: none;
+      transition: opacity 0.15s;
+    }
+    .search-input-wrap:focus-within .search-kbd { opacity: 0; }
+
     .card-actions { display: flex; gap: 4px; }
     .card-actions .btn { padding: 4px 9px; font-size: 0.74rem; }
 
@@ -898,8 +952,12 @@
 
         <div class="filter-group">
           <label>Busca livre</label>
-          <input class="search-input" type="text" id="search-text"
-                 placeholder="cargo, empresa, skill..." oninput="applyFilters()" />
+          <div class="search-input-wrap">
+            <input class="search-input" type="text" id="search-text"
+                   placeholder="cargo, empresa, skill..." oninput="applyFilters()"
+                   style="padding-right:32px" />
+            <kbd class="search-kbd" title="Pressione / pra focar">/</kbd>
+          </div>
         </div>
 
         <div class="filter-group">
@@ -968,9 +1026,9 @@
       <div class="jobs-header">
         <h2>Vagas <span class="jobs-count" id="jobs-count"></span></h2>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btn-blue" style="font-size:0.75rem" onclick="openAddJobModal()" title="Adicionar uma vaga manualmente ao Job Radar">➕ Adicionar vaga</button>
-          <button class="btn btn-top" style="font-size:0.75rem" onclick="showTopOpportunities()" title="Atalho: aplica filtros otimizados para vagas com maior chance de retorno">✨ Top oportunidades</button>
-          <button class="btn btn-ghost" style="font-size:0.75rem" onclick="clearAllFilters()">🔄 Limpar filtros</button>
+          <button class="btn btn-blue" style="font-size:0.75rem" onclick="openAddJobModal()" title="Adicionar vaga manualmente (atalho: N)">➕ Adicionar vaga</button>
+          <button class="btn btn-top" style="font-size:0.75rem" onclick="showTopOpportunities()" title="Aplica filtros otimizados pra vagas com maior chance de retorno (atalho: T)">✨ Top oportunidades</button>
+          <button class="btn btn-ghost" style="font-size:0.75rem" onclick="clearAllFilters()" title="Limpa todos os filtros (atalho: C)">🔄 Limpar filtros</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('score')">↓ Score</button>
           <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortBy('date')">↓ Data</button>
           <button class="btn btn-danger" style="font-size:0.75rem" onclick="deleteAllBaixoFit()">🗑 Limpar baixo fit</button>
@@ -1380,16 +1438,23 @@ function renderCard(job) {
   const score = job.score || 0;
   const status = job.status || 'nova';
 
-  const skillsMatch = (job.skills_match || []).slice(0, 8).map(s =>
+  // Skills com overflow: mostra 8, indica +N
+  const allMatch = job.skills_match || [];
+  const allGap = job.skills_gap || [];
+  const matchVisible = allMatch.slice(0, 8);
+  const gapVisible = allGap.slice(0, 5);
+  const skillsMatch = matchVisible.map(s =>
     `<span class="skill-tag match">${s}</span>`
   ).join('');
-
-  const skillsGap = (job.skills_gap || []).slice(0, 5).map(s =>
+  const skillsGap = gapVisible.map(s =>
     `<span class="skill-tag gap">${s}</span>`
   ).join('');
+  const matchOverflow = allMatch.length > 8
+    ? `<span class="skill-more" title="${escHtml(allMatch.slice(8).join(', '))}">+${allMatch.length - 8} mais</span>`
+    : '';
 
   const salaryBadge = job.salary
-    ? `<span class="badge badge-salary">💰 ${job.salary}</span>`
+    ? `<span class="badge badge-salary">💰 ${escHtml(job.salary)}</span>`
     : '';
 
   const targetBadge = job.target_company
@@ -1399,6 +1464,16 @@ function renderCard(job) {
   const gcpBadge = (job.priority_skills || []).length > 0
     ? `<span class="badge badge-gcp" title="Skills prioritárias: ${(job.priority_skills || []).join(', ')}">☁️ GCP</span>`
     : '';
+
+  // Badge 'NEW' para vagas com found_at < 48h
+  let newBadge = '';
+  if (job.found_at) {
+    const found = new Date(job.found_at);
+    const hoursAgo = (Date.now() - found.getTime()) / (1000 * 60 * 60);
+    if (hoursAgo < 48 && hoursAgo >= 0) {
+      newBadge = `<span class="badge badge-new" title="Encontrada há ${Math.round(hoursAgo)}h">NEW</span>`;
+    }
+  }
 
   const statusClass = {
     nova: 'badge-status-nova',
@@ -1442,7 +1517,7 @@ function renderCard(job) {
     <div class="job-card fit-${fit}" id="card-${job.id}">
       <div class="card-top">
         <div class="card-title-block">
-          <h3>${escHtml(job.title)} ${targetBadge} ${gcpBadge}</h3>
+          <h3>${newBadge} ${escHtml(job.title)} ${targetBadge} ${gcpBadge}</h3>
           <div class="card-meta">
             <span>🏢 ${escHtml(job.company)}</span>
             <span>📍 ${escHtml(job.location)}</span>
@@ -1463,6 +1538,7 @@ function renderCard(job) {
 
       <div class="skills-row" style="margin-top:8px">
         ${skillsMatch}
+        ${matchOverflow}
         ${skillsGap}
       </div>
 
@@ -1675,9 +1751,42 @@ document.getElementById('token-modal').addEventListener('click', function(e) {
   if (e.target === this) closeTokenModal();
 });
 
-// Keyboard: Esc fecha qualquer modal aberto
+// Keyboard shortcuts globais
+// - /         foca o input de busca
+// - Esc       fecha modais (ou limpa busca se já focada)
+// - t         aplica view 'Top Oportunidades'
+// - c         limpa filtros
+// - n         abre modal 'Adicionar vaga'
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeModal(); closeTokenModal(); closeAddJobModal(); }
+  // Esc sempre passa (fecha modais)
+  if (e.key === 'Escape') {
+    closeModal(); closeTokenModal(); closeAddJobModal();
+    // Se um input estava focado e nada estava aberto, perde o foco
+    if (document.activeElement?.tagName === 'INPUT') document.activeElement.blur();
+    return;
+  }
+
+  // Ignora se está digitando em input/textarea
+  const tag = document.activeElement?.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+  // Ignora se algum modal está aberto
+  if (document.querySelector('.modal-backdrop.active, .modal-backdrop.open')) return;
+  // Ignora se modificadores estão pressionados (ex: Ctrl+T abrir nova aba)
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+  if (e.key === '/') {
+    e.preventDefault();
+    document.getElementById('search-text')?.focus();
+  } else if (e.key === 't' || e.key === 'T') {
+    e.preventDefault();
+    showTopOpportunities();
+  } else if (e.key === 'c' || e.key === 'C') {
+    e.preventDefault();
+    clearAllFilters();
+  } else if (e.key === 'n' || e.key === 'N') {
+    e.preventDefault();
+    openAddJobModal();
+  }
 });
 document.getElementById('addjob-modal').addEventListener('click', function(e) {
   if (e.target === this) closeAddJobModal();
