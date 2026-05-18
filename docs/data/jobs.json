@@ -1050,9 +1050,9 @@
         "zabbix"
       ],
       "fit_level": "alto",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
+      "status": "enviada",
+      "applied_at": "2026-05-18T19:23:14.830662+00:00",
+      "cover_letter": "Sou um Engenheiro DevOps com experiência em desenvolvimento de soluções integradas e escaláveis. Destaco minhas habilidades em Docker, Git e GitHub Actions, que considero fundamentais para o desenvolvimento de aplicações web modernas e integração a sistemas industriais e corporativos.\n\nMinha experiência em CI/CD com Docker e GitHub Actions me permite garantir entregas consistentes e de qualidade, além de garantir performance, usabilidade e segurança nas interfaces. Além disso, sou familiarizado com REST e APIs, o que facilita a integração com sistemas industriais e corporativos.\n\nMinha abordagem é focada em resolver problemas complexos de forma eficiente e escalável. Acredito que minha experiência em desenvolvimento de soluções integradas e minha habilidade em trabalhar em equipe seriam um valor agregado para a equipe da Stefanini Brasil.\n\nEstou disponível para uma entrevista para discutir como posso contribuir para o sucesso da empresa e explorar como minha experiência e habilidades podem ser aplicadas para atender às necessidades da vaga de Desenvolvedor Front-End Pleno.",
       "contact_email": null,
       "target_company": true,
       "priority_skills": []
@@ -7464,12 +7464,12 @@
       "priority_skills": []
     }
   ],
-  "last_updated": "2026-05-18T14:33:44.097096+00:00",
+  "last_updated": "2026-05-18T19:23:14.830670+00:00",
   "stats": {
     "total": 93,
     "alto_fit": 13,
     "medio_fit": 26,
     "baixo_fit": 54,
-    "enviadas": 7
+    "enviadas": 8
   }
 }

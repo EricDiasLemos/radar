@@ -98,6 +98,40 @@
       "url": "https://br.linkedin.com/jobs/view/analista-de-observabilidade-sr-at-drogaria-araujo-s-a-4412138306",
       "sent_at": "2026-05-09T16:52:29.851162+00:00",
       "score": 60
+    },
+    {
+      "job_id": "341dfe77dcb201a0",
+      "title": "Desenvolvedor Front-End Pleno",
+      "company": "Stefanini Brasil",
+      "location": "Belo Horizonte, MG",
+      "source": "LinkedIn",
+      "url": "https://br.linkedin.com/jobs/view/desenvolvedor-front-end-pleno-at-stefanini-brasil-4413461027",
+      "sent_at": "2026-05-18T19:23:14.830120+00:00",
+      "score": 76,
+      "fit_level": "alto",
+      "target_company": true,
+      "contact_email": null,
+      "to_email": "ericdias0603@gmail.com",
+      "skills_match": [
+        "api",
+        "azure",
+        "ci/cd",
+        "docker",
+        "git",
+        "github actions",
+        "rest"
+      ],
+      "score_breakdown": {
+        "skills": 15,
+        "location": 20,
+        "level": 15,
+        "keywords": 6,
+        "salary": 5,
+        "target_company": 15,
+        "priority_skills": 0
+      },
+      "cover_letter": "Sou um Engenheiro DevOps com experiência em desenvolvimento de soluções integradas e escaláveis. Destaco minhas habilidades em Docker, Git e GitHub Actions, que considero fundamentais para o desenvolvimento de aplicações web modernas e integração a sistemas industriais e corporativos.\n\nMinha experiência em CI/CD com Docker e GitHub Actions me permite garantir entregas consistentes e de qualidade, além de garantir performance, usabilidade e segurança nas interfaces. Além disso, sou familiarizado com REST e APIs, o que facilita a integração com sistemas industriais e corporativos.\n\nMinha abordagem é focada em resolver problemas complexos de forma eficiente e escalável. Acredito que minha experiência em desenvolvimento de soluções integradas e minha habilidade em trabalhar em equipe seriam um valor agregado para a equipe da Stefanini Brasil.\n\nEstou disponível para uma entrevista para discutir como posso contribuir para o sucesso da empresa e explorar como minha experiência e habilidades podem ser aplicadas para atender às necessidades da vaga de Desenvolvedor Front-End Pleno.",
+      "description": "Descrição da vaga Você conhece a ihm Stefanini? A IHM Stefanini é uma empresa do Grupo Stefanini, quinta empresa brasileira mais internacionalizada, presente em 41 países, atuando em diversos segmentos de mercado e suportando clientes a atingirem seus objetivos estratégicos, cocriando um mundo melhor. A ihm Stefanini é a vertical de negócios do Grupo Stefanini para os segmentos industriais, como mineração. siderurgia, óleo e gás, energia, papel e celulose, alimentos, saneamento, entre outros, e executamos a transformação digital atuando em sistemas de automação, TI, tecnologias emergentes da indústria 4.0, sistemas elétricos e design de soluções customizadas. Nosso headquarter é localizado na cidade de Belo Horizonte/ MG, em nossos 31 anos de vida, expandimos nossa presença em todo território nacional, América Latina, Estados Unidos e Europa. Oferecemos respostas personalizadas e soluções digitais para problemas complexos da indústria, integrando soluções e possibilitando o uso estratégico dos dados. Nossos especialistas desenvolvem produtos e serviços que ajudam na jornada de transformação digital e aceleram as agendas de ESG de nossos clientes. Responsabilidades e atribuições O que esperamos que você realize: Desenvolver e manter aplicações web modernas integradas a sistemas industriais e corporativos; Trabalhar em conjunto com times de backend, UX/UI e QA, garantindo entregas consistentes e de qualidade; Garantir performance, usabilidade e segurança nas interfaces; Apoiar testes, correções e melhorias em ambiente de homologação e produção; Contribuir com boas práticas, revisões de código e arquitetura front-end. Requisitos e qualificações Requisitos essenciais: Experiência sólida com Angular e React (um dos dois em nível avançado); Domínio de JavaScript / TypeScript, HTML5, CSS3 e REST APIs; Conhecimento de Git, versionamento e pipelines de CI/CD; Capacidade de compreender integrações com sistemas industriais (MES, PI System, SCADA etc.); Experiencia com platafor"
     }
   ]
 }
