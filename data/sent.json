@@ -132,6 +132,37 @@
       },
       "cover_letter": "Sou um Engenheiro DevOps com experiência em desenvolvimento de soluções integradas e escaláveis. Destaco minhas habilidades em Docker, Git e GitHub Actions, que considero fundamentais para o desenvolvimento de aplicações web modernas e integração a sistemas industriais e corporativos.\n\nMinha experiência em CI/CD com Docker e GitHub Actions me permite garantir entregas consistentes e de qualidade, além de garantir performance, usabilidade e segurança nas interfaces. Além disso, sou familiarizado com REST e APIs, o que facilita a integração com sistemas industriais e corporativos.\n\nMinha abordagem é focada em resolver problemas complexos de forma eficiente e escalável. Acredito que minha experiência em desenvolvimento de soluções integradas e minha habilidade em trabalhar em equipe seriam um valor agregado para a equipe da Stefanini Brasil.\n\nEstou disponível para uma entrevista para discutir como posso contribuir para o sucesso da empresa e explorar como minha experiência e habilidades podem ser aplicadas para atender às necessidades da vaga de Desenvolvedor Front-End Pleno.",
       "description": "Descrição da vaga Você conhece a ihm Stefanini? A IHM Stefanini é uma empresa do Grupo Stefanini, quinta empresa brasileira mais internacionalizada, presente em 41 países, atuando em diversos segmentos de mercado e suportando clientes a atingirem seus objetivos estratégicos, cocriando um mundo melhor. A ihm Stefanini é a vertical de negócios do Grupo Stefanini para os segmentos industriais, como mineração. siderurgia, óleo e gás, energia, papel e celulose, alimentos, saneamento, entre outros, e executamos a transformação digital atuando em sistemas de automação, TI, tecnologias emergentes da indústria 4.0, sistemas elétricos e design de soluções customizadas. Nosso headquarter é localizado na cidade de Belo Horizonte/ MG, em nossos 31 anos de vida, expandimos nossa presença em todo território nacional, América Latina, Estados Unidos e Europa. Oferecemos respostas personalizadas e soluções digitais para problemas complexos da indústria, integrando soluções e possibilitando o uso estratégico dos dados. Nossos especialistas desenvolvem produtos e serviços que ajudam na jornada de transformação digital e aceleram as agendas de ESG de nossos clientes. Responsabilidades e atribuições O que esperamos que você realize: Desenvolver e manter aplicações web modernas integradas a sistemas industriais e corporativos; Trabalhar em conjunto com times de backend, UX/UI e QA, garantindo entregas consistentes e de qualidade; Garantir performance, usabilidade e segurança nas interfaces; Apoiar testes, correções e melhorias em ambiente de homologação e produção; Contribuir com boas práticas, revisões de código e arquitetura front-end. Requisitos e qualificações Requisitos essenciais: Experiência sólida com Angular e React (um dos dois em nível avançado); Domínio de JavaScript / TypeScript, HTML5, CSS3 e REST APIs; Conhecimento de Git, versionamento e pipelines de CI/CD; Capacidade de compreender integrações com sistemas industriais (MES, PI System, SCADA etc.); Experiencia com platafor"
+    },
+    {
+      "job_id": "5c66e39bbf447b03",
+      "title": "Analista de Infraestrutura de TI Pleno",
+      "company": "abler Vagas",
+      "location": "São João del-Rei, MG",
+      "source": "LinkedIn",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-de-ti-pleno-at-abler-vagas-4417400451",
+      "sent_at": "2026-05-20T23:24:08.859299+00:00",
+      "score": 60,
+      "fit_level": "medio",
+      "target_company": false,
+      "contact_email": "vaga-368205@vagas.abler.in",
+      "to_email": "vaga-368205@vagas.abler.in",
+      "skills_match": [
+        "aws",
+        "grafana",
+        "linux",
+        "zabbix"
+      ],
+      "score_breakdown": {
+        "skills": 10,
+        "location": 20,
+        "level": 15,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0
+      },
+      "cover_letter": "Sou Eric Dias Lemos, Engenheiro DevOps com experiência em ambientes de infraestrutura. Estou me candidatando à vaga de Analista de Infraestrutura de TI Pleno na abler Vagas, pois minhas habilidades técnicas coincidem com os requisitos da posição. Tenho conhecimento em ambientes Cloud AWS, o que me permite contribuir para a gestão e otimização dos recursos da empresa.\n\nMinha experiência em servidores Linux me permite apoiar na administração e manutenção desses ambientes, garantindo a estabilidade e disponibilidade dos serviços. Além disso, tenho familiaridade com ferramentas de monitoramento como Grafana e Zabbix, o que me permite identificar alertas, falhas e oportunidades de melhoria nos ambientes.\n\nComo profissional com experiência em DevOps, posso contribuir para a melhoria contínua e automação da infraestrutura da empresa. Minha habilidade em trabalhar com ambientes Cloud e servidores Linux me permite agregar valor à empresa, garantindo a eficiência e escalabilidade dos serviços.\n\nEstou disponível para uma entrevista para discutir como posso contribuir para a abler Vagas. Agradeço a oportunidade de me candidatar a essa vaga e estou ansioso para discutir minhas habilidades e experiência em mais detalhes.",
+      "description": "Candidate-se rapidamente pelo email: vaga-368205@vagas.abler.in Nível: Analista Escolaridade: Ensino médio - Completo Tipo de contrato: CLT Jornada de trabalho: Segunda a Sexta: 8h00 às 17h30 Disponibilidade para home-office Responsabilidades Da Posição Atuar no monitoramento e sustentação dos ambientes de infraestrutura, garantindo disponibilidade e estabilidade dos serviços. Apoiar na administração de servidores Linux e ambientes virtualizados. Realizar acompanhamento de ambientes Cloud AWS, auxiliando em configurações, análise de desempenho e suporte operacional. Executar troubleshooting de incidentes relacionados a redes, DNS, VPN, firewall e conectividade. Apoiar na administração e manutenção de telefonia IP (Asterisk). Monitorar ambientes utilizando ferramentas como Zabbix e Grafana, identificando alertas, falhas e oportunidades de melhoria. Realizar atendimento e suporte técnico aos times internos, registrando e acompanhando chamados. Auxiliar em processos de backup, atualização de sistemas e aplicação de boas práticas de segurança da informação. Participar da documentação de procedimentos técnicos, inventário de infraestrutura e padronização de ambientes. Colaborar com projetos de melhoria contínua, automação e evolução da infraestrutura da empresa. Requisitos Obrigatórios Para a Posição Conhecimento em ambientes Cloud AWS. Conhecimento em virtualização (Citrix Xen e/ou Proxmox VE). Conhecimento em servidores Linux. Conhecimento em telefonia IP (Asterisk). Noções sólidas de redes, firewall, DNS, VPN e conectividade. Experiência com ferramentas de monitoramento e gestão de incidentes (Zabbix, Grafana, entre outras). Conhecimento em boas práticas de ITIL e ISO 27001. Inglês básico (nível A2/CEFR). Experiência em software houses ou sustentação de ambientes SaaS. Show more Show less"
     }
   ]
 }
