@@ -27,8 +27,7 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 JOBS_FILE = DATA_DIR / "jobs.json"
 ARCHIVE_FILE = DATA_DIR / "archive.json"
 
-# Toda vaga é arquivada após 24h da coleta (found_at).
-# Exceções: status 'enviada' e 'aprovada' NUNCA são arquivadas.
+# Toda vaga é arquivada após 24h da coleta (found_at), SEM exceção.
 ARCHIVE_HOURS = 24
 
 
@@ -104,20 +103,17 @@ def run_daily_scan(auto_apply: bool = True) -> None:
 def _split_for_archive(jobs: list[dict]) -> tuple[list[dict], list[dict]]:
     """
     Separa vagas ativas de vagas a arquivar:
-      - status 'enviada' ou 'aprovada': NUNCA arquiva (preserva histórico)
-      - qualquer outra vaga com idade ≥ ARCHIVE_HOURS (24h) → arquiva
+      - QUALQUER vaga com idade ≥ ARCHIVE_HOURS (24h) → arquiva
+        (inclui status 'enviada' e 'aprovada' — sem exceção)
     Vagas sem found_at válido ficam ativas (não é seguro arquivar).
+    O histórico de candidaturas continua preservado em sent.json
+    e nas vagas movidas para archive.json.
     """
     now = datetime.now(timezone.utc)
     active: list[dict] = []
     archived: list[dict] = []
 
     for j in jobs:
-        # Nunca arquiva vagas já candidatadas ou aprovadas
-        if j.get("status") in ("enviada", "aprovada"):
-            active.append(j)
-            continue
-
         found_at_str = j.get("found_at", "")
         if not found_at_str:
             active.append(j)

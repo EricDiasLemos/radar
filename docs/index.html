@@ -1335,8 +1335,8 @@ function formatRelativeTime(isoString) {
   return `há ${Math.round(diffMo / 12)} ano(s)`;
 }
 
+// TODA vaga expira em 24h desde a coleta (found_at), sem exceção de status.
 function isExpired(job) {
-  if (job.status === 'enviada' || job.status === 'aprovada') return false;
   if (!job.found_at) return false;
   const ageHours = (Date.now() - new Date(job.found_at).getTime()) / 3600000;
   return ageHours >= 24;
