@@ -976,7 +976,9 @@
             <span class="chip active" data-value="">Todas</span>
             <span class="chip" data-value="LinkedIn">LinkedIn</span>
             <span class="chip" data-value="Vagas.com">Vagas.com</span>
+            <span class="chip" data-value="Gupy">Gupy</span>
             <span class="chip" data-value="Programathor">Programathor</span>
+            <span class="chip" data-value="Manual">Manual</span>
           </div>
         </div>
 
@@ -1230,7 +1232,7 @@ async function loadData() {
     const data = await res.json();
     allJobs = data.jobs || [];
     updateHeader(data);
-    updateMetrics(data.stats || {});
+    updateMetrics();
     applyFilters();
   } catch (e) {
     document.getElementById('jobs-grid').innerHTML = `
@@ -1258,25 +1260,37 @@ async function loadData() {
   }
 }
 
+// Conta apenas vagas ativas (não-expiradas) para manter os números do
+// header/métricas consistentes com o que o grid efetivamente mostra.
+function computeActiveStats() {
+  const active = allJobs.filter(j => !isExpired(j));
+  return {
+    total: active.length,
+    alto: active.filter(j => j.fit_level === 'alto').length,
+    medio: active.filter(j => j.fit_level === 'medio').length,
+    enviadas: allJobs.filter(j => j.status === 'enviada').length,
+  };
+}
+
 function updateHeader(data) {
   const ts = data.last_updated
     ? new Date(data.last_updated).toLocaleString('pt-BR')
     : 'N/A';
   document.getElementById('last-updated').textContent = 'Última atualização: ' + ts;
 
-  const stats = data.stats || {};
-  document.getElementById('count-alto').textContent = stats.alto_fit ?? 0;
-  document.getElementById('count-medio').textContent = stats.medio_fit ?? 0;
-  document.getElementById('count-enviadas').textContent = stats.enviadas ?? 0;
-  document.getElementById('count-total').textContent = stats.total ?? allJobs.length;
+  const s = computeActiveStats();
+  document.getElementById('count-alto').textContent = s.alto;
+  document.getElementById('count-medio').textContent = s.medio;
+  document.getElementById('count-enviadas').textContent = s.enviadas;
+  document.getElementById('count-total').textContent = s.total;
 }
 
-function updateMetrics(stats) {
-  document.getElementById('m-total').textContent = stats.total ?? allJobs.length;
-  document.getElementById('m-alto').textContent = stats.alto_fit ?? 0;
-  document.getElementById('m-enviadas').textContent = stats.enviadas ?? 0;
-  const total = stats.total || 1;
-  const taxa = ((stats.alto_fit ?? 0) / total * 100).toFixed(0);
+function updateMetrics() {
+  const s = computeActiveStats();
+  document.getElementById('m-total').textContent = s.total;
+  document.getElementById('m-alto').textContent = s.alto;
+  document.getElementById('m-enviadas').textContent = s.enviadas;
+  const taxa = s.total ? ((s.alto / s.total) * 100).toFixed(0) : 0;
   document.getElementById('m-taxa').textContent = taxa + '%';
 }
 
@@ -1301,11 +1315,24 @@ function setupChipFilters() {
   });
 }
 
+// Verifica se a vaga deve ser ocultada por ter mais de 24h de coleta.
+// Espelha a regra de arquivamento do main.py — status enviada/aprovada
+// nunca expiram (preservam histórico).
+function isExpired(job) {
+  if (job.status === 'enviada' || job.status === 'aprovada') return false;
+  if (!job.found_at) return false;
+  const ageHours = (Date.now() - new Date(job.found_at).getTime()) / 3600000;
+  return ageHours >= 24;
+}
+
 function applyFilters() {
   filterState.text = document.getElementById('search-text').value.toLowerCase();
   filterState.scoreMin = parseInt(document.getElementById('filter-score').value, 10);
 
   filteredJobs = allJobs.filter(job => {
+    // Oculta vagas com mais de 24h (exceto enviadas/aprovadas)
+    if (isExpired(job)) return false;
+
     if (filterState.fit && job.fit_level !== filterState.fit) return false;
     if (filterState.source && job.source !== filterState.source) return false;
     if (filterState.status && job.status !== filterState.status) return false;
@@ -1365,6 +1392,7 @@ function showTopOpportunities() {
   // Aplica filtro custom (sem usar applyFilters padrão)
   filteredJobs = allJobs.filter(job => {
     if (job.status === 'enviada' || job.status === 'arquivada') return false;
+    if (isExpired(job)) return false;  // oculta vagas com mais de 24h
     const isAlto = job.fit_level === 'alto';
     const isMedio = job.fit_level === 'medio';
     const isBigTech = !!job.target_company;
@@ -1417,16 +1445,34 @@ function renderJobs() {
   document.getElementById('jobs-count').textContent = `(${filteredJobs.length})`;
 
   if (filteredJobs.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
-          </svg>
-        </div>
-        <p><strong>Nenhuma vaga com esses filtros.</strong></p>
-        <span class="empty-hint">Ajuste os filtros na sidebar ou clique em <strong>"🔄 Limpar filtros"</strong> para ver todas.</span>
-      </div>`;
+    // Distingue 'sem resultado de filtro' de 'tudo expirou (>24h)'
+    const naoExpiradas = allJobs.filter(j => !isExpired(j)).length;
+    const expiradas = allJobs.length - naoExpiradas;
+
+    if (allJobs.length > 0 && naoExpiradas === 0) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+            </svg>
+          </div>
+          <p><strong>Nenhuma vaga das últimas 24h.</strong></p>
+          <span class="empty-hint">${expiradas} vaga(s) foram coletadas há mais de 24h e não aparecem mais.
+          Clique em <strong>"⚡ Forçar scan"</strong> no topo para buscar vagas novas.</span>
+        </div>`;
+    } else {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+          </div>
+          <p><strong>Nenhuma vaga com esses filtros.</strong></p>
+          <span class="empty-hint">Ajuste os filtros na sidebar ou clique em <strong>"🔄 Limpar filtros"</strong> para ver todas.</span>
+        </div>`;
+    }
     return;
   }
 
