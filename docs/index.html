@@ -9,28 +9,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      /* Paleta minimalista — cinza-azulado profundo */
-      --bg: #0a0b0d;
-      --surface: #131418;
-      --surface-hover: #1a1c21;
+      /* Paleta Âmbar — dark quente */
+      --bg: #0d0b08;
+      --surface: #18140d;
+      --surface-hover: #211c12;
       --border: rgba(255,255,255,0.06);
-      --border-strong: rgba(255,255,255,0.10);
-      --text: #e8eaed;
-      --text-muted: #8a8d94;
-      --text-subtle: #5a5d64;
-      /* Acentos — saturação reduzida pra integrar melhor */
-      --accent: #7c9eff;          /* azul-lilás suave (cor primária) */
-      --accent-soft: rgba(124,158,255,0.10);
-      --green: #5ab57f;
-      --green-soft: rgba(90,181,127,0.10);
-      --yellow: #d9a648;
-      --yellow-soft: rgba(217,166,72,0.10);
-      --red: #e57373;
-      --red-soft: rgba(229,115,115,0.10);
-      --target: #f0b948;          /* dourado pra big tech */
-      --target-soft: rgba(240,185,72,0.10);
-      --gcp: #6db4ff;             /* azul GCP */
-      --gcp-soft: rgba(109,180,255,0.10);
+      --border-strong: rgba(255,255,255,0.11);
+      --text: #ece8e0;
+      --text-muted: #9a9387;
+      --text-subtle: #645d4f;
+      /* Accent âmbar — cor primária */
+      --accent: #fbbf24;
+      --accent-soft: rgba(251,191,36,0.10);
+      /* Semânticas */
+      --green: #4ade80;           /* fit alto */
+      --green-soft: rgba(74,222,128,0.10);
+      --yellow: #fb923c;          /* fit médio (laranja, distinto do âmbar) */
+      --yellow-soft: rgba(251,146,60,0.10);
+      --red: #f87171;             /* fit baixo / rejeitado */
+      --red-soft: rgba(248,113,113,0.10);
+      --target: #fbbf24;          /* big tech = accent âmbar */
+      --target-soft: rgba(251,191,36,0.10);
+      --gcp: #60a5fa;             /* GCP — azul, contraste frio */
+      --gcp-soft: rgba(96,165,250,0.10);
       /* Radius / shadows */
       --radius: 10px;
       --radius-sm: 6px;
@@ -62,9 +63,9 @@
       pointer-events: none;
       z-index: 0;
       background:
-        radial-gradient(at 15% 5%,  rgba(124,158,255,0.08) 0px, transparent 45%),
+        radial-gradient(at 15% 5%,  rgba(251,191,36,0.08) 0px, transparent 45%),
         radial-gradient(at 85% 12%, rgba(240,185,72,0.04) 0px, transparent 40%),
-        radial-gradient(at 50% 95%, rgba(90,181,127,0.04) 0px, transparent 45%);
+        radial-gradient(at 50% 95%, rgba(74,222,128,0.04) 0px, transparent 45%);
     }
     body > * { position: relative; z-index: 1; }
 
@@ -113,13 +114,13 @@
       position: absolute;
       inset: 0;
       border-radius: 9px;
-      box-shadow: 0 0 0 0 rgba(124,158,255,0.5);
+      box-shadow: 0 0 0 0 rgba(251,191,36,0.5);
       animation: radarPulse 2.4s ease-out infinite;
     }
     @keyframes radarPulse {
-      0%   { box-shadow: 0 0 0 0 rgba(124,158,255,0.3); }
-      70%  { box-shadow: 0 0 0 8px rgba(124,158,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(124,158,255,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(251,191,36,0.3); }
+      70%  { box-shadow: 0 0 0 8px rgba(251,191,36,0); }
+      100% { box-shadow: 0 0 0 0 rgba(251,191,36,0); }
     }
 
     .header-meta {
@@ -159,10 +160,10 @@
     .btn-primary {
       background: var(--accent);
       border-color: var(--accent);
-      color: #0a0b0d;
+      color: var(--bg);
       font-weight: 600;
     }
-    .btn-primary:hover { background: #93b1ff; color: #0a0b0d; }
+    .btn-primary:hover { background: #fcd34d; color: var(--bg); }
     .btn-ghost { background: transparent; color: var(--text-muted); }
     .btn-ghost:hover { background: var(--surface); color: var(--text); }
     .btn-danger { color: var(--red); border-color: transparent; }
@@ -172,14 +173,14 @@
       border-color: transparent;
       color: var(--accent);
     }
-    .btn-blue:hover { background: var(--accent); color: #0a0b0d; }
+    .btn-blue:hover { background: var(--accent); color: var(--bg); }
     .btn-top {
       background: var(--target-soft);
       border-color: transparent;
       color: var(--target);
       font-weight: 600;
     }
-    .btn-top:hover { background: var(--target); color: #0a0b0d; }
+    .btn-top:hover { background: var(--target); color: var(--bg); }
 
     /* ── Counters (chips do header) ── */
     .counters {
@@ -357,10 +358,10 @@
       transform: translateY(-1px);
     }
     .job-card.fit-alto:hover::after {
-      background: radial-gradient(circle at 50% -20%, rgba(90,181,127,0.10) 0%, transparent 60%);
+      background: radial-gradient(circle at 50% -20%, rgba(74,222,128,0.10) 0%, transparent 60%);
     }
     .job-card.fit-medio:hover::after {
-      background: radial-gradient(circle at 50% -20%, rgba(217,166,72,0.10) 0%, transparent 60%);
+      background: radial-gradient(circle at 50% -20%, rgba(251,146,60,0.10) 0%, transparent 60%);
     }
     .job-card.fit-alto::before { background: var(--green); }
     .job-card.fit-medio::before { background: var(--yellow); }
@@ -494,7 +495,7 @@
     /* Badge 'NEW' — pulse animation pra destacar vagas frescas (<48h) */
     .badge-new {
       background: var(--accent);
-      color: #0a0b0d;
+      color: var(--bg);
       font-weight: 700;
       letter-spacing: 0.05em;
       padding: 2px 7px;
@@ -511,9 +512,9 @@
       animation: newPulse 2s ease-out infinite;
     }
     @keyframes newPulse {
-      0%   { box-shadow: 0 0 0 0 rgba(124,158,255,0.6); }
-      70%  { box-shadow: 0 0 0 6px rgba(124,158,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(124,158,255,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(251,191,36,0.6); }
+      70%  { box-shadow: 0 0 0 6px rgba(251,191,36,0); }
+      100% { box-shadow: 0 0 0 0 rgba(251,191,36,0); }
     }
 
     /* Skills overflow indicator */
@@ -1007,7 +1008,7 @@
           <label>Score mínimo</label>
           <input type="range" id="filter-score" min="0" max="100" value="0"
                  oninput="document.getElementById('score-val').textContent=this.value; applyFilters()"
-                 style="width:100%;accent-color:var(--blue)" />
+                 style="width:100%;accent-color:var(--accent)" />
           <div style="text-align:right;font-size:0.75rem;color:var(--text-muted)">
             Min: <span id="score-val">0</span>
           </div>
@@ -1141,8 +1142,8 @@
                   placeholder="Cole aqui a descrição/requisitos/skills da vaga..."></textarea>
       </div>
 
-      <div id="addjob-preview" style="display:none;background:rgba(88,166,255,0.08);
-           border:1px solid rgba(88,166,255,0.3);border-radius:8px;padding:12px;font-size:0.82rem">
+      <div id="addjob-preview" style="display:none;background:var(--accent-soft);
+           border:1px solid var(--border-strong);border-radius:8px;padding:12px;font-size:0.82rem">
       </div>
     </div>
     <div class="modal-footer">
@@ -1183,7 +1184,7 @@
       <p style="font-size:0.78rem;color:var(--text-muted);margin-top:16px">
         Não tem um token? Crie em
         <a href="https://github.com/settings/tokens/new?scopes=workflow&description=Job+Radar"
-           target="_blank" style="color:var(--blue)">github.com/settings/tokens</a>
+           target="_blank" style="color:var(--accent)">github.com/settings/tokens</a>
         — marque apenas o scope <strong>workflow</strong>.
       </p>
     </div>
@@ -1554,8 +1555,8 @@ function renderCard(job) {
       <span class="breakdown-label">Nível</span><span class="breakdown-value">${job.score_breakdown.level || 0}/20</span>
       <span class="breakdown-label">Keywords</span><span class="breakdown-value">${job.score_breakdown.keywords || 0}/10</span>
       <span class="breakdown-label">Salário</span><span class="breakdown-value">${job.score_breakdown.salary || 0}/10</span>
-      ${targetBonus ? `<span class="breakdown-label">🎯 Big Tech</span><span class="breakdown-value" style="color:#f8b134">+${targetBonus}</span>` : ''}
-      ${prioBonus ? `<span class="breakdown-label">☁️ GCP</span><span class="breakdown-value" style="color:#4285f4">+${prioBonus}</span>` : ''}
+      ${targetBonus ? `<span class="breakdown-label">🎯 Big Tech</span><span class="breakdown-value" style="color:var(--target)">+${targetBonus}</span>` : ''}
+      ${prioBonus ? `<span class="breakdown-label">☁️ GCP</span><span class="breakdown-value" style="color:var(--gcp)">+${prioBonus}</span>` : ''}
     </div>
   ` : '';
 
