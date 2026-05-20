@@ -1319,6 +1319,22 @@ function setupChipFilters() {
 // Verifica se a vaga deve ser ocultada por ter mais de 24h de coleta.
 // Espelha a regra de arquivamento do main.py — status enviada/aprovada
 // nunca expiram (preservam histórico).
+// Formata um ISO timestamp como tempo relativo ('há 3h', 'há 2 dias').
+function formatRelativeTime(isoString) {
+  const then = new Date(isoString).getTime();
+  if (isNaN(then)) return '?';
+  const diffMin = (Date.now() - then) / 60000;
+  if (diffMin < 1) return 'agora';
+  if (diffMin < 60) return `há ${Math.round(diffMin)}min`;
+  const diffH = diffMin / 60;
+  if (diffH < 24) return `há ${Math.round(diffH)}h`;
+  const diffD = diffH / 24;
+  if (diffD < 30) return `há ${Math.round(diffD)}d`;
+  const diffMo = diffD / 30;
+  if (diffMo < 12) return `há ${Math.round(diffMo)} ${Math.round(diffMo) === 1 ? 'mês' : 'meses'}`;
+  return `há ${Math.round(diffMo / 12)} ano(s)`;
+}
+
 function isExpired(job) {
   if (job.status === 'enviada' || job.status === 'aprovada') return false;
   if (!job.found_at) return false;
@@ -1530,9 +1546,15 @@ function renderCard(job) {
     arquivada: 'badge-status-arquivada',
   }[status] || 'badge-status-nova';
 
-  const pubDate = job.published_at
-    ? `<span>📅 ${job.published_at}</span>`
-    : '';
+  // Mostra QUANDO a vaga foi coletada (found_at), não a data de publicação.
+  // found_at é consistente (ISO) e é o que importa pro filtro de 24h.
+  // O published_at (formato caótico entre fontes) vai só no tooltip.
+  let pubDate = '';
+  if (job.found_at) {
+    const rel = formatRelativeTime(job.found_at);
+    const pubTitle = job.published_at ? ` title="Publicada: ${escHtml(String(job.published_at))}"` : '';
+    pubDate = `<span${pubTitle}>🕐 coletada ${rel}</span>`;
+  }
 
   const deleteBtn = `<button class="btn btn-ghost" onclick="deleteJob('${job.id}')" title="Apagar vaga" style="color:var(--red)">🗑</button>`;
 
