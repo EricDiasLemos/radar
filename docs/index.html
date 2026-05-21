@@ -1206,12 +1206,14 @@ let filteredJobs = [];
 let blacklistIds = new Set();   // IDs banidos permanentemente
 let currentSort = 'score';
 let currentApplyJobId = null;
+// Filtros multi-select: cada grupo é um array de valores selecionados.
+// Array vazio = sem filtro (mostra todos).
 let filterState = {
-  fit: '',
-  source: '',
-  location: '',
-  status: '',
-  target: '',
+  fit: [],
+  source: [],
+  location: [],
+  status: [],
+  target: [],
   text: '',
   scoreMin: 0,
 };
@@ -1295,24 +1297,55 @@ function updateMetrics() {
   document.getElementById('m-taxa').textContent = taxa + '%';
 }
 
-// ─── Filtros ──────────────────────────────────────────────────────────────────
+// ─── Filtros (multi-select) ───────────────────────────────────────────────────
+const FILTER_GROUPS = ['filter-fit', 'filter-source', 'filter-location', 'filter-status', 'filter-target'];
+
 function setupChipFilters() {
-  ['filter-fit', 'filter-source', 'filter-location', 'filter-status', 'filter-target'].forEach(groupId => {
+  FILTER_GROUPS.forEach(groupId => {
     const group = document.getElementById(groupId);
     if (!group) return;
+    const key = groupId.replace('filter-', '');
     group.querySelectorAll('.chip').forEach(chip => {
       chip.addEventListener('click', () => {
-        group.querySelectorAll('.chip').forEach(c => {
-          c.className = 'chip';
-        });
-        const color = chip.dataset.color;
-        chip.className = 'chip ' + (color ? 'active-' + color : 'active');
-
-        const key = groupId.replace('filter-', '');
-        filterState[key] = chip.dataset.value;
+        const val = chip.dataset.value;
+        if (val === '') {
+          // "Todos/Todas" → limpa a seleção do grupo
+          filterState[key] = [];
+        } else {
+          // Toggle do valor no array (multi-select)
+          const arr = filterState[key];
+          const idx = arr.indexOf(val);
+          if (idx >= 0) arr.splice(idx, 1);
+          else arr.push(val);
+        }
+        renderChipGroup(group, key);
         applyFilters();
       });
     });
+  });
+}
+
+// Atualiza o estado visual (active) dos chips de um grupo
+function renderChipGroup(group, key) {
+  const arr = filterState[key];
+  group.querySelectorAll('.chip').forEach(c => {
+    const val = c.dataset.value;
+    const color = c.dataset.color;
+    const active = val === '' ? arr.length === 0 : arr.includes(val);
+    c.className = 'chip' + (active ? ' ' + (color ? 'active-' + color : 'active') : '');
+  });
+}
+
+// Reseta todos os grupos de chips para o estado vazio
+function resetChipFilters() {
+  filterState.fit = [];
+  filterState.source = [];
+  filterState.location = [];
+  filterState.status = [];
+  filterState.target = [];
+  FILTER_GROUPS.forEach(groupId => {
+    const group = document.getElementById(groupId);
+    if (group) renderChipGroup(group, groupId.replace('filter-', ''));
   });
 }
 
@@ -1350,18 +1383,23 @@ function applyFilters() {
     // Oculta vagas com mais de 24h (exceto enviadas/aprovadas)
     if (isExpired(job)) return false;
 
-    if (filterState.fit && job.fit_level !== filterState.fit) return false;
-    if (filterState.source && job.source !== filterState.source) return false;
-    if (filterState.status && job.status !== filterState.status) return false;
-    if (filterState.target === '1' && !job.target_company) return false;
+    // Filtros multi-select: array vazio = sem filtro;
+    // com itens = a vaga precisa bater em PELO MENOS um (OR dentro do grupo).
+    if (filterState.fit.length && !filterState.fit.includes(job.fit_level)) return false;
+    if (filterState.source.length && !filterState.source.includes(job.source)) return false;
+    if (filterState.status.length && !filterState.status.includes(job.status)) return false;
+    if (filterState.target.includes('1') && !job.target_company) return false;
     if (job.score < filterState.scoreMin) return false;
 
-    if (filterState.location) {
+    if (filterState.location.length) {
       const loc = (job.location || '').toLowerCase();
-      if (filterState.location === 'remoto' && !/(remoto|remote|home office)/.test(loc)) return false;
-      if (filterState.location === 'hibrido' && !/h[íi]brido/.test(loc)) return false;
-      if (filterState.location === 'bh' &&
-          !/(belo horizonte|contagem|\bbh\b|minas gerais|\bmg\b)/.test(loc)) return false;
+      const matchAny = filterState.location.some(f => {
+        if (f === 'remoto') return /(remoto|remote|home office)/.test(loc);
+        if (f === 'hibrido') return /h[íi]brido/.test(loc);
+        if (f === 'bh') return /(belo horizonte|contagem|\bbh\b|minas gerais|\bmg\b)/.test(loc);
+        return false;
+      });
+      if (!matchAny) return false;
     }
 
     if (filterState.text) {
@@ -1394,14 +1432,10 @@ function sortBy(field) {
 //   - OU médio fit + email de contato
 //   - Status != enviada (já candidatadas saem da lista)
 function showTopOpportunities() {
-  // Reset chips visualmente: todos voltam pra "Todos/Todas"
-  document.querySelectorAll('.chip-group').forEach(group => {
-    group.querySelectorAll('.chip').forEach(c => {
-      c.className = c.dataset.value === '' ? 'chip active' : 'chip';
-    });
-  });
-  // Reset estado de filtros + search
-  filterState = { fit: '', source: '', location: '', status: '', target: '', text: '', scoreMin: 0 };
+  // Reset todos os filtros (chips + search + score)
+  resetChipFilters();
+  filterState.text = '';
+  filterState.scoreMin = 0;
   document.getElementById('search-text').value = '';
   document.getElementById('filter-score').value = 0;
   document.getElementById('score-val').textContent = '0';
@@ -1430,13 +1464,9 @@ function showTopOpportunities() {
 }
 
 function clearAllFilters() {
-  // Reset chips visualmente
-  document.querySelectorAll('.chip-group').forEach(group => {
-    group.querySelectorAll('.chip').forEach(c => {
-      c.className = c.dataset.value === '' ? 'chip active' : 'chip';
-    });
-  });
-  filterState = { fit: '', source: '', location: '', status: '', target: '', text: '', scoreMin: 0 };
+  resetChipFilters();
+  filterState.text = '';
+  filterState.scoreMin = 0;
   document.getElementById('search-text').value = '';
   document.getElementById('filter-score').value = 0;
   document.getElementById('score-val').textContent = '0';
