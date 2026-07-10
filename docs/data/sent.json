@@ -163,6 +163,36 @@
       },
       "cover_letter": "Sou Eric Dias Lemos, Engenheiro DevOps com experiência em ambientes de infraestrutura. Estou me candidatando à vaga de Analista de Infraestrutura de TI Pleno na abler Vagas, pois minhas habilidades técnicas coincidem com os requisitos da posição. Tenho conhecimento em ambientes Cloud AWS, o que me permite contribuir para a gestão e otimização dos recursos da empresa.\n\nMinha experiência em servidores Linux me permite apoiar na administração e manutenção desses ambientes, garantindo a estabilidade e disponibilidade dos serviços. Além disso, tenho familiaridade com ferramentas de monitoramento como Grafana e Zabbix, o que me permite identificar alertas, falhas e oportunidades de melhoria nos ambientes.\n\nComo profissional com experiência em DevOps, posso contribuir para a melhoria contínua e automação da infraestrutura da empresa. Minha habilidade em trabalhar com ambientes Cloud e servidores Linux me permite agregar valor à empresa, garantindo a eficiência e escalabilidade dos serviços.\n\nEstou disponível para uma entrevista para discutir como posso contribuir para a abler Vagas. Agradeço a oportunidade de me candidatar a essa vaga e estou ansioso para discutir minhas habilidades e experiência em mais detalhes.",
       "description": "Candidate-se rapidamente pelo email: vaga-368205@vagas.abler.in Nível: Analista Escolaridade: Ensino médio - Completo Tipo de contrato: CLT Jornada de trabalho: Segunda a Sexta: 8h00 às 17h30 Disponibilidade para home-office Responsabilidades Da Posição Atuar no monitoramento e sustentação dos ambientes de infraestrutura, garantindo disponibilidade e estabilidade dos serviços. Apoiar na administração de servidores Linux e ambientes virtualizados. Realizar acompanhamento de ambientes Cloud AWS, auxiliando em configurações, análise de desempenho e suporte operacional. Executar troubleshooting de incidentes relacionados a redes, DNS, VPN, firewall e conectividade. Apoiar na administração e manutenção de telefonia IP (Asterisk). Monitorar ambientes utilizando ferramentas como Zabbix e Grafana, identificando alertas, falhas e oportunidades de melhoria. Realizar atendimento e suporte técnico aos times internos, registrando e acompanhando chamados. Auxiliar em processos de backup, atualização de sistemas e aplicação de boas práticas de segurança da informação. Participar da documentação de procedimentos técnicos, inventário de infraestrutura e padronização de ambientes. Colaborar com projetos de melhoria contínua, automação e evolução da infraestrutura da empresa. Requisitos Obrigatórios Para a Posição Conhecimento em ambientes Cloud AWS. Conhecimento em virtualização (Citrix Xen e/ou Proxmox VE). Conhecimento em servidores Linux. Conhecimento em telefonia IP (Asterisk). Noções sólidas de redes, firewall, DNS, VPN e conectividade. Experiência com ferramentas de monitoramento e gestão de incidentes (Zabbix, Grafana, entre outras). Conhecimento em boas práticas de ITIL e ISO 27001. Inglês básico (nível A2/CEFR). Experiência em software houses ou sustentação de ambientes SaaS. Show more Show less"
+    },
+    {
+      "job_id": "86079630e1122a00",
+      "title": "Analista de infraestrutura Júnior ou Pleno - Itabirito MG",
+      "company": "Yapp",
+      "location": "Itabirito, MG",
+      "source": "LinkedIn",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-j%C3%BAnior-ou-pleno-itabirito-mg-at-yapp-4438839052",
+      "sent_at": "2026-07-10T13:15:05.507623+00:00",
+      "score": 60,
+      "fit_level": "medio",
+      "target_company": false,
+      "contact_email": "talentos@rotadaliberdademg.com.brconhece",
+      "to_email": "talentos@rotadaliberdademg.com.brconhece",
+      "skills_match": [
+        "grafana",
+        "mikrotik",
+        "zabbix"
+      ],
+      "score_breakdown": {
+        "skills": 7,
+        "location": 20,
+        "level": 20,
+        "keywords": 8,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0
+      },
+      "cover_letter": "Como Engenheiro DevOps com experiência em tecnologias de monitoramento e infraestrutura, estou interessado na vaga de Analista de Infraestrutura Júnior ou Pleno na Yapp. Minha habilidade em trabalhar com Grafana, por exemplo, pode ser valiosa para a implementação de painéis de monitoramento personalizados e eficazes.\n\nMinha experiência com Linux e Docker também pode ser útil na gestão de servidores físicos e virtualizados, garantindo a estabilidade e segurança da infraestrutura. Além disso, minha familiaridade com o ecossistema de monitoramento pode ser aplicada para melhorar a visibilidade e controle sobre a rede e sistemas.\n\nComo profissional com conhecimento em tecnologias de rede, incluindo MikroTik, posso contribuir para a configuração e gestão de redes de dados corporativas. Minha habilidade em trabalhar com Zabbix também pode ser útil para monitorar e gerenciar a infraestrutura de TI.\n\nEstou disponível para uma entrevista para discutir como posso aplicar minhas habilidades e experiência para contribuir para o sucesso da Rota da Liberdade. Posso ser contatado pelo e-mail para agendar uma conversa.",
+      "description": "DESCRIÇÃO VAGA | Analista de Infraestrutura de TI (Júnior/Pleno) ???? Itabirito/MG — Concessionária Rota da Liberdade (Lote 07 BR-356 / MG-262 / MG-329) Você já imaginou construir do zero o ambiente de TI de uma concessão rodoviária de 30 anos?A Rota da Liberdade está montando seu Centro de Controle Operacional (CCO) e busca um Analista de Infraestrutura para ser peça-chave nessa fase de implantação — cuidando da rede e dos sistemas que mantêm a rodovia operando 24x7.Aqui você vai colocar a mão em tecnologia de verdade:?? Backbone de fibra óptica ao longo de 190 km?? Sistema de cobrança em Free Flow (fluxo livre) e os 4 pórticos?? CFTV, SATs e sistemas inteligentes de transporte (ITS)?? Servidores físicos e virtualizados, firewalls, segurança da informação e monitoramento (Zabbix / PRTG / Grafana)#VemparaRota, candidate-se agora! ?? Candidate-se: talentos@rotadaliberdademg.com.brConhece alguém com esse perfil, indique. Requisitos Formação:Ensino Superior cursando ou completo em Ciência da Computação, Sistemas de Informação, Engenharia da Computação, Análise e Desenvolvimento de Sistemas, Redes de Computadores, Tecnologia em Telecomunicações ou áreas correlatas.Desejável: certificações técnicas em redes e segurança, tais como Cisco CCNA/CCNP, MikroTik MTCNA/MTCRE, Fortinet NSE 4, Ubiquiti UEWA, CompTIA Network+ ou ITIL Foundation v4.Experiência Profissional:de 1 (um) a 3 (três) anos de experiência em administração de redes de dados corporativas e/ou suporte de infraestrutura de TI, com atuação em LAN, WAN, WLAN e VPN. Profissionais em transição de Júnior para Pleno são bem-vindos.Conhecimentos Técnicos: Conhecimento sólido em protocolos de rede: TCP/IP, DNS, DHCP, VLAN, STP, OSPF, BGP, MPLS, QoS e VPN (IPSec/SSL).experiência com equipamentos de fabricantes como Cisco, HP/Aruba, MikroTik, Ubiquiti, Huawei ou equivalentes.Domínio de firewalls de mercado: FortigateVivência em projetos de implantação ou expansão de infraestrutura de redes, idealmente envolvendo backbone "
     }
   ]
 }
