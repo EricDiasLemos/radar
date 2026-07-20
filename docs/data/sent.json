@@ -219,6 +219,41 @@
       },
       "cover_letter": "Me chamo Eric Dias Lemos e sou um Engenheiro DevOps com experiência em Linux, Docker e outras tecnologias relacionadas à infraestrutura de TI. Estou me candidatando à vaga de Analista de TI na Atos Distribuição Ltda, onde posso aplicar minhas habilidades técnicas para garantir a estabilidade e eficiência dos sistemas e redes da empresa.\n\nMinha experiência com Linux e Docker me permite entender a importância de uma infraestrutura bem configurada e escalável. Além disso, minha formação em DevOps me permite ter uma visão holística da cadeia de valor de TI, desde o desenvolvimento até a operação.\n\nAcredito que minhas habilidades técnicas podem ser um grande valor para a Atos Distribuição Ltda, especialmente na administração de servidores e na gestão de infraestrutura. Estou ansioso para discutir como posso contribuir para a equipe e ajudar a empresa a alcançar seus objetivos.\n\nEstou disponível para uma entrevista e gostaria de discutir mais sobre como posso contribuir para a Atos Distribuição Ltda. Agradeço desde já a oportunidade de me candidatar a esta vaga e aguardo contato para prosseguir com o processo de seleção.",
       "description": "VAGA EFETIVAPresencial ### Analista de TI Atos Distribuição – Broker Nestlé Local: Varginha/MG Regime: CLT Horário: Comercial ### Sobre a oportunidade Estamos em busca de um(a) Analista de TI para atuar no suporte aos usuários e na administração da infraestrutura tecnológica da empresa, garantindo a estabilidade dos sistemas, redes e equipamentos. Se você possui perfil analítico, é organizado(a), proativo(a) e gosta de resolver problemas, essa oportunidade é para você! ### Principais atividades * Prestar suporte técnico aos usuários (hardware, software e infraestrutura). * Administrar servidores Windows. * Gerenciar redes cabeadas e wireless. * Instalar e configurar computadores, impressoras e equipamentos de TI. * Administrar recursos do Microsoft 365 (Office 365). * Dar suporte aos sistemas ERP utilizados pela empresa. * Desenvolver relatórios e controles em Excel. * Executar rotinas de backup, atualização e monitoramento da infraestrutura. * Documentar procedimentos e apoiar melhorias nos processos de TI. ### Requisitos * Ensino superior completo ou em andamento em TI, Sistemas de Informação, Ciência da Computação ou áreas correlatas. * Conhecimento em Microsoft Excel. * Experiência com sistemas ERP. * Conhecimento em servidores Windows. * Experiência com redes cabeadas e wireless. * Conhecimento no pacote Microsoft Office 365. * Boa capacidade de análise e resolução de problemas. ### Perfil desejado Proativo(a)PontualDedicado(a)Organizado(a)Concentrado(a)ResponsávelTrabalho em equipeComprometido(a) ### Diferenciais * Conhecimento em Active Directory. * Conhecimento em Power BI. ### O que oferecemos * Salário compatível com o mercado. * Benefícios. * Ambiente colaborativo. * Oportunidade de crescimento e desenvolvimento profissional. ### Como se candidatar Envie seu currículo para o e-mail : an.suporte@atosdistribuicao.com.br ou candidate-se pela plataforma. Assunto: Vaga – Analista de TI Boa sorte no processo seletivo! Atos Distribuição – Broker Nestlé • Tecnolo"
+    },
+    {
+      "job_id": "3569b611ed4a014f",
+      "title": "Gerente de DevOps",
+      "company": "Solucionare",
+      "location": "Belo Horizonte, MG",
+      "source": "LinkedIn",
+      "url": "https://br.linkedin.com/jobs/view/gerente-de-devops-at-solucionare-4442170766",
+      "sent_at": "2026-07-20T13:10:14.896645+00:00",
+      "score": 63,
+      "fit_level": "medio",
+      "target_company": false,
+      "contact_email": "vaga-379272@vagas.abler.in",
+      "to_email": "vaga-379272@vagas.abler.in",
+      "skills_match": [
+        "ansible",
+        "aws",
+        "azure",
+        "ci/cd",
+        "docker",
+        "gcp",
+        "kubernetes",
+        "terraform"
+      ],
+      "score_breakdown": {
+        "skills": 17,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 1
+      },
+      "cover_letter": "Sou Eric Dias Lemos, Engenheiro DevOps com experiência em Python, Docker, Linux, Prometheus, Grafana, Kubernetes, Terraform, AWS e GCP. Estou escrevendo para expressar meu interesse na vaga de Gerente de DevOps na Solucionare, onde posso aplicar minhas habilidades técnicas em Docker, Kubernetes e Terraform para impulsionar a eficiência e a escalabilidade dos ambientes de nuvem e on-premise.\n\nCom minha experiência em DevOps, posso contribuir para a implantação de práticas de DevOps, pipelines de CI/CD e infraestrutura como código, garantindo entregas rápidas e previsíveis. Além disso, posso liderar a arquitetura e a criação de novos ambientes, alinhando as necessidades de Infraestrutura e Desenvolvimento.\n\nMinha experiência com AWS e GCP me permite entender as nuances das plataformas de nuvem e como elas podem ser utilizadas para melhorar a eficiência e a escalabilidade dos ambientes. Posso trabalhar em estreita colaboração com as equipes de Desenvolvimento e Infraestrutura para garantir que as soluções sejam entregues de forma eficaz e eficiente.\n\nEstou ansioso para discutir como posso contribuir para o sucesso da Solucionare e como minhas habilidades técnicas podem ser aplicadas para impulsionar a inovação e a eficiência. Estou disponível para uma entrevista e gostaria de saber mais sobre a oportunidade de trabalhar com a equipe de Infraestrutura na Solucionare. Por favor, entre em contato comigo pelo email vaga-379272@vagas.abler.in.",
+      "description": "Candidate-se rapidamente pelo email: vaga-379272@vagas.abler.in Nível: Analista Cursos de: ANÁLISE E DESENVOLVIMENTO DE SISTEMAS, COBIT, IT Management (PMI, ITIL) Escolaridade: Graduação - ANÁLISE E DESENVOLVIMENTO DE SISTEMAS, COBIT, IT Management (PMI, ITIL) - Completo Tipo de contrato: CLT Jornada de trabalho: Segunda a sexta-feira de 08h às 17h | 40h semanais Responsabilidades Da Posição Sobre a vaga O Seu Dia a Dia Com a Gente Você vai integrar o nosso time de Infraestrutura na frente de DevOps, atuando como ponto de integração entre Infraestrutura e Desenvolvimento, com autonomia técnica para conduzir a construção dos novos ambientes dos nossos produtos de ponta a ponta. Suas principais frentes serão: Arquitetura e Novos Ambientes: Planejar e liderar a arquitetura, a criação e a evolução dos novos ambientes (nuvem e/ou on-premise) que sustentam os nossos produtos, alinhando as necessidades de Infraestrutura e de Desenvolvimento. DevOps e Automação: Implantar práticas de DevOps , pipelines de CI/CD, infraestrutura como código, containers e orquestração para acelerar entregas com estabilidade e previsibilidade. Liderança Técnica e do Time: Planejar e priorizar o backlog de segurança, orientar tecnicamente o(a) Analista de Cibersegurança e desenvolver o time, disseminando boas práticas de engenharia e cultura de segurança. Integração e Indicadores: Atuar como ponte entre Infraestrutura, Desenvolvimento e demais áreas, apoiar decisões de arquitetura e acompanhar indicadores de disponibilidade, desempenho e segurança dos ambientes. Responsabilidades Gerenciar a estratégia e a execução de práticas de DevOps, incluindo CI/CD, infraestrutura como código e automação de processos. Desenvolver e manter políticas de segurança, monitoramento e resposta a incidentes de cibersegurança. Supervisionar a arquitetura de nuvem, garantindo alta disponibilidade, performance e conformidade. Coordenar e capacitar equipes técnicas, promovendo cultura de colaboração e melhoria contínua"
     }
   ]
 }
