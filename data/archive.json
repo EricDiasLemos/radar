@@ -261081,7 +261081,49 @@
       "priority_skills": [
         "google cloud"
       ]
+    },
+    {
+      "id": "52ef405dcc542dcb",
+      "title": "Especialista Modelagem Estatística | Belo Horizonte",
+      "company": "Banco Mercantil",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Estamos em busca de pessoas talentosas, e apaixonadas pelo que fazem para integrar o nosso time. Ser desafiado diariamente é algo que te motiva? Se a resposta for sim, vem ser Mercantil! O que não faltam aqui são oportunidades de vivenciar novos desafios e de ser protagonista de sua carreira, tudo isso em uma das Melhores Empresas para se trabalhar em Minas Gerais. Ao fazer parte da nossa empresa, você terá a oportunidade de crescer em um ambiente dinâmico, onde o seu talento é reconhecido e incentivado. E essa combinação fica ainda mais perfeita se você tiver brilho nos olhos, uma boa comunicação, proatividade e, claro, foco em resultados. Explore nossas vagas, encontre a oportunidade que mais combina com seu perfil e faça parte de um time que valoriza o seu talento. Não perca a chance de transformar sua carreira e contribuir para projetos desafiadores e transformadores. Venha crescer com a gente! Curtiu? Então, confira abaixo a oportunidade que temos para você! Então, veja abaixo a oportunidade que temos aqui: #VEMSERMERCANTIL Responsabilidades e atribuições Seus principais desafios serão: Buscar conhecer o negócio da instituição, as políticas e os procedimentos, bem como as bases de dados corporativas de forma ampla, permitindo o levantamento de todos os componentes e fatores que possam interferir, de forma individual ou conjunta, na apuração do risco de crédito das operações; Atualizar de forma constante o Manual de Procedimentos e Política da área, com eventuais alterações em tarefas existentes, bem como inclusão de novas atividades. Desenvolver versionamento dos modelos utilizados e realização de backtesting; Elaborar relatórios e outras análises solicitadas pela alta administração e demais áreas de negócio, provendo-os de informações e comentários relevantes, de forma a dar subsídios para a tomada de decisão, no âmbito do gerenciamento do risco de crédito; Aprimorar de forma contínua a modelagem estatística para apuração da Perda Esperada, em especial das operações de crédito, com análises forward-looking, visando adequada apuração do risco do crédito; Desenvolver modelos preditivos dos principais indicadores de risco de crédito, usados na elaboração do orçamento corporativo com visões plurianuais (inadimplência, despesa de provisão, créditos baixados para prejuízo, etc); Desenvolver modelos ad hoc, solicitados pelas diversas áreas da instituição que tenham relação com riscos financeiros. Requisitos e qualificações Buscamos uma pessoa com: Ensino superior completo em Estatística, Ciência da Computação, Sistemas de Informação ou áreas exatas; Desenvolvimento de modelos em Python; modelos de análise preditiva e Machine Learning; Construção de Análise exploratória de Dados; Conhecimento de metodologias ágeis; Conhecimento em linguagem SQL; Vai se destacar se apresentar: Conhecimento dos conceitos relacionados ao risco de crédito, em especial relacionado ao IFRS9; Aplicação de ciência de dados em problemas financeiros Conhecimento em Nuvem AWS",
+      "url": "https://br.linkedin.com/jobs/view/especialista-modelagem-estat%C3%ADstica-belo-horizonte-at-banco-mercantil-4432667958",
+      "source": "LinkedIn",
+      "published_at": "2026-07-21",
+      "found_at": "2026-07-22T12:27:23.954978+00:00",
+      "score": 0,
+      "score_breakdown": {},
+      "skills_match": [],
+      "skills_gap": [],
+      "fit_level": "baixo",
+      "status": "arquivada",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null
+    },
+    {
+      "id": "e961e5ef16457372",
+      "title": "Cybersecurity Engineer",
+      "company": "Aditi Consulting",
+      "location": "Contagem, MG",
+      "salary": "",
+      "description": "Summary The Senior Cybersecurity Engineer is responsible for ongoing cybersecurity assessments of the company’s products to determine whether they comply with applicable cybersecurity standards and technical controls. They will advise product managers and engineering teams, create awareness of cybersecurity standards and technical controls, and recommend best practices for satisfying these standards and controls for all products offered or made available to customers. Experience & Qualifications Bachelor’s degree in Computer Science, Software Engineering, Cybersecurity, or related field. 6+ years of experience in cybersecurity engineering, application security, or software development, with a strong coding background. Hands-on experience with threat modeling and application security assessment. Experience reviewing source code and interpreting vulnerability/scan reports to identify and remediate security weaknesses. Strong documentation skills. Working knowledge of cloud security and containerized environments required; embedded/industrial systems security experience is a bonus, not a priority. Candidates with both cloud and embedded security experience are strongly preferred. Knowledge of cyber regulations and standards, including IEC 62443-4-1, IEC 62443-4-2 (preferred). Experience in the rail, mining, or automotive sectors preferred. Fluent in English, with ability to communicate through verbal and written means of communication. Note: this is a product/application security engineering role, not a SOC (security operations) or infrastructure security position. Responsibilities This position requires extensive knowledge and experience with application and product security. Responsibilities will include the following: Conduct ongoing cybersecurity reviews of company products, including threat modeling and application security assessment, and determine whether Cybersecurity Authorization to Operate (CATO) should be granted based on compliance with company policies, standards, and technical controls. Review source code and scan/vulnerability reports to identify product threat surfaces, attack vectors, and remediation steps. Support engineering teams responsible for conducting threat and risk assessments to identify product threat surfaces and attack vectors. Interpret technical cybersecurity concepts and their business implications. Be able to clearly explain these concepts to management and other engineers. Drive and support an authoritative technical consultation process on product cybersecurity across the company’s embedded electronics, cloud, and non-IT networked product portfolio, including connected vehicle security, secure implementation of real-time operating systems, containerized/cloud environments, and ongoing security support for heavy industrial systems and web services. Recommend and consult on the design of software controls, hardening measures, and other risk mitigations to minimize attack surface and support cost-effective field ma",
+      "url": "https://br.linkedin.com/jobs/view/cybersecurity-engineer-at-aditi-consulting-4443552235",
+      "source": "LinkedIn",
+      "published_at": "2026-07-21",
+      "found_at": "2026-07-22T12:27:35.002266+00:00",
+      "score": 0,
+      "score_breakdown": {},
+      "skills_match": [],
+      "skills_gap": [],
+      "fit_level": "baixo",
+      "status": "arquivada",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null
     }
   ],
-  "last_updated": "2026-07-23T12:27:23.029993+00:00"
+  "last_updated": "2026-07-24T12:21:53.019601+00:00"
 }
