@@ -56,6 +56,10 @@ _PROGRAMATHOR_FETCHED: bool = False
 # Populado por run_scraper antes do loop principal.
 _DESCRIPTION_CACHE: dict[str, str] = {}
 
+# Cache de recruiters extraídos da página da vaga (URL da vaga -> dict).
+# Preenchido no mesmo fetch da descrição, sem requisição extra.
+_RECRUITER_CACHE: dict[str, dict] = {}
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -129,6 +133,7 @@ class Job:
     applied_at: Optional[str] = None
     cover_letter: Optional[str] = None
     contact_email: Optional[str] = None
+    recruiter: Optional[dict] = None
 
     @property
     def id(self) -> str:
@@ -156,6 +161,7 @@ class Job:
             "applied_at": self.applied_at,
             "cover_letter": self.cover_letter,
             "contact_email": self.contact_email,
+            "recruiter": self.recruiter,
         }
 
 
@@ -256,15 +262,22 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
             source="LinkedIn",
             description=descriptions.get(c["url"], ""),
             published_at=c["published_at"],
+            recruiter=_RECRUITER_CACHE.get(c["url"]),
         )
         for c in cards_data
     ]
-    log.info("[LinkedIn] %d vagas encontradas", len(jobs))
+    com_rec = sum(1 for j in jobs if j.recruiter)
+    log.info("[LinkedIn] %d vagas encontradas (%d com recruiter identificado)",
+             len(jobs), com_rec)
     return jobs
 
 
 def _fetch_linkedin_description(url: str) -> str:
-    """Fetch direto (sem sleep — paralelização cuida do throttling natural)."""
+    """
+    Fetch direto (sem sleep — paralelização cuida do throttling natural).
+    Aproveita o mesmo HTML para extrair o recruiter que publicou a vaga
+    (bloco '.message-the-recruiter'), guardado em _RECRUITER_CACHE.
+    """
     if url in _DESCRIPTION_CACHE:
         return _DESCRIPTION_CACHE[url]
     resp = _safe_get(url)
@@ -274,7 +287,41 @@ def _fetch_linkedin_description(url: str) -> str:
     desc_el = soup.select_one(".show-more-less-html__markup, .description__text")
     text = desc_el.get_text(separator=" ", strip=True)[:3000] if desc_el else ""
     _DESCRIPTION_CACHE[url] = text
+
+    rec = _extract_linkedin_recruiter(soup)
+    if rec:
+        _RECRUITER_CACHE[url] = rec
     return text
+
+
+def _extract_linkedin_recruiter(soup) -> Optional[dict]:
+    """
+    Extrai quem publicou a vaga a partir do bloco público
+    '.message-the-recruiter' da página da vaga no LinkedIn.
+    Retorna {name, profile_url, headline} ou None (a maioria das vagas
+    é postada pela empresa e não expõe pessoa).
+    """
+    box = soup.select_one(".message-the-recruiter")
+    if not box:
+        return None
+    link = box.select_one('a[href*="/in/"]')
+    if not link:
+        return None
+
+    name = link.get_text(" ", strip=True)
+    profile = (link.get("href") or "").split("?")[0]
+    if not name or not profile:
+        return None
+
+    # O cargo/headline fica no subtítulo do card que envolve o link
+    headline = ""
+    card = link.find_parent(class_=re.compile("base-main-card|base-card"))
+    if card:
+        sub = card.select_one(".base-main-card__subtitle, h4, .body-text")
+        if sub:
+            headline = sub.get_text(" ", strip=True)
+
+    return {"name": name, "profile_url": profile, "headline": headline}
 
 
 def _fetch_descriptions_parallel(urls: list[str], fetcher, max_workers: int = 4) -> dict[str, str]:

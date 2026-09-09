@@ -12,8 +12,11 @@ from pathlib import Path
 
 from scraper import run_scraper, load_existing_jobs, save_jobs
 from scorer import apply_scores, compute_stats
-from letter_gen import generate_letter_batch
+from letter_gen import generate_letter_batch, generate_recruiter_messages
 from mailer import send_batch
+from recruiters import (
+    merge_jobs_into_directory, save_recruiters, compute_recruiter_stats,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -82,13 +85,24 @@ def run_daily_scan(auto_apply: bool = True) -> None:
                     job["cover_letter"] = letters.get(job["id"], "")
             log.info("Candidaturas automáticas enviadas: %d", len(sent_ids))
 
-    # 6. Arquiva vagas antigas (baixo fit > 30 dias, outras > 90 dias)
+    # 6. Diretório de recruiters — acumula quem publicou as vagas.
+    #    Feito ANTES do arquivamento: as vagas expiram em 24h, mas o
+    #    contato do recruiter é permanente.
+    rec_data = merge_jobs_into_directory(scored_new)
+    if auto_apply:  # só gasta cota da Groq quando o scan é o completo
+        geradas = generate_recruiter_messages(rec_data["recruiters"])
+        if geradas:
+            log.info("Mensagens de conexão geradas: %d", geradas)
+    save_recruiters(rec_data)
+    log.info("Recruiters: %s", compute_recruiter_stats(rec_data))
+
+    # 7. Arquiva vagas antigas (baixo fit > 30 dias, outras > 90 dias)
     all_jobs, archived = _split_for_archive(all_jobs)
     if archived:
         _append_to_archive(archived)
         log.info("Arquivadas %d vagas antigas em archive.json", len(archived))
 
-    # 7. Salva dados atualizados
+    # 8. Salva dados atualizados
     stats = compute_stats(all_jobs)
     output = {
         "jobs": all_jobs,

@@ -613,6 +613,108 @@
     .metric-card .metric-trend.yellow{ color: var(--yellow); }
     .metric-card .metric-trend svg { flex-shrink: 0; }
 
+
+    /* ── Abas (Vagas / Recruiters) ── */
+    .tabs {
+      display: inline-flex;
+      gap: 2px;
+      padding: 3px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+    }
+    .tab {
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .tab:hover { color: var(--text); }
+    .tab.active { background: var(--accent); color: var(--bg); font-weight: 600; }
+    .tab .tab-count {
+      font-size: 0.7rem;
+      opacity: 0.75;
+      font-feature-settings: 'tnum';
+    }
+
+    /* ── Card de recruiter ── */
+    .rec-grid { display: flex; flex-direction: column; gap: 10px; }
+    .rec-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: all 0.2s ease;
+      animation: cardIn 0.3s ease backwards;
+    }
+    .rec-card:hover {
+      border-color: var(--border-strong);
+      background: var(--surface-hover);
+      transform: translateY(-1px);
+    }
+    .rec-top {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 14px; margin-bottom: 4px;
+    }
+    .rec-name {
+      font-size: 0.95rem; font-weight: 600;
+      letter-spacing: -0.005em; color: var(--text);
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .rec-headline {
+      font-size: 0.78rem; color: var(--text-muted);
+      margin-bottom: 10px; line-height: 1.45;
+    }
+    .rec-meta {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      font-size: 0.75rem; color: var(--text-subtle); margin-bottom: 12px;
+    }
+    .rec-meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .rec-jobs { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+    .rec-job-tag {
+      font-size: 0.7rem; padding: 3px 9px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.04);
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.15s;
+    }
+    .rec-job-tag:hover { border-color: var(--accent); color: var(--accent); }
+    .rec-job-tag .sc { font-weight: 600; font-feature-settings: 'tnum'; }
+    .rec-job-tag.alto { border-color: rgba(74,222,128,0.3); color: var(--green); }
+    .rec-job-tag.medio { border-color: rgba(251,146,60,0.3); color: var(--yellow); }
+    .rec-msg {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      white-space: pre-wrap;
+      margin-bottom: 12px;
+    }
+    .rec-msg-empty {
+      font-size: 0.78rem; color: var(--text-subtle);
+      font-style: italic; margin-bottom: 12px;
+    }
+    .rec-actions {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      padding-top: 12px; border-top: 1px solid var(--border);
+    }
+    .badge-rec { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+    .badge-country { background: rgba(255,255,255,0.04); color: var(--text-muted); }
+
     /* ── Modal ── */
     .modal-backdrop {
       display: none;
@@ -1024,8 +1126,43 @@
       </div>
     </aside>
 
-    <!-- ── Jobs ── -->
+    <!-- ── Jobs / Recruiters ── -->
     <main>
+      <!-- Alternador de view -->
+      <div class="tabs" id="view-tabs">
+        <button class="tab active" data-view="jobs" onclick="switchView('jobs')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          </svg>
+          Vagas <span class="tab-count" id="tab-count-jobs"></span>
+        </button>
+        <button class="tab" data-view="recruiters" onclick="switchView('recruiters')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Recruiters <span class="tab-count" id="tab-count-recs"></span>
+        </button>
+      </div>
+
+      <!-- View: Recruiters -->
+      <div id="recruiters-view" style="display:none">
+        <div class="jobs-header">
+          <h2>Recruiters <span class="jobs-count" id="rec-count"></span></h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-f-tech"
+                    onclick="toggleRecFilter('tech')" title="Só quem tem cargo de recrutamento">🎯 Só recruiters</button>
+            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-f-br"
+                    onclick="toggleRecFilter('br')" title="Só perfis do Brasil">🇧🇷 Só Brasil</button>
+            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-f-msg"
+                    onclick="toggleRecFilter('msg')" title="Só quem já tem mensagem pronta">💬 Com mensagem</button>
+            <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortRecruiters()">↓ Nº de vagas</button>
+          </div>
+        </div>
+        <div id="recruiters-grid" class="rec-grid"></div>
+      </div>
+
+      <!-- View: Vagas -->
+      <div id="jobs-view">
       <div class="jobs-header">
         <h2>Vagas <span class="jobs-count" id="jobs-count"></span></h2>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -1058,6 +1195,7 @@
           <div><span class="skel-row chip"></span><span class="skel-row chip"></span></div>
         </div>
       </div>
+      </div><!-- /jobs-view -->
     </main>
 
   </div>
@@ -1225,6 +1363,7 @@ const WORKFLOW_ID  = 'daily-scan.yml';
 // ─── Init ─────────────────────────────────────────────────────────────────────
 async function init() {
   await loadData();
+  await loadRecruiters();
   setupChipFilters();
   updateTokenBtn(!!localStorage.getItem('gh_token'));
 }
@@ -1490,6 +1629,8 @@ function sortJobs() {
 function renderJobs() {
   const grid = document.getElementById('jobs-grid');
   document.getElementById('jobs-count').textContent = `(${filteredJobs.length})`;
+  const tcJobs = document.getElementById('tab-count-jobs');
+  if (tcJobs) tcJobs.textContent = filteredJobs.length || '';
 
   if (filteredJobs.length === 0) {
     // Distingue 'sem resultado de filtro' de 'tudo expirou (>24h)'
@@ -1831,6 +1972,162 @@ function escHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+// ─── Recruiters ───────────────────────────────────────────────────────────────
+let allRecruiters = [];
+let recFilters = { tech: false, br: false, msg: false };
+let recSortDesc = true;
+
+async function loadRecruiters() {
+  try {
+    const r = await fetch('./data/recruiters.json?ts=' + Date.now());
+    if (!r.ok) { allRecruiters = []; return; }
+    const d = await r.json();
+    allRecruiters = d.recruiters || [];
+  } catch (_) {
+    allRecruiters = [];
+  }
+  const tc = document.getElementById('tab-count-recs');
+  if (tc) tc.textContent = allRecruiters.length || '';
+  renderRecruiters();
+}
+
+function switchView(view) {
+  document.querySelectorAll('#view-tabs .tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.view === view);
+  });
+  document.getElementById('jobs-view').style.display = view === 'jobs' ? '' : 'none';
+  document.getElementById('recruiters-view').style.display = view === 'recruiters' ? '' : 'none';
+  // A sidebar de filtros só faz sentido na view de vagas
+  const aside = document.querySelector('.sidebar');
+  if (aside) aside.style.display = view === 'jobs' ? '' : 'none';
+  const layout = document.querySelector('.layout');
+  if (layout) layout.style.gridTemplateColumns = view === 'jobs' ? '' : '1fr';
+  if (view === 'recruiters') renderRecruiters();
+}
+
+function toggleRecFilter(key) {
+  recFilters[key] = !recFilters[key];
+  const btn = document.getElementById('rec-f-' + key);
+  if (btn) btn.className = 'btn ' + (recFilters[key] ? 'btn-blue' : 'btn-ghost');
+  renderRecruiters();
+}
+
+function sortRecruiters() {
+  recSortDesc = !recSortDesc;
+  renderRecruiters();
+}
+
+function filteredRecruiters() {
+  const list = allRecruiters.filter(r => {
+    if (recFilters.tech && !r.is_recruiter) return false;
+    if (recFilters.br && r.country !== 'BR') return false;
+    if (recFilters.msg && !r.message) return false;
+    return true;
+  });
+  list.sort((a, b) => {
+    const d = (b.jobs || []).length - (a.jobs || []).length;
+    return recSortDesc ? d : -d;
+  });
+  return list;
+}
+
+function renderRecruiters() {
+  const grid = document.getElementById('recruiters-grid');
+  if (!grid) return;
+  const list = filteredRecruiters();
+  const rc = document.getElementById('rec-count');
+  if (rc) rc.textContent = `(${list.length})`;
+
+  if (list.length === 0) {
+    const semDados = allRecruiters.length === 0;
+    grid.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          </svg>
+        </div>
+        <p><strong>${semDados ? 'Nenhum recruiter no diretório ainda.' : 'Nenhum recruiter com esses filtros.'}</strong></p>
+        <span class="empty-hint">${semDados
+          ? 'O sistema captura o recrutador quando a vaga do LinkedIn expõe quem publicou (cerca de 5-9% delas). Rode um scan para começar a acumular.'
+          : 'Desmarque algum filtro acima para ver mais.'}</span>
+      </div>`;
+    return;
+  }
+  grid.innerHTML = list.map(renderRecruiterCard).join('');
+}
+
+const REC_FLAGS = { BR: '\u{1F1E7}\u{1F1F7}', US: '\u{1F1FA}\u{1F1F8}', IN: '\u{1F1EE}\u{1F1F3}', UK: '\u{1F1EC}\u{1F1E7}', PT: '\u{1F1F5}\u{1F1F9}' };
+
+function renderRecruiterCard(r) {
+  const nJobs = (r.jobs || []).length;
+
+  const recBadge = r.is_recruiter
+    ? '<span class="badge badge-rec">🎯 Recruiter</span>'
+    : '<span class="badge badge-country">Contratante</span>';
+
+  const countryBadge = r.country && r.country !== '?'
+    ? `<span class="badge badge-country">${REC_FLAGS[r.country] || ''} ${escHtml(r.country)}</span>`
+    : '';
+
+  const jobTags = (r.jobs || []).slice(0, 6).map(j => {
+    const cls = j.fit_level === 'alto' ? 'alto' : (j.fit_level === 'medio' ? 'medio' : '');
+    return `<a class="rec-job-tag ${cls}" href="${escHtml(j.url || '#')}" target="_blank" rel="noopener" title="${escHtml(j.company || '')}">${escHtml((j.title || '').slice(0, 42))} <span class="sc">${j.score || 0}</span></a>`;
+  }).join('');
+  const jobsOverflow = nJobs > 6 ? `<span class="rec-job-tag">+${nJobs - 6}</span>` : '';
+
+  const empresas = (r.companies || []).filter(c => c && c !== 'N/A');
+  const msgBlock = r.message
+    ? `<div class="rec-msg">${escHtml(r.message)}</div>`
+    : `<div class="rec-msg-empty">Mensagem ainda não gerada — sai no próximo scan completo.</div>`;
+
+  const copyBtn = r.message
+    ? `<button class="btn btn-blue" style="font-size:0.75rem" onclick="copyRecruiterMessage('${r.id}')">📋 Copiar mensagem</button>`
+    : '';
+
+  return `
+    <div class="rec-card" id="rec-${r.id}">
+      <div class="rec-top">
+        <div style="min-width:0;flex:1">
+          <div class="rec-name">${escHtml(r.name || 'Sem nome')} ${recBadge} ${countryBadge}</div>
+          <div class="rec-headline">${escHtml(r.headline || '—')}</div>
+        </div>
+      </div>
+
+      <div class="rec-meta">
+        ${empresas.length ? `<span>🏢 ${escHtml(empresas.slice(0, 3).join(', '))}</span>` : ''}
+        <span>📋 ${nJobs} vaga${nJobs === 1 ? '' : 's'} publicada${nJobs === 1 ? '' : 's'}</span>
+        ${r.last_seen ? `<span>🕐 visto ${formatRelativeTime(r.last_seen)}</span>` : ''}
+      </div>
+
+      <div class="rec-jobs">${jobTags}${jobsOverflow}</div>
+
+      ${msgBlock}
+
+      <div class="rec-actions">
+        ${copyBtn}
+        <a class="btn btn-ghost" style="font-size:0.75rem" href="${escHtml(r.profile_url || '#')}" target="_blank" rel="noopener">🔗 Abrir perfil</a>
+      </div>
+    </div>`;
+}
+
+function copyRecruiterMessage(id) {
+  const rec = allRecruiters.find(r => r.id === id);
+  if (!rec || !rec.message) { toast('Sem mensagem para copiar.', 'error'); return; }
+  navigator.clipboard.writeText(rec.message)
+    .then(() => toast('Mensagem copiada! Cole no LinkedIn.', 'success'))
+    .catch(() => {
+      // Fallback para browsers sem clipboard API
+      const ta = document.createElement('textarea');
+      ta.value = rec.message;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); toast('Mensagem copiada!', 'success'); }
+      catch (_) { toast('Não foi possível copiar automaticamente.', 'error'); }
+      document.body.removeChild(ta);
+    });
 }
 
 function toast(msg, type = 'info') {

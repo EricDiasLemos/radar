@@ -103,3 +103,106 @@ Estou disponível para uma conversa técnica quando for conveniente para a equip
 Atenciosamente,
 Eric Dias Lemos
 ericdias0603@gmail.com"""
+
+
+# ─── Mensagem de conexão para recruiters (LinkedIn DM) ────────────────────────
+
+RECRUITER_SYSTEM_PROMPT = """Você escreve mensagens curtas de conexão no LinkedIn \
+em nome de Eric Dias Lemos, Engenheiro DevOps (Python, Docker, Linux, Kubernetes, \
+Terraform, AWS, GCP, Prometheus, Grafana).
+
+Regras obrigatórias:
+- No MÁXIMO 60 palavras (é uma DM de LinkedIn, não uma carta)
+- Tom cordial e direto, como uma pessoa real escreveria
+- Citar a vaga específica que o recrutador publicou
+- Mencionar no máximo 3 skills que casam com a vaga
+- Terminar com uma pergunta simples e de baixo atrito
+- Nada de "Prezado(a)", "venho por meio desta" ou jargão corporativo
+- Português brasileiro, informal-profissional
+- Devolver SOMENTE o texto da mensagem, sem assunto nem assinatura"""
+
+
+def generate_recruiter_message(recruiter: dict) -> str:
+    """
+    Gera a mensagem de conexão para um recruiter, citando a vaga de maior
+    score que ele publicou. Retorna o texto pronto para copiar no LinkedIn.
+    """
+    api_key = os.environ.get("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("GROQ_API_KEY não configurada")
+
+    jobs = recruiter.get("jobs") or []
+    best = max(jobs, key=lambda j: j.get("score", 0)) if jobs else {}
+
+    first_name = (recruiter.get("name") or "").split()[0] if recruiter.get("name") else ""
+    outras = len(jobs) - 1
+
+    user_prompt = f"""Recrutador: {recruiter.get('name', '')} ({first_name})
+Cargo dele: {recruiter.get('headline', 'não informado')}
+
+Vaga que ele publicou: {best.get('title', 'vaga de tecnologia')}
+Empresa: {best.get('company', 'não informada')}
+Score de aderência ao perfil do Eric: {best.get('score', 0)}/100
+{f'Ele também publicou outras {outras} vaga(s) que batem com o perfil.' if outras > 0 else ''}
+
+Escreva a mensagem de conexão do Eric para esse recrutador."""
+
+    client = Groq(api_key=api_key)
+    log.info("Gerando mensagem para recruiter: %s (Groq/%s)",
+             recruiter.get("name"), GROQ_MODEL)
+
+    response = client.chat.completions.create(
+        model=GROQ_MODEL,
+        max_tokens=220,
+        temperature=0.7,
+        messages=[
+            {"role": "system", "content": RECRUITER_SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
+        ],
+    )
+    msg = response.choices[0].message.content.strip()
+    log.info("Mensagem gerada: %d caracteres", len(msg))
+    return msg
+
+
+def generate_recruiter_messages(recruiters: list[dict], limit: int = 15) -> int:
+    """
+    Preenche o campo 'message' dos recruiters que ainda não têm uma.
+    Prioriza quem publicou vagas de maior score. `limit` protege a cota da API.
+    Retorna quantas mensagens foram geradas.
+    """
+    pendentes = [r for r in recruiters if not r.get("message") and r.get("jobs")]
+    pendentes.sort(
+        key=lambda r: max((j.get("score", 0) for j in r["jobs"]), default=0),
+        reverse=True,
+    )
+
+    geradas = 0
+    for rec in pendentes[:limit]:
+        try:
+            rec["message"] = generate_recruiter_message(rec)
+            geradas += 1
+        except Exception as e:
+            log.error("Falha ao gerar mensagem para %s: %s", rec.get("name"), e)
+            rec["message"] = _fallback_recruiter_message(rec)
+            geradas += 1
+    return geradas
+
+
+def _fallback_recruiter_message(recruiter: dict) -> str:
+    """Mensagem padrão usada quando a API do Groq falha."""
+    jobs = recruiter.get("jobs") or []
+    best = max(jobs, key=lambda j: j.get("score", 0)) if jobs else {}
+    first_name = (recruiter.get("name") or "").split()[0] if recruiter.get("name") else ""
+    saudacao = f"Oi {first_name}, tudo bem?" if first_name else "Oi, tudo bem?"
+    vaga = best.get("title", "a vaga de infraestrutura")
+    empresa = best.get("company", "")
+    onde = f" na {empresa}" if empresa and empresa != "N/A" else ""
+
+    return (
+        f"{saudacao}\n\n"
+        f"Vi que você publicou a vaga de {vaga}{onde}. "
+        f"Sou Engenheiro DevOps e trabalho com Linux, Docker, Kubernetes e AWS/GCP, "
+        f"então o perfil bateu bastante com o que faço.\n\n"
+        f"Posso te enviar meu currículo?"
+    )

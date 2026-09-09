@@ -46,6 +46,7 @@ jobs:
           cp data/jobs.json docs/data/jobs.json
           cp data/sent.json docs/data/sent.json
           [ -f data/blacklist.json ] && cp data/blacklist.json docs/data/blacklist.json || true
+          [ -f data/recruiters.json ] && cp data/recruiters.json docs/data/recruiters.json || true
 
       - name: Commit dados atualizados
         run: |
@@ -54,8 +55,8 @@ jobs:
           git config user.email "actions@github.com"
 
           # Adiciona cada arquivo individualmente com log (alguns podem não existir)
-          for f in data/jobs.json data/sent.json data/blacklist.json data/archive.json \
-                   docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json; do
+          for f in data/jobs.json data/sent.json data/blacklist.json data/archive.json data/recruiters.json \
+                   docs/data/jobs.json docs/data/sent.json docs/data/blacklist.json docs/data/recruiters.json; do
             if [ -f "$f" ]; then
               git add "$f" && echo "  + $f"
             else
