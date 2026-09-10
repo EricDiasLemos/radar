@@ -12,7 +12,7 @@ import hashlib
 import json
 import logging
 import re
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 log = logging.getLogger(__name__)
@@ -27,6 +27,12 @@ MAX_JOBS_PER_RECRUITER = 20
 # Evita guardar quem so publica vagas fora do perfil (ex: Depto Pessoal),
 # o que geraria mensagens de conexao sem sentido.
 MIN_JOB_SCORE = 40
+
+# Janela para inferir o recruiter de uma vaga a partir da empresa.
+# Se já conhecemos alguém que publicou por aquela empresa nos últimos N dias,
+# associamos as novas vagas dela a esse contato. Recrutador troca de emprego,
+# então um contato muito antigo deixa de valer.
+INFER_WINDOW_DAYS = 90
 
 # ─── Classificação ────────────────────────────────────────────────────────────
 
@@ -175,17 +181,91 @@ def merge_jobs_into_directory(jobs):
             entry["jobs"] = entry["jobs"][:MAX_JOBS_PER_RECRUITER]
         atualizados += 1
 
+    # 2a passada: vagas sem recruiter herdam o contato ja conhecido da empresa.
+    # Cobre o caso comum de a empresa publicar varias vagas e so uma expor
+    # quem publicou.
+    inferidas = _infer_by_company(jobs, by_id, now)
+
     recruiters = sorted(
         by_id.values(),
         key=lambda r: (len(r.get("jobs", [])), r.get("last_seen", "")),
         reverse=True,
     )
     log.info("Diretorio de recruiters: %d novos, %d atualizados, %d no total "
-             "(%d vagas ignoradas por score < %d)",
-             novos, atualizados, len(recruiters), ignoradas, MIN_JOB_SCORE)
+             "(%d vagas ignoradas por score < %d, %d inferidas via empresa)",
+             novos, atualizados, len(recruiters), ignoradas, MIN_JOB_SCORE, inferidas)
 
     return {"recruiters": recruiters, "last_updated": now}
 
+
+
+def _company_key(name):
+    """Normaliza o nome da empresa para casar variacoes de escrita."""
+    if not name or name == "N/A":
+        return ""
+    k = name.lower().strip()
+    k = re.sub(r"[^\w\s]", " ", k)
+    # remove sufixos societarios que variam entre anuncios
+    k = re.sub(r"\b(ltda|s\s*a|sa|me|eireli|epp|inc|llc|co|group|brasil|brazil)\b", " ", k)
+    return re.sub(r"\s+", " ", k).strip()
+
+
+def _infer_by_company(jobs, by_id, now):
+    """
+    Liga vagas sem recruiter ao contato ja conhecido da mesma empresa.
+
+    A vaga entra na lista do recruiter marcada com inferred=True, para o
+    dashboard deixar claro que o contato veio da empresa e nao daquela vaga.
+    Retorna quantas vagas foram inferidas.
+    """
+    limite = datetime.now(timezone.utc) - timedelta(days=INFER_WINDOW_DAYS)
+
+    # empresa -> recruiter mais recente que publicou por ela
+    por_empresa = {}
+    for r in by_id.values():
+        try:
+            visto = datetime.fromisoformat((r.get("last_seen") or "").replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if visto < limite:
+            continue
+        for comp in r.get("companies", []):
+            key = _company_key(comp)
+            if not key:
+                continue
+            atual = por_empresa.get(key)
+            if atual is None or visto > atual[1]:
+                por_empresa[key] = (r, visto)
+
+    inferidas = 0
+    for job in jobs:
+        if job.get("recruiter"):
+            continue  # ja tem contato proprio
+        if job.get("score", 0) < MIN_JOB_SCORE:
+            continue
+        key = _company_key(job.get("company", ""))
+        if not key or key not in por_empresa:
+            continue
+
+        entry = por_empresa[key][0]
+        if job.get("id") in {j.get("id") for j in entry.get("jobs", [])}:
+            continue
+
+        entry["jobs"].insert(0, {
+            "id": job.get("id"),
+            "title": job.get("title"),
+            "company": job.get("company"),
+            "url": job.get("url"),
+            "score": job.get("score", 0),
+            "fit_level": job.get("fit_level", "baixo"),
+            "found_at": job.get("found_at", now),
+            "inferred": True,
+        })
+        entry["jobs"] = entry["jobs"][:MAX_JOBS_PER_RECRUITER]
+        entry["last_seen"] = now
+        inferidas += 1
+
+    return inferidas
 
 def compute_recruiter_stats(data):
     recs = data.get("recruiters", [])

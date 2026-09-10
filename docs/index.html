@@ -690,6 +690,8 @@
     }
     .rec-job-tag:hover { border-color: var(--accent); color: var(--accent); }
     .rec-job-tag .sc { font-weight: 600; font-feature-settings: 'tnum'; }
+    .rec-job-tag.inferred { border-style: dashed; opacity: 0.8; }
+    .rec-job-tag.inferred::before { content: '~ '; opacity: 0.6; }
     .rec-job-tag.alto { border-color: rgba(74,222,128,0.3); color: var(--green); }
     .rec-job-tag.medio { border-color: rgba(251,146,60,0.3); color: var(--yellow); }
     .rec-msg {
@@ -1157,6 +1159,10 @@
                     onclick="toggleRecFilter('msg')" title="Só quem já tem mensagem pronta">💬 Com mensagem</button>
             <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortRecruiters()">↓ Nº de vagas</button>
           </div>
+        </div>
+        <div style="font-size:0.72rem;color:var(--text-subtle);margin:-8px 0 14px">
+          Vagas com borda tracejada (<span style="border:1px dashed var(--border-strong);border-radius:4px;padding:0 5px">~ exemplo</span>)
+          foram associadas pela empresa — o anúncio não expôs quem publicou.
         </div>
         <div id="recruiters-grid" class="rec-grid"></div>
       </div>
@@ -2074,7 +2080,11 @@ function renderRecruiterCard(r) {
 
   const jobTags = (r.jobs || []).slice(0, 6).map(j => {
     const cls = j.fit_level === 'alto' ? 'alto' : (j.fit_level === 'medio' ? 'medio' : '');
-    return `<a class="rec-job-tag ${cls}" href="${escHtml(j.url || '#')}" target="_blank" rel="noopener" title="${escHtml(j.company || '')}">${escHtml((j.title || '').slice(0, 42))} <span class="sc">${j.score || 0}</span></a>`;
+    const inf = j.inferred ? ' inferred' : '';
+    const tip = j.inferred
+      ? `${j.company || ''} — vaga associada pela empresa (o anúncio não expôs quem publicou)`
+      : (j.company || '');
+    return `<a class="rec-job-tag ${cls}${inf}" href="${escHtml(j.url || '#')}" target="_blank" rel="noopener" title="${escHtml(tip)}">${escHtml((j.title || '').slice(0, 42))} <span class="sc">${j.score || 0}</span></a>`;
   }).join('');
   const jobsOverflow = nJobs > 6 ? `<span class="rec-job-tag">+${nJobs - 6}</span>` : '';
 
