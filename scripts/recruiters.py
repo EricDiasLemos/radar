@@ -26,7 +26,7 @@ MAX_JOBS_PER_RECRUITER = 20
 # Score minimo da vaga para o recruiter entrar no diretorio.
 # Evita guardar quem so publica vagas fora do perfil (ex: Depto Pessoal),
 # o que geraria mensagens de conexao sem sentido.
-MIN_JOB_SCORE = 40
+MIN_JOB_SCORE = 60
 
 # Janela para inferir o recruiter de uma vaga a partir da empresa.
 # Se já conhecemos alguém que publicou por aquela empresa nos últimos N dias,

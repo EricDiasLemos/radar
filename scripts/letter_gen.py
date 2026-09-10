@@ -10,16 +10,55 @@ from groq import Groq
 
 log = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """Você é um assistente especializado em escrever cartas de apresentação \
-para Eric Dias Lemos, Engenheiro DevOps com experiência em Python, Docker, Linux, \
-Prometheus, Grafana, Kubernetes, Terraform, AWS e GCP.
+# Perfil do candidato — base factual usada nos prompts.
+# Mantenha fiel ao currículo: o modelo não deve inventar experiência.
+CANDIDATE_PROFILE = """Eric Dias Lemos — DevOps / Platform Engineer, 3 anos de experiência.
+Engenharia da Computação concluída (Centro Universitário Una, 2026). Belo Horizonte/MG.
+
+Atuação atual — Método Telecom (desde mar/2025), DevOps | Cloud & Infraestrutura:
+- Construiu do zero uma plataforma interna (IDP) com Gitea, Jenkins, Docker Registry,
+  Trivy, Gitleaks e SonarQube — DevSecOps embutido em cada commit, stack open source.
+- Sustenta hospedagem, confiabilidade e CI/CD de 30+ sistemas em produção;
+  4 servidores e 25+ máquinas Linux monitoradas.
+- Observabilidade com Zabbix, Prometheus, Grafana e Loki: dashboards, alertas
+  multi-canal e abertura automática de chamados.
+- Pipelines Jenkins containerizado em EC2 e Kubernetes (K3s), testes em múltiplos
+  níveis e Blue-Green Deployment com zero downtime. Provisionamento com Terraform.
+- Ambiente híbrido GCP + AWS + VMware, com migração de sistemas e FinOps.
+- Exporters em Python integrando APIs de SBCs de telefonia ao Prometheus.
+- Redes e segurança: Fortigate, WireGuard, MikroTik, segmentação e troubleshooting.
+
+MUG Solutions (desde mar/2026), Cloud Engineer | DevOps — responsável pela infraestrutura:
+- Reconstruiu a infra como código (Terraform + Ansible) — ambiente 100% reprodutível.
+- Conduziu avaliação multi-cloud e migrou a stack de GCP para AWS reaproveitando
+  100% da camada Ansible — migração sem retrabalho.
+- CI/CD com GitHub Actions e deploy blue-green (Next.js + Supabase).
+- Análise de custo/capacidade que reduziu gasto de nuvem.
+
+Antes: Analista de Redes Jr (Century) e Assistente de NOC (Kater) — Zabbix, Grafana,
+MikroTik, Huawei, OLT, VLAN, troubleshooting camada 2/3. Militar do Exército (Comunicações).
+
+Stack: Python, Docker, Kubernetes/K3s, Terraform, Ansible, Jenkins, GitHub Actions,
+Prometheus, Grafana, Loki, Zabbix, AWS (EC2, EBS, IAM, Elastic IP), GCP (Compute Engine,
+Cloud Run), VMware, Nginx, Cloudflare, Fortigate, WireGuard, FastAPI, Flask, N8N.
+
+Certificações: AWS Cloud Practitioner (curso), Google DevOps Essentials,
+Cisco NDG Linux Essentials, Networking Basics. Cursando Google Cloud Associate
+Cloud Engineer."""
+
+SYSTEM_PROMPT = """Você escreve cartas de apresentação em nome de Eric Dias Lemos.
+
+PERFIL DO CANDIDATO (use só o que está aqui, nunca invente experiência):
+""" + CANDIDATE_PROFILE + """
 
 Regras obrigatórias:
 - Tom direto e técnico, sem exageros ou adjetivos vazios
 - Máximo 4 parágrafos curtos (não mais de 5 linhas cada)
 - Não começar com "Prezados" ou frases genéricas
-- Destacar sempre 2-3 skills técnicas que coincidem com a vaga
-- Não mencionar habilidades que Eric não possui
+- Destacar 2-3 pontos do perfil que casam com a vaga, preferindo
+  resultados concretos (ex: plataforma interna para 30+ sistemas,
+  migração GCP→AWS sem retrabalho, blue-green com zero downtime)
+- Nunca citar tecnologia ou experiência que não esteja no perfil acima
 - Finalizar com disponibilidade para entrevista
 - Escrever em português brasileiro formal-técnico"""
 
@@ -108,8 +147,10 @@ ericdias0603@gmail.com"""
 # ─── Mensagem de conexão para recruiters (LinkedIn DM) ────────────────────────
 
 RECRUITER_SYSTEM_PROMPT = """Você escreve mensagens curtas de conexão no LinkedIn \
-em nome de Eric Dias Lemos, Engenheiro DevOps (Python, Docker, Linux, Kubernetes, \
-Terraform, AWS, GCP, Prometheus, Grafana).
+em nome de Eric Dias Lemos.
+
+PERFIL (use só o que está aqui, nunca invente experiência):
+""" + CANDIDATE_PROFILE + """
 
 Regras obrigatórias:
 - No MÁXIMO 60 palavras (é uma DM de LinkedIn, não uma carta)
@@ -202,7 +243,8 @@ def _fallback_recruiter_message(recruiter: dict) -> str:
     return (
         f"{saudacao}\n\n"
         f"Vi que você publicou a vaga de {vaga}{onde}. "
-        f"Sou Engenheiro DevOps e trabalho com Linux, Docker, Kubernetes e AWS/GCP, "
-        f"então o perfil bateu bastante com o que faço.\n\n"
+        f"Trabalho com DevOps e Cloud há 3 anos — hoje cuido de CI/CD e "
+        f"observabilidade de 30+ sistemas em produção, com Terraform, Kubernetes "
+        f"e AWS/GCP. O perfil da vaga bateu bastante com o que faço.\n\n"
         f"Posso te enviar meu currículo?"
     )

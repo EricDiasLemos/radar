@@ -13,7 +13,7 @@ from pathlib import Path
 from scraper import run_scraper, load_existing_jobs, save_jobs
 from scorer import apply_scores, compute_stats
 from letter_gen import generate_letter_batch, generate_recruiter_messages
-from mailer import send_batch
+from mailer import send_batch, SEND_SELF_NOTIFICATIONS
 from recruiters import (
     merge_jobs_into_directory, save_recruiters, compute_recruiter_stats,
 )
@@ -72,8 +72,18 @@ def run_daily_scan(auto_apply: bool = True) -> None:
         log.info("Vagas para auto-candidatura: %d total (%d big tech, %d com email direto, %d sem email)",
                  len(alto_fit), len(big_techs), len(email_vagas), len(sem_email))
 
+        # A carta só é usada quando o email vai direto para o recrutador.
+        # Com SEND_SELF_NOTIFICATIONS=false as demais nem são enviadas, então
+        # gerar carta para elas só queimaria cota da Groq — que é melhor
+        # aproveitada nas mensagens de conexão do LinkedIn.
+        alvos_carta = email_vagas if not SEND_SELF_NOTIFICATIONS else alto_fit
+
         if alto_fit:
-            letters = generate_letter_batch(alto_fit)
+            letters = generate_letter_batch(alvos_carta) if alvos_carta else {}
+            if len(alvos_carta) < len(alto_fit):
+                log.info("Cartas geradas apenas para %d vaga(s) com email do recrutador "
+                         "(%d sem email não recebem email, então não precisam de carta)",
+                         len(alvos_carta), len(alto_fit) - len(alvos_carta))
             sent_ids = send_batch(alto_fit, letters)
 
             # Atualiza status e carta no banco

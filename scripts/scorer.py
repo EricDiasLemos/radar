@@ -29,10 +29,25 @@ CANDIDATE_SKILLS = {
     # Observabilidade (valem +2)
     "zabbix", "datadog", "loki", "alertmanager", "grafana loki", "elk",
     "newrelic", "dynatrace",
+    # DevSecOps / qualidade de codigo (valem +2)
+    "sonarqube", "trivy", "gitleaks", "gitea", "vault", "devsecops",
+    # Estrategias de deploy (valem +2)
+    "blue-green", "blue green", "canary", "gitops", "rollback",
+    "zero downtime", "zero-downtime",
+    # IaC / plataforma (valem +2)
+    "iac", "infrastructure as code", "infraestrutura como codigo",
+    "docker compose", "docker-compose", "proxmox", "systemd",
+    # Dados / backing services (valem +2)
+    "postgresql", "postgres", "redis", "cloud sql", "rabbitmq", "kafka",
+    # Cloud / edge complementares (valem +2)
+    "cloudflare", "compute engine", "cloud functions", "app engine",
+    "elastic ip", "ebs", "security groups", "load balancer",
+    # Redes (base do candidato — valem +2)
+    "cisco", "huawei", "vlan", "bgp", "firewall", "vpn", "dns", "olt",
     # Infra / Rede (valem +2)
     "nginx", "bash", "shell", "git", "rest", "api",
     "k3s", "wireguard", "mikrotik", "fortigate", "vmware",
-    "n8n", "flask",
+    "n8n", "flask", "fastapi", "gunicorn",
 }
 
 CORE_SKILLS = {"python", "docker", "linux", "prometheus", "grafana"}
@@ -48,8 +63,14 @@ POSITIVE_KEYWORDS = {
     "cloud native", "multicloud", "multi-cloud", "hybrid cloud",
     "cloud operations", "cloudops", "finops",
     "migração para nuvem", "cloud migration",
+    # Platform engineering / confiabilidade
+    "platform engineering", "plataforma interna", "internal developer platform",
+    "idp", "gitops", "zero downtime", "blue-green",
+    "confiabilidade", "reliability", "disponibilidade", "availability",
+    "escalabilidade", "scalability", "infraestrutura como codigo",
     # Cargos alvo
     "analista de infraestrutura", "engenheiro de infraestrutura",
+    "platform engineer", "engenheiro de plataforma", "devops engineer",
     "engenheiro cloud", "analista cloud", "cloud engineer",
     "suporte linux", "administrador linux", "linux admin",
     "administrador cloud", "cloud administrator",

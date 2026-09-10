@@ -84,6 +84,10 @@ SEARCH_QUERIES = [
     "Analista de Infraestrutura",
     "Analista de Infraestrutura Junior",
     "Analista de Infraestrutura Pleno",
+    # Platform Engineering
+    "Platform Engineer",
+    "Cloud Platform",
+    "Engenheiro de Plataforma",
     # Cloud
     "Cloud Engineer",
     "Engenheiro Cloud",
