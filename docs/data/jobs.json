@@ -134,7 +134,8 @@
       "contact_email": null,
       "recruiter": null,
       "target_company": false,
-      "priority_skills": []
+      "priority_skills": [],
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc"
     },
     {
       "id": "999903a9f348b131",
@@ -413,7 +414,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T17:50:32.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEhPUi4bYTP-A/company-logo_200_200/company-logo_200_200/0/1712955003130/fitenergia_logo?e=2147483647&v=beta&t=SiOyMYUFqHoNuCDn80u0xsn-uK5h0R7NbvauHR0j7FI"
     },
     {
       "id": "85a2e3632497fa3d",
@@ -833,7 +835,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T00:50:54.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc"
     },
     {
       "id": "318cced4a6e03b9b",
@@ -973,7 +976,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-13T21:33:54.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEzMzmY-T_F1g/company-logo_200_200/company-logo_200_200/0/1670441718552/grupofcamara_logo?e=2147483647&v=beta&t=2Qy9XIxC0x54_y4t-AosfeeanHSzIfUiYYUCKaX_GiI"
     },
     {
       "id": "de78baa7ba01838c",
@@ -1113,7 +1117,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-11-24T04:33:16.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -1390,7 +1395,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-09T10:37:19.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -1529,7 +1535,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-02T20:32:11.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEKyVZ5kehqbA/company-logo_200_200/company-logo_200_200/0/1695203312947/emivebr_logo?e=2147483647&v=beta&t=VsWZgPk-UY7iRUG13Ropk79VJIJbUEY_kjHUtepBsFY"
     },
     {
       "id": "4e3af81035abcf90",
@@ -1668,7 +1675,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-08T22:59:46.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk"
     },
     {
       "id": "9e5994878882e2b4",
@@ -1806,7 +1814,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-01T22:19:49.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQHanufOwaigQA/company-logo_200_200/company-logo_200_200/0/1630622207004/vmi_security_logo?e=2147483647&v=beta&t=RgCPqYQIj0fGD4mJubyz11dYqoME1PZzpfPU58u2Ca0"
     },
     {
       "id": "c87fd0d512cf821e",
@@ -1945,7 +1954,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-01T23:00:01.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk"
     },
     {
       "id": "3b42f5789987b5f5",
@@ -2083,7 +2093,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-28T10:38:00.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHkPgPj3HY6YQ/company-logo_200_200/company-logo_200_200/0/1736435132288/astralpaesemassas_logo?e=2147483647&v=beta&t=qAsoe-6G9AHQcuEYoN6do9-9JURqfGvDnx9q2uqkPVQ"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -2221,7 +2232,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE5LPVRiEw4JQ/company-logo_100_100/company-logo_100_100/0/1736446136441?e=2147483647&v=beta&t=OJeZ6-coS0QrIa1fsNOf3dCZlz3lNR4alRhKiLxM-O4"
     },
     {
       "id": "a4e3492c010321de",
@@ -2358,7 +2370,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF8asXMfQ28iw/company-logo_100_100/B4DaCH06DCIQAM-/0/1788985189127/seteloc_logo?e=2147483647&v=beta&t=k3GATtSw1_Qu6ZawRBYFhxhjE6KIN4xoVBv5-XtVCt4"
     },
     {
       "id": "ce5890a61b181743",
@@ -2495,7 +2508,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGYY570-kdpUg/company-logo_100_100/company-logo_100_100/0/1738953126028/zummit_it_logo?e=2147483647&v=beta&t=v_orIm5RcxsCxlnRrOJ4r24O7oQCK0At-zfjvYKbvjo"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -2771,7 +2785,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-27T13:53:06.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFbq4nyJmxxEQ/company-logo_200_200/B4DaBepRZqJcAE-/0/1788294272848/cast4it_logo?e=2147483647&v=beta&t=JxNERgItU9X2PWny0uHidlnyaIloyyUfbIpE7roXcXs"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -2910,7 +2925,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-01T00:53:02.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGQ9_7vYuztPA/company-logo_200_200/company-logo_200_200/0/1695849805705/sgatiemnuvem_logo?e=2147483647&v=beta&t=kfkYfUS2yMC4wrTT0wB7wPutJI4j6zx_p6sBk-iS8U4"
     },
     {
       "id": "132d6541e19aaf94",
@@ -3048,7 +3064,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-23T19:51:14.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM"
     },
     {
       "id": "ace4090aed558a31",
@@ -3187,7 +3204,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-25T20:15:54.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE4q-iBP4fZ0g/company-logo_200_200/B4DZUUipIKG8AI-/0/1739806380950/mercadolivre_com_logo?e=2147483647&v=beta&t=e6EdT3IHvk1PqtvipIAQjHALqTyRoFjbtOQLd-r6944"
     },
     {
       "id": "b4d64b7488c8cfa5",
@@ -3329,7 +3347,8 @@
       ],
       "title_class": "core",
       "valid_through": "2026-09-24T22:59:44.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk"
     },
     {
       "id": "4bfe4aa702c7e784",
@@ -3466,7 +3485,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQG_S8qdMW3LQw/company-logo_100_100/company-logo_100_100/0/1635352720943/bernoulli_educacao_logo?e=2147483647&v=beta&t=1DkPoUYI7m3yyBJnMr-baHePmp8cmlcnrXRW6USS83g"
     },
     {
       "id": "f685ca9dbe9165ce",
@@ -3604,7 +3624,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2027-02-16T18:53:00.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQHa-WQRRMKqNw/company-logo_200_200/B4EZ21jU6oGYAI-/0/1776867430513/licitardigital_logo?e=2147483647&v=beta&t=1Kqeyvh4bvpSV6Kvmm-4halY6j3O4FU1eDtUvxm_qYo"
     },
     {
       "id": "efc1913733d79b2c",
@@ -3745,7 +3766,8 @@
       ],
       "title_class": "core",
       "valid_through": "2026-09-17T12:53:25.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQG9cUkWrOne1Q/company-logo_200_200/B4DaBeMQvLKgAE-/0/1788286667937/npobrasil_logo?e=2147483647&v=beta&t=aBYdlDHKmTkFdMakDaMcBhjBlK3Ii_8tbTOlsuAQ4_s"
     },
     {
       "id": "e715ab7ef8d99f35",
@@ -3884,7 +3906,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-17T16:23:58.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFOPyOhO4wTTg/company-logo_200_200/company-logo_200_200/0/1719784126380/stefanini_brasil_logo?e=2147483647&v=beta&t=GeCNS8NITXMaT6BuXQ9PIgV7dLeqnIvSm8gjOi3iVvs"
     },
     {
       "id": "e382d9f2e57ea4bb",
@@ -4023,7 +4046,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-17T12:52:43.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQG9cUkWrOne1Q/company-logo_200_200/B4DaBeMQvLKgAE-/0/1788286667937/npobrasil_logo?e=2147483647&v=beta&t=aBYdlDHKmTkFdMakDaMcBhjBlK3Ii_8tbTOlsuAQ4_s"
     },
     {
       "id": "afb382f8d749dabd",
@@ -4161,7 +4185,8 @@
       "target_company": true,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFOPyOhO4wTTg/company-logo_100_100/company-logo_100_100/0/1719784126380/stefanini_brasil_logo?e=2147483647&v=beta&t=pLSKljGfrvJ4D4UxOwTCpgljT3gXNuOzic86pWs2jZw"
     },
     {
       "id": "76c9bff5c198e4a4",
@@ -4300,7 +4325,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-16T19:51:31.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM"
     },
     {
       "id": "da9f611c135204f7",
@@ -4853,7 +4879,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-07T18:00:51.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQErv_Gb6j-umA/company-logo_200_200/B4EZmgfhRSGoAI-/0/1759334242338/actar_peersgroup_logo?e=2147483647&v=beta&t=O0thjdaZ8M2IFQ3Stk-VLFNIAweWja2r-GhWJSGzoA4"
     },
     {
       "id": "c24f5b4abe1a524b",
@@ -5268,7 +5295,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T20:01:07.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFZ1BSyUCLUOw/company-logo_200_200/B4DZ.KHnjwKsAE-/0/1784728680913/stellantislatam_logo?e=2147483647&v=beta&t=ykGVc5l89N6K2SCmLwvVq_i69rEsiF5gtHJePxGGOPo"
     },
     {
       "id": "ac5a1722a0111efe",
@@ -5544,7 +5572,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGvYuv9rJJ6zw/company-logo_100_100/company-logo_100_100/0/1631362999645/concremat_logo?e=2147483647&v=beta&t=WNzKh0EKrwI__D5xeTPij9F06GXtCgbUZs4oczIcl8M"
     },
     {
       "id": "a8252538477b3eb5",
@@ -5682,7 +5711,8 @@
       "target_company": true,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFOPyOhO4wTTg/company-logo_100_100/company-logo_100_100/0/1719784126380/stefanini_brasil_logo?e=2147483647&v=beta&t=pLSKljGfrvJ4D4UxOwTCpgljT3gXNuOzic86pWs2jZw"
     },
     {
       "id": "9235ddfdc10469d5",
@@ -5821,7 +5851,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-16T07:55:08.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_200_200/B4DZ35TgVVJkAE-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=eVF7MRTRghJJ7ZnZJc8dzgF6jQ4H_H7LaA6VEKHyoy4"
     },
     {
       "id": "03c2e530f58dccc8",
@@ -5960,7 +5991,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-09T01:54:48.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_200_200/B4DZ35TgVVJkAE-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=eVF7MRTRghJJ7ZnZJc8dzgF6jQ4H_H7LaA6VEKHyoy4"
     },
     {
       "id": "e2d8221478a0c96e",
@@ -6099,7 +6131,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-16T20:03:54.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQH_PCxwhnAwEg/company-logo_200_200/company-logo_200_200/0/1733150018149/inovaagroltda_logo?e=2147483647&v=beta&t=K7fhQbcHxTC9VFzSD9m7is47ff_ID_Vee8VAXwrl0S4"
     },
     {
       "id": "f045a9cb0324f544",
@@ -6240,7 +6273,8 @@
       ],
       "title_class": "core",
       "valid_through": "2026-10-09T00:00:06.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEB7h9WibWyYQ/company-logo_200_200/B4DZwfQMxaIYAI-/0/1770050866683/mundiale_logo?e=2147483647&v=beta&t=BXObOzh09I51iqhjk_7UxFL-igLWXbhf3ScZmUdDfHQ"
     },
     {
       "id": "c10a2cf9400b307b",
@@ -6516,7 +6550,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-27T07:39:21.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00"
+      "verified_at": "2026-09-11T03:36:48.273381+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGzikkXLX-9rw/company-logo_200_200/company-logo_200_200/0/1715957700690/mm_invest_ai_logo?e=2147483647&v=beta&t=Rxfs9OU-E8jSFqhj-ydTgB3vO7SNNwRce0XrA9J4KbA"
     },
     {
       "id": "fb7995fc604339d4",
@@ -6932,7 +6967,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T00:53:08.000Z",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -7078,7 +7114,8 @@
         "google kubernetes engine"
       ],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s"
     },
     {
       "id": "1751b936eb92ef5e",
@@ -7217,7 +7254,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-14T16:32:09.000Z",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM"
     },
     {
       "id": "ab3a146f8cc794ef",
@@ -7356,7 +7394,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-24T01:51:32.000Z",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM"
     },
     {
       "id": "80bedef09ddefbd2",
@@ -7494,7 +7533,8 @@
       "target_company": true,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFOPyOhO4wTTg/company-logo_100_100/company-logo_100_100/0/1719784126380/stefanini_brasil_logo?e=2147483647&v=beta&t=pLSKljGfrvJ4D4UxOwTCpgljT3gXNuOzic86pWs2jZw"
     },
     {
       "id": "e9c0ca818fb608ca",
@@ -7631,7 +7671,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEV7Udy9Yb7jQ/company-logo_100_100/B4DZcTHFiSGYAQ-/0/1748372314672/v_tal_logo?e=2147483647&v=beta&t=lweDNf1nUU8eehr4B9WxNkxbjWF19RBdAdx7jij6i_I"
     },
     {
       "id": "2fa444fb24756932",
@@ -7768,7 +7809,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQG_S8qdMW3LQw/company-logo_100_100/company-logo_100_100/0/1635352720943/bernoulli_educacao_logo?e=2147483647&v=beta&t=1DkPoUYI7m3yyBJnMr-baHePmp8cmlcnrXRW6USS83g"
     },
     {
       "id": "96af17307427a6d2",
@@ -7906,7 +7948,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-18T18:36:42.000Z",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGsGR9p4ikS5w/company-logo_200_200/company-logo_200_200/0/1708946550425/tata_consultancy_services_logo?e=2147483647&v=beta&t=5ToTCrFT_LhuaUBB1Q6vTWEdIV8m4j-2YADVE15KjAI"
     },
     {
       "id": "b165f9e451e54272",
@@ -8044,7 +8087,8 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T01:52:38.000Z",
-      "verified_at": "2026-09-11T03:38:08.529756+00:00"
+      "verified_at": "2026-09-11T03:38:08.529756+00:00",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM"
     },
     {
       "id": "26d09c1c43e69e4d",

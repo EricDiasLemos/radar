@@ -147,6 +147,18 @@ check("vaga antiga e aberta continua no banco", [j["id"] for j in ativos] == ["a
 check("fechada/prazo -> closed, sem confirmacao -> max_age",
       {j["id"]: j["archive_reason"] for j in arq} == {"b": "closed", "c": "closed", "d": "max_age"})
 
+print("[logo da empresa]")
+from bs4 import BeautifulSoup
+from scraper import _card_logo, _extract_company_logo
+ld = ('<script type="application/ld+json">{"hiringOrganization":{"@type":"Organization",'
+      '"name":"Acme","logo":"https://media.licdn.com/dms/image/v2/X/company-logo_200_200/a?e=1&amp;t=z"}}</script>')
+check("logo lido do JSON-LD da vaga",
+      _extract_company_logo(ld) == "https://media.licdn.com/dms/image/v2/X/company-logo_200_200/a?e=1&t=z")
+li = BeautifulSoup('<li><img data-delayed-url="https://media.licdn.com/dms/image/v2/Y/company-logo_100_100/q"></li>',
+                   "html.parser").li
+check("logo lido do card da busca", _card_logo(li) == "https://media.licdn.com/dms/image/v2/Y/company-logo_100_100/q")
+check("pagina sem logo -> None", _extract_company_logo("<html></html>") is None)
+
 print()
 if FALHAS:
     print(f"{len(FALHAS)} falha(s): {FALHAS}")

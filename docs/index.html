@@ -773,6 +773,25 @@
     .job-poster a { color: var(--accent); text-decoration: none; }
     .job-poster a:hover { text-decoration: underline; }
 
+
+    /* ── Logo da empresa ── */
+    .company-avatar { width: 42px; height: 42px; flex-shrink: 0; }
+    .company-logo {
+      width: 42px; height: 42px; display: block;
+      border-radius: 9px; object-fit: contain;
+      background: #fff; padding: 3px;
+      border: 1px solid var(--border);
+    }
+    .company-initials {
+      width: 42px; height: 42px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.82rem; letter-spacing: 0.02em;
+    }
+    .company-unknown {
+      background: rgba(255,255,255,0.04); color: var(--text-subtle);
+      border: 1px solid var(--border);
+    }
+
     /* ── Modal ── */
     .modal-backdrop {
       display: none;
@@ -1786,6 +1805,33 @@ function renderJobs() {
   grid.innerHTML = filteredJobs.map(job => renderCard(job)).join('');
 }
 
+// Logo da empresa, com iniciais coloridas como reserva (sem logo, ou se a
+// imagem não carregar). A cor é fixa por empresa, derivada do nome.
+function companyInitials(name) {
+  const w = (name || '').replace(/[^\p{L}\p{N} ]/gu, ' ').trim().split(/\s+/).filter(Boolean);
+  if (!w.length) return '?';
+  return ((w[0][0] || '') + (w[1] ? w[1][0] : '')).toUpperCase();
+}
+
+function companyHue(name) {
+  let h = 0;
+  for (const c of (name || '')) h = (h * 31 + c.charCodeAt(0)) % 360;
+  return h;
+}
+
+function companyAvatar(job) {
+  const name = job.company && job.company !== 'N/A' ? job.company : '';
+  if (!name && !job.company_logo) {
+    // Empresa não informada (comum no Vagas.com): ícone neutro em vez de '?'
+    return `<div class="company-avatar"><div class="company-initials company-unknown" title="Empresa não informada"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M10 21v-3h4v3"/></svg></div></div>`;
+  }
+  const hue = companyHue(name);
+  const hidden = job.company_logo ? ';display:none' : '';
+  const initials = `<div class="company-initials" style="background:hsl(${hue} 45% 20%);color:hsl(${hue} 75% 72%)${hidden}" title="${escHtml(name)}">${escHtml(companyInitials(name))}</div>`;
+  if (!job.company_logo) return `<div class="company-avatar">${initials}</div>`;
+  return `<div class="company-avatar"><img class="company-logo" src="${escHtml(job.company_logo)}" alt="${escHtml(name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">${initials}</div>`;
+}
+
 function renderCard(job) {
   const fit = job.fit_level || 'baixo';
   const score = job.score || 0;
@@ -1886,6 +1932,7 @@ function renderCard(job) {
   return `
     <div class="job-card fit-${fit}" id="card-${job.id}">
       <div class="card-top">
+        ${companyAvatar(job)}
         <div class="card-title-block">
           <h3>${newBadge} ${escHtml(job.title)} ${targetBadge} ${gcpBadge}</h3>
           <div class="card-meta">

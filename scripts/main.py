@@ -14,7 +14,7 @@ from pathlib import Path
 
 from scraper import (
     run_scraper, load_existing_jobs, save_jobs, load_blacklist,
-    verify_job_open, get_seen_in_search, deadline_passed,
+    verify_job_open, get_seen_in_search, deadline_passed, page_logo,
 )
 from scorer import apply_scores, compute_stats, classify_title
 from letter_gen import generate_letter_batch, generate_recruiter_messages
@@ -204,6 +204,8 @@ def _verify_open_jobs(jobs: list[dict]) -> list[dict]:
     for j, (aberta, vt) in zip(lote, resultados):
         if vt:
             j["valid_through"] = vt
+        if not j.get("company_logo") and page_logo(j.get("url", "")):
+            j["company_logo"] = page_logo(j["url"])
         if aberta is True:
             j["verified_at"] = now.isoformat()
             abertas += 1
@@ -329,6 +331,26 @@ def restore_open_from_archive(limit: int = 150) -> None:
              len(restauradas), len(fechadas), len(rescored) - len(restauradas) - len(fechadas))
 
 
+def backfill_logos(limit: int = 200) -> None:
+    """Preenche o logo das vagas do LinkedIn que ainda não têm (visita a página)."""
+    data = load_existing_jobs()
+    alvo = [j for j in data.get("jobs", [])
+            if not j.get("company_logo") and j.get("source") == "LinkedIn" and j.get("url")][:limit]
+    if not alvo:
+        log.info("Todas as vagas do LinkedIn já têm logo")
+        return
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        list(ex.map(verify_job_open, alvo))
+    achados = 0
+    for j in alvo:
+        logo = page_logo(j["url"])
+        if logo:
+            j["company_logo"] = logo
+            achados += 1
+    save_jobs(data)
+    log.info("Logos: %d de %d vagas preenchidas", achados, len(alvo))
+
+
 def apply_single_job(job_id: str) -> None:
     """Candidatura manual para um job_id específico (workflow manual-apply)."""
     log.info("=== Candidatura manual: job_id=%s ===", job_id)
@@ -377,6 +399,7 @@ if __name__ == "__main__":
     apply_parser.add_argument("job_id", help="ID da vaga")
 
     sub.add_parser("restore", help="Traz de volta do arquivo as vagas da área ainda abertas")
+    sub.add_parser("logos", help="Preenche o logo da empresa nas vagas que não têm")
 
     args = parser.parse_args()
 
@@ -386,6 +409,8 @@ if __name__ == "__main__":
         apply_single_job(args.job_id)
     elif args.command == "restore":
         restore_open_from_archive()
+    elif args.command == "logos":
+        backfill_logos()
     else:
         parser.print_help()
         sys.exit(1)

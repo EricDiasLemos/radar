@@ -13,6 +13,7 @@ Fontes removidas (sem feed/API pública acessível):
 """
 
 import hashlib
+import html as html_lib
 import json
 import logging
 import random
@@ -147,6 +148,7 @@ class Job:
     contact_email: Optional[str] = None
     recruiter: Optional[dict] = None
     valid_through: Optional[str] = None
+    company_logo: Optional[str] = None
 
     @property
     def id(self) -> str:
@@ -176,6 +178,7 @@ class Job:
             "contact_email": self.contact_email,
             "recruiter": self.recruiter,
             "valid_through": self.valid_through,
+            "company_logo": self.company_logo,
         }
 
 
@@ -261,6 +264,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
                 "location": loc_el.get_text(strip=True) if loc_el else location,
                 "url": href,
                 "published_at": date_el.get("datetime", "") if date_el else "",
+                "logo": _card_logo(card),
             })
         except Exception as e:
             log.warning("[LinkedIn] Erro ao processar card: %s", e)
@@ -283,6 +287,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
             published_at=c["published_at"],
             recruiter=_RECRUITER_CACHE.get(c["url"]),
             valid_through=_VALID_THROUGH_CACHE.get(c["url"]),
+            company_logo=c.get("logo") or _PAGE_LOGO.get(c["url"]),
         )
         for c in cards_data
     ]
@@ -315,6 +320,10 @@ def _fetch_linkedin_description(url: str) -> str:
     vt = _extract_valid_through(resp.text)
     if vt:
         _VALID_THROUGH_CACHE[url] = vt
+
+    logo = _extract_company_logo(resp.text)
+    if logo:
+        _PAGE_LOGO[url] = logo
     return text
 
 
@@ -634,6 +643,7 @@ def scrape_gupy(query: str, limit: int = 30) -> list[Job]:
                 description=description,
                 published_at=published,
                 valid_through=(it.get("applicationDeadline") or None),
+                company_logo=(it.get("careerPageLogo") or None),
             ))
         except Exception as e:
             log.warning("[Gupy] Erro ao processar item: %s", e)
@@ -739,7 +749,50 @@ def verify_job_open(job: dict):
         resp = requests.get(url, headers=_get_headers(), timeout=20, allow_redirects=True)
     except requests.RequestException:
         return None, None
+    logo = _extract_company_logo(resp.text)
+    if logo:
+        _PAGE_LOGO[url] = logo
     return interpret_job_page(job.get("source", ""), resp.status_code, resp.url, resp.text)
+
+
+# ─── Logo da empresa ──────────────────────────────────────────────────────────
+# LinkedIn expõe o logo em dois lugares: no card da busca (img data-delayed-url,
+# sem requisição extra) e na página da vaga (hiringOrganization.logo, 200x200).
+# A Gupy manda careerPageLogo na própria API.
+
+_PAGE_LOGO: dict[str, str] = {}
+_LD_LOGO_RE = re.compile(r'"hiringOrganization".*?"logo"\s*:\s*"([^"]+)"', re.S)
+_ANY_COMPANY_LOGO_RE = re.compile(r'https://media\.licdn\.com/dms/image/[^"\'\s<>]*company-logo_[^"\'\s<>]*')
+
+
+def _clean_logo_url(url: Optional[str]) -> Optional[str]:
+    if not url:
+        return None
+    url = html_lib.unescape(url.replace("\\/", "/")).strip()
+    return url if url.startswith("https://") else None
+
+
+def _extract_company_logo(html: str) -> Optional[str]:
+    """Logo da empresa na página da vaga: JSON-LD primeiro, depois o top card."""
+    m = _LD_LOGO_RE.search(html or "")
+    if m:
+        return _clean_logo_url(m.group(1))
+    m = _ANY_COMPANY_LOGO_RE.search(html or "")
+    return _clean_logo_url(m.group(0)) if m else None
+
+
+def _card_logo(card) -> Optional[str]:
+    """Logo no card da busca do LinkedIn (carregado sob demanda no site)."""
+    img = card.select_one("img") if card is not None else None
+    if not img:
+        return None
+    url = img.get("data-delayed-url") or img.get("src") or ""
+    return _clean_logo_url(url) if "media.licdn.com" in url else None
+
+
+def page_logo(url: str) -> Optional[str]:
+    """Logo capturado na última visita à página desta vaga, se houver."""
+    return _PAGE_LOGO.get(url)
 
 
 def get_seen_in_search() -> set:
