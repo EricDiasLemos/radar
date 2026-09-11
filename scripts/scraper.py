@@ -60,6 +60,14 @@ _DESCRIPTION_CACHE: dict[str, str] = {}
 # Preenchido no mesmo fetch da descrição, sem requisição extra.
 _RECRUITER_CACHE: dict[str, dict] = {}
 
+# Prazo de candidatura (validThrough do JSON-LD) por URL de vaga. Vem no
+# mesmo HTML da descrição, então não custa requisição extra.
+_VALID_THROUGH_CACHE: dict[str, str] = {}
+
+# IDs de vagas já conhecidas que reapareceram na busca deste scan: sinal de
+# que continuam abertas, sem precisar visitar a página.
+_SEEN_IN_SEARCH: set[str] = set()
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -138,6 +146,7 @@ class Job:
     cover_letter: Optional[str] = None
     contact_email: Optional[str] = None
     recruiter: Optional[dict] = None
+    valid_through: Optional[str] = None
 
     @property
     def id(self) -> str:
@@ -166,6 +175,7 @@ class Job:
             "cover_letter": self.cover_letter,
             "contact_email": self.contact_email,
             "recruiter": self.recruiter,
+            "valid_through": self.valid_through,
         }
 
 
@@ -206,9 +216,9 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
         f"?keywords={quote_plus(query)}"
         f"&location={quote_plus(location + ', Brasil')}"
-        # 3 dias cobre o fim de semana (o cron roda seg-sex). Repetição não
-        # é problema: o dedup também consulta as vagas já arquivadas.
-        "&f_TPR=r259200"
+        # 30 dias: vaga aberta vale mesmo sendo antiga. Quem já está no banco
+        # não duplica, e quem fechou sai pela verificação do main.
+        "&f_TPR=r2592000"
         # Nível: 2=assistente, 3=júnior/associado, 4=pleno-sênior.
         # Os cargos sênior que sobrarem caem no portão de título do scorer.
         "&f_E=2%2C3%2C4"
@@ -272,6 +282,7 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
             description=descriptions.get(c["url"], ""),
             published_at=c["published_at"],
             recruiter=_RECRUITER_CACHE.get(c["url"]),
+            valid_through=_VALID_THROUGH_CACHE.get(c["url"]),
         )
         for c in cards_data
     ]
@@ -300,6 +311,10 @@ def _fetch_linkedin_description(url: str) -> str:
     rec = _extract_linkedin_recruiter(soup)
     if rec:
         _RECRUITER_CACHE[url] = rec
+
+    vt = _extract_valid_through(resp.text)
+    if vt:
+        _VALID_THROUGH_CACHE[url] = vt
     return text
 
 
@@ -618,6 +633,7 @@ def scrape_gupy(query: str, limit: int = 30) -> list[Job]:
                 source="Gupy",
                 description=description,
                 published_at=published,
+                valid_through=(it.get("applicationDeadline") or None),
             ))
         except Exception as e:
             log.warning("[Gupy] Erro ao processar item: %s", e)
@@ -658,6 +674,79 @@ def load_blacklist() -> set[str]:
         return set()
 
 
+# ─── Vaga ainda aberta? ───────────────────────────────────────────────────────
+# Medido no LinkedIn: vaga fechada responde 404 ou redireciona para a página de
+# vagas da empresa (sai de /jobs/view/). Vaga aberta responde 200 com botão de
+# candidatura e um validThrough (prazo) no JSON-LD.
+
+_VALID_THROUGH_RE = re.compile(r'"validThrough"\s*:\s*"([^"]+)"')
+_CLOSED_MARKERS_RE = re.compile(
+    r"no longer accepting applications|n[aã]o aceita mais candidaturas"
+    r"|vaga (foi )?encerrada|this job has expired|vaga expirada",
+    re.IGNORECASE,
+)
+
+
+def _extract_valid_through(html: str) -> Optional[str]:
+    m = _VALID_THROUGH_RE.search(html or "")
+    return m.group(1) if m else None
+
+
+def deadline_passed(valid_through: Optional[str]) -> bool:
+    """True se o prazo de candidatura informado pela vaga já passou."""
+    if not valid_through:
+        return False
+    try:
+        dt = datetime.fromisoformat(str(valid_through).replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt < datetime.now(timezone.utc)
+
+
+def interpret_job_page(source: str, status: int, final_url: str, html: str):
+    """
+    Lê a resposta da página da vaga. Retorna (aberta, valid_through), onde
+    aberta é True/False — ou None quando não dá para saber (bloqueio, erro).
+    None nunca remove a vaga: na dúvida, ela fica.
+    """
+    if status in (404, 410):
+        return False, None
+    if status != 200:
+        return None, None
+    if source == "LinkedIn" and "/jobs/view/" not in (final_url or ""):
+        return False, None
+    if _CLOSED_MARKERS_RE.search(html or ""):
+        return False, None
+    vt = _extract_valid_through(html)
+    if deadline_passed(vt):
+        return False, vt
+    return True, vt
+
+
+def verify_job_open(job: dict):
+    """Visita a vaga e confirma se continua aberta. Ver interpret_job_page."""
+    if deadline_passed(job.get("valid_through")):
+        return False, job.get("valid_through")
+    url = job.get("url")
+    if not url:
+        return None, None
+    if job.get("source") == "Gupy":
+        # Página renderizada por JS; vale o applicationDeadline da API.
+        return None, None
+    try:
+        resp = requests.get(url, headers=_get_headers(), timeout=20, allow_redirects=True)
+    except requests.RequestException:
+        return None, None
+    return interpret_job_page(job.get("source", ""), resp.status_code, resp.url, resp.text)
+
+
+def get_seen_in_search() -> set:
+    """IDs de vagas já conhecidas que reapareceram na busca do último scan."""
+    return set(_SEEN_IN_SEARCH)
+
+
 def _load_archived_jobs() -> list[dict]:
     path = DATA_DIR / "archive.json"
     if not path.exists():
@@ -671,6 +760,7 @@ def _load_archived_jobs() -> list[dict]:
 
 
 def run_scraper() -> list[Job]:
+    _SEEN_IN_SEARCH.clear()
     existing = load_existing_jobs()
     existing_jobs = existing.get("jobs", [])
     existing_ids = {j["id"] for j in existing_jobs}
@@ -682,14 +772,18 @@ def run_scraper() -> list[Job]:
 
     # Vagas expiradas vão para o archive.json. Sem olhar para ele, a mesma
     # vaga voltava como "nova" a cada scan enquanto seguisse no LinkedIn.
-    archived = _load_archived_jobs()
-    for j in archived:
+    # Só fica bloqueada a vaga arquivada por ter FECHADO (ou sumido sem
+    # confirmação). As que saíram pela regra antiga de 24h podem voltar se
+    # ainda estiverem abertas.
+    fechadas = [j for j in _load_archived_jobs()
+                if j.get("archive_reason") in ("closed", "max_age")]
+    for j in fechadas:
         if j.get("id"):
             existing_ids.add(j["id"])
         if j.get("title"):
             seen_signatures.add(_job_signature(j["title"], j.get("company", "")))
-    log.info("Dedup considera %d vagas ativas + %d arquivadas",
-             len(existing_jobs), len(archived))
+    log.info("Dedup considera %d vagas ativas + %d fechadas",
+             len(existing_jobs), len(fechadas))
 
     # Popula cache de descrições com vagas que já temos no banco.
     # Evita re-fetch quando a mesma URL aparece nesta execução.
@@ -762,6 +856,7 @@ def _is_new(job: Job, existing_ids: set, seen_sigs: set, blacklist_ids: set = No
     if blacklist_ids and job.id in blacklist_ids:
         return False
     if job.id in existing_ids:
+        _SEEN_IN_SEARCH.add(job.id)  # reapareceu na busca: segue aberta
         return False
     if _job_signature(job.title, job.company) in seen_sigs:
         log.debug("Duplicata cross-fonte: %s @ %s", job.title, job.company)

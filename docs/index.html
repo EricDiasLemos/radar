@@ -1622,11 +1622,15 @@ function formatRelativeTime(isoString) {
   return `há ${Math.round(diffMo / 12)} ano(s)`;
 }
 
-// TODA vaga expira em 24h desde a coleta (found_at), sem exceção de status.
+// A vaga some do painel quando FECHA (verificado pelo scan) ou quando o
+// prazo de candidatura informado por ela passa. Idade não importa.
 function isExpired(job) {
-  if (!job.found_at) return false;
-  const ageHours = (Date.now() - new Date(job.found_at).getTime()) / 3600000;
-  return ageHours >= 24;
+  if (job.closed) return true;
+  if (job.valid_through) {
+    const t = new Date(job.valid_through).getTime();
+    if (!isNaN(t) && t < Date.now()) return true;
+  }
+  return false;
 }
 
 function applyFilters() {
@@ -1634,7 +1638,7 @@ function applyFilters() {
   filterState.scoreMin = parseInt(document.getElementById('filter-score').value, 10);
 
   filteredJobs = allJobs.filter(job => {
-    // Oculta vagas com mais de 24h (exceto enviadas/aprovadas)
+    // Oculta vagas fechadas ou com prazo de candidatura vencido
     if (isExpired(job)) return false;
 
     // Filtros multi-select: array vazio = sem filtro;
@@ -1748,7 +1752,7 @@ function renderJobs() {
   if (tcJobs) tcJobs.textContent = filteredJobs.length || '';
 
   if (filteredJobs.length === 0) {
-    // Distingue 'sem resultado de filtro' de 'tudo expirou (>24h)'
+    // Distingue 'sem resultado de filtro' de 'todas fecharam'
     const naoExpiradas = allJobs.filter(j => !isExpired(j)).length;
     const expiradas = allJobs.length - naoExpiradas;
 
@@ -1760,8 +1764,8 @@ function renderJobs() {
               <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
             </svg>
           </div>
-          <p><strong>Nenhuma vaga das últimas 24h.</strong></p>
-          <span class="empty-hint">${expiradas} vaga(s) foram coletadas há mais de 24h e não aparecem mais.
+          <p><strong>Nenhuma vaga aberta no momento.</strong></p>
+          <span class="empty-hint">${expiradas} vaga(s) fecharam ou passaram do prazo de candidatura.
           Clique em <strong>"⚡ Forçar scan"</strong> no topo para buscar vagas novas.</span>
         </div>`;
     } else {
@@ -1840,6 +1844,16 @@ function renderCard(job) {
     const rel = formatRelativeTime(job.found_at);
     const pubTitle = job.published_at ? ` title="Publicada: ${escHtml(String(job.published_at))}"` : '';
     pubDate = `<span${pubTitle}>🕐 coletada ${rel}</span>`;
+  }
+  if (job.valid_through) {
+    const dias = Math.ceil((new Date(job.valid_through).getTime() - Date.now()) / 86400000);
+    if (!isNaN(dias) && dias >= 0) {
+      const urg = dias <= 5 ? ' style="color:var(--yellow);font-weight:600"' : '';
+      pubDate += ` <span${urg} title="Prazo de candidatura informado pela vaga">⏳ fecha ${dias === 0 ? 'hoje' : 'em ' + dias + 'd'}</span>`;
+    }
+  }
+  if (job.verified_at) {
+    pubDate += ` <span title="O scan visitou a vaga e confirmou que segue aberta">✅ aberta · verificada ${formatRelativeTime(job.verified_at)}</span>`;
   }
 
   const deleteBtn = `<button class="btn btn-ghost" onclick="deleteJob('${job.id}')" title="Apagar vaga" style="color:var(--red)">🗑</button>`;

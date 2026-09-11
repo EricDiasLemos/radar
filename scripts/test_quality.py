@@ -116,6 +116,37 @@ scraper.DATA_DIR = tmp
 arq = scraper._load_archived_jobs()
 check("archive.json lido para o dedup", [j["id"] for j in arq] == ["x1"])
 
+print("[vaga aberta x fechada]")
+from scraper import interpret_job_page
+futuro = (datetime.now(timezone.utc) + timedelta(days=20)).isoformat()
+passado = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+aberta_html = '<script>{"validThrough": "%s"}</script>' % futuro
+check("LinkedIn 404 = fechada", interpret_job_page("LinkedIn", 404, "u", "")[0] is False)
+check("LinkedIn redirecionou para a empresa = fechada",
+      interpret_job_page("LinkedIn", 200, "https://br.linkedin.com/jobs/acme-vagas", aberta_html)[0] is False)
+check("LinkedIn aberta traz o prazo",
+      interpret_job_page("LinkedIn", 200, "https://br.linkedin.com/jobs/view/x-1", aberta_html) == (True, futuro))
+check("prazo vencido = fechada",
+      interpret_job_page("LinkedIn", 200, "https://br.linkedin.com/jobs/view/x-1",
+                         '"validThrough": "%s"' % passado)[0] is False)
+check("429 = incerto (nao remove)", interpret_job_page("LinkedIn", 429, "u", "")[0] is None)
+check("aviso 'no longer accepting' = fechada",
+      interpret_job_page("Vagas.com", 200, "u", "No longer accepting applications")[0] is False)
+
+print("[arquivamento]")
+import main
+vinte_dias = (datetime.now(timezone.utc) - timedelta(days=20)).isoformat()
+noventa_dias = (datetime.now(timezone.utc) - timedelta(days=90)).isoformat()
+ativos, arq = main._split_for_archive([
+    {"id": "a", "found_at": vinte_dias, "verified_at": now},   # antiga, mas aberta
+    {"id": "b", "found_at": now, "closed": True},              # fechou
+    {"id": "c", "found_at": now, "valid_through": passado},    # prazo passou
+    {"id": "d", "found_at": noventa_dias},                     # sem confirmacao
+])
+check("vaga antiga e aberta continua no banco", [j["id"] for j in ativos] == ["a"])
+check("fechada/prazo -> closed, sem confirmacao -> max_age",
+      {j["id"]: j["archive_reason"] for j in arq} == {"b": "closed", "c": "closed", "d": "max_age"})
+
 print()
 if FALHAS:
     print(f"{len(FALHAS)} falha(s): {FALHAS}")
