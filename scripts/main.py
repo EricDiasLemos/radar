@@ -61,7 +61,7 @@ def run_daily_scan(auto_apply: bool = True) -> None:
     existing_jobs = [
         j for j in existing_jobs
         if j.get("status") in ("enviada", "aprovada")
-        or classify_title(j.get("title", "")) in ("core", "adjacent")
+        or classify_title(j.get("title", "")) == "core"
     ]
     if antes != len(existing_jobs):
         log.info("Limpeza de cargo fora da área: %d vagas antigas removidas",

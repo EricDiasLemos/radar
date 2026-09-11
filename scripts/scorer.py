@@ -239,7 +239,8 @@ _TITLE_OTHER_TECH = re.compile(
     r"|banco de dados|database|mobile|ios|android|ux|ui|produto|product"
     r"|scrum|agile)\b"
 )
-# Carreira vizinha: aproveitável, mas não é o alvo principal
+# Carreira vizinha (redes, segurança, telecom): próxima, mas não é DevOps.
+# É classificada à parte só para o log dizer o motivo — também é rejeitada.
 _TITLE_ADJACENT = re.compile(
     r"\b(redes|network|networking|noc|telecom|telecomunicacoes|it operations"
     r"|tech ops|operacoes de ti|virtualizacao|vmware|seguranca da informacao"
@@ -303,7 +304,7 @@ def is_obviously_rejected(text: str) -> bool:
     Usado pelo scraper para pular fetch de descrições de vagas que serão
     descartadas de qualquer jeito. Evita ~30-40% das requisições.
     """
-    if classify_title(text) in ("off", "senior"):
+    if classify_title(text) != "core":
         return True
     text_lower = text.lower()
     for rx in _SENIOR_RE:
@@ -363,9 +364,11 @@ def score_job(job_dict: dict) -> ScoreResult:
 
     # ── Portão do cargo: título fora da área nem chega a ser pontuado ───────
     title_class = classify_title(job_dict.get("title", ""))
-    if title_class in ("off", "senior"):
-        motivo = ("Cargo acima do nível-alvo" if title_class == "senior"
-                  else "Cargo fora da área (DevOps/Cloud/Platform/Infra)")
+    if title_class != "core":
+        motivo = {
+            "senior": "Cargo acima do nível-alvo",
+            "adjacent": "Carreira vizinha (redes/segurança/telecom), não é DevOps",
+        }.get(title_class, "Cargo fora da área (DevOps/Cloud/Platform/Infra)")
         return ScoreResult(
             total=0, skills=0, location=0, level=0, keywords=0, salary=0,
             skills_match=[], skills_gap=[], fit_level="baixo", rejected=True,
