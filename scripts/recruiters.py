@@ -15,6 +15,11 @@ import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+try:
+    from scorer import classify_title  # type: ignore
+except ImportError:
+    from scripts.scorer import classify_title  # type: ignore
+
 log = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -115,6 +120,9 @@ def merge_jobs_into_directory(jobs):
     """
     data = load_recruiters()
     by_id = {r["id"]: r for r in data.get("recruiters", [])}
+    podados = _prune_directory(by_id)
+    if podados:
+        log.info("Diretorio: %d recruiters removidos pelos criterios atuais", podados)
     now = datetime.now(timezone.utc).isoformat()
 
     novos, atualizados, ignoradas = 0, 0, 0
@@ -125,7 +133,7 @@ def merge_jobs_into_directory(jobs):
             continue
         # Ignora vagas irrelevantes para o perfil — nao adianta guardar o
         # contato de quem so publica coisa fora da area.
-        if job.get("score", 0) < MIN_JOB_SCORE:
+        if not _job_qualifies(job):
             ignoradas += 1
             continue
 
@@ -186,9 +194,12 @@ def merge_jobs_into_directory(jobs):
     # quem publicou.
     inferidas = _infer_by_company(jobs, by_id, now)
 
+    for r in by_id.values():
+        r["priority"] = compute_priority(r)
+
     recruiters = sorted(
         by_id.values(),
-        key=lambda r: (len(r.get("jobs", [])), r.get("last_seen", "")),
+        key=lambda r: (r.get("priority", 0), r.get("last_seen", "")),
         reverse=True,
     )
     log.info("Diretorio de recruiters: %d novos, %d atualizados, %d no total "
@@ -241,7 +252,7 @@ def _infer_by_company(jobs, by_id, now):
     for job in jobs:
         if job.get("recruiter"):
             continue  # ja tem contato proprio
-        if job.get("score", 0) < MIN_JOB_SCORE:
+        if not _job_qualifies(job):
             continue
         key = _company_key(job.get("company", ""))
         if not key or key not in por_empresa:
@@ -267,6 +278,56 @@ def _infer_by_company(jobs, by_id, now):
 
     return inferidas
 
+
+def compute_priority(r) -> int:
+    """
+    0-100: por onde começar a abordagem.
+      +25 é recrutador de fato (não o gestor que postou a própria vaga)
+      +15 perfil no Brasil
+      até +32 volume de vagas da área publicadas (8 por vaga, até 4)
+      até +15 aderência da melhor vaga (60 -> 0, 100 -> 15)
+      até +13 recência (7 dias: 13, 30 dias: 6)
+    """
+    jobs = r.get("jobs") or []
+    pts = 0
+    if r.get("is_recruiter"):
+        pts += 25
+    if r.get("country") == "BR":
+        pts += 15
+    pts += min(len(jobs), 4) * 8
+    best = max((j.get("score", 0) for j in jobs), default=0)
+    pts += max(0, min(15, round((best - MIN_JOB_SCORE) * 15 / (100 - MIN_JOB_SCORE))))
+    try:
+        visto = datetime.fromisoformat((r.get("last_seen") or "").replace("Z", "+00:00"))
+        dias = (datetime.now(timezone.utc) - visto).days
+        pts += 13 if dias <= 7 else (6 if dias <= 30 else 0)
+    except ValueError:
+        pass
+    return min(pts, 100)
+
+
+def _job_qualifies(job) -> bool:
+    """Só vaga da área e com aderência mínima liga um recruiter ao diretório."""
+    return (job.get("score", 0) >= MIN_JOB_SCORE
+            and classify_title(job.get("title", "")) == "core")
+
+
+def _prune_directory(by_id) -> int:
+    """
+    Reaplica os critérios atuais a quem já está no diretório. Endurecer o
+    filtro (ex.: score 40 -> 60) passa a valer também para o histórico.
+    Retorna quantos recruiters saíram.
+    """
+    removidos = 0
+    for rid in list(by_id):
+        r = by_id[rid]
+        r["jobs"] = [j for j in r.get("jobs", []) if _job_qualifies(j)]
+        if not r["jobs"]:
+            del by_id[rid]
+            removidos += 1
+    return removidos
+
+
 def compute_recruiter_stats(data):
     recs = data.get("recruiters", [])
     return {
@@ -274,4 +335,6 @@ def compute_recruiter_stats(data):
         "tech_recruiters": sum(1 for r in recs if r.get("is_recruiter")),
         "brasil": sum(1 for r in recs if r.get("country") == "BR"),
         "com_mensagem": sum(1 for r in recs if r.get("message")),
+        "com_convite": sum(1 for r in recs if r.get("invite_note")),
+        "prioridade_alta": sum(1 for r in recs if r.get("priority", 0) >= 70),
     }

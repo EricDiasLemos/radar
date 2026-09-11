@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from scraper import run_scraper, load_existing_jobs, save_jobs
-from scorer import apply_scores, compute_stats
+from scorer import apply_scores, compute_stats, classify_title
 from letter_gen import generate_letter_batch, generate_recruiter_messages
 from mailer import send_batch, SEND_SELF_NOTIFICATIONS
 from recruiters import (
@@ -48,7 +48,24 @@ def run_daily_scan(auto_apply: bool = True) -> None:
 
     # 3. Scoring das novas vagas
     scored_new = apply_scores(new_jobs_dicts)
-    log.info("Novas vagas após scoring: %d", len(scored_new))
+    # Rejeitadas (cargo fora da área, nível acima, keyword negativa) não
+    # entram no banco: só poluíam o dashboard e o diretório de recruiters.
+    rejeitadas = [j for j in scored_new if j.get("rejected")]
+    scored_new = [j for j in scored_new if not j.get("rejected")]
+    log.info("Novas vagas após scoring: %d aceitas, %d descartadas",
+             len(scored_new), len(rejeitadas))
+
+    # Limpeza retroativa: vagas que entraram antes do portão de cargo.
+    # Candidaturas enviadas/aprovadas ficam — são decisão do usuário.
+    antes = len(existing_jobs)
+    existing_jobs = [
+        j for j in existing_jobs
+        if j.get("status") in ("enviada", "aprovada")
+        or classify_title(j.get("title", "")) in ("core", "adjacent")
+    ]
+    if antes != len(existing_jobs):
+        log.info("Limpeza de cargo fora da área: %d vagas antigas removidas",
+                 antes - len(existing_jobs))
 
     # 4. Mescla com banco existente
     all_jobs = existing_jobs + scored_new

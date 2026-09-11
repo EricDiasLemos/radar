@@ -1,80 +1,31 @@
 {
   "recruiters": [
     {
-      "id": "63101aa4b4b61bb2",
-      "name": "Layane Marla",
-      "profile_url": "https://br.linkedin.com/in/layane-marla-14248815b",
-      "headline": "Psicóloga Organizacional | Business Partner | Aquisição de Talentos | Recrutamento & Seleção | Employer Branding | Headhunter | Recursos Humanos…",
-      "is_recruiter": true,
-      "country": "BR",
+      "id": "252ba40fab50478d",
+      "name": "Pavan kalyan Yarlagadda",
+      "profile_url": "https://in.linkedin.com/in/pavankalyanyarlagadda",
+      "headline": "Full Stack Java Developer | Skilled in Java, Spring Boot, React.js, and Oracle DB.",
+      "is_recruiter": false,
+      "country": "IN",
       "companies": [
-        "Arqia"
+        "Clinisoltech"
       ],
       "jobs": [
         {
-          "id": "5c796c16d0ef8c4f",
-          "title": "Especialista de Desenvolvimento I",
-          "company": "Arqia",
-          "url": "https://br.linkedin.com/jobs/view/especialista-de-desenvolvimento-i-at-arqia-4450761852",
-          "score": 46,
-          "fit_level": "baixo",
-          "found_at": "2026-09-09T23:37:31.317572+00:00"
+          "id": "d075afda70001394",
+          "title": "DevOps Engineer",
+          "company": "Clinisoltech",
+          "url": "https://www.linkedin.com/jobs/view/devops-engineer-at-clinisoltech-4465079765",
+          "score": 75,
+          "fit_level": "alto",
+          "found_at": "2026-09-11T03:15:53.291848+00:00"
         }
       ],
-      "first_seen": "2026-09-09T23:37:47.744018+00:00",
-      "last_seen": "2026-09-10T01:10:49.750693+00:00",
-      "message": "Oi Layane, tudo bem?\n\nVi que você publicou a vaga de Especialista de Desenvolvimento I na Arqia. Sou Engenheiro DevOps e trabalho com Linux, Docker, Kubernetes e AWS/GCP, então o perfil bateu bastante com o que faço.\n\nPosso te enviar meu currículo?"
-    },
-    {
-      "id": "6f382a23f14ee16e",
-      "name": "Beverly Rose",
-      "profile_url": "https://www.linkedin.com/in/beverly-rose-53a71868",
-      "headline": "Senior Talent Acquisition Specialist at Amerisure Insurance | Expertise in Recruiting and HR",
-      "is_recruiter": true,
-      "country": "?",
-      "companies": [
-        "Amerisure Insurance"
-      ],
-      "jobs": [
-        {
-          "id": "cf09e7138773ebe9",
-          "title": "Cloud Operations Analyst II",
-          "company": "Amerisure Insurance",
-          "url": "https://www.linkedin.com/jobs/view/cloud-operations-analyst-ii-at-amerisure-insurance-4443530389",
-          "score": 45,
-          "fit_level": "baixo",
-          "found_at": "2026-09-09T23:37:47.227666+00:00"
-        }
-      ],
-      "first_seen": "2026-09-09T23:37:47.744018+00:00",
-      "last_seen": "2026-09-09T23:37:47.744018+00:00",
-      "message": "Oi Beverly, tudo bem?\n\nVi que você publicou a vaga de Cloud Operations Analyst II na Amerisure Insurance. Sou Engenheiro DevOps e trabalho com Linux, Docker, Kubernetes e AWS/GCP, então o perfil bateu bastante com o que faço.\n\nPosso te enviar meu currículo?"
-    },
-    {
-      "id": "dc41d02ad26d4e29",
-      "name": "ALAN KRULL",
-      "profile_url": "https://www.linkedin.com/in/alan-krull-26954735",
-      "headline": "Talent Acquisition Partner – Technology RELX.    Empowering Healthcare Professionals as we drive innovation and mitigate risk.…",
-      "is_recruiter": true,
-      "country": "?",
-      "companies": [
-        "Elsevier"
-      ],
-      "jobs": [
-        {
-          "id": "7d8b33d7830a00b2",
-          "title": "AWS Systems Engineer",
-          "company": "Elsevier",
-          "url": "https://www.linkedin.com/jobs/view/aws-systems-engineer-at-elsevier-4463523346",
-          "score": 43,
-          "fit_level": "baixo",
-          "found_at": "2026-09-09T23:37:26.985810+00:00"
-        }
-      ],
-      "first_seen": "2026-09-09T23:37:47.744018+00:00",
-      "last_seen": "2026-09-09T23:37:47.744018+00:00",
-      "message": "Oi ALAN, tudo bem?\n\nVi que você publicou a vaga de AWS Systems Engineer na Elsevier. Sou Engenheiro DevOps e trabalho com Linux, Docker, Kubernetes e AWS/GCP, então o perfil bateu bastante com o que faço.\n\nPosso te enviar meu currículo?"
+      "first_seen": "2026-09-11T03:16:45.591594+00:00",
+      "last_seen": "2026-09-11T03:16:45.591594+00:00",
+      "message": null,
+      "priority": 27
     }
   ],
-  "last_updated": "2026-09-10T14:56:56.372794+00:00"
+  "last_updated": "2026-09-11T03:16:45.591594+00:00"
 }

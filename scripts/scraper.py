@@ -206,7 +206,12 @@ def scrape_linkedin(query: str, location: str) -> list[Job]:
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
         f"?keywords={quote_plus(query)}"
         f"&location={quote_plus(location + ', Brasil')}"
-        "&f_TPR=r604800"  # últimos 7 dias
+        # 3 dias cobre o fim de semana (o cron roda seg-sex). Repetição não
+        # é problema: o dedup também consulta as vagas já arquivadas.
+        "&f_TPR=r259200"
+        # Nível: 2=assistente, 3=júnior/associado, 4=pleno-sênior.
+        # Os cargos sênior que sobrarem caem no portão de título do scorer.
+        "&f_E=2%2C3%2C4"
         "&start=0"
     )
 
@@ -653,6 +658,18 @@ def load_blacklist() -> set[str]:
         return set()
 
 
+def _load_archived_jobs() -> list[dict]:
+    path = DATA_DIR / "archive.json"
+    if not path.exists():
+        return []
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f).get("jobs", [])
+    except (json.JSONDecodeError, OSError) as e:
+        log.warning("Falha ao ler archive.json: %s", e)
+        return []
+
+
 def run_scraper() -> list[Job]:
     existing = load_existing_jobs()
     existing_jobs = existing.get("jobs", [])
@@ -662,6 +679,17 @@ def run_scraper() -> list[Job]:
     seen_signatures: set[str] = set()
     for j in existing_jobs:
         seen_signatures.add(_job_signature(j["title"], j["company"]))
+
+    # Vagas expiradas vão para o archive.json. Sem olhar para ele, a mesma
+    # vaga voltava como "nova" a cada scan enquanto seguisse no LinkedIn.
+    archived = _load_archived_jobs()
+    for j in archived:
+        if j.get("id"):
+            existing_ids.add(j["id"])
+        if j.get("title"):
+            seen_signatures.add(_job_signature(j["title"], j.get("company", "")))
+    log.info("Dedup considera %d vagas ativas + %d arquivadas",
+             len(existing_jobs), len(archived))
 
     # Popula cache de descrições com vagas que já temos no banco.
     # Evita re-fetch quando a mesma URL aparece nesta execução.

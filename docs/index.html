@@ -717,6 +717,62 @@
     .badge-rec { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
     .badge-country { background: rgba(255,255,255,0.04); color: var(--text-muted); }
 
+
+    /* ── CRM de abordagem ── */
+    .rec-funnel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .funnel-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .funnel-box .fv {
+      font-size: 1.25rem; font-weight: 600; color: var(--text);
+      font-feature-settings: 'tnum'; line-height: 1.1;
+    }
+    .funnel-box .fl {
+      font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-subtle); margin-top: 3px;
+    }
+    .funnel-box.warn { border-color: var(--yellow); }
+    .funnel-box.warn .fv { color: var(--yellow); }
+    .rec-legend {
+      font-size: 0.72rem; color: var(--text-subtle); margin: 0 0 14px; line-height: 1.5;
+    }
+    .rec-legend .dash {
+      border: 1px dashed var(--border-strong); border-radius: 4px; padding: 0 5px;
+    }
+    .badge-prio { font-weight: 700; font-feature-settings: 'tnum'; }
+    .badge-prio.hi  { background: var(--green-soft); color: var(--green); }
+    .badge-prio.mid { background: var(--yellow-soft); color: var(--yellow); }
+    .badge-prio.lo  { background: rgba(255,255,255,0.04); color: var(--text-subtle); }
+    .badge-follow { background: var(--red-soft); color: var(--red); font-weight: 600; }
+    .badge-manual { background: var(--gcp-soft); color: var(--gcp); }
+    .rec-stage {
+      background: var(--bg); color: var(--text); border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm); padding: 5px 8px; font-size: 0.75rem;
+      font-family: inherit; cursor: pointer;
+    }
+    .rec-stage:focus { outline: none; border-color: var(--accent); }
+    .rec-block-label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--text-subtle); margin: 0 0 5px;
+    }
+    .rec-block-label .count { font-feature-settings: 'tnum'; text-transform: none; letter-spacing: 0; }
+    .rec-block-label .count.over { color: var(--red); font-weight: 600; }
+    .rec-next {
+      font-size: 0.74rem; color: var(--accent); margin-bottom: 12px;
+      display: flex; gap: 6px; align-items: flex-start;
+    }
+    .job-poster a { color: var(--accent); text-decoration: none; }
+    .job-poster a:hover { text-decoration: underline; }
+
     /* ── Modal ── */
     .modal-backdrop {
       display: none;
@@ -1150,19 +1206,29 @@
       <div id="recruiters-view" style="display:none">
         <div class="jobs-header">
           <h2>Recruiters <span class="jobs-count" id="rec-count"></span></h2>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-mode-queue"
+                    onclick="setRecMode('queue')" title="Os de maior prioridade que você ainda não abordou">📅 Fila de hoje</button>
+            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-mode-followup"
+                    onclick="setRecMode('followup')" title="Convites ou conversas sem resposta há 7+ dias">⏰ Follow-ups</button>
+            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-mode-all"
+                    onclick="setRecMode('all')">Todos</button>
+            <select id="rec-status-filter" class="rec-stage" onchange="renderRecruiters()" title="Filtrar por etapa">
+              <option value="">Todas as etapas</option>
+            </select>
             <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-f-tech"
                     onclick="toggleRecFilter('tech')" title="Só quem tem cargo de recrutamento">🎯 Só recruiters</button>
             <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-f-br"
                     onclick="toggleRecFilter('br')" title="Só perfis do Brasil">🇧🇷 Só Brasil</button>
-            <button class="btn btn-ghost" style="font-size:0.75rem" id="rec-f-msg"
-                    onclick="toggleRecFilter('msg')" title="Só quem já tem mensagem pronta">💬 Com mensagem</button>
-            <button class="btn btn-ghost" style="font-size:0.75rem" onclick="sortRecruiters()">↓ Nº de vagas</button>
+            <button class="btn btn-blue" style="font-size:0.75rem" onclick="openAddRecruiterModal()"
+                    title="Cole o perfil de um recrutador que você achou num post ou busca do LinkedIn">➕ Adicionar recruiter</button>
           </div>
         </div>
-        <div style="font-size:0.72rem;color:var(--text-subtle);margin:-8px 0 14px">
-          Vagas com borda tracejada (<span style="border:1px dashed var(--border-strong);border-radius:4px;padding:0 5px">~ exemplo</span>)
-          foram associadas pela empresa — o anúncio não expôs quem publicou.
+        <div class="rec-funnel" id="rec-funnel"></div>
+        <div class="rec-legend">
+          Fluxo: <strong>copie o convite</strong> → abra o perfil → Conectar → Adicionar nota → cole e envie →
+          marque <strong>Convite enviado</strong>. Quando ele aceitar, mande a mensagem. Mantenha até ~15 convites por dia.
+          Vagas com borda tracejada (<span class="dash">~ exemplo</span>) foram associadas pela empresa.
         </div>
         <div id="recruiters-grid" class="rec-grid"></div>
       </div>
@@ -1295,6 +1361,49 @@
       <button class="btn btn-blue" onclick="previewAndAddJob()">
         🎯 Pontuar e adicionar
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Modal adicionar recruiter ─────────────────────────────── -->
+<div class="modal-backdrop" id="addrec-modal">
+  <div class="modal" style="max-width:560px">
+    <div class="modal-header">
+      <h2>➕ Adicionar recruiter</h2>
+      <button class="modal-close" onclick="closeAddRecruiterModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:14px;line-height:1.5">
+        Achou alguém num post ("estou contratando DevOps") ou numa busca do LinkedIn?
+        Cole o perfil — ele entra na fila de abordagem com convite e mensagem prontos.
+      </p>
+      <div style="margin-bottom:12px">
+        <label style="font-size:0.78rem;color:var(--text-muted)">URL do perfil *</label>
+        <input id="addrec-url" type="url" class="search-input" style="width:100%"
+               placeholder="https://www.linkedin.com/in/fulana-silva">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+        <div>
+          <label style="font-size:0.78rem;color:var(--text-muted)">Nome</label>
+          <input id="addrec-name" type="text" class="search-input" style="width:100%" placeholder="Fulana Silva">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;color:var(--text-muted)">Empresa</label>
+          <input id="addrec-company" type="text" class="search-input" style="width:100%" placeholder="Ex: Nubank">
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <label style="font-size:0.78rem;color:var(--text-muted)">Cargo / headline</label>
+        <input id="addrec-headline" type="text" class="search-input" style="width:100%" placeholder="Tech Recruiter | Talent Acquisition">
+      </div>
+      <div>
+        <label style="font-size:0.78rem;color:var(--text-muted)">Vaga que ela está divulgando (opcional)</label>
+        <input id="addrec-job" type="text" class="search-input" style="width:100%" placeholder="DevOps Engineer Pleno">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeAddRecruiterModal()">Cancelar</button>
+      <button class="btn btn-blue" onclick="saveManualRecruiter()">Adicionar à fila</button>
     </div>
   </div>
 </div>
@@ -1754,6 +1863,7 @@ function renderCard(job) {
       <span class="breakdown-label">Nível</span><span class="breakdown-value">${job.score_breakdown.level || 0}/20</span>
       <span class="breakdown-label">Keywords</span><span class="breakdown-value">${job.score_breakdown.keywords || 0}/10</span>
       <span class="breakdown-label">Salário</span><span class="breakdown-value">${job.score_breakdown.salary || 0}/10</span>
+      ${job.score_breakdown.title ? `<span class="breakdown-label">Cargo da área</span><span class="breakdown-value" style="color:var(--green)">+${job.score_breakdown.title}</span>` : ''}
       ${targetBonus ? `<span class="breakdown-label">🎯 Big Tech</span><span class="breakdown-value" style="color:var(--target)">+${targetBonus}</span>` : ''}
       ${prioBonus ? `<span class="breakdown-label">☁️ GCP</span><span class="breakdown-value" style="color:var(--gcp)">+${prioBonus}</span>` : ''}
     </div>
@@ -1768,6 +1878,10 @@ function renderCard(job) {
             <span>🏢 ${escHtml(job.company)}</span>
             <span>📍 ${escHtml(job.location)}</span>
             ${pubDate}
+            ${job.recruiter && job.recruiter.profile_url
+              ? `<span class="job-poster">👤 <a href="${escHtml(job.recruiter.profile_url)}" target="_blank" rel="noopener"
+                   title="${escHtml(job.recruiter.headline || '')}">${escHtml(job.recruiter.name || 'quem publicou')}</a></span>`
+              : ''}
           </div>
         </div>
         <div class="score-block">
@@ -1980,23 +2094,220 @@ function escHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-// ─── Recruiters ───────────────────────────────────────────────────────────────
+// ─── Recruiters + CRM de abordagem ────────────────────────────────────────────
+// recruiters.json é escrito pelo scan (GitHub Actions); outreach.json guarda o
+// que VOCÊ faz (etapa de cada contato + recruiters adicionados à mão). Ficam em
+// arquivos separados para o scan nunca sobrescrever o seu progresso.
+
+const OUTREACH_STAGES = [
+  { v: 'novo',            label: 'Novo' },
+  { v: 'convite_enviado', label: 'Convite enviado' },
+  { v: 'conectado',       label: 'Conectado' },
+  { v: 'respondeu',       label: 'Respondeu' },
+  { v: 'entrevista',      label: 'Entrevista' },
+  { v: 'descartado',      label: 'Descartado' },
+];
+const NEXT_STEP = {
+  novo:            { to: 'convite_enviado', btn: '✓ Enviei o convite',
+                     hint: 'Copie o convite, abra o perfil, clique em Conectar → Adicionar nota e cole.' },
+  convite_enviado: { to: 'conectado', btn: '✓ Aceitou o convite',
+                     hint: 'Aguardando aceite. Se passar de 7 dias, ele vai para Follow-ups.' },
+  conectado:       { to: 'respondeu', btn: '✓ Respondeu',
+                     hint: 'Conectado! Mande a mensagem abaixo pelo chat do LinkedIn.' },
+  respondeu:       { to: 'entrevista', btn: '✓ Marcou entrevista',
+                     hint: 'Conversa ativa — envie o currículo se ele pedir.' },
+};
+const DAILY_QUEUE = 10;
+const QUEUE_MIN_PRIORITY = 40;   // contato fraco fica em 'Todos', nao ocupa a fila
+const FOLLOWUP_DAYS = 7;
+const WEEKLY_INVITE_LIMIT = 100;   // limite aproximado do LinkedIn
+const INVITE_LIMIT = 300;          // caracteres da nota de convite
+const OUTREACH_LS = 'outreach_v1';
+
 let allRecruiters = [];
-let recFilters = { tech: false, br: false, msg: false };
-let recSortDesc = true;
+let outreach = { status: {}, manual: [], updated_at: '' };
+let recFilters = { tech: false, br: false };
+let recMode = 'queue';
 
 async function loadRecruiters() {
   try {
     const r = await fetch('./data/recruiters.json?ts=' + Date.now());
-    if (!r.ok) { allRecruiters = []; return; }
-    const d = await r.json();
-    allRecruiters = d.recruiters || [];
+    allRecruiters = r.ok ? ((await r.json()).recruiters || []) : [];
   } catch (_) {
     allRecruiters = [];
   }
-  const tc = document.getElementById('tab-count-recs');
-  if (tc) tc.textContent = allRecruiters.length || '';
+  await loadOutreach();
+  const sel = document.getElementById('rec-status-filter');
+  if (sel && sel.options.length === 1) {
+    OUTREACH_STAGES.forEach(st => sel.add(new Option(st.label, st.v)));
+  }
+  // Abre na fila do dia se houver alguém para abordar
+  recMode = buildRecruiterList().some(r => getStage(r.id) === 'novo') ? 'queue' : 'all';
   renderRecruiters();
+}
+
+async function loadOutreach() {
+  let remote = { status: {}, manual: [] };
+  try {
+    const r = await fetch('./data/outreach.json?ts=' + Date.now());
+    if (r.ok) remote = await r.json();
+  } catch (_) { /* arquivo opcional */ }
+  let local = { status: {}, manual: [] };
+  try {
+    local = JSON.parse(localStorage.getItem(OUTREACH_LS) || '{}');
+  } catch (_) { /* storage bloqueado */ }
+  outreach = mergeOutreach(remote, local);
+}
+
+// Junta o estado do repo com o do navegador; em conflito vence o mais recente.
+function mergeOutreach(a, b) {
+  const out = { status: {}, manual: [], updated_at: '' };
+  for (const src of [a || {}, b || {}]) {
+    for (const [id, e] of Object.entries(src.status || {})) {
+      const cur = out.status[id];
+      if (!cur || (e.updated_at || '') > (cur.updated_at || '')) out.status[id] = e;
+    }
+    for (const m of src.manual || []) {
+      const i = out.manual.findIndex(x => x.id === m.id);
+      if (i < 0) out.manual.push(m);
+      else if ((m.last_seen || '') > (out.manual[i].last_seen || '')) out.manual[i] = m;
+    }
+    if ((src.updated_at || '') > out.updated_at) out.updated_at = src.updated_at;
+  }
+  return out;
+}
+
+let _outreachWarned = false;
+function persistOutreach() {
+  outreach.updated_at = new Date().toISOString();
+  try { localStorage.setItem(OUTREACH_LS, JSON.stringify(outreach)); } catch (_) {}
+  // Sincroniza com o repo quando há token; se falhar, segue salvo no navegador.
+  if (!localStorage.getItem('gh_token')) return;
+  _enqueueSave(saveOutreachToGitHub).catch(e => {
+    if (!_outreachWarned) {
+      toast('Progresso salvo só neste navegador (sync com GitHub falhou: ' + e.message + ')', 'info');
+      _outreachWarned = true;
+    }
+  });
+}
+
+async function saveOutreachToGitHub() {
+  const token = localStorage.getItem('gh_token');
+  if (!token) return;
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(outreach, null, 2))));
+  await _ghPutFile('data/outreach.json', encoded, token);
+  await _ghPutFile('docs/data/outreach.json', encoded, token);
+}
+
+function getStage(id) {
+  return (outreach.status[id] && outreach.status[id].status) || 'novo';
+}
+
+function setOutreachStage(id, stage) {
+  const now = new Date().toISOString();
+  const e = outreach.status[id] || { history: [] };
+  e.status = stage;
+  e.updated_at = now;
+  e.history = (e.history || []).concat([{ status: stage, at: now }]);
+  if (stage === 'convite_enviado' && !e.invited_at) e.invited_at = now;
+  outreach.status[id] = e;
+  persistOutreach();
+  renderRecruiters();
+  const label = (OUTREACH_STAGES.find(s => s.v === stage) || {}).label || stage;
+  toast(`Etapa: ${label}`, 'success');
+}
+
+function daysSince(iso) {
+  const t = new Date(iso || 0).getTime();
+  return isNaN(t) ? 0 : (Date.now() - t) / 86400000;
+}
+
+function needsFollowUp(r) {
+  const e = outreach.status[r.id];
+  if (!e) return false;
+  return (e.status === 'convite_enviado' || e.status === 'conectado')
+    && daysSince(e.updated_at) >= FOLLOWUP_DAYS;
+}
+
+function invitesLast7d() {
+  let n = 0;
+  for (const e of Object.values(outreach.status)) {
+    for (const h of e.history || []) {
+      if (h.status === 'convite_enviado' && daysSince(h.at) <= 7) n++;
+    }
+  }
+  return n;
+}
+
+// ── Espelho em JS das regras do recruiters.py (para quem entra à mão) ──
+const JS_RECRUITER_RE = /recruit|talent\s*acquisition|\btalent\b|head\s*hunt|\br&s\b|\brh\b|recursos\s+humanos|people|sele[cç][aã]o|\bhiring\b|staffing|tech\s*rec/i;
+
+function jsCountry(url) {
+  const m = /^https?:\/\/([a-z]{2})\.linkedin\.com/i.exec(url || '');
+  return m && m[1].toLowerCase() !== 'ww' ? m[1].toUpperCase() : '?';
+}
+
+async function jsRecruiterId(url) {
+  let norm = (url || '').split('?')[0].toLowerCase().replace(/\/+$/, '');
+  norm = norm.replace(/^https?:\/\/([a-z]{2}\.|www\.)?linkedin\.com/, '');
+  norm = norm.replace(/\/(pt|en|es)$/, '');
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(norm));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
+}
+
+function jsFit(text, limit) {
+  text = (text || '').trim();
+  if (text.length <= limit) return text;
+  const cut = text.slice(0, limit);
+  const end = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! '), cut.lastIndexOf('? '));
+  if (end >= limit * 0.6) return cut.slice(0, end + 1).trim();
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[ ,;:]+$/, '') + '…';
+}
+
+function jsOutreachTexts(r) {
+  const first = (r.name || '').split(' ')[0];
+  const oi = first ? `Oi ${first}` : 'Oi';
+  const job = (r.jobs || [])[0] || {};
+  const vaga = job.title || 'vagas de DevOps';
+  const emp = (r.companies || [])[0];
+  const onde = emp && emp !== 'N/A' ? ` na ${emp}` : '';
+  return {
+    invite_note: jsFit(
+      `${oi}! Vi que você está contratando para ${vaga}${onde}. Sou DevOps há 3 anos e ` +
+      `hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.`,
+      INVITE_LIMIT),
+    message:
+      `${oi}, obrigado por aceitar!\n\nSobre ${job.title ? 'a vaga de ' + vaga : 'as vagas de DevOps'}${onde}: ` +
+      `construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas ` +
+      `em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\n` +
+      `Posso te enviar meu currículo?`,
+  };
+}
+
+function jsPriority(r) {
+  if (typeof r.priority === 'number') return r.priority;
+  let p = 0;
+  if (r.is_recruiter) p += 25;
+  if (r.country === 'BR') p += 15;
+  if (r.source === 'manual') p += 25;   // voce escolheu essa pessoa
+  p += Math.min((r.jobs || []).length, 4) * 8;
+  if (daysSince(r.last_seen) <= 7) p += 13;
+  return Math.min(p, 100);
+}
+
+// Diretório do scan + adicionados à mão, sem duplicar a mesma pessoa.
+function buildRecruiterList() {
+  const byId = new Map();
+  for (const r of allRecruiters) byId.set(r.id, r);
+  for (const m of outreach.manual || []) {
+    if (!byId.has(m.id)) byId.set(m.id, m);
+  }
+  return Array.from(byId.values()).map(r => {
+    if (r.invite_note && r.message) return r;
+    return Object.assign({}, jsOutreachTexts(r), r,
+      { invite_note: r.invite_note || jsOutreachTexts(r).invite_note,
+        message: r.message || jsOutreachTexts(r).message });
+  });
 }
 
 function switchView(view) {
@@ -2005,7 +2316,7 @@ function switchView(view) {
   });
   document.getElementById('jobs-view').style.display = view === 'jobs' ? '' : 'none';
   document.getElementById('recruiters-view').style.display = view === 'recruiters' ? '' : 'none';
-  // A sidebar de filtros só faz sentido na view de vagas
+  // A sidebar de filtros so faz sentido na view de vagas
   const aside = document.querySelector('.sidebar');
   if (aside) aside.style.display = view === 'jobs' ? '' : 'none';
   const layout = document.querySelector('.layout');
@@ -2013,41 +2324,100 @@ function switchView(view) {
   if (view === 'recruiters') renderRecruiters();
 }
 
-function toggleRecFilter(key) {
-  recFilters[key] = !recFilters[key];
-  const btn = document.getElementById('rec-f-' + key);
-  if (btn) btn.className = 'btn ' + (recFilters[key] ? 'btn-blue' : 'btn-ghost');
+function setRecMode(mode) {
+  recMode = mode;
   renderRecruiters();
 }
 
-function sortRecruiters() {
-  recSortDesc = !recSortDesc;
+function toggleRecFilter(key) {
+  recFilters[key] = !recFilters[key];
   renderRecruiters();
 }
 
 function filteredRecruiters() {
-  const list = allRecruiters.filter(r => {
+  const stageFilter = (document.getElementById('rec-status-filter') || {}).value || '';
+  let list = buildRecruiterList().filter(r => {
     if (recFilters.tech && !r.is_recruiter) return false;
     if (recFilters.br && r.country !== 'BR') return false;
-    if (recFilters.msg && !r.message) return false;
+    if (stageFilter && getStage(r.id) !== stageFilter) return false;
     return true;
   });
-  list.sort((a, b) => {
-    const d = (b.jobs || []).length - (a.jobs || []).length;
-    return recSortDesc ? d : -d;
-  });
+  list.sort((a, b) => jsPriority(b) - jsPriority(a));
+  if (recMode === 'queue') {
+    list = list.filter(r => getStage(r.id) === 'novo' && jsPriority(r) >= QUEUE_MIN_PRIORITY)
+               .slice(0, DAILY_QUEUE);
+  } else if (recMode === 'followup') {
+    list = list.filter(needsFollowUp);
+  }
   return list;
+}
+
+function renderFunnel() {
+  const box = document.getElementById('rec-funnel');
+  if (!box) return;
+  const list = buildRecruiterList();
+  const count = st => list.filter(r => getStage(r.id) === st).length;
+  const convidados = list.filter(r =>
+    ['convite_enviado', 'conectado', 'respondeu', 'entrevista'].includes(getStage(r.id))).length;
+  const aceitos = list.filter(r =>
+    ['conectado', 'respondeu', 'entrevista'].includes(getStage(r.id))).length;
+  const responderam = count('respondeu') + count('entrevista');
+  const pct = (a, b) => b ? Math.round(a * 100 / b) + '%' : '—';
+  const semana = invitesLast7d();
+  const follow = list.filter(needsFollowUp).length;
+
+  const cells = [
+    ['A abordar', count('novo')],
+    ['Convites', convidados],
+    ['Conectados', aceitos],
+    ['Responderam', responderam],
+    ['Entrevistas', count('entrevista')],
+    ['Taxa de aceite', pct(aceitos, convidados)],
+    ['Taxa de resposta', pct(responderam, aceitos)],
+    ['Follow-ups', follow, follow > 0],
+    ['Convites 7 dias', `${semana}/${WEEKLY_INVITE_LIMIT}`, semana >= WEEKLY_INVITE_LIMIT * 0.8],
+  ];
+  box.innerHTML = cells.map(([l, v, warn]) =>
+    `<div class="funnel-box${warn ? ' warn' : ''}"><div class="fv">${v}</div><div class="fl">${l}</div></div>`
+  ).join('');
 }
 
 function renderRecruiters() {
   const grid = document.getElementById('recruiters-grid');
   if (!grid) return;
+  ['queue', 'followup', 'all'].forEach(m => {
+    const b = document.getElementById('rec-mode-' + m);
+    if (b) b.className = 'btn ' + (recMode === m ? 'btn-blue' : 'btn-ghost');
+  });
+  ['tech', 'br'].forEach(k => {
+    const b = document.getElementById('rec-f-' + k);
+    if (b) b.className = 'btn ' + (recFilters[k] ? 'btn-blue' : 'btn-ghost');
+  });
+  renderFunnel();
+
+  const total = buildRecruiterList().length;
+  const tc = document.getElementById('tab-count-recs');
+  if (tc) tc.textContent = total || '';
+
   const list = filteredRecruiters();
   const rc = document.getElementById('rec-count');
   if (rc) rc.textContent = `(${list.length})`;
 
   if (list.length === 0) {
-    const semDados = allRecruiters.length === 0;
+    let titulo, dica;
+    if (total === 0) {
+      titulo = 'Nenhum recruiter no diretório ainda.';
+      dica = 'O scan captura quem publicou a vaga quando o LinkedIn expõe (5-9% das vagas). Enquanto isso, adicione à mão quem você achar em posts.';
+    } else if (recMode === 'queue') {
+      titulo = 'Fila de hoje vazia — todos já foram abordados.';
+      dica = 'Veja os Follow-ups ou volte amanhã, depois do próximo scan.';
+    } else if (recMode === 'followup') {
+      titulo = 'Nenhum follow-up pendente.';
+      dica = `Aparece aqui quem está há ${FOLLOWUP_DAYS}+ dias sem responder.`;
+    } else {
+      titulo = 'Nenhum recruiter com esses filtros.';
+      dica = 'Desmarque algum filtro acima.';
+    }
     grid.innerHTML = `
       <div class="empty-state">
         <div class="empty-icon">
@@ -2055,10 +2425,8 @@ function renderRecruiters() {
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
           </svg>
         </div>
-        <p><strong>${semDados ? 'Nenhum recruiter no diretório ainda.' : 'Nenhum recruiter com esses filtros.'}</strong></p>
-        <span class="empty-hint">${semDados
-          ? 'O sistema captura o recrutador quando a vaga do LinkedIn expõe quem publicou (cerca de 5-9% delas). Rode um scan para começar a acumular.'
-          : 'Desmarque algum filtro acima para ver mais.'}</span>
+        <p><strong>${titulo}</strong></p>
+        <span class="empty-hint">${dica}</span>
       </div>`;
     return;
   }
@@ -2069,14 +2437,21 @@ const REC_FLAGS = { BR: '\u{1F1E7}\u{1F1F7}', US: '\u{1F1FA}\u{1F1F8}', IN: '\u{
 
 function renderRecruiterCard(r) {
   const nJobs = (r.jobs || []).length;
+  const stage = getStage(r.id);
+  const prio = jsPriority(r);
+  const prioCls = prio >= 70 ? 'hi' : (prio >= 45 ? 'mid' : 'lo');
 
-  const recBadge = r.is_recruiter
-    ? '<span class="badge badge-rec">🎯 Recruiter</span>'
-    : '<span class="badge badge-country">Contratante</span>';
-
-  const countryBadge = r.country && r.country !== '?'
-    ? `<span class="badge badge-country">${REC_FLAGS[r.country] || ''} ${escHtml(r.country)}</span>`
-    : '';
+  const badges = [
+    r.is_recruiter
+      ? '<span class="badge badge-rec">🎯 Recruiter</span>'
+      : '<span class="badge badge-country">Contratante</span>',
+    r.country && r.country !== '?'
+      ? `<span class="badge badge-country">${REC_FLAGS[r.country] || ''} ${escHtml(r.country)}</span>` : '',
+    `<span class="badge badge-prio ${prioCls}" title="Prioridade de abordagem (0-100)">${prio}</span>`,
+    r.source === 'manual' ? '<span class="badge badge-manual">manual</span>' : '',
+    needsFollowUp(r)
+      ? `<span class="badge badge-follow">⏰ ${Math.floor(daysSince(outreach.status[r.id].updated_at))}d sem resposta</span>` : '',
+  ].join(' ');
 
   const jobTags = (r.jobs || []).slice(0, 6).map(j => {
     const cls = j.fit_level === 'alto' ? 'alto' : (j.fit_level === 'medio' ? 'medio' : '');
@@ -2084,61 +2459,134 @@ function renderRecruiterCard(r) {
     const tip = j.inferred
       ? `${j.company || ''} — vaga associada pela empresa (o anúncio não expôs quem publicou)`
       : (j.company || '');
-    return `<a class="rec-job-tag ${cls}${inf}" href="${escHtml(j.url || '#')}" target="_blank" rel="noopener" title="${escHtml(tip)}">${escHtml((j.title || '').slice(0, 42))} <span class="sc">${j.score || 0}</span></a>`;
+    const href = j.url ? escHtml(j.url) : '#';
+    const sc = j.score ? ` <span class="sc">${j.score}</span>` : '';
+    return `<a class="rec-job-tag ${cls}${inf}" href="${href}" target="_blank" rel="noopener" title="${escHtml(tip)}">${escHtml((j.title || '').slice(0, 42))}${sc}</a>`;
   }).join('');
   const jobsOverflow = nJobs > 6 ? `<span class="rec-job-tag">+${nJobs - 6}</span>` : '';
-
   const empresas = (r.companies || []).filter(c => c && c !== 'N/A');
-  const msgBlock = r.message
-    ? `<div class="rec-msg">${escHtml(r.message)}</div>`
-    : `<div class="rec-msg-empty">Mensagem ainda não gerada — sai no próximo scan completo.</div>`;
 
-  const copyBtn = r.message
-    ? `<button class="btn btn-blue" style="font-size:0.75rem" onclick="copyRecruiterMessage('${r.id}')">📋 Copiar mensagem</button>`
-    : '';
+  const stageSel = `<select class="rec-stage" onchange="setOutreachStage('${r.id}', this.value)" title="Etapa da abordagem">` +
+    OUTREACH_STAGES.map(st => `<option value="${st.v}"${st.v === stage ? ' selected' : ''}>${st.label}</option>`).join('') +
+    `</select>`;
+
+  const next = NEXT_STEP[stage];
+  const inviteLen = (r.invite_note || '').length;
+  const showInvite = stage === 'novo' || stage === 'convite_enviado';
+  const showMsg = stage !== 'novo';
 
   return `
     <div class="rec-card" id="rec-${r.id}">
       <div class="rec-top">
         <div style="min-width:0;flex:1">
-          <div class="rec-name">${escHtml(r.name || 'Sem nome')} ${recBadge} ${countryBadge}</div>
+          <div class="rec-name">${escHtml(r.name || 'Sem nome')} ${badges}</div>
           <div class="rec-headline">${escHtml(r.headline || '—')}</div>
         </div>
+        ${stageSel}
       </div>
 
       <div class="rec-meta">
         ${empresas.length ? `<span>🏢 ${escHtml(empresas.slice(0, 3).join(', '))}</span>` : ''}
-        <span>📋 ${nJobs} vaga${nJobs === 1 ? '' : 's'} publicada${nJobs === 1 ? '' : 's'}</span>
+        <span>📋 ${nJobs} vaga${nJobs === 1 ? '' : 's'} da área</span>
         ${r.last_seen ? `<span>🕐 visto ${formatRelativeTime(r.last_seen)}</span>` : ''}
       </div>
 
-      <div class="rec-jobs">${jobTags}${jobsOverflow}</div>
+      ${jobTags ? `<div class="rec-jobs">${jobTags}${jobsOverflow}</div>` : ''}
 
-      ${msgBlock}
+      ${next ? `<div class="rec-next">→ ${next.hint}</div>` : ''}
+
+      ${showInvite ? `
+        <div class="rec-block-label"><span>Convite de conexão</span>
+          <span class="count${inviteLen > INVITE_LIMIT ? ' over' : ''}">${inviteLen}/${INVITE_LIMIT}</span></div>
+        <div class="rec-msg">${escHtml(r.invite_note || '')}</div>` : ''}
+
+      ${showMsg ? `
+        <div class="rec-block-label"><span>Mensagem depois do aceite</span></div>
+        <div class="rec-msg">${escHtml(r.message || '')}</div>` : ''}
 
       <div class="rec-actions">
-        ${copyBtn}
+        ${showInvite ? `<button class="btn btn-blue" style="font-size:0.75rem" onclick="copyRecruiterText('${r.id}', 'invite_note')">📋 Copiar convite</button>` : ''}
+        ${showMsg ? `<button class="btn btn-blue" style="font-size:0.75rem" onclick="copyRecruiterText('${r.id}', 'message')">📋 Copiar mensagem</button>` : ''}
         <a class="btn btn-ghost" style="font-size:0.75rem" href="${escHtml(r.profile_url || '#')}" target="_blank" rel="noopener">🔗 Abrir perfil</a>
+        ${next ? `<button class="btn btn-top" style="font-size:0.75rem" onclick="setOutreachStage('${r.id}', '${next.to}')">${next.btn}</button>` : ''}
+        ${stage !== 'descartado' ? `<button class="btn btn-ghost" style="font-size:0.75rem;margin-left:auto" onclick="setOutreachStage('${r.id}', 'descartado')" title="Tirar da fila">✕ Descartar</button>` : ''}
       </div>
     </div>`;
 }
 
-function copyRecruiterMessage(id) {
-  const rec = allRecruiters.find(r => r.id === id);
-  if (!rec || !rec.message) { toast('Sem mensagem para copiar.', 'error'); return; }
-  navigator.clipboard.writeText(rec.message)
-    .then(() => toast('Mensagem copiada! Cole no LinkedIn.', 'success'))
+function copyRecruiterText(id, field) {
+  const rec = buildRecruiterList().find(r => r.id === id);
+  const text = rec && rec[field];
+  if (!text) { toast('Nada para copiar.', 'error'); return; }
+  const ok = field === 'invite_note'
+    ? 'Convite copiado. Abra o perfil → Conectar → Adicionar nota → cole e envie.'
+    : 'Mensagem copiada. Cole no chat do LinkedIn.';
+  navigator.clipboard.writeText(text)
+    .then(() => toast(ok, 'success'))
     .catch(() => {
-      // Fallback para browsers sem clipboard API
       const ta = document.createElement('textarea');
-      ta.value = rec.message;
+      ta.value = text;
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand('copy'); toast('Mensagem copiada!', 'success'); }
+      try { document.execCommand('copy'); toast(ok, 'success'); }
       catch (_) { toast('Não foi possível copiar automaticamente.', 'error'); }
       document.body.removeChild(ta);
     });
 }
+
+// ── Adicionar recruiter à mão ──
+function openAddRecruiterModal() {
+  ['url', 'name', 'company', 'headline', 'job'].forEach(f => {
+    document.getElementById('addrec-' + f).value = '';
+  });
+  document.getElementById('addrec-modal').classList.add('active');
+  setTimeout(() => document.getElementById('addrec-url').focus(), 100);
+}
+
+function closeAddRecruiterModal() {
+  const m = document.getElementById('addrec-modal');
+  if (m) m.classList.remove('active');
+}
+
+async function saveManualRecruiter() {
+  const url = document.getElementById('addrec-url').value.trim().split('?')[0];
+  if (!/linkedin\.com\/in\//i.test(url)) {
+    toast('Cole a URL de um perfil (linkedin.com/in/...).', 'error');
+    return;
+  }
+  const id = await jsRecruiterId(url);
+  if (buildRecruiterList().some(r => r.id === id)) {
+    toast('Essa pessoa já está no diretório.', 'info');
+    closeAddRecruiterModal();
+    return;
+  }
+  const name = document.getElementById('addrec-name').value.trim()
+    || decodeURIComponent(url.split('/in/')[1] || '').split('/')[0].replace(/-[0-9a-f]{5,}$/i, '').replace(/-/g, ' ');
+  const headline = document.getElementById('addrec-headline').value.trim();
+  const company = document.getElementById('addrec-company').value.trim();
+  const job = document.getElementById('addrec-job').value.trim();
+  const now = new Date().toISOString();
+
+  const rec = {
+    id, name, profile_url: url, headline,
+    is_recruiter: JS_RECRUITER_RE.test(headline),
+    country: jsCountry(url),
+    companies: company ? [company] : [],
+    jobs: job ? [{ title: job, company, url: '', score: 0, fit_level: '' }] : [],
+    first_seen: now, last_seen: now, source: 'manual',
+  };
+  Object.assign(rec, jsOutreachTexts(rec));
+  outreach.manual = (outreach.manual || []).concat([rec]);
+  persistOutreach();
+  closeAddRecruiterModal();
+  recMode = 'queue';
+  renderRecruiters();
+  toast(`${name || 'Recruiter'} entrou na fila com convite pronto.`, 'success');
+}
+
+document.addEventListener('click', e => {
+  if (e.target && e.target.id === 'addrec-modal') closeAddRecruiterModal();
+});
 
 function toast(msg, type = 'info') {
   const container = document.getElementById('toast-container');
@@ -2166,7 +2614,7 @@ document.getElementById('token-modal').addEventListener('click', function(e) {
 document.addEventListener('keydown', e => {
   // Esc sempre passa (fecha modais)
   if (e.key === 'Escape') {
-    closeModal(); closeTokenModal(); closeAddJobModal();
+    closeModal(); closeTokenModal(); closeAddJobModal(); closeAddRecruiterModal();
     // Se um input estava focado e nada estava aberto, perde o foco
     if (document.activeElement?.tagName === 'INPUT') document.activeElement.blur();
     return;
@@ -2552,8 +3000,9 @@ async function _ghPutFile(path, content, token, attempt = 0) {
       'Cache-Control': 'no-cache',
     },
   });
-  if (!getR.ok) throw new Error(`Não foi possível ler ${path}: HTTP ${getR.status}`);
-  const { sha } = await getR.json();
+  // 404 = arquivo ainda não existe no repo; o PUT sem sha cria.
+  if (!getR.ok && getR.status !== 404) throw new Error(`Não foi possível ler ${path}: HTTP ${getR.status}`);
+  const sha = getR.ok ? (await getR.json()).sha : undefined;
 
   const putR = await fetch(base, {
     method: 'PUT',
@@ -2562,7 +3011,10 @@ async function _ghPutFile(path, content, token, attempt = 0) {
       'Content-Type': 'application/json',
       Accept: 'application/vnd.github.v3+json',
     },
-    body: JSON.stringify({ message: 'chore: remove jobs via dashboard', content, sha, branch: 'main' }),
+    body: JSON.stringify(Object.assign(
+      { message: 'chore: update data via dashboard', content, branch: 'main' },
+      sha ? { sha } : {}
+    )),
   });
 
   if (putR.ok) return;

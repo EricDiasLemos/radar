@@ -5,6 +5,7 @@ Score 0–100 calculado com base em skills, localização, nível e keywords.
 
 import logging
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Optional
 
@@ -186,6 +187,98 @@ _LEVEL_PL_RE = re.compile(r"\bpleno\b|\bpl\b\s+(?:devops|engenheiro|analista)")
 _PRIORITY_SKILL_RE = [(s, re.compile(r"\b" + re.escape(s) + r"\b")) for s in PRIORITY_SKILLS]
 
 
+# ─── Relevância do cargo (título) ─────────────────────────────────────────────
+# O score por skills sozinho não segura ruído: uma vaga de "Backend Java" cita
+# AWS, Docker e Python na descrição e chegava a 70. O título diz a carreira;
+# por isso ele é o primeiro portão, antes de qualquer pontuação.
+
+def _norm_title(text: str) -> str:
+    t = unicodedata.normalize("NFKD", (text or "").lower())
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9+#/ ]+", " ", t)
+
+
+# Fora de TI — descarta sempre (engenharia civil, adm, vendas...)
+_TITLE_NON_TECH = re.compile(
+    r"pavimenta|rodovi|\bcivil\b|\bobras?\b|saneamento|predial|eletric|mecanic"
+    r"|\bminas\b|minera|geotecn|clinic|hospitalar|industrial|facilities"
+    r"|manutencao|contab|fiscal|financeir|compras|comprador|vendas|comercia"
+    r"|marketing|\bsdr\b|\bbdr\b|recursos humanos|departamento pessoal"
+    r"|administrativ|secretari|eventos|juridic|logistic|frota|orcamento"
+    r"|contratos?\b|planejamento|producao|processos|estagi|aprendiz"
+)
+# Acima do nível-alvo (3 anos de experiência)
+_TITLE_TOO_SENIOR = re.compile(
+    r"\b(senior|sr|staff|principal|lead|lider|tech lead|head|gerente|manager"
+    r"|coordenador|coordinator|diretor|director|supervisor|master|iii)\b"
+)
+# Cargo claramente da área — basta sozinho
+_TITLE_CORE_STRONG = re.compile(
+    r"\b(devops|dev ops|devsecops|sre|site reliability|kubernetes|k8s"
+    r"|observabilidade|observability|sysadmin|system administrator"
+    r"|administrador de sistemas|cloud engineer|cloud ops|cloudops"
+    r"|cloud operations|cloud analyst|cloud platform|analista (de )?cloud"
+    r"|engenheir[oa] (de )?(cloud|nuvem)|release engineer|build engineer"
+    r"|finops|platform engineer|engenheir[oa] de plataforma|platform|plataforma"
+    r"|infraestrutura|infrastructure|infra)\b"
+)
+# Termos fortes, porém genéricos: "Plataforma de Dados", "Software Engineer,
+# Infrastructure". Sozinhos contam; ao lado de outra carreira, só adjacente.
+_TITLE_CORE_GENERIC = re.compile(
+    r"\b(platform|plataforma|infraestrutura|infrastructure|infra)\b"
+)
+# Termos da área que sozinhos são ambíguos (aparecem em cargos de dados/dev)
+_TITLE_CORE_WEAK = re.compile(r"\b(cloud|nuvem|aws|gcp|azure|linux|terraform)\b")
+# Outra carreira de TI — descarta mesmo com termo fraco da área
+_TITLE_OTHER_TECH = re.compile(
+    r"\b(full ?stack|front ?end|back ?end|desenvolvedor|developer|programador"
+    r"|software engineer|software developer|engenheir[oa] de software"
+    r"|desenvolvimento|data|dados|analytics|bi|cientista|scientist"
+    r"|machine learning|ml|ia|ai|artificial intelligence|inteligencia artificial"
+    r"|qa|quality|qualidade|tester|salesforce|sap|servicenow|dba"
+    r"|banco de dados|database|mobile|ios|android|ux|ui|produto|product"
+    r"|scrum|agile)\b"
+)
+# Carreira vizinha: aproveitável, mas não é o alvo principal
+_TITLE_ADJACENT = re.compile(
+    r"\b(redes|network|networking|noc|telecom|telecomunicacoes|it operations"
+    r"|tech ops|operacoes de ti|virtualizacao|vmware|seguranca da informacao"
+    r"|cyber ?security|ciberseguranca|security engineer|suporte linux)\b"
+)
+
+
+def classify_title(title: str) -> str:
+    """
+    Classifica o cargo pelo título:
+      'core'     — DevOps / SRE / Cloud / Platform / Infra
+      'adjacent' — carreira vizinha (redes, NOC, telecom, segurança)
+      'senior'   — nível acima do alvo
+      'off'      — fora da área
+    """
+    t = _norm_title(title)
+    if not t.strip():
+        return "off"
+    if _TITLE_NON_TECH.search(t):
+        return "off"
+    if _TITLE_TOO_SENIOR.search(t):
+        return "senior"
+
+    other = bool(_TITLE_OTHER_TECH.search(t))
+    strong = _TITLE_CORE_STRONG.search(t)
+    if strong:
+        generic_only = bool(_TITLE_CORE_GENERIC.fullmatch(strong.group(0)))
+        if other and generic_only:
+            return "adjacent"
+        return "core"
+    if other:
+        return "off"
+    if _TITLE_CORE_WEAK.search(t):
+        return "core"
+    if _TITLE_ADJACENT.search(t):
+        return "adjacent"
+    return "off"
+
+
 def is_target_company(company: str) -> bool:
     """
     Verifica se o nome da empresa bate com a lista de big techs alvo.
@@ -210,6 +303,8 @@ def is_obviously_rejected(text: str) -> bool:
     Usado pelo scraper para pular fetch de descrições de vagas que serão
     descartadas de qualquer jeito. Evita ~30-40% das requisições.
     """
+    if classify_title(text) in ("off", "senior"):
+        return True
     text_lower = text.lower()
     for rx in _SENIOR_RE:
         if rx.search(text_lower):
@@ -255,6 +350,8 @@ class ScoreResult:
     target_company_bonus: int = 0
     priority_bonus: int = 0
     priority_skills: list[str] = None
+    title_bonus: int = 0
+    title_class: str = ""
 
 
 def score_job(job_dict: dict) -> ScoreResult:
@@ -263,6 +360,18 @@ def score_job(job_dict: dict) -> ScoreResult:
 
     # ── Email de contato ────────────────────────────────────────────────────
     contact_email = extract_contact_email(text)
+
+    # ── Portão do cargo: título fora da área nem chega a ser pontuado ───────
+    title_class = classify_title(job_dict.get("title", ""))
+    if title_class in ("off", "senior"):
+        motivo = ("Cargo acima do nível-alvo" if title_class == "senior"
+                  else "Cargo fora da área (DevOps/Cloud/Platform/Infra)")
+        return ScoreResult(
+            total=0, skills=0, location=0, level=0, keywords=0, salary=0,
+            skills_match=[], skills_gap=[], fit_level="baixo", rejected=True,
+            rejection_reason=motivo, contact_email=contact_email,
+            title_class=title_class,
+        )
 
     # ── Rejeição automática ─────────────────────────────────────────────────
     for rx in _SENIOR_RE:
@@ -360,8 +469,11 @@ def score_job(job_dict: dict) -> ScoreResult:
             priority_skills_found.append(skill)
     priority_bonus = min(len(priority_skills_found), 10)
 
+    # Cargo exatamente da área vale mais que carreira vizinha
+    title_bonus = 10 if title_class == "core" else 0
+
     total = (skills_score + location_score + level_score + kw_score +
-             salary_score + target_company_bonus + priority_bonus)
+             salary_score + target_company_bonus + priority_bonus + title_bonus)
     total = min(total, 100)
 
     # Threshold mais baixo de alto fit quando é big tech (60 vs 70)
@@ -397,6 +509,8 @@ def score_job(job_dict: dict) -> ScoreResult:
         target_company_bonus=target_company_bonus,
         priority_bonus=priority_bonus,
         priority_skills=sorted(priority_skills_found),
+        title_bonus=title_bonus,
+        title_class=title_class,
     )
 
 
@@ -416,6 +530,8 @@ def apply_scores(jobs: list[dict]) -> list[dict]:
             job["fit_level"] = "baixo"
             job["status"] = "arquivada"
             job["contact_email"] = result.contact_email
+            job["rejected"] = True
+            job["rejected_reason"] = result.rejection_reason
         else:
             log.info("Score %d [%s] — %s @ %s",
                      result.total, result.fit_level, job.get("title"), job.get("company"))
@@ -428,7 +544,9 @@ def apply_scores(jobs: list[dict]) -> list[dict]:
                 "salary": result.salary,
                 "target_company": result.target_company_bonus,
                 "priority_skills": result.priority_bonus,
+                "title": result.title_bonus,
             }
+            job["title_class"] = result.title_class
             job["skills_match"] = result.skills_match
             job["skills_gap"] = result.skills_gap
             job["fit_level"] = result.fit_level

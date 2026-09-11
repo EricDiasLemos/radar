@@ -3,6 +3,7 @@ Job Radar — Geração de carta de apresentação via Groq (gratuito)
 Modelo: llama-3.3-70b-versatile (substituto do 3.1-70b descontinuado)
 """
 
+import json
 import logging
 import os
 
@@ -144,107 +145,132 @@ Eric Dias Lemos
 ericdias0603@gmail.com"""
 
 
-# ─── Mensagem de conexão para recruiters (LinkedIn DM) ────────────────────────
+# ─── Abordagem de recruiters (LinkedIn) ───────────────────────────────────────
+# Duas peças por recrutador:
+#   invite_note — vai no convite de conexão. O LinkedIn corta em 300 caracteres.
+#   message     — mandada depois que ele aceita; aí cabe um pouco mais.
 
-RECRUITER_SYSTEM_PROMPT = """Você escreve mensagens curtas de conexão no LinkedIn \
-em nome de Eric Dias Lemos.
+INVITE_LIMIT = 300
+
+RECRUITER_SYSTEM_PROMPT = """Você escreve a abordagem de LinkedIn de Eric Dias Lemos \
+para recrutadores que publicaram vagas de DevOps/Cloud/Platform.
 
 PERFIL (use só o que está aqui, nunca invente experiência):
 """ + CANDIDATE_PROFILE + """
 
-Regras obrigatórias:
-- No MÁXIMO 60 palavras (é uma DM de LinkedIn, não uma carta)
-- Tom cordial e direto, como uma pessoa real escreveria
-- Citar a vaga específica que o recrutador publicou
-- Mencionar no máximo 3 skills que casam com a vaga
-- Terminar com uma pergunta simples e de baixo atrito
-- Nada de "Prezado(a)", "venho por meio desta" ou jargão corporativo
-- Português brasileiro, informal-profissional
-- Devolver SOMENTE o texto da mensagem, sem assunto nem assinatura"""
+Devolva JSON com duas chaves:
+- "convite": nota do convite de conexão. NO MÁXIMO 280 caracteres. Cite a vaga
+  e uma prova concreta do perfil. Termine sem pergunta longa.
+- "mensagem": mensagem para depois que o convite for aceito, até 70 palavras.
+  Retome a vaga, dê 2 resultados concretos que casam com ela e termine com uma
+  pergunta simples e de baixo atrito (ex: "posso te mandar meu currículo?").
+
+Regras: tom cordial e direto, como uma pessoa real escreveria; português
+brasileiro informal-profissional; nada de "Prezado(a)" ou jargão corporativo;
+nenhuma tecnologia ou resultado fora do perfil."""
 
 
-def generate_recruiter_message(recruiter: dict) -> str:
-    """
-    Gera a mensagem de conexão para um recruiter, citando a vaga de maior
-    score que ele publicou. Retorna o texto pronto para copiar no LinkedIn.
-    """
+def _fit(text: str, limit: int) -> str:
+    """Corta no limite sem quebrar palavra, preferindo fim de frase."""
+    text = (text or "").strip()
+    if len(text) <= limit:
+        return text
+    corte = text[:limit]
+    fim = max(corte.rfind(". "), corte.rfind("! "), corte.rfind("? "))
+    if fim >= limit * 0.6:
+        return corte[:fim + 1].strip()
+    return corte[:corte.rfind(" ")].rstrip(" ,;:") + "…"
+
+
+def _best_job(recruiter: dict) -> dict:
+    jobs = recruiter.get("jobs") or []
+    diretas = [j for j in jobs if not j.get("inferred")] or jobs
+    return max(diretas, key=lambda j: j.get("score", 0)) if diretas else {}
+
+
+def generate_recruiter_outreach(recruiter: dict) -> dict:
+    """Gera {'invite_note', 'message'} via Groq para um recruiter."""
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
         raise ValueError("GROQ_API_KEY não configurada")
 
+    best = _best_job(recruiter)
     jobs = recruiter.get("jobs") or []
-    best = max(jobs, key=lambda j: j.get("score", 0)) if jobs else {}
-
     first_name = (recruiter.get("name") or "").split()[0] if recruiter.get("name") else ""
     outras = len(jobs) - 1
 
-    user_prompt = f"""Recrutador: {recruiter.get('name', '')} ({first_name})
+    user_prompt = f"""Recrutador: {recruiter.get('name', '')} (primeiro nome: {first_name})
 Cargo dele: {recruiter.get('headline', 'não informado')}
 
 Vaga que ele publicou: {best.get('title', 'vaga de tecnologia')}
 Empresa: {best.get('company', 'não informada')}
-Score de aderência ao perfil do Eric: {best.get('score', 0)}/100
-{f'Ele também publicou outras {outras} vaga(s) que batem com o perfil.' if outras > 0 else ''}
+{f'Ele também tem outras {outras} vaga(s) da área abertas.' if outras > 0 else ''}
 
-Escreva a mensagem de conexão do Eric para esse recrutador."""
+Escreva o JSON com "convite" e "mensagem"."""
 
     client = Groq(api_key=api_key)
-    log.info("Gerando mensagem para recruiter: %s (Groq/%s)",
-             recruiter.get("name"), GROQ_MODEL)
-
+    log.info("Gerando abordagem para recruiter: %s (Groq/%s)", recruiter.get("name"), GROQ_MODEL)
     response = client.chat.completions.create(
         model=GROQ_MODEL,
-        max_tokens=220,
+        max_tokens=400,
         temperature=0.7,
+        response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": RECRUITER_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
     )
-    msg = response.choices[0].message.content.strip()
-    log.info("Mensagem gerada: %d caracteres", len(msg))
-    return msg
+    data = json.loads(response.choices[0].message.content)
+    invite = _fit(data.get("convite", ""), INVITE_LIMIT)
+    message = (data.get("mensagem") or "").strip()
+    if not invite or not message:
+        raise ValueError(f"resposta incompleta da Groq: {list(data)}")
+    return {"invite_note": invite, "message": message}
 
 
 def generate_recruiter_messages(recruiters: list[dict], limit: int = 15) -> int:
     """
-    Preenche o campo 'message' dos recruiters que ainda não têm uma.
-    Prioriza quem publicou vagas de maior score. `limit` protege a cota da API.
-    Retorna quantas mensagens foram geradas.
+    Preenche invite_note e message de quem ainda não tem, começando pelos de
+    maior prioridade. `limit` protege a cota da API.
     """
-    pendentes = [r for r in recruiters if not r.get("message") and r.get("jobs")]
-    pendentes.sort(
-        key=lambda r: max((j.get("score", 0) for j in r["jobs"]), default=0),
-        reverse=True,
-    )
+    pendentes = [r for r in recruiters
+                 if r.get("jobs") and not (r.get("invite_note") and r.get("message"))]
+    pendentes.sort(key=lambda r: r.get("priority", 0), reverse=True)
 
     geradas = 0
     for rec in pendentes[:limit]:
         try:
-            rec["message"] = generate_recruiter_message(rec)
-            geradas += 1
+            rec.update(generate_recruiter_outreach(rec))
+            rec["outreach_source"] = "groq"
         except Exception as e:
-            log.error("Falha ao gerar mensagem para %s: %s", rec.get("name"), e)
-            rec["message"] = _fallback_recruiter_message(rec)
-            geradas += 1
+            log.error("Falha ao gerar abordagem para %s: %s: %s",
+                      rec.get("name"), type(e).__name__, e)
+            rec.update(_fallback_outreach(rec))
+            rec["outreach_source"] = "fallback"
+        geradas += 1
     return geradas
 
 
-def _fallback_recruiter_message(recruiter: dict) -> str:
-    """Mensagem padrão usada quando a API do Groq falha."""
-    jobs = recruiter.get("jobs") or []
-    best = max(jobs, key=lambda j: j.get("score", 0)) if jobs else {}
+def _fallback_outreach(recruiter: dict) -> dict:
+    """Textos padrão quando a Groq falha. O convite respeita os 300 caracteres."""
+    best = _best_job(recruiter)
     first_name = (recruiter.get("name") or "").split()[0] if recruiter.get("name") else ""
-    saudacao = f"Oi {first_name}, tudo bem?" if first_name else "Oi, tudo bem?"
-    vaga = best.get("title", "a vaga de infraestrutura")
+    oi = f"Oi {first_name}" if first_name else "Oi"
+    vaga = best.get("title", "a vaga de DevOps")
     empresa = best.get("company", "")
     onde = f" na {empresa}" if empresa and empresa != "N/A" else ""
 
-    return (
-        f"{saudacao}\n\n"
-        f"Vi que você publicou a vaga de {vaga}{onde}. "
-        f"Trabalho com DevOps e Cloud há 3 anos — hoje cuido de CI/CD e "
-        f"observabilidade de 30+ sistemas em produção, com Terraform, Kubernetes "
-        f"e AWS/GCP. O perfil da vaga bateu bastante com o que faço.\n\n"
+    invite = _fit(
+        f"{oi}! Vi sua vaga de {vaga}{onde}. Sou DevOps há 3 anos e hoje cuido "
+        f"do CI/CD e da observabilidade de 30+ sistemas em produção. "
+        f"Gostaria de me conectar.",
+        INVITE_LIMIT,
+    )
+    message = (
+        f"{oi}, obrigado por aceitar!\n\n"
+        f"Sobre a vaga de {vaga}{onde}: construí do zero uma plataforma interna "
+        f"(Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e "
+        f"conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\n"
         f"Posso te enviar meu currículo?"
     )
+    return {"invite_note": invite, "message": message}
