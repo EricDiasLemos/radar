@@ -23,9 +23,11 @@
       ],
       "first_seen": "2026-09-11T03:16:45.591594+00:00",
       "last_seen": "2026-09-11T03:16:45.591594+00:00",
-      "message": null,
-      "priority": 27
+      "message": "Oi Pavan, obrigado por aceitar!\n\nSobre a vaga de DevOps Engineer na Clinisoltech: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
+      "priority": 27,
+      "invite_note": "Oi Pavan! Vi sua vaga de DevOps Engineer na Clinisoltech. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
+      "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-09-11T03:16:45.591594+00:00"
+  "last_updated": "2026-09-11T03:24:48.577888+00:00"
 }
