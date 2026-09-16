@@ -1,6 +1,34 @@
 {
   "recruiters": [
     {
+      "id": "a9ffc89fe466f4b5",
+      "name": "Luiza Carvalho",
+      "profile_url": "https://br.linkedin.com/in/luizacarvalhorh",
+      "headline": "Psicologia Organizacional | Analista de RH JR | Recrutamento & Seleção",
+      "is_recruiter": true,
+      "country": "BR",
+      "companies": [
+        "Farmácia Indiana"
+      ],
+      "jobs": [
+        {
+          "id": "78e1959dee2799ff",
+          "title": "Analista de Infraestrutura de TI Jr",
+          "company": "Farmácia Indiana",
+          "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-de-ti-jr-at-farm%C3%A1cia-indiana-4468226604",
+          "score": 64,
+          "fit_level": "medio",
+          "found_at": "2026-09-16T15:21:45.462160+00:00"
+        }
+      ],
+      "first_seen": "2026-09-16T15:22:59.199426+00:00",
+      "last_seen": "2026-09-16T15:22:59.199426+00:00",
+      "message": "Oi Luiza, obrigado por aceitar!\n\nSobre a vaga de Analista de Infraestrutura de TI Jr na Farmácia Indiana: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
+      "priority": 63,
+      "invite_note": "Oi Luiza! Vi sua vaga de Analista de Infraestrutura de TI Jr na Farmácia Indiana. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
+      "outreach_source": "fallback"
+    },
+    {
       "id": "252ba40fab50478d",
       "name": "Pavan kalyan Yarlagadda",
       "profile_url": "https://in.linkedin.com/in/pavankalyanyarlagadda",
@@ -29,5 +57,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-09-15T15:30:01.345910+00:00"
+  "last_updated": "2026-09-16T15:22:59.199426+00:00"
 }
