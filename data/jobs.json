@@ -277,7 +277,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T17:50:32.000Z",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEhPUi4bYTP-A/company-logo_200_200/company-logo_200_200/0/1712955003130/fitenergia_logo?e=2147483647&v=beta&t=SiOyMYUFqHoNuCDn80u0xsn-uK5h0R7NbvauHR0j7FI"
     },
     {
@@ -418,7 +418,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T00:50:54.000Z",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00"
     },
@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -1123,7 +1123,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "9e5994878882e2b4",
@@ -1404,7 +1404,7 @@
       "valid_through": "2026-10-01T23:00:01.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "3b42f5789987b5f5",
@@ -1819,7 +1819,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGYY570-kdpUg/company-logo_100_100/company-logo_100_100/0/1738953126028/zummit_it_logo?e=2147483647&v=beta&t=v_orIm5RcxsCxlnRrOJ4r24O7oQCK0At-zfjvYKbvjo"
     },
     {
@@ -2098,7 +2098,7 @@
       "valid_through": "2026-09-27T13:53:06.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFbq4nyJmxxEQ/company-logo_200_200/B4DaBepRZqJcAE-/0/1788294272848/cast4it_logo?e=2147483647&v=beta&t=JxNERgItU9X2PWny0uHidlnyaIloyyUfbIpE7roXcXs",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -2237,7 +2237,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-01T00:53:02.000Z",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGQ9_7vYuztPA/company-logo_200_200/company-logo_200_200/0/1695849805705/sgatiemnuvem_logo?e=2147483647&v=beta&t=kfkYfUS2yMC4wrTT0wB7wPutJI4j6zx_p6sBk-iS8U4"
     },
     {
@@ -2519,7 +2519,7 @@
       "valid_through": "2026-09-25T20:15:54.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE4q-iBP4fZ0g/company-logo_200_200/B4DZUUipIKG8AI-/0/1739806380950/mercadolivre_com_logo?e=2147483647&v=beta&t=e6EdT3IHvk1PqtvipIAQjHALqTyRoFjbtOQLd-r6944",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "b4d64b7488c8cfa5",
@@ -2663,7 +2663,7 @@
       "valid_through": "2026-09-24T22:59:44.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "4bfe4aa702c7e784",
@@ -4189,7 +4189,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGvYuv9rJJ6zw/company-logo_100_100/company-logo_100_100/0/1631362999645/concremat_logo?e=2147483647&v=beta&t=WNzKh0EKrwI__D5xeTPij9F06GXtCgbUZs4oczIcl8M"
     },
     {
@@ -4469,7 +4469,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-09T01:54:48.000Z",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_200_200/B4DZ35TgVVJkAE-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=eVF7MRTRghJJ7ZnZJc8dzgF6jQ4H_H7LaA6VEKHyoy4"
     },
     {
@@ -4888,7 +4888,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-27T07:39:21.000Z",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGzikkXLX-9rw/company-logo_200_200/company-logo_200_200/0/1715957700690/mm_invest_ai_logo?e=2147483647&v=beta&t=Rxfs9OU-E8jSFqhj-ydTgB3vO7SNNwRce0XrA9J4KbA"
     },
     {
@@ -5305,7 +5305,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T00:53:08.000Z",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00",
+      "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo"
     },
     {
@@ -5735,7 +5735,7 @@
       "valid_through": "2026-09-24T01:51:32.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM",
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "2fa444fb24756932",
@@ -7120,7 +7120,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-18T14:50:52.055774+00:00"
+      "verified_at": "2026-09-22T15:28:38.615874+00:00"
     },
     {
       "id": "08629c51e986c861",
@@ -7398,7 +7398,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -7543,7 +7543,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "f9a6684d6f63450b",
@@ -7684,7 +7684,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -7967,7 +7967,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -8111,7 +8111,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -8540,7 +8540,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -8687,7 +8687,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -8827,15 +8827,155 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-21T16:51:57.112794+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+    },
+    {
+      "id": "1c5eb4130f7b5d69",
+      "title": "Assistente de Infraestrutura Noturno",
+      "company": "Grupo Friopeças",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "DESCRIÇÃO Monitorar Sistemas; Administrar processamento de dados; Assegurar funcionamento do hardware e software; Garantir segurança das informações; Atender chamados e usuários; Inspecionar ambiente físico de trabalho. Local de trabalho: Belo Horizonte, MG Regime de contratação de tipo: Efetivo – CLT Jornada: Período Integral Área e especialização profissional: Informática, TI, Telecomunicações - TI Nível hierárquico: Assistente REQUISITOS Escolaridade Mínima: Ensino Superior VALORIZADO Tempo de experiência: Entre 1 e 3 anos Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/assistente-de-infraestrutura-noturno-at-grupo-friope%C3%A7as-4468160602",
+      "source": "LinkedIn",
+      "published_at": "2026-09-21",
+      "found_at": "2026-09-22T15:27:16.980179+00:00",
+      "score": 49,
+      "score_breakdown": {
+        "skills": 0,
+        "location": 20,
+        "level": 10,
+        "keywords": 4,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "baixo",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFd5Dmv53L5cA/company-logo_100_100/B4DZ.E.6qgHEAI-/0/1784642513980/friopecas_logo?e=2147483647&v=beta&t=-rqYXnf0nDGSagSLHmAaQejS5bynPexAUs9-TZR50TM",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
     }
   ],
-  "last_updated": "2026-09-21T16:52:04.549974+00:00",
+  "last_updated": "2026-09-22T15:28:40.103844+00:00",
   "stats": {
-    "total": 63,
+    "total": 64,
     "alto_fit": 17,
     "medio_fit": 34,
-    "baixo_fit": 12,
+    "baixo_fit": 13,
     "enviadas": 0
   }
 }
