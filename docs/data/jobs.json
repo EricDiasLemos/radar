@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -1123,7 +1123,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "9e5994878882e2b4",
@@ -1404,7 +1404,7 @@
       "valid_through": "2026-10-01T23:00:01.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "3b42f5789987b5f5",
@@ -2098,7 +2098,7 @@
       "valid_through": "2026-09-27T13:53:06.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFbq4nyJmxxEQ/company-logo_200_200/B4DaBepRZqJcAE-/0/1788294272848/cast4it_logo?e=2147483647&v=beta&t=JxNERgItU9X2PWny0uHidlnyaIloyyUfbIpE7roXcXs",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -2519,7 +2519,7 @@
       "valid_through": "2026-09-25T20:15:54.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE4q-iBP4fZ0g/company-logo_200_200/B4DZUUipIKG8AI-/0/1739806380950/mercadolivre_com_logo?e=2147483647&v=beta&t=e6EdT3IHvk1PqtvipIAQjHALqTyRoFjbtOQLd-r6944",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "b4d64b7488c8cfa5",
@@ -2663,7 +2663,7 @@
       "valid_through": "2026-09-24T22:59:44.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "4bfe4aa702c7e784",
@@ -5306,7 +5306,8 @@
       "title_class": "core",
       "valid_through": "2026-10-03T00:53:08.000Z",
       "verified_at": "2026-09-22T15:28:38.615874+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo"
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo",
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -5735,7 +5736,7 @@
       "valid_through": "2026-09-24T01:51:32.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM",
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "2fa444fb24756932",
@@ -7398,7 +7399,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -7684,7 +7685,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -7967,7 +7968,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -8111,7 +8112,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -8540,7 +8541,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -8687,7 +8688,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -8827,7 +8828,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -8967,13 +8968,156 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
+    },
+    {
+      "id": "234de5a3fb6a19ca",
+      "title": "Analista de Infraestrutura Cloud & DevOps.",
+      "company": "Empresa Confidencial",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Buscamos profissional para atuar na sustentação, evolução e automação da nossa infraestrutura de TI, cobrindo ambientes Cloud (AWS/GCP), servidores Linux, arquiteturas em containers e redes. Principais atividades: Sustentação, administração e evolução de ambientes Cloud e On-Premise; Provisionamento e automação de infraestrutura como código (IaC); Monitoramento ativo, troubleshooting técnico avançado e resolução de incidentes complexos; Gestão de redes, conectividade, segurança e servidores de aplicação. Requisitos Técnicos: Cloud: Experiência prática com AWS ou GCP; Sistemas Operacionais: Domínio de Linux (obrigatório) e conhecimentos em Windows Server; Automação & IaC: Terraform e/ou Ansible; Containers & Servidores Web: Docker e NGINX; Redes & Segurança: TCP/IP, DNS, VPN, Firewalls e gestão de links de conectividade; Monitoramento & Scripting: Zabbix, Datadog ou similares; automação via Bash ou Python; Bancos de Dados: Vivência com PostgreSQL (ou outros SGBDs em ambiente Linux); Ferramentas de Suporte à Infra: Equipamentos Ubiquiti/UniFi e gestão de Google Workspace; Inglês técnico: Para leitura de documentações e troubleshooting. Formação: Ensino superior completo ou em andamento em Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia ou áreas correlatas. Informações da Vaga: Local: Belo Horizonte/MG (100% Presencial) Contratação: CLT Salário: A combinar (enviar pretensão) 🎁 Benefícios: Vale Alimentação/Refeição, Plano de Saúde, Plano Odontológico, Seguro de Vida e Vale-Transporte ou Vale Combustível. #VagasTI #DevOps #CloudEngineer #Infraestrutura #AWS #Linux #Terraform #Docker #BeloHorizonte #VagasBH Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-cloud-devops-at-empresa-confidencial-4469935927",
+      "source": "LinkedIn",
+      "published_at": "2026-09-21",
+      "found_at": "2026-09-23T15:20:55.989526+00:00",
+      "score": 89,
+      "score_breakdown": {
+        "skills": 33,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 1,
+        "title": 10
+      },
+      "skills_match": [
+        "ansible",
+        "aws",
+        "bash",
+        "datadog",
+        "dns",
+        "docker",
+        "gcp",
+        "iac",
+        "linux",
+        "nginx",
+        "postgresql",
+        "python",
+        "terraform",
+        "vpn",
+        "zabbix"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "api",
+        "app engine",
+        "argocd",
+        "azure",
+        "azure devops",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "devsecops",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "olt",
+        "postgres",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "wireguard",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-10-21T18:16:48.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE5LKe2moMnHg/company-logo_100_100/company-logo_100_100/0/1736630274411/empresa_confidencial_logo?e=2147483647&v=beta&t=sS0AldO_PjNIlU-TC-ehYg2AY8a1l3UgmPDGUK8kH-M",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [
+        "gcp"
+      ],
+      "last_seen_at": "2026-09-23T15:23:11.534817+00:00"
     }
   ],
-  "last_updated": "2026-09-22T15:28:40.103844+00:00",
+  "last_updated": "2026-09-23T15:23:11.546412+00:00",
   "stats": {
-    "total": 64,
-    "alto_fit": 17,
+    "total": 65,
+    "alto_fit": 18,
     "medio_fit": 34,
     "baixo_fit": 13,
     "enviadas": 0
