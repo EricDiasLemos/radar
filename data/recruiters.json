@@ -1,6 +1,34 @@
 {
   "recruiters": [
     {
+      "id": "30c9dbf7e8129239",
+      "name": "Aline Silva",
+      "profile_url": "https://br.linkedin.com/in/aline-silva-130a8930",
+      "headline": "Coordenadora de RH/Tech Recruiter",
+      "is_recruiter": true,
+      "country": "BR",
+      "companies": [
+        "Amo Promo"
+      ],
+      "jobs": [
+        {
+          "id": "3e20236bebeee8e8",
+          "title": "Analista de DevOps — Cloud Operations Pleno",
+          "company": "Amo Promo",
+          "url": "https://br.linkedin.com/jobs/view/analista-de-devops-%E2%80%94-cloud-operations-pleno-at-amo-promo-4472026343",
+          "score": 100,
+          "fit_level": "alto",
+          "found_at": "2026-09-25T15:45:08.311382+00:00"
+        }
+      ],
+      "first_seen": "2026-09-25T15:47:27.634310+00:00",
+      "last_seen": "2026-09-25T15:47:27.634310+00:00",
+      "message": "Oi Aline, obrigado por aceitar!\n\nSobre a vaga de Analista de DevOps — Cloud Operations Pleno na Amo Promo: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
+      "priority": 76,
+      "invite_note": "Oi Aline! Vi sua vaga de Analista de DevOps — Cloud Operations Pleno na Amo Promo. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
+      "outreach_source": "fallback"
+    },
+    {
       "id": "a9ffc89fe466f4b5",
       "name": "Luiza Carvalho",
       "profile_url": "https://br.linkedin.com/in/luizacarvalhorh",
@@ -57,5 +85,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-09-24T15:45:57.947600+00:00"
+  "last_updated": "2026-09-25T15:47:27.634310+00:00"
 }

@@ -137,7 +137,7 @@
       "priority_skills": [],
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "19e6532b595901db",
@@ -277,7 +277,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T17:50:32.000Z",
-      "verified_at": "2026-09-22T15:28:38.615874+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEhPUi4bYTP-A/company-logo_200_200/company-logo_200_200/0/1712955003130/fitenergia_logo?e=2147483647&v=beta&t=SiOyMYUFqHoNuCDn80u0xsn-uK5h0R7NbvauHR0j7FI"
     },
     {
@@ -418,7 +418,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T00:50:54.000Z",
-      "verified_at": "2026-09-22T15:28:38.615874+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00"
     },
@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -981,7 +981,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-02T20:32:11.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEKyVZ5kehqbA/company-logo_200_200/company-logo_200_200/0/1695203312947/emivebr_logo?e=2147483647&v=beta&t=VsWZgPk-UY7iRUG13Ropk79VJIJbUEY_kjHUtepBsFY"
     },
     {
@@ -1123,147 +1123,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
-    },
-    {
-      "id": "9e5994878882e2b4",
-      "title": "Analista de Infraestrutura I",
-      "company": "VMI Security",
-      "location": "Lagoa Santa, MG",
-      "salary": "",
-      "description": "Descrição Buscamos profissional para atuar na administração e sustentação da infraestrutura de Tecnologia da Informação, garantindo a disponibilidade, segurança, desempenho e continuidade dos ambientes computacionais da empresa. Responsabilidades e atribuições Administrar e manter servidores, bancos de dados e redes de comunicação de dados; Apoiar a gestão dos serviços de infraestrutura de TI, incluindo manutenção e operação do ambiente; Prestar suporte técnico aos usuários na utilização de estações de trabalho, equipamentos e sistemas; Monitorar equipamentos ativos e passivos de rede, identificando e tratando possíveis indisponibilidades ou incidentes; Administrar serviços de rede, servidores e ambientes de virtualização; Atuar na gestão dos recursos do Data Center, incluindo disponibilização de servidores, expansão e upgrades de infraestrutura quando necessário; Apoiar as atividades relacionadas à segurança, disponibilidade e desempenho do Data Center e dos servidores; Executar e acompanhar rotinas de backup e cópias de segurança dos sistemas; Configurar, instalar e manter recursos e sistemas computacionais; Documentar rotinas, procedimentos e atividades relacionadas à infraestrutura de TI; Apoiar o cumprimento dos níveis de serviço e a continuidade dos ambientes de tecnologia. Requisitos e qualificações Ensino superior completo ou cursando em Tecnologia da Informação, Redes de Computadores, Sistemas de Informação ou áreas correlatas; Experiência profissional superior a 1 ano na área de infraestrutura de TI. Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-i-at-vmi-security-4459576157",
-      "source": "LinkedIn",
-      "published_at": "2026-09-01",
-      "found_at": "2026-09-07T16:19:14.574513+00:00",
-      "score": 51,
-      "score_breakdown": {
-        "skills": 0,
-        "location": 20,
-        "level": 10,
-        "keywords": 6,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "dns",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [],
-      "title_class": "core",
-      "valid_through": "2026-10-01T22:19:49.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQHanufOwaigQA/company-logo_200_200/company-logo_200_200/0/1630622207004/vmi_security_logo?e=2147483647&v=beta&t=RgCPqYQIj0fGD4mJubyz11dYqoME1PZzpfPU58u2Ca0",
-      "last_seen_at": "2026-09-17T15:29:13.690314+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "c87fd0d512cf821e",
@@ -1404,7 +1264,7 @@
       "valid_through": "2026-10-01T23:00:01.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "3b42f5789987b5f5",
@@ -1542,7 +1402,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-09-28T10:38:00.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHkPgPj3HY6YQ/company-logo_200_200/company-logo_200_200/0/1736435132288/astralpaesemassas_logo?e=2147483647&v=beta&t=qAsoe-6G9AHQcuEYoN6do9-9JURqfGvDnx9q2uqkPVQ"
     },
     {
@@ -1681,7 +1541,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE5LPVRiEw4JQ/company-logo_100_100/company-logo_100_100/0/1736446136441?e=2147483647&v=beta&t=OJeZ6-coS0QrIa1fsNOf3dCZlz3lNR4alRhKiLxM-O4"
     },
     {
@@ -1819,7 +1679,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-22T15:28:38.615874+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGYY570-kdpUg/company-logo_100_100/company-logo_100_100/0/1738953126028/zummit_it_logo?e=2147483647&v=beta&t=v_orIm5RcxsCxlnRrOJ4r24O7oQCK0At-zfjvYKbvjo"
     },
     {
@@ -1958,7 +1818,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "f7561cb35600ee70",
@@ -2379,151 +2239,7 @@
       "valid_through": "2026-09-25T20:15:54.000Z",
       "verified_at": "2026-09-14T16:51:30.296913+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE4q-iBP4fZ0g/company-logo_200_200/B4DZUUipIKG8AI-/0/1739806380950/mercadolivre_com_logo?e=2147483647&v=beta&t=e6EdT3IHvk1PqtvipIAQjHALqTyRoFjbtOQLd-r6944",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
-    },
-    {
-      "id": "b4d64b7488c8cfa5",
-      "title": "Platform Engineer (GCP) - Remote Work | REF#301534",
-      "company": "BairesDev",
-      "location": "Minas Gerais, Brasil",
-      "salary": "",
-      "description": "At BairesDev®, we've been leading the way in technology projects for over 15 years. We deliver cutting-edge solutions to giants like Google and the most innovative startups in Silicon Valley. Our diverse 4,000+ team, composed of the world's Top 1% of tech talent, works remotely on roles that drive significant impact worldwide. When you apply for this position, you're taking the first step in a process that goes beyond the ordinary. We aim to align your passions and skills with our vacancies, setting you on a path to exceptional career development and success. Platform Engineer (GCP) at BairesDev In this role, you'll build and maintain the platform foundations that support an AI-driven mainframe modernization practice, ensuring that systems regenerated in Java, Go, or .NET on GCP run reliably at scale. Working alongside architects and engineers within project pods, you'll focus on the infrastructure and data platform layers that make modernization efforts sustainable long-term. This is your opportunity to apply platform engineering discipline to a complex modernization challenge, working in a fully GCP-based environment with global engineering teams. What You'll Do Build and maintain platform infrastructure supporting application modernization efforts on GCP. Implement and manage data pipelines and analytics platforms using BigQuery. Support engineering teams with platform reliability, scalability, and best practices. Collaborate with distributed engineering teams within a fully GCP-based environment. What We Are Looking For 5+ years of experience in platform engineering with GCP. Experience supporting application modernization, contributing to re-architecting legacy or mainframe-class systems into Java, Go, or .NET. Background in data architecture on GCP including BigQuery and data pipelines. Exposure to consulting or professional services delivery in project-based, client-facing environments. Familiarity with AI engineering practices such as harness engineering or spec-driven design. Experience with requirements gathering. Familiarity with test-driven design. Advanced proficiency in English. Nice To Have Mainframe or COBOL domain familiarity. Experience with DORA metrics. QA discipline and practices. How we do make your work (and your life) easier: 100% remote work (from anywhere). Excellent compensation in USD or your local currency if preferred Hardware and software setup for you to work from home. Flexible hours: create your own schedule. Paid parental leaves, vacations, and national holidays. Innovative and multicultural work environment: collaborate and learn from the global Top 1% of talent. Supportive environment with mentorship, promotions, skill development, and diverse growth opportunities. Join a global team where your unique talents can truly thrive and make a significant impact! Apply now! Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/platform-engineer-gcp-remote-work-ref%23301534-at-bairesdev-4455983309",
-      "source": "LinkedIn",
-      "published_at": "2026-08-25",
-      "found_at": "2026-08-31T17:56:07.213513+00:00",
-      "score": 61,
-      "score_breakdown": {
-        "skills": 4,
-        "location": 20,
-        "level": 10,
-        "keywords": 10,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 2,
-        "title": 10
-      },
-      "skills_match": [
-        "bigquery",
-        "gcp"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "dns",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [
-        "bigquery",
-        "gcp"
-      ],
-      "title_class": "core",
-      "valid_through": "2026-09-24T22:59:44.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "4bfe4aa702c7e784",
@@ -2660,7 +2376,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQG_S8qdMW3LQw/company-logo_100_100/company-logo_100_100/0/1635352720943/bernoulli_educacao_logo?e=2147483647&v=beta&t=1DkPoUYI7m3yyBJnMr-baHePmp8cmlcnrXRW6USS83g"
     },
     {
@@ -2800,7 +2516,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-13T19:52:28.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM"
     },
     {
@@ -2939,7 +2655,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "9ae1438d456c50d8",
@@ -3076,7 +2792,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "8e29826f9cbb0de8",
@@ -3215,7 +2931,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-08T16:34:13.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFnNOoDrwfW6A/company-logo_200_200/company-logo_200_200/0/1630540114523/eurofins_logo?e=2147483647&v=beta&t=-y50mMC087GiSjhNPRe6sII-Dl_Hrq7Vv0Sv43lJmJI"
     },
     {
@@ -3355,7 +3071,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-07T18:00:51.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQErv_Gb6j-umA/company-logo_200_200/B4EZmgfhRSGoAI-/0/1759334242338/actar_peersgroup_logo?e=2147483647&v=beta&t=O0thjdaZ8M2IFQ3Stk-VLFNIAweWja2r-GhWJSGzoA4"
     },
     {
@@ -3494,7 +3210,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-04T00:00:26.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEtYxamaI76ig/company-logo_100_100/company-logo_100_100/0/1730480431320/aiko_brasil_logo?e=2147483647&v=beta&t=amLSinj1FwQO0tZ_3NpWUo5M-xBC1kHxl0TTR7NTafQ"
     },
     {
@@ -3633,7 +3349,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "b24ab262ab38f81f",
@@ -3772,7 +3488,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-03T20:01:07.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFZ1BSyUCLUOw/company-logo_200_200/B4DZ.KHnjwKsAE-/0/1784728680913/stellantislatam_logo?e=2147483647&v=beta&t=ykGVc5l89N6K2SCmLwvVq_i69rEsiF5gtHJePxGGOPo"
     },
     {
@@ -3911,7 +3627,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "1b11ab7a7b2225f0",
@@ -4049,7 +3765,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-22T15:28:38.615874+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGvYuv9rJJ6zw/company-logo_100_100/company-logo_100_100/0/1631362999645/concremat_logo?e=2147483647&v=beta&t=WNzKh0EKrwI__D5xeTPij9F06GXtCgbUZs4oczIcl8M"
     },
     {
@@ -4189,7 +3905,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-13T13:55:32.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_200_200/B4DZ35TgVVJkAE-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=eVF7MRTRghJJ7ZnZJc8dzgF6jQ4H_H7LaA6VEKHyoy4"
     },
     {
@@ -4471,7 +4187,7 @@
       ],
       "title_class": "core",
       "valid_through": "2026-10-09T00:00:06.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEB7h9WibWyYQ/company-logo_200_200/B4DZwfQMxaIYAI-/0/1770050866683/mundiale_logo?e=2147483647&v=beta&t=BXObOzh09I51iqhjk_7UxFL-igLWXbhf3ScZmUdDfHQ"
     },
     {
@@ -4609,7 +4325,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "71a8b4d477e616fa",
@@ -4747,8 +4463,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "valid_through": "2026-09-27T07:39:21.000Z",
-      "verified_at": "2026-09-22T15:28:38.615874+00:00",
+      "valid_through": "2026-10-25T07:38:42.000Z",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGzikkXLX-9rw/company-logo_200_200/company-logo_200_200/0/1715957700690/mm_invest_ai_logo?e=2147483647&v=beta&t=Rxfs9OU-E8jSFqhj-ydTgB3vO7SNNwRce0XrA9J4KbA"
     },
     {
@@ -4886,7 +4602,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "5696a0aa5c664d75",
@@ -5026,7 +4742,7 @@
         "gcp"
       ],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "3c52a178ce0b5043",
@@ -5167,7 +4883,7 @@
       "valid_through": "2026-10-03T00:53:08.000Z",
       "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo",
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -5313,7 +5029,7 @@
         "google kubernetes engine"
       ],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s"
     },
     {
@@ -5453,147 +5169,9 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-14T16:32:09.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
       "last_seen_at": "2026-09-18T14:50:52.037424+00:00"
-    },
-    {
-      "id": "2fa444fb24756932",
-      "title": "TECNICO SUPORTE INFRAESTRUTURA",
-      "company": "Bernoulli Educação",
-      "location": "Belo Horizonte, MG",
-      "salary": "",
-      "description": "Se o olho brilha, vem ser Bernoulli Somos feitos de pessoas que acreditam no poder transformador da educação. Gente criativa, determinada e que gosta de aprender. Profissionais que enxergam os desafios como oportunidades para inovar, gerar ideias, soluções e impulsionar o conhecimento. Tudo isso em um ambiente onde as diferenças se encontram, dialogam e trabalham em equipe. Um ambiente acolhedor, plural e dinâmico, onde as pessoas são motivadas a se desenvolver para evoluir, prosperar e alcançar seus objetivos. Se seu olho brilha para novos desafios e você quer fazer parte de uma cultura em transformação, em uma empresa que não para de crescer, venha ser Bernoulli! Venha revolucionar a educação junto com a gente! Responsabilidades e atribuições Acompanhar equipe técnica de terceiros nas execuções de serviços de infraestrutura e instalação, configuração e manutenção de equipamentos, através de solicitações realizadas pelo Service Desk e demandas do líder de infraestrutura, visando auxiliar o terceiro na realização da tarefa contratada. Realizar a gestão de ativos de tecnologia, através do controle, organização, movimentação e acompanhamento do ciclo de vida dos equipamentos, visando garantir rastreabilidade, disponibilidade e correta utilização dos recursos tecnológicos da instituição. Manter os suprimentos de tecnologia organizados e quantificados, através de controles internos de consumo, reportando ao líder a necessidade de reposição de itens, visando garantir a disponibilidade destes recursos para operação dos equipamentos de tecnologia. Realizar manutenção e suporte a computadores, rede, telefonia e demais equipamentos de tecnologia, através de rotinas de manutenção e atendimento a solicitações internas, visando garantir sua disponibilidade e evitando riscos de impacto/prejuízo ao negócio. Realizar acompanhamento de eventos internos e externos, através de acompanhamento local, visando garantir a infraestrutura de computadores, internet e rede necessária para o evento. Prestar atendimento a incidentes e solicitações de suporte e serviços, através do atendimento de solicitações do Service Desk de nível 1, visando solucionar falhas, orientar a correta utilização de recursos de tecnologia e atuar com foco na qualidade da prestação de serviço. O modelo de trabalho da vaga é: CLT, 100% Presencial. Carga horária: 44h semanais, de segunda a sexta-feira das 06h30 às 16h30 e um sábado ao mês 07h às 12h. Requisitos e qualificações Curso técnico em áreas de tecnologia. Experiência com montagem e manutenção de computadores. Instalação e configurações de Softwares Noções em rede de computadores Noções em sistemas de telefonia (PABX). Informações adicionais 🩺 Plano de saúde 🦷 Plano odontológico 💙 Seguro de vida 🍴 Vale-alimentação e refeição no mesmo cartão ☕️ Café da manhã ou lanche da tarde nas unidades físicas 🚍 Vale-transporte 🏋️‍♂️ Total Pass e Wellhub (acesso a academias e serviços de bem-estar) 🎂 Day off no aniversário 📖 Universidade Corporativa 🤰🏽 Pr",
-      "url": "https://br.linkedin.com/jobs/view/tecnico-suporte-infraestrutura-at-bernoulli-educa%C3%A7%C3%A3o-4458532185",
-      "source": "LinkedIn",
-      "published_at": "2026-08-25",
-      "found_at": "2026-08-26T11:32:17.285203+00:00",
-      "score": 49,
-      "score_breakdown": {
-        "skills": 0,
-        "location": 20,
-        "level": 10,
-        "keywords": 4,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "dns",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "baixo",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [],
-      "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQG_S8qdMW3LQw/company-logo_100_100/company-logo_100_100/0/1635352720943/bernoulli_educacao_logo?e=2147483647&v=beta&t=1DkPoUYI7m3yyBJnMr-baHePmp8cmlcnrXRW6USS83g"
     },
     {
       "id": "b165f9e451e54272",
@@ -5731,7 +5309,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T01:52:38.000Z",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00"
     },
@@ -5871,7 +5449,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "4d6bedeb24327563",
@@ -6009,7 +5587,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -6147,7 +5725,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -6288,7 +5866,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -6426,7 +6004,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -6564,7 +6142,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -6702,7 +6280,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "1cec3d1a5a279de9",
@@ -7118,7 +6696,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -7263,7 +6841,8 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-22T15:28:38.608943+00:00"
+      "last_seen_at": "2026-09-22T15:28:38.608943+00:00",
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "f9a6684d6f63450b",
@@ -7687,7 +7266,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -7831,7 +7410,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -7977,7 +7556,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-16T15:22:59.172332+00:00",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "eff16103248478be",
@@ -8119,7 +7698,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-16T15:22:59.172332+00:00",
-      "verified_at": "2026-09-21T16:51:57.120312+00:00"
+      "verified_at": "2026-09-25T15:47:27.762058+00:00"
     },
     {
       "id": "ecfdc669a61cd1ef",
@@ -8260,7 +7839,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -8407,7 +7986,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -8547,7 +8126,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -8687,7 +8266,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -8830,7 +8409,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -8970,15 +8549,307 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-24T15:45:57.942456+00:00"
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
+    },
+    {
+      "id": "93941ce4460e1570",
+      "title": "IT Solutions DevOps Engineer",
+      "company": "Eurofins",
+      "location": "Belo Horizonte e Região",
+      "salary": "",
+      "description": "Eurofins Scientific is an international life sciences company, providing a unique range of analytical testing services to clients across multiple industries, to make life and our environment safer, healthier and more sustainable. From the food you eat, to the water you drink, to the medicines you rely on, Eurofins laboratories work with the biggest companies in the world to ensure the products they supply are safe, their ingredients are authentic and labelling is accurate. The Eurofins network of companies believes that it is a global leader in food, environment, pharmaceutical and cosmetic product testing and in discovery pharmacology, forensics, advanced material sciences and agroscience contract research services. It is also one of the market leaders in certain testing and laboratory services for genomics, and in the support of clinical studies, as well as in biopharma contract development and manufacturing. It also has a rapidly developing presence in highly specialised and molecular clinical diagnostic testing and in-vitro diagnostic products. The group's key figures are approximately: Turnover of 6.5 billion euros, more than 940 laboratories in 62 countries and around 62,000 employees. Job Description In a nutshell We are seeking a DevOps Engineer to support end-to-end software delivery and platform operations. The role covers infrastructure provisioning, request coordination with external teams, automated deployments, software instance setup, and cross-team delivery coordination. Key activities include applying Infrastructure as Code practices, using Terraform to provision and manage cloud infrastructure, maintaining deployment automation and configuration consistency, monitoring deployment outcomes, and supporting security, change, and release management controls. Software instances are provisioned and maintained across development, test, and production environments. The engineer will collaborate with development, infrastructure, security, and operations teams to resolve delivery issues, improve deployment quality, and strengthen platform reliability. This role requires strong analytical and troubleshooting skills, disciplined organisation, clear stakeholder communication, and a continuous-improvement mindset to reduce manual effort and error-prone activities. Where will you be based and what business will you support? This hybrid position is based in Belo Horizonte, Brazil with a minimum of two days per week in the office. What can we do for you? We offer the opportunity to work on impactful, global IT projects within a collaborative and international environment, providing exposure to business-critical systems, continuous learning, and professional growth opportunities . Qualifications Are you our kind of extraordinary? We seek a professional with experience DevOps engineering, release and deployment management, infrastructure automation, or related fields, with exposure to: Agile methodology CI/CD pipelines Platforms: Windows, Linux Da",
+      "url": "https://br.linkedin.com/jobs/view/it-solutions-devops-engineer-at-eurofins-4472010659",
+      "source": "LinkedIn",
+      "published_at": "2026-09-25",
+      "found_at": "2026-09-25T15:45:08.311378+00:00",
+      "score": 64,
+      "score_breakdown": {
+        "skills": 9,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "ci/cd",
+        "infrastructure as code",
+        "linux",
+        "terraform"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2027-03-24T13:16:12.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFnNOoDrwfW6A/company-logo_100_100/company-logo_100_100/0/1630540114523/eurofins_logo?e=2147483647&v=beta&t=YmAUdo_wjfnFDQerIYzNSukvGQH0MB4fgGIuolHWNc8",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
+    },
+    {
+      "id": "3e20236bebeee8e8",
+      "title": "Analista de DevOps — Cloud Operations Pleno",
+      "company": "Amo Promo",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Estamos em busca de um(a) Analista de DevOps — Cloud Operations Pleno para integrar nosso time de Tecnologia. O(a) profissional será responsável pela administração e sustentação dos ambientes em cloud, atuando com infraestrutura, containers, automação, monitoramento e suporte aos ambientes de produção. Principais responsabilidades: Configurar e administrar recursos na Google Cloud Platform (GCP), incluindo máquinas virtuais, GKE, Cloud Run e armazenamento Operar aplicações em containers, realizando deploys, atualizações, ajustes de configuração e rollbacks Configurar e manter redes, DNS, certificados, regras de firewall e conectividade entre serviços Administrar acessos, permissões, contas de serviço e segredos, seguindo boas práticas de segurança Monitorar métricas, logs e alertas, investigando falhas de infraestrutura e apoiando o atendimento a incidentes Manter pipelines de build e deploy e automatizar rotinas operacionais Acompanhar o consumo e os custos dos ambientes em cloud, identificando oportunidades de otimização Acompanhar rotinas de backup e realizar testes de restauração Apoiar os times de Desenvolvimento na configuração dos ambientes e na investigação de problemas em produção. Requisitos: Experiência com Google Cloud Platform (GCP) ou AWS Conhecimentos em Linux, Docker, Kubernetes e Helm Conhecimentos em redes, incluindo TCP/IP, DNS, HTTP/HTTPS, balanceamento de carga, VPN e firewall Conhecimentos em IAM, contas de serviço e gerenciamento de credenciais e segredos Experiência com Git e pipelines de CI/CD Familiaridade com ferramentas de monitoramento e observabilidade, como Grafana, Datadog, Prometheus ou Sentry Conhecimentos em automação utilizando Bash ou Python Noções de PostgreSQL, Redis e filas de mensagens. Diferenciais: Experiência prática com Google Cloud Platform (GCP) Conhecimento em infraestrutura como código utilizando Terraform ou Ansible Conhecimentos em FinOps, dimensionamento de recursos e autoscaling Experiência com hardening de Linux, redes privadas e auditoria de acessos em cloud Vivência em ambientes de e-commerce ou serviços web com grande volume de acessos. Venha fazer parte do time Amo Promo! ✈️ Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-devops-%E2%80%94-cloud-operations-pleno-at-amo-promo-4472026343",
+      "source": "LinkedIn",
+      "published_at": "2026-09-25",
+      "found_at": "2026-09-25T15:45:08.311382+00:00",
+      "score": 100,
+      "score_breakdown": {
+        "skills": 40,
+        "location": 20,
+        "level": 15,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 5,
+        "title": 10
+      },
+      "skills_match": [
+        "ansible",
+        "aws",
+        "bash",
+        "ci/cd",
+        "cloud run",
+        "datadog",
+        "dns",
+        "docker",
+        "firewall",
+        "gcp",
+        "git",
+        "gke",
+        "google cloud",
+        "grafana",
+        "helm",
+        "iam",
+        "kubernetes",
+        "linux",
+        "postgresql",
+        "prometheus",
+        "python",
+        "redis",
+        "terraform",
+        "vpn"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "api",
+        "app engine",
+        "argocd",
+        "azure",
+        "azure devops",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "devsecops",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "flask",
+        "fortigate",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "grafana loki",
+        "gunicorn",
+        "huawei",
+        "iac",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": {
+        "name": "Aline Silva",
+        "profile_url": "https://br.linkedin.com/in/aline-silva-130a8930",
+        "headline": "Coordenadora de RH/Tech Recruiter"
+      },
+      "valid_through": "2026-10-25T14:50:09.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQFyiPykfGjPGg/company-logo_100_100/company-logo_100_100/0/1630604280308/amopromo_logo?e=2147483647&v=beta&t=k3DZ9qN7F_kmHz8hsfHVCnzy5ZnBhrINaID7Ga7Mlak",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [
+        "cloud run",
+        "gcp",
+        "gke",
+        "google cloud",
+        "google cloud platform"
+      ],
+      "last_seen_at": "2026-09-25T15:47:27.616839+00:00"
     }
   ],
-  "last_updated": "2026-09-24T15:45:58.304809+00:00",
+  "last_updated": "2026-09-25T15:47:35.398647+00:00",
   "stats": {
-    "total": 64,
-    "alto_fit": 18,
-    "medio_fit": 34,
-    "baixo_fit": 12,
+    "total": 63,
+    "alto_fit": 19,
+    "medio_fit": 33,
+    "baixo_fit": 11,
     "enviadas": 0
   }
 }
