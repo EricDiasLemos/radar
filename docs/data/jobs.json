@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -1123,7 +1123,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "c87fd0d512cf821e",
@@ -1264,7 +1264,7 @@
       "valid_through": "2026-10-01T23:00:01.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -4187,7 +4187,7 @@
       "valid_through": "2026-10-03T00:53:08.000Z",
       "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo",
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -5308,7 +5308,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-25T15:47:27.762058+00:00"
+      "verified_at": "2026-09-29T16:50:54.323209+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -5584,7 +5584,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-25T15:47:27.762058+00:00"
+      "verified_at": "2026-09-29T16:50:54.323209+00:00"
     },
     {
       "id": "1cec3d1a5a279de9",
@@ -6000,7 +6000,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -6571,7 +6571,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -6715,7 +6715,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -7144,7 +7144,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -7291,7 +7291,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -7431,7 +7431,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -7571,7 +7571,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -7714,7 +7714,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -7854,7 +7854,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "93941ce4460e1570",
@@ -7995,7 +7995,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "3e20236bebeee8e8",
@@ -8146,7 +8146,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -8287,7 +8287,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     },
     {
       "id": "c7c3a78616a70b65",
@@ -8428,14 +8428,297 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-28T18:33:29.582095+00:00"
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
+    },
+    {
+      "id": "570ff892e674660b",
+      "title": "Analista de Observabilidade Appdynamics Pleno",
+      "company": "NPO Brasil",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "VAGA EXTENSIVA PCD Que tal fazer parte uma empresa consolidada, certificada pelo GPTW e que acredita na inovação através de pessoas? Somos uma empresa de Tecnologia que acompanha as tendências do Mercado e não para de crescer. Você é um profissional experiente em bservabilidade está pronto para assumir novos desafios? Então, temos a oportunidade perfeita para você! Estamos buscando um Analista de Observabilidade Pleno para integrar nossa equipe e contribuir com seu conhecimento e habilidades! Responsabilidades Administração de Ambiente: Gerenciar e manter a estabilidade de um ambiente hibrido(Windows\\Linux) on premisses/Cloud complexo e de alto volume de dados (Large Scale Environment); Implantação de APM: Configurar, instalar e tunar agentes do AppDynamics em diversas camadas (Java, .NET, Node.js, SQL Server, Mongodb e etc.) ; Gestão de Splunk AppDynamics: Criar e otimizar alertas e relatórios para monitoração proativa; Configuração de Instrumentação: Mapear jornadas de negócio e transações críticas para garantir a visibilidade \"ponta a ponta\" (Business Transactions); Suporte e Troubleshooting: Atuar na causa raiz de incidentes de performance, apoiando os times de desenvolvimento com insights técnicos. Escala de trabalho 40h semanais de 08:00 ás 17:00 , modelo híbrido 2x na semana. Requisitos Sólidos conhecimentos em AppDynamics: Vivência prática na configuração de controladores, agentes e instrumentação de aplicações; Conhecimento em Infraestrutura: Noções de sistemas operacionais (Linux/Windows) e redes para entendimento de conectividade dos agentes e banco de dados (SQL Server, Mongodb); Cultura de Observabilidade: Entendimento de conceitos como Golden Signals, Logs, Métricas e Tracing. Diferenciais Certificações oficiais Splunk ou AppDynamics; Experiência com automação de instalação de agentes (via Ansible, Terraform, powershgell); Conhecimento em monitoração de ambientes Cloud (AWS, Azure ou GCP); Vivência com outras ferramentas de monitoração (Dynatrace, Datadog ou Elastic Stack). Benefícios Refeição e Alimentação (Para os nossos benefícios, utilizamos o Cartão da Flash); Auxílio Mobilidade; Plano de Saúde: SulAmerica (Apartamento / Nacional - Mensalidade Cobertura: 100%); Seguro de vida em grupo; PLR; Day off no mês do aniversário; Cursos na plataforma da Udemy; TotalPass ; Parceria Pratique Fitness; Parceria com Open English; Parceria Onhappy - viagens e lazer; Se você se identifica com esse perfil e está pronto para impulsionar sua carreira, não perca essa oportunidade. Envie seu currículo e se torne um NeOple! Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-observabilidade-appdynamics-pleno-at-npo-brasil-4471588225",
+      "source": "LinkedIn",
+      "published_at": "2026-09-29",
+      "found_at": "2026-09-29T16:49:29.477308+00:00",
+      "score": 78,
+      "score_breakdown": {
+        "skills": 17,
+        "location": 20,
+        "level": 15,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 1,
+        "title": 10
+      },
+      "skills_match": [
+        "ansible",
+        "aws",
+        "azure",
+        "datadog",
+        "dynatrace",
+        "gcp",
+        "linux",
+        "terraform"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "api",
+        "app engine",
+        "argocd",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-10-29T00:53:16.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQG9cUkWrOne1Q/company-logo_100_100/B4DaBeMQvLKgAI-/0/1788286667937/npobrasil_logo?e=2147483647&v=beta&t=bnbOKmD5Iq3qudgs_OHpyKS4UeVe0-X7-5scD8u3Gb8",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [
+        "gcp"
+      ],
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
+    },
+    {
+      "id": "362f48aa861cf82b",
+      "title": "Analista de Infraestrutura",
+      "company": "RHF TALENTOS CONTAGEM",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "DESCRIÇÃO Analista de Infraestrutura Cloud – Microsoft 365 Responsável pela implantação, administração e migração de ambientes Microsoft 365 e Google Workspace, realizando suporte técnico N2/N3, configuração e gerenciamento de backups, segurança e auditoria de ambientes, documentação da infraestrutura e treinamento de clientes. Requisitos Obrigatórios Experiência com migração de arquivos, e-mails e usuários para o Microsoft 365. Requisitos Desejáveis Ensino Superior em Tecnologia da Informação ou áreas correlatas; Conhecimento em Microsoft 365 e Google Workspace; Experiência com suporte técnico N2/N3. Salário R$ 3.244,38 a R$ 3.925,69 Benefícios Vale-Alimentação/Refeição: R$ 700,00/mês; Plano de carreira estruturado; Participação nos Lucros (PLR); Programa de certificações; Plano de Saúde Hapvida integral; Plano Odontológico Hapvida integral; Convênio com o SESC; Cozinha compartilhada; Home office 2x por semana. Horário REQUISITOS Segunda a sexta-feira, das 09h às 18h. Local de trabalho: Belo Horizonte, MG Regime de contratação de tipo: Efetivo – CLT Jornada: Período Integral Área e especialização profissional: Informática, TI, Telecomunicações - Infraestrutura Nível hierárquico: Analista Escolaridade Mínima: Ensino Superior Formação Desejada Tecnologia da Informação, Ensino Superior Ciências da computação, Ensino Superior VALORIZADO Tempo de experiência: Entre 1 e 3 anos HABILIDADES RESPONSABILIDADE ASSIDUIDADE COMPROMETIMENTO PROATIVIDADE TRABALHO EM EQUIPE COMUNICAÇÃO ATENÇÃO BENEFÍCIOS - Home office 2 vezes por semana. Cozinha compartilhada; Convênio com o SESC; Plano odontológico Hapvida integral; Vale-alimentação/refeição: R$ 700,00 mensais; Programa de certificações; Participação nos lucros (PLR); Plano de carreira estruturado; Plano de saúde Hapvida integral; Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-at-rhf-talentos-contagem-4471290836",
+      "source": "LinkedIn",
+      "published_at": "2026-09-29",
+      "found_at": "2026-09-29T16:49:35.279173+00:00",
+      "score": 53,
+      "score_breakdown": {
+        "skills": 0,
+        "location": 20,
+        "level": 10,
+        "keywords": 8,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFXKcHXJm5VKA/company-logo_100_100/B4DZwRUGu7GQAQ-/0/1769817009772/rhftalentoscontagem_logo?e=2147483647&v=beta&t=yAoeWy0d4GTBqRewdJ_NRiwm7-BFJQOyz_EOe31pUVY",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-09-29T16:50:54.309880+00:00"
     }
   ],
-  "last_updated": "2026-09-28T18:33:35.552741+00:00",
+  "last_updated": "2026-09-29T16:50:54.553526+00:00",
   "stats": {
-    "total": 60,
-    "alto_fit": 19,
-    "medio_fit": 31,
+    "total": 62,
+    "alto_fit": 20,
+    "medio_fit": 32,
     "baixo_fit": 10,
     "enviadas": 0
   }
