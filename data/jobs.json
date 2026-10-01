@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -1123,7 +1123,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "c87fd0d512cf821e",
@@ -1264,7 +1264,7 @@
       "valid_through": "2026-10-01T23:00:01.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -4187,7 +4187,7 @@
       "valid_through": "2026-10-03T00:53:08.000Z",
       "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo",
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -4334,7 +4334,8 @@
       ],
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s"
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "1751b936eb92ef5e",
@@ -6000,7 +6001,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -6571,7 +6572,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -6715,7 +6716,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -7144,7 +7145,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -7291,7 +7292,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -7431,7 +7432,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -7571,7 +7572,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -7714,7 +7715,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -7854,7 +7855,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "93941ce4460e1570",
@@ -7995,7 +7996,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "3e20236bebeee8e8",
@@ -8146,7 +8147,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -8287,7 +8288,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "c7c3a78616a70b65",
@@ -8428,7 +8429,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "570ff892e674660b",
@@ -8571,7 +8572,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "362f48aa861cf82b",
@@ -8711,7 +8712,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -8851,14 +8852,155 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-09-30T16:45:05.825425+00:00"
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+    },
+    {
+      "id": "ebee5ade320e19e0",
+      "title": "System Administrator",
+      "company": "Arcadis",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Arcadis is the world's leading company delivering sustainable design, engineering, and consultancy solutions for natural and built assets. We are more than 34,000 people, in over 30 countries, dedicated to improving quality of life. Everyone has an important role to play. With the power of many curious minds, together we can solve the world’s most complex challenges and deliver more impact together. Role description: Responsible on working all tickets and other operational tasks. Role accountabilities: Individual responsibilities: Backup and Restore Ensure regular system backups in place Manage and configure backup toolset Perform quick system restores for disaster recovery purposes IT Asset Management Apply industry best practices in maintaining and operating hosting and networking assets Asset Change Management. Maintenance and improvements on CMDB Monitoring and Events Management Provide fast and quality solutions to outages detected by our monitoring tool Resolve issues that has high customer impact Provide indebt root cause analysis, and apply logical solutions Identify and Access Management Act as control and enact identity policies Provide SSO integration on accredited external sites/application Maintain health of AD infrastructure and functionalities Software Deployment and Update Management Deploy latest patches on resources Perform in-places OS upgrades Key Shared Accountabilities Provide the best end user experience possible Maintenance/Administration of Tech assets Qualifications & Experience: 2 to 5 years of high technical experience in technologies mainly but not limited to Cisco and Microsoft solutions. Able to operate/navigate on technologies regarding Virtualization, PaaS, IaaS, Security and recovery, Azure Storage, AD, DNS, Windows Server OS, SCCM, Linux, PowerShell. Demonstrate significant technical abilities by quickly restoring outages, able to provide detailed Root Cause Analysis for server slowness/outages. Willing to work on a 24x7shifting schedules including weekends and holidays. Why Arcadis? We can only achieve our goals when everyone is empowered to be their best. We believe everyone's contribution matters. It’s why we are pioneering a skills-based approach, where you can harness your unique experience and expertise to carve your career path and maximize the impact we can make together. You’ll do meaningful work, and no matter what role, you’ll be helping to deliver sustainable solutions for a more prosperous planet. Make your mark, on your career, your colleagues, your clients, your life and the world around you. Together, we can create a lasting legacy. Join Arcadis. Create a Legacy. Our Commitment to Equality, Diversity, Inclusion & Belonging We want you to be able to bring your best self to work every day, which is why we take equality and inclusion seriously and hold ourselves to account for our actions. Our ambition is to be an employer of choice and provide a great place to work for all our people. At Arcadis, y",
+      "url": "https://br.linkedin.com/jobs/view/system-administrator-at-arcadis-4472933415",
+      "source": "LinkedIn",
+      "published_at": "2026-10-01",
+      "found_at": "2026-10-01T17:18:10.101874+00:00",
+      "score": 58,
+      "score_breakdown": {
+        "skills": 9,
+        "location": 20,
+        "level": 10,
+        "keywords": 4,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "azure",
+        "cisco",
+        "dns",
+        "linux"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-10-31T13:52:22.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D560BAQENjWtigNGe9w/company-logo_100_100/company-logo_100_100/0/1720420615682/arcadis_logo?e=2147483647&v=beta&t=eC2ke3vDjbBpetRZt0liKqefA1kCmXYxbDmNmqD4wbc",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     }
   ],
-  "last_updated": "2026-09-30T16:45:05.837466+00:00",
+  "last_updated": "2026-10-01T17:19:35.725763+00:00",
   "stats": {
-    "total": 63,
+    "total": 64,
     "alto_fit": 20,
-    "medio_fit": 32,
+    "medio_fit": 33,
     "baixo_fit": 11,
     "enviadas": 0
   }
