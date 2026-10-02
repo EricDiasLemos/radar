@@ -137,7 +137,7 @@
       "priority_skills": [],
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "19e6532b595901db",
@@ -276,8 +276,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "valid_through": "2026-10-03T17:50:32.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "valid_through": "2026-10-30T19:46:18.000Z",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEhPUi4bYTP-A/company-logo_200_200/company-logo_200_200/0/1712955003130/fitenergia_logo?e=2147483647&v=beta&t=SiOyMYUFqHoNuCDn80u0xsn-uK5h0R7NbvauHR0j7FI"
     },
     {
@@ -418,7 +418,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T00:50:54.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHQomtDOtPd3A/company-logo_200_200/B4DZ28BG2MKMAI-/0/1776975900966/grupo_fcil_logo?e=2147483647&v=beta&t=t7aRaSR4OYweBHaqv22XeFBhrZ9qKQRx17gv49TXaMc",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00"
     },
@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "e25c0df59ce5a643",
@@ -981,7 +981,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-02T20:32:11.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEKyVZ5kehqbA/company-logo_200_200/company-logo_200_200/0/1695203312947/emivebr_logo?e=2147483647&v=beta&t=VsWZgPk-UY7iRUG13Ropk79VJIJbUEY_kjHUtepBsFY"
     },
     {
@@ -1123,148 +1123,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
-    },
-    {
-      "id": "c87fd0d512cf821e",
-      "title": "Site Reliability Engineer - Remote Work | REF#279922",
-      "company": "BairesDev",
-      "location": "Belo Horizonte, MG",
-      "salary": "",
-      "description": "At BairesDev®, we've been leading the way in technology projects for over 15 years. We deliver cutting-edge solutions to giants like Google and the most innovative startups in Silicon Valley. Our diverse 4,000+ team, composed of the world's Top 1% of tech talent, works remotely on roles that drive significant impact worldwide. When you apply for this position, you're taking the first step in a process that goes beyond the ordinary. We aim to align your passions and skills with our vacancies, setting you on a path to exceptional career development and success. Site Reliability Engineer at BairesDev We are looking for a Site Reliability Engineer to administrate and provide support for the whole project infrastructure hosted in the cloud while implementing CI/CD pipelines for the automation of the deployments. What You Will Do Ensure high service availability, performance, security, and maintainability. Implement CI/CD pipelines for the automation of the deployments. Automate tools to reduce repeating efforts of processes using scripting. Assess new cloud providers. Create and maintain technical documentation for existing and new processes and policies. Troubleshoot errors - from software to hardware to cloud resources. Here's What We Are Looking For 2+ years of experience as an Infrastructure Engineer or similar. 1+ years of experience with Kubernetes as an SRE engineer or similar. Previous work experience with Ansible, Terraform, and CI/CD pipelines. Experience and familiarity working with different cloud providers. Experience working with monitor/observability tools like Grafana and Prometheus, datadog, new relic. Experience working with bitbucket pipelines is a plus. Advanced English level. How We Make Your Work (and Your Life) Easier 100% remote work (from anywhere). Excellent compensation in USD or your local currency if preferred Hardware and software setup for you to work from home. Flexible hours: create your own schedule. Paid parental leaves, vacations, and national holidays. Innovative and multicultural work environment: collaborate and learn from the global Top 1% of talent. Supportive environment with mentorship, promotions, skill development, and diverse growth opportunities. Join a global team where your unique talents can truly thrive! Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/site-reliability-engineer-remote-work-ref%23279922-at-bairesdev-4209242838",
-      "source": "LinkedIn",
-      "published_at": "2026-09-01",
-      "found_at": "2026-09-07T16:18:39.804787+00:00",
-      "score": 71,
-      "score_breakdown": {
-        "skills": 16,
-        "location": 20,
-        "level": 10,
-        "keywords": 10,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [
-        "ansible",
-        "ci/cd",
-        "datadog",
-        "grafana",
-        "kubernetes",
-        "prometheus",
-        "terraform"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "devsecops",
-        "dns",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "alto",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [],
-      "title_class": "core",
-      "valid_through": "2026-10-01T23:00:01.000Z",
-      "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -1402,7 +1261,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE5LPVRiEw4JQ/company-logo_100_100/company-logo_100_100/0/1736446136441?e=2147483647&v=beta&t=OJeZ6-coS0QrIa1fsNOf3dCZlz3lNR4alRhKiLxM-O4"
     },
     {
@@ -1541,7 +1400,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -1680,7 +1539,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-28T12:52:24.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGQ9_7vYuztPA/company-logo_200_200/company-logo_200_200/0/1695849805705/sgatiemnuvem_logo?e=2147483647&v=beta&t=kfkYfUS2yMC4wrTT0wB7wPutJI4j6zx_p6sBk-iS8U4"
     },
     {
@@ -1820,7 +1679,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-13T19:52:28.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM"
     },
     {
@@ -1959,7 +1818,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "9ae1438d456c50d8",
@@ -2096,7 +1955,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "8e29826f9cbb0de8",
@@ -2235,7 +2094,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-08T16:34:13.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQFnNOoDrwfW6A/company-logo_200_200/company-logo_200_200/0/1630540114523/eurofins_logo?e=2147483647&v=beta&t=-y50mMC087GiSjhNPRe6sII-Dl_Hrq7Vv0Sv43lJmJI"
     },
     {
@@ -2375,7 +2234,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-07T18:00:51.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQErv_Gb6j-umA/company-logo_200_200/B4EZmgfhRSGoAI-/0/1759334242338/actar_peersgroup_logo?e=2147483647&v=beta&t=O0thjdaZ8M2IFQ3Stk-VLFNIAweWja2r-GhWJSGzoA4"
     },
     {
@@ -2514,7 +2373,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-04T00:00:26.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEtYxamaI76ig/company-logo_100_100/company-logo_100_100/0/1730480431320/aiko_brasil_logo?e=2147483647&v=beta&t=amLSinj1FwQO0tZ_3NpWUo5M-xBC1kHxl0TTR7NTafQ"
     },
     {
@@ -2653,7 +2512,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "b24ab262ab38f81f",
@@ -2791,8 +2650,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "valid_through": "2026-10-03T20:01:07.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "valid_through": "2026-10-31T20:00:23.000Z",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFZ1BSyUCLUOw/company-logo_200_200/B4DZ.KHnjwKsAE-/0/1784728680913/stellantislatam_logo?e=2147483647&v=beta&t=ykGVc5l89N6K2SCmLwvVq_i69rEsiF5gtHJePxGGOPo"
     },
     {
@@ -2931,7 +2790,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "1b11ab7a7b2225f0",
@@ -3069,7 +2928,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGvYuv9rJJ6zw/company-logo_100_100/company-logo_100_100/0/1631362999645/concremat_logo?e=2147483647&v=beta&t=WNzKh0EKrwI__D5xeTPij9F06GXtCgbUZs4oczIcl8M"
     },
     {
@@ -3209,7 +3068,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-13T13:55:32.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_200_200/B4DZ35TgVVJkAE-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=eVF7MRTRghJJ7ZnZJc8dzgF6jQ4H_H7LaA6VEKHyoy4"
     },
     {
@@ -3349,7 +3208,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-09T01:54:48.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_200_200/B4DZ35TgVVJkAE-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=eVF7MRTRghJJ7ZnZJc8dzgF6jQ4H_H7LaA6VEKHyoy4"
     },
     {
@@ -3491,7 +3350,7 @@
       ],
       "title_class": "core",
       "valid_through": "2026-10-09T00:00:06.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEB7h9WibWyYQ/company-logo_200_200/B4DZwfQMxaIYAI-/0/1770050866683/mundiale_logo?e=2147483647&v=beta&t=BXObOzh09I51iqhjk_7UxFL-igLWXbhf3ScZmUdDfHQ"
     },
     {
@@ -3629,7 +3488,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "71a8b4d477e616fa",
@@ -3768,7 +3627,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-25T07:38:42.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGzikkXLX-9rw/company-logo_200_200/company-logo_200_200/0/1715957700690/mm_invest_ai_logo?e=2147483647&v=beta&t=Rxfs9OU-E8jSFqhj-ydTgB3vO7SNNwRce0XrA9J4KbA"
     },
     {
@@ -3906,7 +3765,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "5696a0aa5c664d75",
@@ -4046,7 +3905,7 @@
         "gcp"
       ],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "3c52a178ce0b5043",
@@ -4187,7 +4046,7 @@
       "valid_through": "2026-10-03T00:53:08.000Z",
       "verified_at": "2026-09-22T15:28:38.615874+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQF-GxNQM6Vkwg/company-logo_200_200/B4DZh7XGPsGkAI-/0/1754416309718/sabi_administrao_logo?e=2147483647&v=beta&t=pyLgcukAuqro45R0k4ZS7QkenMBxtYbfDJXwpYm1lSo",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -4335,7 +4194,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "1751b936eb92ef5e",
@@ -4474,7 +4333,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-14T16:32:09.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
       "last_seen_at": "2026-09-18T14:50:52.037424+00:00"
     },
@@ -4614,7 +4473,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-10-10T01:52:38.000Z",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00",
+      "verified_at": "2026-10-02T16:34:12.897327+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEUwreILeGS7Q/company-logo_200_200/B4DZ5wJQzAG4AI-/0/1779997937122/jobbol_empregos_logo?e=2147483647&v=beta&t=qc4NI8gP2YkFNIB0m4ABQdHpDyvrJwbnHuDIrf0orKM",
       "last_seen_at": "2026-09-11T14:55:09.217265+00:00"
     },
@@ -4754,7 +4613,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "4d6bedeb24327563",
@@ -4892,7 +4751,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -5030,7 +4889,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -5171,7 +5030,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -5447,7 +5306,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -5723,7 +5582,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "08629c51e986c861",
@@ -5860,7 +5719,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "b1e5f5b09abfd7c8",
@@ -6001,7 +5860,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -6147,7 +6006,7 @@
         "google cloud platform"
       ],
       "last_seen_at": "2026-09-22T15:28:38.608943+00:00",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "f9a6684d6f63450b",
@@ -6431,7 +6290,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-18T14:50:52.037424+00:00",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "613e3005f775c0b3",
@@ -6572,7 +6431,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -6716,7 +6575,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -6862,7 +6721,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-16T15:22:59.172332+00:00",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "eff16103248478be",
@@ -7004,7 +6863,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-16T15:22:59.172332+00:00",
-      "verified_at": "2026-09-28T18:33:29.597163+00:00"
+      "verified_at": "2026-10-02T16:34:12.897327+00:00"
     },
     {
       "id": "ecfdc669a61cd1ef",
@@ -7145,7 +7004,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -7292,7 +7151,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -7432,7 +7291,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -7572,7 +7431,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -7715,7 +7574,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -7855,7 +7714,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "93941ce4460e1570",
@@ -7996,7 +7855,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "3e20236bebeee8e8",
@@ -8147,7 +8006,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -8288,7 +8147,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "c7c3a78616a70b65",
@@ -8429,7 +8288,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "570ff892e674660b",
@@ -8572,7 +8431,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "362f48aa861cf82b",
@@ -8712,7 +8571,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -8852,7 +8711,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
+      "last_seen_at": "2026-10-02T16:34:12.887496+00:00"
     },
     {
       "id": "ebee5ade320e19e0",
@@ -8996,10 +8855,10 @@
       "last_seen_at": "2026-10-01T17:19:35.711606+00:00"
     }
   ],
-  "last_updated": "2026-10-01T17:19:35.725763+00:00",
+  "last_updated": "2026-10-02T16:34:18.103742+00:00",
   "stats": {
-    "total": 64,
-    "alto_fit": 20,
+    "total": 63,
+    "alto_fit": 19,
     "medio_fit": 33,
     "baixo_fit": 11,
     "enviadas": 0
