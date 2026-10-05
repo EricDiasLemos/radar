@@ -24,7 +24,7 @@
       "first_seen": "2026-09-25T15:47:27.634310+00:00",
       "last_seen": "2026-09-25T15:47:27.634310+00:00",
       "message": "Oi Aline, obrigado por aceitar!\n\nSobre a vaga de Analista de DevOps — Cloud Operations Pleno na Amo Promo: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
-      "priority": 76,
+      "priority": 69,
       "invite_note": "Oi Aline! Vi sua vaga de Analista de DevOps — Cloud Operations Pleno na Amo Promo. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
       "outreach_source": "fallback"
     },
@@ -85,5 +85,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-10-02T16:34:12.896351+00:00"
+  "last_updated": "2026-10-05T19:33:56.906512+00:00"
 }
