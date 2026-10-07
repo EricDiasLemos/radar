@@ -562,7 +562,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "bc84ae1749c39c6c",
@@ -701,7 +701,7 @@
       "title_class": "core",
       "valid_through": "2026-10-08",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "ca57756cd3db4b67",
@@ -842,7 +842,7 @@
       "valid_through": "2026-10-09T10:37:19.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQEmGViHyZshhA/company-logo_200_200/company-logo_200_200/0/1630655652588/exportadora_de_caf_guaxup_ltda_logo?e=2147483647&v=beta&t=Ai8x_5a7xFH_rgwxuKXoZgyDr4bVyLtuWiru9uQPNsw",
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "4e3af81035abcf90",
@@ -983,7 +983,7 @@
       "valid_through": "2026-10-08T22:59:46.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_200_200/company-logo_200_200/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=1x4m_AFUqlUMZRbye1rU_IE4xDg5VLZsJ8HB0tg4Svk",
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -3774,7 +3774,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "1751b936eb92ef5e",
@@ -5440,7 +5440,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "fceee94776b83c04",
@@ -6011,7 +6011,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -6155,7 +6155,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -6584,7 +6584,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -6731,7 +6731,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -6871,7 +6871,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -7011,7 +7011,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -7154,7 +7154,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -7445,7 +7445,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -7586,7 +7586,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "c7c3a78616a70b65",
@@ -7870,7 +7870,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "362f48aa861cf82b",
@@ -8010,7 +8010,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -8150,7 +8150,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "ebee5ade320e19e0",
@@ -8291,7 +8291,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-01T17:19:35.711606+00:00",
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00",
       "verified_at": "2026-10-05T19:33:56.907510+00:00"
     },
     {
@@ -8433,7 +8433,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "9da64eeb21457f4e",
@@ -8574,7 +8574,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -8714,7 +8714,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -8856,13 +8856,154 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-06T17:05:52.439656+00:00"
+    },
+    {
+      "id": "05b9121b5e6f3345",
+      "title": "Analista de TI II Pleno (Infraestrutura e Cloud)",
+      "company": "N/A",
+      "location": "Rio de Janeiro / RJ A empresa aceita candidaturas de qualquer cidade do Brasil",
+      "salary": "",
+      "description": "Faixa salarial a combinar Rio de Janeiro A empresa aceita candidaturas de qualquer cidade do Brasil Regime CLT Benefícios Descrição Empresa Assistência médica Assistência odontológica Auxílio academia Auxílio creche Cesta de natal Programa de remuneração variável Seguro de vida Vale-alimentação Vale-refeição Ver todos Ver menos Descrição : 🥰 Jeito GNA Somos uma empresa cheia de energia, com um time focado na excelência no qual todos crescem juntos. Criamos um ambiente de trabalho saudável, diverso e harmonioso, onde todos contribuem com seu conhecimento e experiência. 🔎 A oportunidade Modernizar, administrar e evoluir a infraestrutura de TI da GNA, integrando ambientes on-premises, virtualizados e em nuvem, com foco em Microsoft Azure e Oracle OCI, garantindo disponibilidade, segurança, eficiência de custos e escalabilidade para suportar novos sistemas, integrações, automações e soluções de inteligência artificial 🧩 Suas principais atividades: Projetar e administrar a infraestrutura híbrida de TI, contemplando ambientes on-premises, virtualizados e em nuvem, com foco em Microsoft Azure e OCI ( Oracle ). Conduzir iniciativas de modernização e migração da infraestrutura para ambientes em nuvem, garantindo continuidade e evolução tecnológica. Garantir a disponibilidade, segurança, desempenho e eficiência de custos dos ambientes de infraestrutura. Implementar e evoluir automações, utilizando práticas de Infrastructure as Code (IaC) para provisionamento e gestão dos ambientes. Definir requisitos técnicos e de infraestrutura para a adoção de ferramentas e soluções de Inteligência Artificial. Monitorar o ambiente e atuar na identificação e resolução de incidentes, contribuindo para a continuidade dos serviços de TI. Apoiar as equipes de desenvolvimento na definição e implementação de integrações entre sistemas, aplicações e serviços de infraestrutura. Avaliar fornecedores e soluções tecnológicas, considerando requisitos técnicos, segurança, desempenho e custo-benefício. Documentar arquiteturas, configurações, procedimentos e padrões técnicos, garantindo a organização e a continuidade do conhecimento de infraestrutura. Idiomas : Inglês - Nível Intermediário Outros requisitos : Superior Completo : Redes, Sistemas de Informação, Ciência da Computação ou afins. Conhecimentos : Infraestrutura e Sistemas: Windows Server, Active Directory, Entra ID e Linux; VMware e Hyper-V. Cloud e Redes: Microsoft Azure (IaaS), firewall, VPN e roteamento. Backup e Segurança: Veeam, Acronis e segurança de infraestrutura. Automação e DevOps: Terraform, Ansible e PowerShell (Infrastructure as Code), Python. Tecnologias Emergentes e Gestão de Cloud: noções de integração de IA e FinOps. Certificações diferenciais desejáveis : AZ-104, AZ-305, AZ-500,e Terraform, OCI Operations / Cloud Operations Associate, OCI Cloud Native / DevOps Associate Empresa A GNA - Gás Natural Açu - é uma joint venture formada pela Prumo Logística, bp, Siemens e SPIC Brasil dedicada ao desenvolvimento, im",
+      "url": "https://www.vagas.com.br/vagas/v2838209/analista-de-ti-ii-pleno-infraestrutura-e-cloud",
+      "source": "Vagas.com",
+      "published_at": "Ontem",
+      "found_at": "2026-10-07T17:42:18.092546+00:00",
+      "score": 62,
+      "score_breakdown": {
+        "skills": 22,
+        "location": 0,
+        "level": 15,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "ansible",
+        "azure",
+        "firewall",
+        "iac",
+        "infrastructure as code",
+        "linux",
+        "python",
+        "terraform",
+        "vmware",
+        "vpn"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iam",
+        "infraestrutura como codigo",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vpc",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": null,
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-07T17:44:12.818378+00:00"
     }
   ],
-  "last_updated": "2026-10-06T17:05:52.692052+00:00",
+  "last_updated": "2026-10-07T17:44:12.834672+00:00",
   "stats": {
-    "total": 63,
+    "total": 64,
     "alto_fit": 20,
-    "medio_fit": 31,
+    "medio_fit": 32,
     "baixo_fit": 12,
     "enviadas": 0
   }
