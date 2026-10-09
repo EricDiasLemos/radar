@@ -282,6 +282,37 @@
       },
       "cover_letter": "Prezados da Janus Automation,\n\nTenho interesse na vaga de Desenvolvedor full stack e acredito que minha experiência em rest se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com",
       "description": "Desenvolvedor(a) Júnior ou Pleno – TI e Automação Industrial A Janus Automation está contratando Desenvolvedor(a) Júnior ou Pleno para atuar presencialmente em Belo Horizonte/MG. O profissional integrará projetos de Automação Nível 2, participando do desenvolvimento e da integração de sistemas aplicados ao monitoramento, controle e otimização de processos industriais. Principais responsabilidades • Desenvolver e realizar a manutenção de aplicações; • Integrar sistemas de tecnologia e automação industrial; • Analisar requisitos técnicos e funcionais; • Participar da execução de testes FAT e SAT; • Apoiar atividades de comissionamento e as equipes em campo; • Identificar e implementar melhorias nas soluções desenvolvidas; • Interagir com clientes e equipes multidisciplinares durante a execução dos projetos. Conhecimentos técnicos • C# e .NET; • SQL Server; • WebSocket; • APIs REST; • Padrão MVVM; • Protocolos OPC, OPC UA e Modbus; • Integração com PLCs e outros sistemas industriais. Perfil desejado • Formação em Tecnologia da Informação, Engenharia de Automação, Engenharia de Controle e Automação, Sistemas de Informação, Ciência da Computação ou áreas relacionadas; • Capacidade analítica e habilidade para solucionar problemas; • Interesse por processos e ambientes industriais; • Facilidade de comunicação e de interação com clientes e equipes multidisciplinares; • Disponibilidade para atuação presencial em Belo Horizonte/MG. Informações da oportunidade Local de atuação: Belo Horizonte/MG Modelo de trabalho: Presencial Nível: Júnior ou Pleno Candidatura Pelo LinkedIn ou os profissionais interessados deverão encaminhar o currículo para join.us.br@janusautomation.com, informando a pretensão salarial. Benefícios oferecidos • Plano de saúde; • Plano odontológico; • Vale-refeição; • Vale-alimentação; • Vale-transporte; • TotalPass — acesso a academias e serviços de bem-estar; • Seguro de vida. Show more Show less"
+    },
+    {
+      "job_id": "6b442400a30d9266",
+      "title": "Analista de Infraestrutura",
+      "company": "Solucionare",
+      "location": "Belo Horizonte, MG",
+      "source": "LinkedIn",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-at-solucionare-4477832097",
+      "sent_at": "2026-10-09T17:23:51.190000+00:00",
+      "score": 61,
+      "fit_level": "medio",
+      "target_company": false,
+      "contact_email": "vaga-398025@vagas.abler.in",
+      "to_email": "vaga-398025@vagas.abler.in",
+      "skills_match": [
+        "dns",
+        "proxmox",
+        "vmware"
+      ],
+      "score_breakdown": {
+        "skills": 6,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "cover_letter": "Prezados da Solucionare,\n\nTenho interesse na vaga de Analista de Infraestrutura e acredito que minha experiência em dns, proxmox, vmware se alinha diretamente com as necessidades descritas.\n\nAtuo há mais de 3 anos em ambientes de infraestrutura Linux com foco em automação, monitoramento (Prometheus/Grafana) e containerização com Docker e Kubernetes. Já implementei pipelines CI/CD com GitHub Actions e Jenkins em ambientes produtivos.\n\nEstou disponível para uma conversa técnica quando for conveniente para a equipe.\n\nAtenciosamente,\nEric Dias Lemos\nericdias0603@gmail.com",
+      "description": "Candidate-se rapidamente pelo email: vaga-398025@vagas.abler.in Nível: Analista Cursos de: ANÁLISE E DESENVOLVIMENTO DE SISTEMAS, Análise e Desenvolvimento de Sistemas, Análise e desenvolvimento de sistemas, Bachelor's Degree in Internet Systems Engineering, Tecnologia da Informação Escolaridade: Graduação - ANÁLISE E DESENVOLVIMENTO DE SISTEMAS, Análise e Desenvolvimento de Sistemas, Análise e desenvolvimento de sistemas, Bachelor's Degree in Internet Systems Engineering, Tecnologia da Informação - Indiferente Tipo de contrato: CLT Jornada de trabalho: De segunda à sexta-feira de 09 às 18h. Responsabilidades Da Posição Sobre a vaga Buscamos Um Analista De Infraestrutura Para Atuar Em Um Ambiente Dinâmico, Responsável Por Garantir a Disponibilidade, Segurança e Performance Dos Sistemas Da Empresa. O Profissional Será Parte Fundamental Na Implementação e Manutenção De Soluções De Infraestrutura Que Suportam Nossas Operações. As Principais Atividades Serão Administrar e sustentar ambientes Windows Server, Active Directory, virtualização, redes e serviços de infraestrutura. Atuar na resolução de incidentes e problemas de média e alta complexidade, buscando identificar e eliminar suas causas raiz. Gerenciar ambientes virtualizados, servidores físicos, backups, firewalls, switches, VLANs e endpoints. Executar e acompanhar rotinas de atualização, patches, hardening, capacidade e disponibilidade dos ambientes. Automatizar atividades operacionais e repetitivas utilizando scripts e ferramentas de automação. Apoiar iniciativas de modernização, observabilidade, documentação e melhoria contínua da infraestrutura. Responsabilidades Garantir estabilidade, disponibilidade e performance dos serviços de infraestrutura. Reduzir recorrência de incidentes por meio de análise de causa raiz e ações definitivas. Manter os ambientes atualizados, seguros, documentados e monitorados. Melhorar o nível de automação das atividades operacionais. Apoiar a construção de indicadores de disponibilid"
     }
   ]
 }
