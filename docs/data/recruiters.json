@@ -29,6 +29,34 @@
       "outreach_source": "fallback"
     },
     {
+      "id": "776c9b010f8ef573",
+      "name": "Yasmim Asakura",
+      "profile_url": "https://br.linkedin.com/in/yasmim-asakura-85a59128b",
+      "headline": "Tech Recruiter | Manufacturing & MFG Recruitment | Talent Acquisition | Tata Consultancy Services #TalentAcquisition #TechRecruiter #Manufacturing",
+      "is_recruiter": true,
+      "country": "BR",
+      "companies": [
+        "Tata Consultancy Services"
+      ],
+      "jobs": [
+        {
+          "id": "3646ea2352b119af",
+          "title": "ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR",
+          "company": "Tata Consultancy Services",
+          "url": "https://br.linkedin.com/jobs/view/analista-de-suporte-a-infraestrutura-junior-at-tata-consultancy-services-4479002368",
+          "score": 74,
+          "fit_level": "alto",
+          "found_at": "2026-10-15T15:31:48.943540+00:00"
+        }
+      ],
+      "first_seen": "2026-10-15T15:33:09.229181+00:00",
+      "last_seen": "2026-10-15T15:33:09.229181+00:00",
+      "message": "Oi Yasmim, obrigado por aceitar!\n\nSobre a vaga de ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR na Tata Consultancy Services: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
+      "priority": 66,
+      "invite_note": "Oi Yasmim! Vi sua vaga de ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR na Tata Consultancy Services. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
+      "outreach_source": "fallback"
+    },
+    {
       "id": "a9ffc89fe466f4b5",
       "name": "Luiza Carvalho",
       "profile_url": "https://br.linkedin.com/in/luizacarvalhorh",
@@ -85,5 +113,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-10-14T15:45:27.872205+00:00"
+  "last_updated": "2026-10-15T15:33:09.229181+00:00"
 }

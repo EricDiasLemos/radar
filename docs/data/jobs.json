@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -2230,148 +2230,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
-    },
-    {
-      "id": "1751b936eb92ef5e",
-      "title": "DevOps Engineer (Azure + On-Premise) - Remote - Latin America",
-      "company": "FullStack",
-      "location": "Belo Horizonte, MG",
-      "salary": "",
-      "description": "About FullStack FullStack is your AI-native engineering partner, built to turn AI capability into certainty. Most companies can demo AI; few can get it to production and prove what it produced. We close that gap with three capabilities, AI built into your products from the start, elite vetted talent who apply it, and transparent execution that shows value every step of the way. With now over 600 customers in North America, FullStack is one integrated partner for all your AI engineering needs. With FullStack, you move forward with confidence. We’re Most Proud Of Offering life-changing career opportunities to talented software professionals across the Americas. Building highly-skilled software development teams for hundreds of the world’s greatest companies. Having delivered hundreds of successful custom software solutions, which have positively impacted the lives and careers of millions of users. Our 4.1-star rating on GlassDoor. Our client Net Promoter Score of 68, twice the industry average. The Opportunity Join our talent network and connect with U.S. clients for flexible, project-based development work as a DevOps Engineer (Azure + On-Premise). You will integrate directly into our client's team and work alongside their existing designers and engineers on a daily basis. What We're Looking For 4+ years of professional DevOps engineering experience. Advanced English is required. Successful completion of a four-year college degree is required. Track record of deploying, scaling, and maintaining production Kubernetes clusters. Demonstrated experience managing cloud infrastructure solutions within Microsoft Azure. Hands-on experience building and optimizing CI/CD pipelines using Azure DevOps and GitLab. Solid background in supporting on-premise/co-located physical infrastructure, data center operations, and virtualization technologies (such as OpenStack, QEMU, or Hyper-V). Skilled at infrastructure automation and configuration management using Ansible and Terraform. Strong history of Linux administration (specifically Ubuntu or Talos Linux) and scripting with Python and Bash. Solid understanding of networking concepts (TCP/IP, DNS, VPNs, Load Balancers) across both cloud and physical environments. Experienced with database administration (PostgreSQL, Redis, ClickHouse) and managing distributed storage systems (Ceph, NFS, S3). Adept at implementing monitoring, logging, and alerting systems using tools like Zabbix, Prometheus, and the ELK Stack. Knowledgeable in security hardening, SIEM tools (such as Wazuh), and integrating vulnerability scanners (Snyk, SonarQube) in CI/CD pipelines. Comfortable working with disaster recovery planning and automated backups (e.g., AWS S3 Glacier). Ability to work through new and difficult issues and contribute to libraries as needed. Ability to create and maintain continuous integration and delivery of applications. Forensic attention to detail. A positive mindset and a can-do attitude. Experience working on Agile/Scr",
-      "url": "https://br.linkedin.com/jobs/view/devops-engineer-azure-%2B-on-premise-remote-latin-america-at-fullstack-4441616220",
-      "source": "LinkedIn",
-      "published_at": "2026-08-28",
-      "found_at": "2026-09-01T15:24:22.858813+00:00",
-      "score": 94,
-      "score_breakdown": {
-        "skills": 39,
-        "location": 20,
-        "level": 10,
-        "keywords": 10,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [
-        "ansible",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "ci/cd",
-        "dns",
-        "elk",
-        "kubernetes",
-        "linux",
-        "postgresql",
-        "prometheus",
-        "python",
-        "redis",
-        "s3",
-        "sonarqube",
-        "terraform",
-        "zabbix"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "api",
-        "app engine",
-        "argocd",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "lambda",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "proxmox",
-        "pulumi",
-        "rabbitmq",
-        "rds",
-        "rest",
-        "rollback",
-        "route53",
-        "security groups",
-        "shell",
-        "systemd",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "alto",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [],
-      "title_class": "core",
-      "valid_through": "2026-10-14T16:32:09.000Z",
-      "verified_at": "2026-10-12T20:11:34.882354+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-09-18T14:50:52.037424+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "26d09c1c43e69e4d",
@@ -4044,7 +3903,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -4188,7 +4047,7 @@
         "cloud storage",
         "google cloud"
       ],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "78e1959dee2799ff",
@@ -4617,7 +4476,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "0f2369e3d692330f",
@@ -4764,7 +4623,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "ce221fff7a93ad28",
@@ -4904,7 +4763,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -5044,7 +4903,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-13T18:03:12.638998+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -5187,7 +5046,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -5479,7 +5338,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -5620,7 +5479,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "570ff892e674660b",
@@ -5904,7 +5763,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -6186,7 +6045,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-07T17:44:12.818378+00:00",
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00",
       "verified_at": "2026-10-14T15:45:27.873132+00:00"
     },
     {
@@ -6328,7 +6187,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "9da64eeb21457f4e",
@@ -6469,7 +6328,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -6609,7 +6468,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -6892,7 +6751,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -7174,7 +7033,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -7314,7 +7173,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "19bc79372be44a16",
@@ -7455,7 +7314,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "f03e5efd699b5e0a",
@@ -7596,7 +7455,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "9d589b21917aeaec",
@@ -7736,7 +7595,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "2379660f78055a5d",
@@ -7876,7 +7735,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "6d7f43c982935ed8",
@@ -8016,7 +7875,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "f8ef9aa76e6b0732",
@@ -8157,7 +8016,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "3717f16ee5106375",
@@ -8300,7 +8159,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     },
     {
       "id": "c7247975894db9c0",
@@ -8582,14 +8441,300 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
+    },
+    {
+      "id": "f2cf35674d786735",
+      "title": "Administrador de Sistemas 3",
+      "company": "SONDA",
+      "location": "Minas Gerais, Brasil",
+      "salary": "",
+      "description": "Identificação do Pedido: 81575 Viva a experiência SONDA Aqui você transforma sua carreira! Por que fazer parte da SONDA? Porque assim como você, amamos o que fazemos, temos paixão por inovação e estamos convencidos de que através do conhecimento e da tecnologia vamos transformar não só os negócios de nossos clientes, mas também o futuro. Na SONDA você terá uma experiência de trabalho com diversas oportunidades de desenvolvimento pessoal e profissional. Um excelente lugar para aprender e contribuir para melhorar a qualidade de vida das pessoas por meio da tecnologia. Procuramos um Administrador de Sistema para atuar na administração, sustentação e evolução de ambientes UNIX e Linux, garantindo a disponibilidade, segurança e desempenho dos serviços de infraestrutura. Modalidade de Trabalho: Atuação em formato 100% Remoto em Belo Horizonte - MG e no horário de 08:30 às 17:30 (SEG/SEX) Nesta função você irá: Administrar, configurar e manter ambientes UNIX e Linux. Monitorar recursos e serviços de infraestrutura, assegurando a disponibilidade e a performance dos ambientes. Analisar e solucionar incidentes, problemas e eventos relacionados aos sistemas operacionais. Realizar análise de desempenho de CPU, memória, rede e armazenamento (I/O). Gerenciar usuários, grupos, permissões e controles de acesso. Executar atividades de manutenção, atualização, aplicação de patches e correções de segurança. Administrar sistemas de arquivos e apoiar processos de backup e recuperação. Atuar em implantações, migrações e atualizações de serviços e ambientes de TI. Participar dos processos de gerenciamento de mudanças, incidentes, problemas e crises. Realizar abertura e acompanhamento de chamados junto a fabricantes e fornecedores. Elaborar documentações técnicas, procedimentos operacionais e relatórios gerenciais. Desenvolver e manter scripts de automação utilizando Shell Script, Python, Perl ou tecnologias correlatas. Administrar e prestar suporte a serviços como DNS, Postfix e demais componentes de infraestrutura. Ideal se você tiver: Experiência em atividades de suporte a ambientes de Datacenter. Experiência com instalação, configuração e administração de ambientes UNIX e Linux. Conhecimento em troubleshooting de sistemas operacionais e análise de logs. Experiência em monitoramento e análise de desempenho de CPU, memória, rede e armazenamento. Conhecimento em arquiteturas de armazenamento NFS e SAN. Conhecimento em infraestrutura de redes, servidores, armazenamento, alta disponibilidade, segurança e disaster recovery. Experiência na administração de usuários, grupos e permissões. Vivência em implantações, migrações e atualizações de ambientes de TI. Experiência com gerenciamento de mudanças, incidentes, problemas e tratamento de crises. Experiência no acompanhamento de projetos e atuação com equipes multidisciplinares. Conhecimento em Shell Script, Python, Perl ou outras linguagens de automação. Conhecimento em serviços como DNS e Postfix. Será um diferencial se voc",
+      "url": "https://br.linkedin.com/jobs/view/administrador-de-sistemas-3-at-sonda-4479599348",
+      "source": "LinkedIn",
+      "published_at": "2026-10-14",
+      "found_at": "2026-10-15T15:31:38.294287+00:00",
+      "score": 63,
+      "score_breakdown": {
+        "skills": 10,
+        "location": 20,
+        "level": 10,
+        "keywords": 8,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "dns",
+        "linux",
+        "python",
+        "shell"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-11-13T19:54:52.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_100_100/B4DZ35TgVVJkAI-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=LAyGMNuzptA6X7MYRzswSTX7N4kOyTkMBTtJ8QLU35U",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
+    },
+    {
+      "id": "3646ea2352b119af",
+      "title": "ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR",
+      "company": "Tata Consultancy Services",
+      "location": "Jeceaba, MG",
+      "salary": "",
+      "description": "Venha para uma das maiores empresas de Serviços TI do mundo!! Aqui você pode transformar sua carreira! Por que fazer parte da TCS? Aqui na TCS acreditamos que as pessoas fazem a diferença, por isso vivemos uma cultura de aprendizado ilimitado cheio de oportunidades de melhorias e desenvolvimento mútuo. O cenário ideal para expandir ideias através das ferramentas certas, contribuindo para nosso sucesso num ambiente colaborativo. Estamos procurando um ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR. Requisitos: Experiência com ITSM / CMDB / NETWORK / AZURE / INTUNE/ WINDOWS / CNH B Desejável: Inglês intermediário ITIL COBIT COMPTIA Responsabilidades: • Atender presencialmente e remotamente os clientes para solução de problemas no uso cotidiano dos recursos de TI em sua área de trabalho, dispositivos conectados e recursos de rede ou aplicação. • Criar, corrigir, melhorar documentação de trabalho em base de conhecimento. • Executar as atividades de instalação, troca, recolhimento de hardware seguindo o checklist de controle de ativos e procedimentos de segurança da informação relacionados a atividade. • Dirigir com responsabilidade em conformidade com a lei nos ambientes internos dos clientes e durante os deslocamentos externos. • Relatar ao superior imediato qualquer não conformidade percebida no uso dos computadores próprios ou do cliente, no uso dos veículos da empresa, na destinação de material em estoque ou fora de uso. • Registrar e gerenciar chamados de suporte, garantindo a comunicação com as áreas envolvidas. • Fornecer suporte aos usuários internos e externos, fornecendo informações e orientações técnicas • Identificar e reportar imediatamente ao Supervisor de Serviço Nível 2 problemas críticos que tenham impactos significativos no ambiente tecnológico do Cliente, situações excepcionais e outras situações fora de seu controle ou jurisdição; • Colaborar na execução das atividades do processo de gestão de ativos em locais do Cliente onde não haja técnicos de ativos alocados, em momentos em que o serviço de Gestão de Ativos não esteja disponível ou sempre que exigido pela supervisão. O que você pode esperar de nós? Desenvolvimento profissional e evolução constante das suas competências, sempre de acordo com os seus interesses. Oportunidades para trabalho fora do Brasil Um ambiente colaborativo, diverso e inovador, que incentiva o trabalho em equipe. O que oferecemos? Benefícios TCS – Brasil Plano de Saúde Planos Odontológico Seguro de Vida Vale Transporte Vale Refeição/Alimentação Auxílio Creche Totalpass TCS Cares – 0800 gratuito que fornece assistência psicológica (24 hrs/dia), jurídica, social e financeira aos associados Parceria com SESC Reembolso de Certificações Portal de aprendizagem gratuito da TCS – cursos online e treinamentos ao vivo Oportunidade de experiência internacional Parceria de Descontos com Universidades e Escolas de Idiomas Bring Your Buddy – Ao indicar pessoas você se torna elegível a receber um bônus para cada contratação T",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-suporte-a-infraestrutura-junior-at-tata-consultancy-services-4479002368",
+      "source": "LinkedIn",
+      "published_at": "2026-10-13",
+      "found_at": "2026-10-15T15:31:48.943540+00:00",
+      "score": 74,
+      "score_breakdown": {
+        "skills": 2,
+        "location": 20,
+        "level": 20,
+        "keywords": 2,
+        "salary": 5,
+        "target_company": 15,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "azure"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": {
+        "name": "Yasmim Asakura",
+        "profile_url": "https://br.linkedin.com/in/yasmim-asakura-85a59128b",
+        "headline": "Tech Recruiter | Manufacturing & MFG Recruitment | Talent Acquisition | Tata Consultancy Services #TalentAcquisition #TechRecruiter #Manufacturing"
+      },
+      "valid_through": "2026-11-12T12:38:48.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGsGR9p4ikS5w/company-logo_100_100/company-logo_100_100/0/1708946550425/tata_consultancy_services_logo?e=2147483647&v=beta&t=P-PkUMh7Ks1GQY0_l7GhzQiwfyLfQpvKWwX8Tq18Yc4",
+      "title_class": "core",
+      "target_company": true,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-15T15:33:09.214045+00:00"
     }
   ],
-  "last_updated": "2026-10-14T15:45:29.344929+00:00",
+  "last_updated": "2026-10-15T15:33:09.902196+00:00",
   "stats": {
-    "total": 61,
+    "total": 62,
     "alto_fit": 14,
-    "medio_fit": 32,
+    "medio_fit": 33,
     "baixo_fit": 15,
     "enviadas": 1
   }
