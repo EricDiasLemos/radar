@@ -80,7 +80,7 @@
       "first_seen": "2026-09-16T15:22:59.199426+00:00",
       "last_seen": "2026-09-16T15:22:59.199426+00:00",
       "message": "Oi Luiza, obrigado por aceitar!\n\nSobre a vaga de Analista de Infraestrutura de TI Jr na Farmácia Indiana: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
-      "priority": 56,
+      "priority": 50,
       "invite_note": "Oi Luiza! Vi sua vaga de Analista de Infraestrutura de TI Jr na Farmácia Indiana. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
       "outreach_source": "fallback"
     },
@@ -113,5 +113,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-10-16T15:19:10.009462+00:00"
+  "last_updated": "2026-10-19T17:23:28.650294+00:00"
 }
