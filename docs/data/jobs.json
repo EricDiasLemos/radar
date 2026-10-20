@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -2230,7 +2230,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "26d09c1c43e69e4d",
@@ -2506,7 +2506,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -2644,7 +2644,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -2785,7 +2785,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -2923,7 +2923,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -3061,7 +3061,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -3199,7 +3199,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "1cec3d1a5a279de9",
@@ -3474,7 +3474,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-16T15:19:10.010436+00:00"
+      "verified_at": "2026-10-20T15:36:26.629897+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -3901,7 +3901,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "234de5a3fb6a19ca",
@@ -4044,7 +4044,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "dae7040133a8b9ad",
@@ -4336,7 +4336,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -4477,7 +4477,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "570ff892e674660b",
@@ -4761,7 +4761,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -5185,7 +5185,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "9da64eeb21457f4e",
@@ -5326,7 +5326,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -5466,7 +5466,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -5749,7 +5749,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -6032,7 +6032,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -6172,7 +6172,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "19bc79372be44a16",
@@ -6313,7 +6313,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "f03e5efd699b5e0a",
@@ -6454,7 +6454,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "9d589b21917aeaec",
@@ -6876,7 +6876,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "f8ef9aa76e6b0732",
@@ -7017,7 +7017,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "3717f16ee5106375",
@@ -7160,148 +7160,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
-    },
-    {
-      "id": "c7247975894db9c0",
-      "title": "Analista de Infraestrutura Microsoft Pleno",
-      "company": "SONDA",
-      "location": "Minas Gerais, Brasil",
-      "salary": "",
-      "description": "Identificação do Pedido: 81558 Viva a experiência SONDA Aqui você transforma sua carreira! Por que fazer parte da SONDA? Porque assim como você, amamos o que fazemos, temos paixão por inovação e estamos convencidos de que através do conhecimento e da tecnologia vamos transformar não só os negócios de nossos clientes, mas também o futuro. Na SONDA você terá uma experiência de trabalho com diversas oportunidades de desenvolvimento pessoal e profissional. Um excelente lugar para aprender e contribuir para melhorar a qualidade de vida das pessoas por meio da tecnologia. Procuramos Analista de Infraestrutura Microsoft Pleno para atuar com administração e suporte de ambientes Microsoft. Modalidade de Trabalho: Atuação em formato 100% presencial em Belo Horizonte - MG e no horário de 08:30 às 17:30 (SEG/SEX) Nesta função você irá: Administrar ambientes Windows Server e Active Directory. Realizar atendimento e resolução de chamados N2. Gerenciar serviços Microsoft (DNS, DHCP, File Server, IIS, RDS e WSUS). Atuar em troubleshooting de incidentes e problemas de infraestrutura. Administrar Azure AD e ambientes Microsoft 365. Elaborar documentação e relatórios técnicos. Ideal se você tiver: Experiência em ambientes de datacenter. Conhecimento em Windows Server, Active Directory e GPOs. Experiência com DNS, DHCP, IIS, RDS e WSUS. Conhecimento em Azure AD, Microsoft 365 e PowerShell. Vivência com troubleshooting e suporte N2. Será um diferencial se você tiver: Conhecimento em Azure AD Connect, ADFS e WAP. Experiência com ambientes de alta disponibilidade. Certificações Microsoft. O que você pode esperar de nós? Flexibilidade de trabalho, promovendo o equilíbrio entre sua vida pessoal e profissional. Desenvolvimento profissional e evolução constante das suas competências, sempre de acordo com os seus interesses. Um ambiente colaborativo, diverso e inovador, que incentiva o trabalho em equipe. O que oferecemos? SONDA Academy: uma plataforma de aprendizado que busca maximizar seu desenvolvimento profissional. SONDA Wellness, um programa que busca apoiá-lo no equilíbrio da sua vida pessoal e profissional, promovendo uma série de iniciativas focadas na sua saúde física, menta e social. E muito mais! Diversidade Inclusão = Inovação e colaboração Na SONDA estamos comprometidos com a diversidade. Promovemos um ambiente inclusivo, garantindo que os talentos possam trabalhar em um ambiente positivo que os convide a desenvolver sua carreira profissional com igualdade de oportunidades. Sabermos que a diversidade é um elemento fundamental para impulsionar a inovação, é por isso que buscamos candidatos com base em suas qualificações profissionais, independentemente de raça, cor da pele, religião, idade, sexo, orientação sexual, identidade de gênero, nacionalidade ou deficiência. Faça parte da nossa equipe! #VempraSONDA Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-microsoft-pleno-at-sonda-4479203019",
-      "source": "LinkedIn",
-      "published_at": "2026-10-13",
-      "found_at": "2026-10-14T15:44:18.690636+00:00",
-      "score": 64,
-      "score_breakdown": {
-        "skills": 6,
-        "location": 20,
-        "level": 15,
-        "keywords": 8,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [
-        "azure",
-        "dns",
-        "rds"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "recruiter": null,
-      "valid_through": "2026-11-12T19:54:44.000Z",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFVqJqzQaOcmA/company-logo_100_100/B4DZ35TgVVJkAI-/0/1778004133504/sonda_logo?e=2147483647&v=beta&t=LAyGMNuzptA6X7MYRzswSTX7N4kOyTkMBTtJ8QLU35U",
-      "title_class": "core",
-      "target_company": false,
-      "priority_skills": [],
-      "last_seen_at": "2026-10-14T15:45:27.860377+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "d9265a999ba79cfd",
@@ -7442,7 +7301,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "f2cf35674d786735",
@@ -7729,7 +7588,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "faa0acebcdab817a",
@@ -8011,7 +7870,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     },
     {
       "id": "c8d486db87de53c5",
@@ -8151,10 +8010,153 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-19T17:23:28.640896+00:00"
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
+    },
+    {
+      "id": "80276acdfa5b9b69",
+      "title": "Agentic GCP DevOps Engineer - Remote - Latin America",
+      "company": "FullStack",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "",
+      "url": "https://br.linkedin.com/jobs/view/agentic-gcp-devops-engineer-remote-latin-america-at-fullstack-4480504984",
+      "source": "LinkedIn",
+      "published_at": "2026-10-16",
+      "found_at": "2026-10-20T15:35:16.574368+00:00",
+      "score": 52,
+      "score_breakdown": {
+        "skills": 2,
+        "location": 20,
+        "level": 10,
+        "keywords": 4,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 1,
+        "title": 10
+      },
+      "skills_match": [
+        "gcp"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_100_100/B4EZo1FC7hIIAQ-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=TX2W7XY8VQOqyE5uwUHWxTPZC3rSHuZcy5UN31sBL-4",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [
+        "gcp"
+      ],
+      "last_seen_at": "2026-10-20T15:36:26.627482+00:00"
     }
   ],
-  "last_updated": "2026-10-19T17:23:32.798192+00:00",
+  "last_updated": "2026-10-20T15:36:28.415122+00:00",
   "stats": {
     "total": 58,
     "alto_fit": 9,
