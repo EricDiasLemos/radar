@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -2230,7 +2230,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "26d09c1c43e69e4d",
@@ -3904,149 +3904,6 @@
       "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
     },
     {
-      "id": "234de5a3fb6a19ca",
-      "title": "Analista de Infraestrutura Cloud & DevOps.",
-      "company": "Empresa Confidencial",
-      "location": "Belo Horizonte, MG",
-      "salary": "",
-      "description": "Buscamos profissional para atuar na sustentação, evolução e automação da nossa infraestrutura de TI, cobrindo ambientes Cloud (AWS/GCP), servidores Linux, arquiteturas em containers e redes. Principais atividades: Sustentação, administração e evolução de ambientes Cloud e On-Premise; Provisionamento e automação de infraestrutura como código (IaC); Monitoramento ativo, troubleshooting técnico avançado e resolução de incidentes complexos; Gestão de redes, conectividade, segurança e servidores de aplicação. Requisitos Técnicos: Cloud: Experiência prática com AWS ou GCP; Sistemas Operacionais: Domínio de Linux (obrigatório) e conhecimentos em Windows Server; Automação & IaC: Terraform e/ou Ansible; Containers & Servidores Web: Docker e NGINX; Redes & Segurança: TCP/IP, DNS, VPN, Firewalls e gestão de links de conectividade; Monitoramento & Scripting: Zabbix, Datadog ou similares; automação via Bash ou Python; Bancos de Dados: Vivência com PostgreSQL (ou outros SGBDs em ambiente Linux); Ferramentas de Suporte à Infra: Equipamentos Ubiquiti/UniFi e gestão de Google Workspace; Inglês técnico: Para leitura de documentações e troubleshooting. Formação: Ensino superior completo ou em andamento em Ciência da Computação, Análise e Desenvolvimento de Sistemas, Engenharia ou áreas correlatas. Informações da Vaga: Local: Belo Horizonte/MG (100% Presencial) Contratação: CLT Salário: A combinar (enviar pretensão) 🎁 Benefícios: Vale Alimentação/Refeição, Plano de Saúde, Plano Odontológico, Seguro de Vida e Vale-Transporte ou Vale Combustível. #VagasTI #DevOps #CloudEngineer #Infraestrutura #AWS #Linux #Terraform #Docker #BeloHorizonte #VagasBH Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-cloud-devops-at-empresa-confidencial-4469935927",
-      "source": "LinkedIn",
-      "published_at": "2026-09-21",
-      "found_at": "2026-09-23T15:20:55.989526+00:00",
-      "score": 89,
-      "score_breakdown": {
-        "skills": 33,
-        "location": 20,
-        "level": 10,
-        "keywords": 10,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 1,
-        "title": 10
-      },
-      "skills_match": [
-        "ansible",
-        "aws",
-        "bash",
-        "datadog",
-        "dns",
-        "docker",
-        "gcp",
-        "iac",
-        "linux",
-        "nginx",
-        "postgresql",
-        "python",
-        "terraform",
-        "vpn",
-        "zabbix"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "api",
-        "app engine",
-        "argocd",
-        "azure",
-        "azure devops",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "devsecops",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "olt",
-        "postgres",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "wireguard",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "alto",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "recruiter": null,
-      "valid_through": "2026-10-21T18:16:48.000Z",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE5LKe2moMnHg/company-logo_100_100/company-logo_100_100/0/1736630274411/empresa_confidencial_logo?e=2147483647&v=beta&t=sS0AldO_PjNIlU-TC-ehYg2AY8a1l3UgmPDGUK8kH-M",
-      "title_class": "core",
-      "target_company": false,
-      "priority_skills": [
-        "gcp"
-      ],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
-    },
-    {
       "id": "dae7040133a8b9ad",
       "title": "Analista de Infraestrutura de Redes e Cloud Pleno",
       "company": "Jobbol",
@@ -4336,7 +4193,7 @@
         "google cloud",
         "google cloud platform"
       ],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "91ae1ab5fca63a67",
@@ -4477,7 +4334,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "570ff892e674660b",
@@ -4761,7 +4618,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -5043,7 +4900,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00",
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00",
       "verified_at": "2026-10-19T17:23:28.651187+00:00"
     },
     {
@@ -5185,7 +5042,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "9da64eeb21457f4e",
@@ -5326,7 +5183,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -5466,7 +5323,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -5749,7 +5606,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -6032,7 +5889,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -6172,7 +6029,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "19bc79372be44a16",
@@ -6313,7 +6170,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "f03e5efd699b5e0a",
@@ -6454,7 +6311,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "9d589b21917aeaec",
@@ -6876,7 +6733,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "f8ef9aa76e6b0732",
@@ -7160,7 +7017,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "d9265a999ba79cfd",
@@ -7301,7 +7158,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "f2cf35674d786735",
@@ -7588,7 +7445,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "faa0acebcdab817a",
@@ -7870,7 +7727,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "c8d486db87de53c5",
@@ -8010,7 +7867,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     },
     {
       "id": "80276acdfa5b9b69",
@@ -8153,14 +8010,154 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-21T15:53:20.933616+00:00"
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
+    },
+    {
+      "id": "6e89bc254d4d6f81",
+      "title": "Analista de Infraestrutura TI",
+      "company": "Grupo Friopeças",
+      "location": "Extrema, MG",
+      "salary": "",
+      "description": "DESCRIÇÃO Atividades Atuar na manutenção dos equipamentos; Realizar o inventário; Prestar o suporte aos usuários presenciais e remotos; Criar documentações; Realizar o monitoramento do ambiente; Conhecimento em rede de computadores; E outras atividades. Requisitos Superior em andamento nas áreas de Ciência da Computação, Sistema da Informação, Análise e Desenvolvimento de Sistemas ou áreas correlatas. Benefícios Plano de Saúde Unimed Plano Odontológico Unimed Gympass Parceria com faculdades, Wizard e Sesc Desconto em produtos Convênio farmácia Seguro de Vida Participação nos Lucros ou Resultados Restaurante Interno Programa de treinamentos Fretado Horário De Trabalho 8h às 17h48 De segunda a sexta-feira Local de trabalho: Extrema, MG Regime de contratação de tipo: Efetivo – CLT Jornada: Período Integral Área e especialização profissional: Informática, TI, Telecomunicações - TI Nível hierárquico: Analista REQUISITOS Escolaridade Mínima: Curso Técnico Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-ti-at-grupo-friope%C3%A7as-4482427276",
+      "source": "LinkedIn",
+      "published_at": "2026-10-22",
+      "found_at": "2026-10-22T15:49:06.395026+00:00",
+      "score": 53,
+      "score_breakdown": {
+        "skills": 0,
+        "location": 20,
+        "level": 10,
+        "keywords": 8,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFd5Dmv53L5cA/company-logo_100_100/B4DZ.E.6qgHEAI-/0/1784642513980/friopecas_logo?e=2147483647&v=beta&t=-rqYXnf0nDGSagSLHmAaQejS5bynPexAUs9-TZR50TM",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-22T15:50:37.361225+00:00"
     }
   ],
-  "last_updated": "2026-10-21T15:53:21.584430+00:00",
+  "last_updated": "2026-10-22T15:50:38.026334+00:00",
   "stats": {
     "total": 58,
-    "alto_fit": 9,
-    "medio_fit": 33,
+    "alto_fit": 8,
+    "medio_fit": 34,
     "baixo_fit": 16,
     "enviadas": 1
   }
