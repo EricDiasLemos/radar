@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "b024186dc06e5ab0",
@@ -2230,7 +2230,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "26d09c1c43e69e4d",
@@ -4042,7 +4042,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -4324,7 +4324,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00",
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00",
       "verified_at": "2026-10-19T17:23:28.651187+00:00"
     },
     {
@@ -4466,7 +4466,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "9da64eeb21457f4e",
@@ -4607,7 +4607,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -4747,7 +4747,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -5030,7 +5030,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -5313,7 +5313,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -5453,7 +5453,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "19bc79372be44a16",
@@ -6442,7 +6442,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "d9265a999ba79cfd",
@@ -6870,7 +6870,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00",
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00",
       "verified_at": "2026-10-26T17:11:08.055019+00:00"
     },
     {
@@ -7011,7 +7011,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "80276acdfa5b9b69",
@@ -7154,7 +7154,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -7294,7 +7294,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -7435,7 +7435,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -7576,7 +7576,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "03b23f4aa1e20e97",
@@ -7716,7 +7716,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -7857,7 +7857,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     },
     {
       "id": "0d1eda569532351b",
@@ -7998,14 +7998,296 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-27T16:17:01.546915+00:00"
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+    },
+    {
+      "id": "30488359f82da3e6",
+      "title": "Infrastructure Engineer & SRE ID98508",
+      "company": "AgileEngine",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "AgileEngine is an Inc. 5000 company that creates award-winning software for Fortune 500 brands and trailblazing startups across 17+ industries. We rank among the leaders in areas like application development and AI/ML, and our people-first culture has earned us multiple Best Place to Work awards. WHY JOIN US If you're looking for a place to grow, make an impact, and work with people who care, we'd love to meet you! ABOUT THE ROLE We are looking for a Infrastructure Engineer & SRE to operate and improve a Kubernetes-based API platform across public and private cloud environments, including automation, tooling, and incident management. MUST HAVES - Hands-on experience of at least 4 years operating Kubernetes in production , ideally with Service Mesh. - Strong Linux and command line fundamentals. - Confident debugging and troubleshooting complex systems, from the application layer through to lower-level infrastructure. - Experience working with a public cloud provider, preferably Azure or AWS. - Upper-intermediate English level. NICE TO HAVES - Working knowledge of Grafana, Prometheus, Loki and Tempo is a plus. - Scripting or coding in Python or Java is a strong plus. - CI/CD, infrastructure as code such as Helm or Terraform is a plus. - Financial services background is not required. WHAT YOU WILL DO - Operate and maintain the Kubernetes-based platform across public and private cloud environments. - Work with observability tooling to ensure alerts are actionable through up-to-date runbooks and documentation. - Manage incidents from end-to-end, including incident response, root cause analysis, and post-incident reviews. - Onboard and support new clients onto the platform. - Build automation and diagnostic tooling that cuts manual effort and evaluates performance. - Identify and deliver process improvements. - Support software and hardware upgrades and keep components up to date. - Proactively manage capacity so the platform scales with demand. PERKS AND BENEFITS - Professional growth : Mentorship, TechTalks, and personalized growth roadmaps. - Competitive compensation : USD-based pay with education, fitness, and team activity budgets. - Exciting projects : Modern solutions with Fortune 500 and top product companies. - Flextime : Flexible schedule with remote and office options. Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/infrastructure-engineer-sre-id98508-at-agileengine-4484104248",
+      "source": "LinkedIn",
+      "published_at": "2026-10-28",
+      "found_at": "2026-10-28T17:02:05.379709+00:00",
+      "score": 85,
+      "score_breakdown": {
+        "skills": 30,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "api",
+        "aws",
+        "azure",
+        "ci/cd",
+        "grafana",
+        "helm",
+        "infrastructure as code",
+        "kubernetes",
+        "linux",
+        "loki",
+        "prometheus",
+        "python",
+        "terraform"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "app engine",
+        "argocd",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana loki",
+        "gunicorn",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "lambda",
+        "load balancer",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-11-27T23:34:43.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEV7XPrwqjYLg/company-logo_100_100/company-logo_100_100/0/1693840967446/agileengine_logo?e=2147483647&v=beta&t=0Xv_TEiqU0JPoq9Y_i_McYtdd28R60GXiofRm9KTzlo",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+    },
+    {
+      "id": "6200360e55f2b6db",
+      "title": "Analista de TI - Infraestrutura",
+      "company": "Avante Social",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "Responsabilidades Da Posição Sobre a vaga Administrar e sustentar ambientes Windows Server, Active Directory, virtualização, redes e serviços de infraestrutura. Atuar na resolução de incidentes e problemas de média complexidade, buscando identificar e eliminar suas causas raiz. Gerenciar ambientes virtualizados, servidores, backups, firewalls, switches, VLANs e endpoints. Executar e acompanhar rotinas de atualização, patches, hardening, capacidade e disponibilidade dos ambientes. Apoiar iniciativas de modernização, observabilidade, documentação e melhoria contínua da infraestrutura. Requisitos Obrigatórios Para a Posição Windows Server. Active Directory, DNS, DHCP e políticas de grupo. Administração de ambientes de virtualização, preferencialmente VMware. Administração ou suporte a firewalls Gestão de backup de ambientes físicos e virtuais. Conhecimento de ferramentas de endpoint security Conhecimento de monitoramento e análise de performance de infraestrutura. Responsabilidades Garantir estabilidade, disponibilidade e performance dos serviços de infraestrutura. Reduzir recorrência de incidentes por meio de análise de causa raiz e ações definitivas. Manter os ambientes atualizados, seguros, documentados e monitorados. Melhorar o nível de automação das atividades operacionais.. Criar e manter documentação técnica, procedimentos e runbooks. Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-ti-infraestrutura-at-avante-social-4482283111",
+      "source": "LinkedIn",
+      "published_at": "2026-10-27",
+      "found_at": "2026-10-28T17:02:29.739236+00:00",
+      "score": 59,
+      "score_breakdown": {
+        "skills": 4,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "dns",
+        "vmware"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-11-27T04:45:11.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGSNTjz49qquw/company-logo_100_100/B4DaA99ARxJcAI-/0/1787745797448/avantesocial_logo?e=2147483647&v=beta&t=vmjVhXK8VX2Xm3FjSFzHN5TOwcV9MSHPmhcnSILsTt4",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
     }
   ],
-  "last_updated": "2026-10-27T16:17:03.281010+00:00",
+  "last_updated": "2026-10-28T17:04:03.301800+00:00",
   "stats": {
-    "total": 57,
-    "alto_fit": 6,
-    "medio_fit": 35,
+    "total": 59,
+    "alto_fit": 7,
+    "medio_fit": 36,
     "baixo_fit": 16,
     "enviadas": 1
   }
