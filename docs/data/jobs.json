@@ -137,8 +137,8 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "valid_through": "2026-10-30T19:46:18.000Z",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00",
+      "valid_through": "2026-11-26T22:22:48.000Z",
+      "verified_at": "2026-10-29T17:21:47.213537+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEhPUi4bYTP-A/company-logo_200_200/company-logo_200_200/0/1712955003130/fitenergia_logo?e=2147483647&v=beta&t=SiOyMYUFqHoNuCDn80u0xsn-uK5h0R7NbvauHR0j7FI"
     },
     {
@@ -281,146 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
-    },
-    {
-      "id": "b024186dc06e5ab0",
-      "title": "Analista de Infraestrutura Pleno",
-      "company": "Economart Atacadista",
-      "location": "Ribeirão das Neves, MG",
-      "salary": "",
-      "description": "Sobre a vaga No Economart, conectamos pessoas, negócios e oportunidades para gerar economia e buscar a eficiência em tudo o que fazemos. Estamos em constante evolução e precisamos de gente com vontade de transformar — e que acredite no nosso propósito! Quer fazer parte de algo realmente grande e aprender muito, em um ambiente pautado pela ética, compromisso, valorização e respeito às pessoas? Então #VenhaSerEconomart! O que você fará no dia a dia? Implantar e sustentar servidores físicos e virtuais (Windows Server, Linux, VMware, etc.), Monitorar e manter redes LAN/WAN, VPNs e firewalls, Gerenciar sistemas de backup, armazenamento e recuperação de desastres, Aplicar políticas de segurança da informação e controle de acesso, Automatizar rotinas de manutenção e monitoramento com scripts e ferramentas, Participar de projetos de melhoria e expansão da infraestrutura, Documentar procedimentos técnicos e topologia de rede, Realizar troubleshooting avançado em ambientes de produção. Por Isso, Precisamos Que Você Possua Ensino superior completo em Ciência da Computação, Engenharia da Computação, Sistemas de Informação ou áreas correlatas. Experiência comprovada com servidores, redes e virtualização Conhecimento em Active Directory, DNS, DHCP, VLANs Familiaridade com ferramentas de monitoramento (Zabbix, PRTG, Grafana) Se Você Possuir Certificações como ITIL, MCSA, CCNA, CompTIA Network+ Jornada De Trabalho Atuação presencial de segunda a quinta-feira, das 8h às 18h e sexta-feira das 8h às 17h O Que Você Vai Encontrar No Economart Salário compatível com o mercado; Vale-transporte Fretado Alimentação na empresa Café da manhã e da tarde Plano de saúde Plano odontológico Seguro de vida Convênio com Sesc Convênio com faculdades: descontos de até 80% em algumas instituições Comemoração em datas festivas como Carnaval, Páscoa, Dia das Mães, Dia dos Pais, Dia da Mulheres, Dia das Crianças, Halloween, Natal, etc Oportunidade de crescimento profissional. Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-pleno-at-economart-atacadista-4460721604",
-      "source": "LinkedIn",
-      "published_at": "2026-09-03",
-      "found_at": "2026-09-04T14:51:52.484796+00:00",
-      "score": 68,
-      "score_breakdown": {
-        "skills": 12,
-        "location": 20,
-        "level": 15,
-        "keywords": 6,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [
-        "dns",
-        "grafana",
-        "linux",
-        "vmware",
-        "zabbix"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [],
-      "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQE5LPVRiEw4JQ/company-logo_100_100/company-logo_100_100/0/1736446136441?e=2147483647&v=beta&t=OJeZ6-coS0QrIa1fsNOf3dCZlz3lNR4alRhKiLxM-O4"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -558,7 +419,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -836,7 +697,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "9ae1438d456c50d8",
@@ -973,7 +834,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "0526892fe6f50daa",
@@ -1111,7 +972,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "b24ab262ab38f81f",
@@ -1389,7 +1250,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "1b11ab7a7b2225f0",
@@ -1527,7 +1388,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00",
+      "verified_at": "2026-10-29T17:21:47.213537+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGvYuv9rJJ6zw/company-logo_100_100/company-logo_100_100/0/1631362999645/concremat_logo?e=2147483647&v=beta&t=WNzKh0EKrwI__D5xeTPij9F06GXtCgbUZs4oczIcl8M"
     },
     {
@@ -1805,7 +1666,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "fb7995fc604339d4",
@@ -1942,7 +1803,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "5696a0aa5c664d75",
@@ -2082,7 +1943,7 @@
         "gcp"
       ],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -2230,7 +2091,7 @@
       "title_class": "core",
       "verified_at": "2026-09-28T18:33:29.597163+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "26d09c1c43e69e4d",
@@ -2368,7 +2229,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "4d6bedeb24327563",
@@ -2506,7 +2367,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -2644,7 +2505,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -2785,7 +2646,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -2923,7 +2784,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -3061,7 +2922,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -3474,7 +3335,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -4324,7 +4185,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00",
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00",
       "verified_at": "2026-10-19T17:23:28.651187+00:00"
     },
     {
@@ -4466,7 +4327,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "9da64eeb21457f4e",
@@ -4607,7 +4468,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -4747,7 +4608,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -5030,7 +4891,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -5313,7 +5174,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -5453,7 +5314,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "19bc79372be44a16",
@@ -5876,7 +5737,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-15T15:33:09.214045+00:00",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "2379660f78055a5d",
@@ -6017,7 +5878,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-16T15:19:10.004371+00:00",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "6d7f43c982935ed8",
@@ -6299,7 +6160,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-20T15:36:26.627482+00:00",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "3717f16ee5106375",
@@ -6442,7 +6303,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "d9265a999ba79cfd",
@@ -6725,7 +6586,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-15T15:33:09.214045+00:00",
-      "verified_at": "2026-10-26T17:11:08.055019+00:00"
+      "verified_at": "2026-10-29T17:21:47.213537+00:00"
     },
     {
       "id": "3646ea2352b119af",
@@ -6870,7 +6731,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00",
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00",
       "verified_at": "2026-10-26T17:11:08.055019+00:00"
     },
     {
@@ -7154,7 +7015,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -7294,7 +7155,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -7435,7 +7296,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -7576,7 +7437,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "03b23f4aa1e20e97",
@@ -7716,7 +7577,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -7857,7 +7718,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "0d1eda569532351b",
@@ -7998,7 +7859,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -8139,7 +8000,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     },
     {
       "id": "6200360e55f2b6db",
@@ -8280,14 +8141,14 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-10-28T17:04:03.286763+00:00"
+      "last_seen_at": "2026-10-29T17:21:47.208691+00:00"
     }
   ],
-  "last_updated": "2026-10-28T17:04:03.301800+00:00",
+  "last_updated": "2026-10-29T17:21:50.248631+00:00",
   "stats": {
-    "total": 59,
+    "total": 58,
     "alto_fit": 7,
-    "medio_fit": 36,
+    "medio_fit": 35,
     "baixo_fit": 16,
     "enviadas": 1
   }
