@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -3061,7 +3061,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "1cec3d1a5a279de9",
@@ -3199,7 +3199,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "08629c51e986c861",
@@ -3478,7 +3478,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-18T14:50:52.037424+00:00",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -3623,7 +3623,7 @@
         "google cloud"
       ],
       "last_seen_at": "2026-10-15T15:33:09.214045+00:00",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -4046,7 +4046,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-08T17:48:20.525441+00:00",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "a27cfcc378423702",
@@ -4186,7 +4186,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "0f651da639452968",
@@ -4328,7 +4328,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-06T17:05:52.439656+00:00",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "05b9121b5e6f3345",
@@ -4469,7 +4469,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -4611,7 +4611,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-14T15:45:27.860377+00:00",
-      "verified_at": "2026-10-30T16:59:31.206032+00:00"
+      "verified_at": "2026-11-03T18:17:15.052091+00:00"
     },
     {
       "id": "6b442400a30d9266",
@@ -4752,7 +4752,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -4892,7 +4892,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "9d589b21917aeaec",
@@ -5600,7 +5600,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "f2cf35674d786735",
@@ -5887,7 +5887,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00",
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00",
       "verified_at": "2026-10-26T17:11:08.055019+00:00"
     },
     {
@@ -6031,7 +6031,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -6171,7 +6171,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -6312,7 +6312,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -6453,7 +6453,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "03b23f4aa1e20e97",
@@ -6593,7 +6593,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -6734,7 +6734,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -6875,7 +6875,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "6200360e55f2b6db",
@@ -7016,7 +7016,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "0c5f68b974615cb3",
@@ -7160,7 +7160,7 @@
         "gcp",
         "gke"
       ],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "b9444f6fa0a6f660",
@@ -7303,7 +7303,7 @@
       "priority_skills": [
         "google cloud"
       ],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "cb7633f1e11f2f0d",
@@ -7444,7 +7444,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "9087fe674938edc3",
@@ -7585,7 +7585,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     },
     {
       "id": "1ed5d5b765b02906",
@@ -7734,10 +7734,10 @@
         "google cloud platform",
         "google kubernetes engine"
       ],
-      "last_seen_at": "2026-11-02T20:40:35.733322+00:00"
+      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
     }
   ],
-  "last_updated": "2026-11-02T20:40:40.681997+00:00",
+  "last_updated": "2026-11-03T18:17:15.858360+00:00",
   "stats": {
     "total": 55,
     "alto_fit": 10,
