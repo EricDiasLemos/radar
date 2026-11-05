@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -4329,7 +4329,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -4612,7 +4612,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -4752,7 +4752,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "9d589b21917aeaec",
@@ -5747,7 +5747,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00",
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00",
       "verified_at": "2026-10-26T17:11:08.055019+00:00"
     },
     {
@@ -5891,7 +5891,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -6031,7 +6031,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -6172,7 +6172,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -6453,7 +6453,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -6594,7 +6594,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -6735,7 +6735,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "6200360e55f2b6db",
@@ -6876,7 +6876,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "0c5f68b974615cb3",
@@ -7020,7 +7020,7 @@
         "gcp",
         "gke"
       ],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "b9444f6fa0a6f660",
@@ -7163,7 +7163,7 @@
       "priority_skills": [
         "google cloud"
       ],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "cb7633f1e11f2f0d",
@@ -7304,7 +7304,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-03T18:17:15.049151+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "9087fe674938edc3",
@@ -7445,7 +7445,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "1ed5d5b765b02906",
@@ -7594,7 +7594,7 @@
         "google cloud platform",
         "google kubernetes engine"
       ],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "40301aae370d5ff4",
@@ -7734,7 +7734,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -7875,13 +7875,156 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
+    },
+    {
+      "id": "a0872af0a93237c7",
+      "title": "Analista de Infraestrutura Cloud e Redes Pleno",
+      "company": "Central dos Benefícios",
+      "location": "Belo Horizonte e Região",
+      "salary": "",
+      "description": "A Central dos Benefícios é um hub de soluções que transforma benefícios corporativos em valor para pessoas e empresas. Há mais de 20 anos, unimos tecnologia, atendimento humanizado e parceiros estratégicos para simplificar a rotina do RH e democratizar o acesso à saúde, proteção, bem-estar e qualidade de vida. Aqui, trabalhamos para gerar impacto positivo na vida de milhares de pessoas e construir soluções cada vez mais simples, acessíveis e eficientes. Buscamos um(a) Analista de Infraestrutura Cloud e Redes Pleno com perfil analítico, investigativo e orientado à segurança para administrar e monitorar nossa infraestrutura, contribuindo para a disponibilidade, proteção e desempenho de redes, servidores e serviços em nuvem. Sobre seu dia a dia Administrar servidores, máquinas virtuais e recursos em nuvem, acompanhando disponibilidade, capacidade e desempenho; Configurar e manter redes, VPNs, firewalls e acessos remotos seguros; Administrar usuários, computadores e permissões no Active Directory (AD), conforme as políticas de acesso; Administrar o Microsoft 365 e o SharePoint, incluindo acessos, permissões e configurações; Monitorar recursos, métricas, alertas e logs, investigando falhas e atuando preventivamente; Diagnosticar e solucionar incidentes de média complexidade, acionando apoio em situações críticas; Executar atualizações, correções de vulnerabilidades e controles de proteção de dispositivos; Acompanhar backups e realizar testes de restauração; Apoiar implantações, migrações e melhorias em conjunto com o time de TI e fornecedores; Manter inventários e procedimentos atualizados, registrar incidentes e acompanhar chamados com fornecedores. Requisitos técnicos Formação superior completa ou em andamento em TI ou áreas correlatas; Experiência em gerenciamento de servidores e VMs, incluindo configuração, manutenção e acesso remoto seguro; Conhecimento prático em infraestrutura em nuvem, como Azure, AWS ou Google Cloud; Experiência com configuração de firewalls, regras de acesso e segurança de redes; Experiência em redes TCP/IP, DNS, DHCP e VPN; Experiência em administração do Microsoft 365 (Office 365) e SharePoint; Experiência em AD, incluindo ingresso e configuração de computadores no domínio, gestão de usuários, grupos, permissões e políticas de grupo (GPOs); Vivência com monitoramento e observabilidade de recursos utilizando Zabbix e Grafana; Conhecimento em análise de métricas e logs para identificar indisponibilidade, falhas e problemas de desempenho; Conhecimento em backup, restauração, atualização de sistemas e proteção de endpoints; Capacidade de documentar configurações, procedimentos e soluções. Competências comportamentais Perfil analítico, investigativo e atento aos detalhes; Organização, responsabilidade e priorização conforme o impacto na operação; Autonomia nas rotinas e discernimento para solicitar apoio; Comunicação clara, colaboração e postura preventiva; Interesse em aprendizado e melhoria contínua. Diferenciais Capacidade d",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-cloud-e-redes-pleno-at-central-dos-benef%C3%ADcios-4487588349",
+      "source": "LinkedIn",
+      "published_at": "2026-11-05",
+      "found_at": "2026-11-05T18:33:58.127176+00:00",
+      "score": 76,
+      "score_breakdown": {
+        "skills": 15,
+        "location": 20,
+        "level": 15,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 1,
+        "title": 10
+      },
+      "skills_match": [
+        "aws",
+        "azure",
+        "dns",
+        "google cloud",
+        "grafana",
+        "vpn",
+        "zabbix"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "wireguard",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-12-05T00:51:13.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEHNkTQRLRrlQ/company-logo_100_100/company-logo_100_100/0/1727290239161/central_dos_benefcios_logo?e=2147483647&v=beta&t=E7YjSO3VgRgm1LSkopYB2y2Z0nzqqjpRT9o0_rI_gnE",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [
+        "google cloud"
+      ],
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
     }
   ],
-  "last_updated": "2026-11-04T18:31:50.837314+00:00",
+  "last_updated": "2026-11-05T18:35:30.300952+00:00",
   "stats": {
-    "total": 56,
-    "alto_fit": 11,
+    "total": 57,
+    "alto_fit": 12,
     "medio_fit": 31,
     "baixo_fit": 14,
     "enviadas": 1
