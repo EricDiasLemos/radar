@@ -29,6 +29,34 @@
       "outreach_source": "fallback"
     },
     {
+      "id": "69825f4a740e89e7",
+      "name": "Luana Diniz",
+      "profile_url": "https://br.linkedin.com/in/luana-diniz-",
+      "headline": "Analista de Recursos Humanos | R&S | Tech Recruiter | Headhunter | Especialista Comportamental DISC | Talent Acquisition | Treinamento &…",
+      "is_recruiter": true,
+      "country": "BR",
+      "companies": [
+        "NPO Brasil"
+      ],
+      "jobs": [
+        {
+          "id": "e5ba1f4680d4eec0",
+          "title": "Analista de Infraestrutura Windows Server Pleno",
+          "company": "NPO Brasil",
+          "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-windows-server-pleno-at-npo-brasil-4489112117",
+          "score": 62,
+          "fit_level": "medio",
+          "found_at": "2026-11-09T21:19:37.876092+00:00"
+        }
+      ],
+      "first_seen": "2026-11-09T21:21:13.069988+00:00",
+      "last_seen": "2026-11-09T21:21:13.069988+00:00",
+      "message": "Oi Luana, obrigado por aceitar!\n\nSobre a vaga de Analista de Infraestrutura Windows Server Pleno na NPO Brasil: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
+      "priority": 62,
+      "invite_note": "Oi Luana! Vi sua vaga de Analista de Infraestrutura Windows Server Pleno na NPO Brasil. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
+      "outreach_source": "fallback"
+    },
+    {
       "id": "776c9b010f8ef573",
       "name": "Yasmim Asakura",
       "profile_url": "https://br.linkedin.com/in/yasmim-asakura-85a59128b",
@@ -113,5 +141,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-11-06T17:51:43.897281+00:00"
+  "last_updated": "2026-11-09T21:21:13.069988+00:00"
 }
