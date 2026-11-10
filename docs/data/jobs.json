@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -2090,7 +2090,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "4d6bedeb24327563",
@@ -2228,7 +2228,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -2366,7 +2366,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -2507,7 +2507,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -2645,7 +2645,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -2783,7 +2783,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -3196,7 +3196,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-06T17:51:43.898281+00:00"
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -5039,7 +5039,8 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-04T18:31:50.116553+00:00"
+      "last_seen_at": "2026-11-04T18:31:50.116553+00:00",
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "3646ea2352b119af",
@@ -5184,7 +5185,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00",
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00",
       "verified_at": "2026-10-26T17:11:08.055019+00:00"
     },
     {
@@ -5328,7 +5329,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -5468,7 +5469,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -5609,7 +5610,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -5891,7 +5892,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -6032,7 +6033,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -6173,7 +6174,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "6200360e55f2b6db",
@@ -6314,7 +6315,8 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-05T18:35:30.293271+00:00"
+      "last_seen_at": "2026-11-05T18:35:30.293271+00:00",
+      "verified_at": "2026-11-10T18:32:14.411362+00:00"
     },
     {
       "id": "0c5f68b974615cb3",
@@ -6458,7 +6460,7 @@
         "gcp",
         "gke"
       ],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "9087fe674938edc3",
@@ -6599,7 +6601,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "1ed5d5b765b02906",
@@ -6888,7 +6890,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -7029,7 +7031,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "a0872af0a93237c7",
@@ -7172,7 +7174,7 @@
       "priority_skills": [
         "google cloud"
       ],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "61eca31e602ac956",
@@ -7313,7 +7315,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     },
     {
       "id": "e5ba1f4680d4eec0",
@@ -7599,14 +7601,154 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-09T21:21:13.053054+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+    },
+    {
+      "id": "77eec0ba21d85ec8",
+      "title": "Analista de Produtos Cloud | Vaga Afirmativa Pcd",
+      "company": "N/A",
+      "location": "São Paulo / SP A empresa aceita candidaturas de São Paulo e cidades próximas",
+      "salary": "",
+      "description": "Faixa salarial a combinar São Paulo A empresa aceita candidaturas de São Paulo e cidades próximas Regime CLT Benefícios Descrição Empresa Assistência médica Auxílio creche Auxílio desenvolvimento Convênio com empresas parceiras Programa de treinamentos Refeitório Sala de Jogos Seguro de vida Vale-refeição Vale-transporte Ver todos Ver menos Descrição : 🚀 Vem ser um Thinker! Oportunidade: Analista de Produtos Cloud | PcD Na Penso Tecnologia, acreditamos que a tecnologia transforma negócios e que diferentes talentos tornam nosso time ainda mais forte. Estamos em busca de uma pessoa organizada, analítica e curiosa, que goste de tecnologia e queira desenvolver sua carreira em um ambiente colaborativo e cheio de aprendizados. 💙 Esta é uma vaga afirmativa para Pessoas com Deficiência (PcD). 🎯 Seu desafio na Penso Contribuir para a organização, o controle e a evolução do nosso portfólio de produtos e serviços Cloud, garantindo a qualidade das informações, a eficiência dos processos e a integração entre equipes e parceiros. 💻 O que você vai fazer por aqui? Apoiar a gestão do portfólio de produtos e serviços Cloud, mantendo cadastros, catálogos e informações atualizados. Acompanhar contratos, licenças, assinaturas, renovações e prazos junto a fabricantes e distribuidores. Conferir informações de consumo, custos, preços e faturamento, identificando possíveis divergências. Organizar planilhas, documentos, relatórios e indicadores para apoiar a tomada de decisões. Realizar follow-ups com fornecedores e equipes internas, garantindo o andamento das demandas. Identificar oportunidades de melhoria nos processos, explorando ferramentas digitais, inteligência artificial e automação. Responsabilidades e atribuições 🔎 O que buscamos em você? Buscamos alguém que tenha atenção aos detalhes, facilidade para lidar com informações e vontade de aprender e fazer acontecer. Para essa oportunidade, esperamos: Ensino superior cursando ou recém-concluído em Administração, Tecnologia ou áreas correlatas. Inglês intermediário. Conhecimento em Excel e pacote Microsoft Office. Organização, raciocínio lógico e capacidade analítica. Familiaridade com sistemas, ferramentas digitais e controles administrativos. Boa comunicação, colaboração e interesse pelo universo da tecnologia. Requisitos e qualificações ⭐ Vai ser um diferencial se você tiver... Experiência em áreas de Produtos, Operações ou empresas de tecnologia. Conhecimentos em Cloud Computing, SaaS ou licenciamento de software. Familiaridade com ferramentas de CRM, Service Desk, inteligência artificial ou automação . 📍 Onde e como você vai trabalhar? Local: Jardim Paulista, São Paulo/SP. Modelo de trabalho: Híbrido, com 3 dias presenciais e 2 dias de home office por semana. Modalidade: Vaga afirmativa para Pessoas com Deficiência (PcD). Outros requisitos : 💙 Por que fazer parte da Penso? Aqui, você encontra um ambiente de colaboração, troca de conhecimentos e oportunidades para desenvolver suas habilidades técnicas e profission",
+      "url": "https://www.vagas.com.br/vagas/v2842616/analista-de-produtos-cloud-vaga-afirmativa-pcd",
+      "source": "Vagas.com",
+      "published_at": "Hoje",
+      "found_at": "2026-11-10T18:31:32.612170+00:00",
+      "score": 51,
+      "score_breakdown": {
+        "skills": 0,
+        "location": 20,
+        "level": 10,
+        "keywords": 6,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": null,
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
     }
   ],
-  "last_updated": "2026-11-09T21:21:18.306101+00:00",
+  "last_updated": "2026-11-10T18:32:15.251219+00:00",
   "stats": {
-    "total": 54,
+    "total": 55,
     "alto_fit": 11,
-    "medio_fit": 29,
+    "medio_fit": 30,
     "baixo_fit": 14,
     "enviadas": 0
   }
