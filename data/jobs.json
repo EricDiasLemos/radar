@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -5185,7 +5185,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00",
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00",
       "verified_at": "2026-10-26T17:11:08.055019+00:00"
     },
     {
@@ -5329,7 +5329,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -5469,7 +5469,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -5610,7 +5610,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -5892,7 +5892,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -6033,7 +6033,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -6174,7 +6174,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "6200360e55f2b6db",
@@ -6460,7 +6460,7 @@
         "gcp",
         "gke"
       ],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "9087fe674938edc3",
@@ -6601,7 +6601,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "1ed5d5b765b02906",
@@ -6890,7 +6890,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -7031,7 +7031,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "a0872af0a93237c7",
@@ -7315,7 +7315,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "e5ba1f4680d4eec0",
@@ -7601,7 +7601,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     },
     {
       "id": "77eec0ba21d85ec8",
@@ -7741,13 +7741,154 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
+    },
+    {
+      "id": "97b8d3acfbcc7c61",
+      "title": "Analista Infraestrutura Júnior  - Extensiva a PCD",
+      "company": "Patrus Transportes",
+      "location": "Contagem, MG",
+      "salary": "",
+      "description": "DESCRIÇÃO Unidade: Contagem Endereço: R. José Afonso Barbosa Melo, 145 - Cinco, Contagem - MG Horário de trabalho: 08h às 18h (Segunda à Sexta-Feira) Somos a Patrus Transportes, uma empresa que tem as pessoas como o seu maior ativo e que coloca paixão em cada detalhe. Olho no olho é premissa a ser seguida e dar a nossa palavra como garantia é prova de transparência e responsabilidade. Estamos sempre buscando os melhores caminhos e comprometidos com o melhor resultado. Se interessou e quer compor este time que trabalha diariamente para manter o Brasil em movimento, conectando indústrias e pessoas? Principais Responsabilidades Atendimento de chamados Nível 2, remoto e presencial; Suporte e rotinas em Windows Server, incluindo AD, DNS, DHCP e RADIUS, além de ambiente Linux; Administração e suporte básico ao Microsoft 365, incluindo atribuição de licenças, MFA, fluxo de e-mails, Exchange Online e Teams; Apoio em Microsoft Azure, com criação básica de VMs e suporte à infraestrutura IaaS; Configuração e suporte de redes, switches Cisco, Intelbras e Huawei, além de wireless UniFi e Aruba; Apoio em melhorias de infraestrutura física, cabeamento, novos pontos de rede, mudanças de endereço e implantação de novas unidades; Configuração e troubleshooting básico de FortiGate, incluindo VPN, roteamento estático, análise de recursos e exportação/importação de configurações; Monitoramento dos ambientes utilizando Zabbix e Grafana; Apoio na criação e atualização da documentação dos processos de infraestrutura. Requisitos Ensino Superior em andamento em Tecnologia da Informação, Redes, Sistemas de Informação ou áreas relacionadas; Disponibilidade para viagens; Disponibilidade para atuação em regime de plantão, quando necessário. Fundamentos de Windows e Linux; Redes: TCP/IP, DNS, DHCP, VLANs, roteamento básico e wireless; Noções de Cloud e Segurança da Informação; Conhecimentos em FortiGate; Conhecimentos básicos em Microsoft 365 e Azure. Diferenciais Inglês intermediário para escrita e conversação; Certificação CCNA ou equivalente; Certificação Microsoft Azure AZ-900, curso concluído ou experiência básica com Azur Benefícios Plano de Saúde Unimed; Plano Odontológico; Refeição na empresa; Seguro de Vida, conforme Convenção Coletiva de Trabalho (CCT); Previdência Privada; Desconto especial em linha TIM; Parceria com o SEST SENAT, com acesso a serviços, cursos e atividades; Universidade Corporativa, com plataforma de cursos on-line para seu desenvolvimento contínuo; Wellhub - plataforma de bem-estar com acesso a academias, estúdios, apps de saúde, terapia e nutrição; Kit Bebê um cuidado especial para esse momento tão importante; Kit escolar para os filhos de 06 a 14 anos. Mais do que uma empresa de transportes, somos a Patrus. Venha construir sua carreira com a gente! Local de trabalho: Contagem, MG Regime de contratação de tipo: Efetivo – CLT Jornada: Período Integral Área e especialização profissional: Informática, TI, Telecomunicações - Infraestrutura Nível hierá",
+      "url": "https://br.linkedin.com/jobs/view/analista-infraestrutura-j%C3%BAnior-extensiva-a-pcd-at-patrus-transportes-4489907132",
+      "source": "LinkedIn",
+      "published_at": "2026-11-11",
+      "found_at": "2026-11-11T18:25:42.103183+00:00",
+      "score": 85,
+      "score_breakdown": {
+        "skills": 20,
+        "location": 20,
+        "level": 20,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "azure",
+        "cisco",
+        "dns",
+        "fortigate",
+        "grafana",
+        "huawei",
+        "linux",
+        "vpn",
+        "zabbix"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "wireguard",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEhbiByXKNmYw/company-logo_100_100/company-logo_100_100/0/1672687663042/patrus_transportes_logo?e=2147483647&v=beta&t=uThHFOZ6f9Bd8-MZRY9FgmZbtN9Iur5mR3Wo753_LN4",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-11T18:27:28.211144+00:00"
     }
   ],
-  "last_updated": "2026-11-10T18:32:15.251219+00:00",
+  "last_updated": "2026-11-11T18:27:28.219320+00:00",
   "stats": {
-    "total": 55,
-    "alto_fit": 11,
+    "total": 56,
+    "alto_fit": 12,
     "medio_fit": 30,
     "baixo_fit": 14,
     "enviadas": 0
