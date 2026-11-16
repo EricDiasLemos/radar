@@ -138,7 +138,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-11-26T22:22:48.000Z",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00",
+      "verified_at": "2026-11-16T20:52:07.980668+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEhPUi4bYTP-A/company-logo_200_200/company-logo_200_200/0/1712955003130/fitenergia_logo?e=2147483647&v=beta&t=SiOyMYUFqHoNuCDn80u0xsn-uK5h0R7NbvauHR0j7FI"
     },
     {
@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -419,7 +419,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -558,7 +558,7 @@
       "priority_skills": [],
       "title_class": "core",
       "valid_through": "2026-11-24T18:46:09.000Z",
-      "verified_at": "2026-11-09T21:21:13.225250+00:00",
+      "verified_at": "2026-11-16T20:52:07.980668+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGQ9_7vYuztPA/company-logo_200_200/company-logo_200_200/0/1695849805705/sgatiemnuvem_logo?e=2147483647&v=beta&t=kfkYfUS2yMC4wrTT0wB7wPutJI4j6zx_p6sBk-iS8U4"
     },
     {
@@ -697,7 +697,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "9ae1438d456c50d8",
@@ -834,7 +834,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "0526892fe6f50daa",
@@ -972,147 +972,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
-    },
-    {
-      "id": "b24ab262ab38f81f",
-      "title": "SPECIALIST IN VEHICLE CYBERSECURITY, PKI & CLOUD SECURITY",
-      "company": "Stellantis South America",
-      "location": "Betim, MG",
-      "salary": "",
-      "description": "Sobre a Empresa At Stellantis, we assess candidates based on qualifications, merit, and business needs. We welcome applications from people of all gender identities, age, ethnicity, nationality, religion, sexual orientation, and disability. Diverse teams will allow us to better meet the evolving needs of our customers and care for our future. Ready to make an impact? Apply today! Horário: ADM Contratação: Efetivo – CLT Nível: Profissional Descrição e Responsabilidades Stellantis is one of the global leaders in the development and production of automobiles and light commercial vehicles, as well as in providing mobility solutions. We are one of the world’s leading Mobility Tech Companies, bringing together iconic brands such as Fiat, Jeep, Peugeot, Citroën, RAM, and Abarth. With operations in nearly 30 countries and presence in over 130 markets, we offer clean, connected, accessible, and safe mobility solutions. What drives us is the talent and diversity of our people, who transform passion and experience into value for our customers, communities, and partners every day. We are looking for individuals who are passionate about automobiles, technology, and innovation to join our team! The person in this role will be responsible for designing, implementing, operating, and continuously improving the cryptographic trust infrastructure that secures connected vehicles and software-defined vehicle ecosystems. This position combines expertise in Vehicle Public Key Infrastructure (VPKI), cloud security, cryptographic services, automation, and DevSecOps to ensure scalable, resilient, and secure solutions supporting global mobility patforms and connected services. Main Activities Design, deploy and maintain global Vehicle PKI services supporting vehicle identities, firmware signing, OTA security, V2X communications and connected services authentication; Define trust models, certificate hierarchies and cryptographic architectures aligned with cybersecurity standards and industry best practices; Manage certificate lifecycle processes including enrollment, provisioning, renewal, revocation and recovery; Design and operate cloud-native PKI services and security architectures across cloud environments; Develop Infrastructure as Code and automation solutions supporting PKI operations and security controls; Collaborate with Product Security, Engineering and Connected Services teams to integrate cryptographic controls into product development; Participate in cybersecurity assessments, architecture reviews and security requirement definition activities; Drive innovation initiatives related to cryptographic services, Zero Trust architectures, cloud security and next-generation trust technologies. Requisitos We expect you to have: Bachelor’s degree in Cybersecurity, Computer Science, Software Engineering, Computer Engineering or related field; Knowledge of Public Key Infrastructure (PKI), cryptographic services and certificate lifecycle management; Understanding of X.509",
-      "url": "https://br.linkedin.com/jobs/view/specialist-in-vehicle-cybersecurity-pki-cloud-security-at-stellantis-south-america-4450633648",
-      "source": "LinkedIn",
-      "published_at": "2026-08-06",
-      "found_at": "2026-08-12T11:47:04.178745+00:00",
-      "score": 57,
-      "score_breakdown": {
-        "skills": 4,
-        "location": 20,
-        "level": 10,
-        "keywords": 8,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [
-        "devsecops",
-        "infrastructure as code"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "dns",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vmware",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "target_company": false,
-      "priority_skills": [],
-      "title_class": "core",
-      "valid_through": "2026-11-27T20:00:52.000Z",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFZ1BSyUCLUOw/company-logo_200_200/B4DZ.KHnjwKsAE-/0/1784728680913/stellantislatam_logo?e=2147483647&v=beta&t=ykGVc5l89N6K2SCmLwvVq_i69rEsiF5gtHJePxGGOPo"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "ac5a1722a0111efe",
@@ -1250,7 +1110,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "1b11ab7a7b2225f0",
@@ -1526,7 +1386,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "fb7995fc604339d4",
@@ -1663,7 +1523,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "5696a0aa5c664d75",
@@ -1803,7 +1663,7 @@
         "gcp"
       ],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -1949,7 +1809,7 @@
         "google kubernetes engine"
       ],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00",
+      "verified_at": "2026-11-16T20:52:07.980668+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
       "last_seen_at": "2026-10-30T16:59:31.201236+00:00",
       "valid_through": "2026-11-27T17:45:27.000Z"
@@ -2090,7 +1950,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "4d6bedeb24327563",
@@ -2228,7 +2088,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -2366,7 +2226,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -2507,7 +2367,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -2645,7 +2505,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -2783,7 +2643,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -2921,7 +2781,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "1cec3d1a5a279de9",
@@ -3059,7 +2919,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "08629c51e986c861",
@@ -3196,7 +3056,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -3338,7 +3198,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-09-18T14:50:52.037424+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "8c159085510834ea",
@@ -3483,7 +3343,7 @@
         "google cloud"
       ],
       "last_seen_at": "2026-10-15T15:33:09.214045+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "1c5eb4130f7b5d69",
@@ -3624,7 +3484,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-21T15:53:20.933616+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "04380e462df9fa43",
@@ -4190,7 +4050,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-11-06T17:51:43.895270+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "f8ef9aa76e6b0732",
@@ -4332,7 +4192,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-20T15:36:26.627482+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "3717f16ee5106375",
@@ -4476,7 +4336,7 @@
         "gcp"
       ],
       "last_seen_at": "2026-11-04T18:31:50.116553+00:00",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "80276acdfa5b9b69",
@@ -4619,7 +4479,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -4759,7 +4619,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -4900,7 +4760,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -5042,7 +4902,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-11-03T18:17:15.049151+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "03b23f4aa1e20e97",
@@ -5182,7 +5042,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -5323,7 +5183,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -5464,149 +5324,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
-    },
-    {
-      "id": "6200360e55f2b6db",
-      "title": "Analista de TI - Infraestrutura",
-      "company": "Avante Social",
-      "location": "Belo Horizonte, MG",
-      "salary": "",
-      "description": "Responsabilidades Da Posição Sobre a vaga Administrar e sustentar ambientes Windows Server, Active Directory, virtualização, redes e serviços de infraestrutura. Atuar na resolução de incidentes e problemas de média complexidade, buscando identificar e eliminar suas causas raiz. Gerenciar ambientes virtualizados, servidores, backups, firewalls, switches, VLANs e endpoints. Executar e acompanhar rotinas de atualização, patches, hardening, capacidade e disponibilidade dos ambientes. Apoiar iniciativas de modernização, observabilidade, documentação e melhoria contínua da infraestrutura. Requisitos Obrigatórios Para a Posição Windows Server. Active Directory, DNS, DHCP e políticas de grupo. Administração de ambientes de virtualização, preferencialmente VMware. Administração ou suporte a firewalls Gestão de backup de ambientes físicos e virtuais. Conhecimento de ferramentas de endpoint security Conhecimento de monitoramento e análise de performance de infraestrutura. Responsabilidades Garantir estabilidade, disponibilidade e performance dos serviços de infraestrutura. Reduzir recorrência de incidentes por meio de análise de causa raiz e ações definitivas. Manter os ambientes atualizados, seguros, documentados e monitorados. Melhorar o nível de automação das atividades operacionais.. Criar e manter documentação técnica, procedimentos e runbooks. Show more Show less",
-      "url": "https://br.linkedin.com/jobs/view/analista-de-ti-infraestrutura-at-avante-social-4482283111",
-      "source": "LinkedIn",
-      "published_at": "2026-10-27",
-      "found_at": "2026-10-28T17:02:29.739236+00:00",
-      "score": 59,
-      "score_breakdown": {
-        "skills": 4,
-        "location": 20,
-        "level": 10,
-        "keywords": 10,
-        "salary": 5,
-        "target_company": 0,
-        "priority_skills": 0,
-        "title": 10
-      },
-      "skills_match": [
-        "dns",
-        "vmware"
-      ],
-      "skills_gap": [
-        "aks",
-        "alertmanager",
-        "ansible",
-        "api",
-        "app engine",
-        "argocd",
-        "aws",
-        "azure",
-        "azure devops",
-        "bash",
-        "bgp",
-        "bigquery",
-        "blue green",
-        "blue-green",
-        "canary",
-        "ci/cd",
-        "circleci",
-        "cisco",
-        "cloud functions",
-        "cloud run",
-        "cloud sql",
-        "cloud storage",
-        "cloudflare",
-        "cloudformation",
-        "cloudwatch",
-        "compute engine",
-        "datadog",
-        "devsecops",
-        "docker",
-        "docker compose",
-        "docker-compose",
-        "dynatrace",
-        "ebs",
-        "ec2",
-        "ecs",
-        "eks",
-        "elastic ip",
-        "elk",
-        "fastapi",
-        "firewall",
-        "flask",
-        "fortigate",
-        "gcp",
-        "git",
-        "gitea",
-        "github actions",
-        "gitlab ci",
-        "gitleaks",
-        "gitops",
-        "gke",
-        "google cloud",
-        "grafana",
-        "grafana loki",
-        "gunicorn",
-        "helm",
-        "huawei",
-        "iac",
-        "iam",
-        "infraestrutura como codigo",
-        "infrastructure as code",
-        "jenkins",
-        "k3s",
-        "kafka",
-        "kubernetes",
-        "lambda",
-        "linux",
-        "load balancer",
-        "loki",
-        "mikrotik",
-        "n8n",
-        "newrelic",
-        "nginx",
-        "olt",
-        "postgres",
-        "postgresql",
-        "prometheus",
-        "proxmox",
-        "pulumi",
-        "python",
-        "rabbitmq",
-        "rds",
-        "redis",
-        "rest",
-        "rollback",
-        "route53",
-        "s3",
-        "security groups",
-        "shell",
-        "sonarqube",
-        "systemd",
-        "terraform",
-        "trivy",
-        "vault",
-        "vlan",
-        "vpc",
-        "vpn",
-        "wireguard",
-        "zabbix",
-        "zero downtime",
-        "zero-downtime"
-      ],
-      "fit_level": "medio",
-      "status": "nova",
-      "applied_at": null,
-      "cover_letter": null,
-      "contact_email": null,
-      "recruiter": null,
-      "valid_through": "2026-11-27T04:45:11.000Z",
-      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQGSNTjz49qquw/company-logo_100_100/B4DaA99ARxJcAI-/0/1787745797448/avantesocial_logo?e=2147483647&v=beta&t=vmjVhXK8VX2Xm3FjSFzHN5TOwcV9MSHPmhcnSILsTt4",
-      "title_class": "core",
-      "target_company": false,
-      "priority_skills": [],
-      "last_seen_at": "2026-11-05T18:35:30.293271+00:00",
-      "verified_at": "2026-11-10T18:32:14.411362+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "0c5f68b974615cb3",
@@ -5750,7 +5468,7 @@
         "gcp",
         "gke"
       ],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "40301aae370d5ff4",
@@ -5890,7 +5608,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -6031,7 +5749,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "a0872af0a93237c7",
@@ -6174,7 +5892,8 @@
       "priority_skills": [
         "google cloud"
       ],
-      "last_seen_at": "2026-11-10T18:32:14.398990+00:00"
+      "last_seen_at": "2026-11-10T18:32:14.398990+00:00",
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "61eca31e602ac956",
@@ -6315,7 +6034,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "e5ba1f4680d4eec0",
@@ -6461,7 +6180,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-11-09T21:21:13.053054+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-16T20:52:07.980668+00:00"
     },
     {
       "id": "58185ba543ccd7e3",
@@ -6602,7 +6321,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "77eec0ba21d85ec8",
@@ -6742,7 +6461,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "97b8d3acfbcc7c61",
@@ -6883,7 +6602,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "f1932deb4bf72967",
@@ -7024,7 +6743,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     },
     {
       "id": "f4de3d9d5e9b37fc",
@@ -7165,10 +6884,292 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-13T18:27:32.626008+00:00"
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+    },
+    {
+      "id": "9552003238b70f82",
+      "title": "Software Engineer II: DevOps",
+      "company": "Cadence",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "At Cadence, we hire and develop leaders and innovators who want to make an impact on the world of technology. Cadence Design Systems Inc. is looking for a motivated Software Engineer II: DevOps to work with us in Belo Horizonte, Brazil. This role combines software engineering, DevOps automation, CI/CD, and AI-assisted development, with a focus on improving developer productivity across a large global R&D organization. Cadence has been nominated as a Great Place to Work globally and in Brazil and is also a Fortune 100 Best Companies to Work For. Job Description Member of a new DevOps group focused on delivering automation and developer productivity gains to a large R&D organization. Helping to accelerate our software engineering processes by deploying Agentic AI coding platforms widely and effectively. Develop and support CI/CD pipelines, automated testing, code-quality checks, and engineering workflows. Develop code in Python within a distributed software development environment with other contributors from around the world. Build and maintain internal engineering tools using modern web technologies, APIs, databases, and Linux-based platforms. Role will include some responsibilities for C++ code within existing Cadence products. Requirements Complete Bachelor’s in Computer Science or related fields with at least 2 years of work experience in a comparable software engineering role. Strong programming and software engineering experience in Python and JavaScript or comparable languages. Some exposure to C-like languages (C/C++/Java/C# etc.). Interest in AI tools for software development (Agents/Skills/MCP) Knowledge of modern Web development practices and frameworks on Linux including command line, shell scripting, debugging, and basic system administration. Interest in software engineering: language features, data structures, design patterns, unit testing, automation tools. Proficiency in a version control system (Perforce/Git etc.). Good verbal and written communication skills in English and a good team player. Nice To Have Master’s degree in a relevant discipline/field. Knowledge of Agentic Coding systems such as Claude Code or Github Copilot. Knowledge of GitHub Enterprise, Jenkins, or another CI/CD system. Experience in a DevOps team Additional Job Details Employment category: CLT Employment term: 40 hours/week. Competitive benefits. Location: Av Contorno 5800, Belo Horizonte, Minas Gerais Brazil. About Cadence Cadence is the only company that provides the expertise and tools, IP, and hardware required for the entire electronics design chain, from chip design to chip packaging to boards and to systems. We enable electronic systems and semiconductor companies to create innovative products that transform the way people live, work, and play. Our products are used in mobile, consumer, cloud datacenter, automotive, aerospace, IoT, industrial and other market segments. For more information, access http://www.cadence.com We’re doing work that matters.",
+      "url": "https://br.linkedin.com/jobs/view/software-engineer-ii-devops-at-cadence-4489842280",
+      "source": "LinkedIn",
+      "published_at": "2026-11-13",
+      "found_at": "2026-11-16T20:50:24.330924+00:00",
+      "score": 67,
+      "score_breakdown": {
+        "skills": 14,
+        "location": 20,
+        "level": 10,
+        "keywords": 8,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "ci/cd",
+        "git",
+        "jenkins",
+        "linux",
+        "python",
+        "shell"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-12-13T23:48:31.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/C560BAQFORFBYBIoPHQ/company-logo_100_100/company-logo_100_100/0/1630668285973?e=2147483647&v=beta&t=2J-kabPjQZhiv-NQmJBV5GTY1H_oVFa73HtuaA2-b0M",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+    },
+    {
+      "id": "144a41e0ec86d7a2",
+      "title": "Engenheiro(a) / Analista de Automação ( Infraestrutura e Cibersegurança)",
+      "company": "N/A",
+      "location": "Mariana / MG A empresa aceita candidaturas de Mariana e cidades próximas",
+      "salary": "",
+      "description": "Faixa salarial a combinar Mariana A empresa aceita candidaturas de Mariana e cidades próximas Regime CLT Benefícios Descrição Empresa Assistência médica Assistência odontológica Participação nos Lucros ou Resultados Previdência privada Programa de treinamentos Seguro de vida Vale-alimentação Vale-refeição Vale-transporte Ver todos Ver menos Descrição : Infraestrutura e Cibersegurança OT Responsável pela configuração, administração e suporte da infraestrutura de redes do novo sistema Yokogawa, garantindo alta disponibilidade das comunicações, segurança cibernética do ambiente OT e integração confiável e segura com os sistemas PIMS e DeltaV. Atuará na configuração e monitoramento da rede, servidores e ativos de infraestrutura, implementação de controles de cibersegurança, diagnóstico de falhas, gestão de vulnerabilidades e suporte aos testes, comissionamento e entrada em operação do novo sistema. Principais Atividades: • Configurar, administrar e manter a infraestrutura de rede do sistema Yokogawa, incluindo switches, interfaces de comunicação, endereçamento, VLANs, redundâncias e demais componentes de conectividade; • Garantir a disponibilidade, confiabilidade e desempenho das comunicações entre servidores, estações de operação e engenharia, controladores e demais componentes da arquitetura Yokogawa; • Implementar e manter os requisitos de cibersegurança OT, incluindo segmentação de redes, hardening, controle de acessos, firewalls, proteção de endpoints, gestão de patches e monitoramento de segurança; • Configurar e suportar a integração e troca de dados entre o sistema Yokogawa, PIMS e DeltaV, garantindo disponibilidade, integridade e segurança das informações; • Administrar os servidores físicos e virtualizados e estações de trabalho associados ao ambiente de automação, incluindo Windows Server, Windows Workstation e Linux, quando aplicável; • Monitorar a infraestrutura e atuar na identificação, diagnóstico e solução de falhas de comunicação, desempenho e disponibilidade; • Identificar, analisar e apoiar o tratamento de vulnerabilidades, desvios e incidentes de cibersegurança no ambiente OT; • Executar e acompanhar rotinas de backup, restauração, recuperação e verificação de integridade dos sistemas e configurações de infraestrutura; • Apoiar os testes de integração, redundância, failover, recuperação e disponibilidade durante a implantação e comissionamento do novo sistema; • Apoiar as etapas de implantação, testes, comissionamento, partida e estabilização da infraestrutura do sistema Yokogawa; • Manter atualizados diagramas de rede, documentação de arquitetura, configurações, procedimentos e inventário de ativos OT. Conhecimentos Necessários: • Ensino Superior completo em Engenharia da Computação, Engenharia de Controle e Automação, Engenharia Elétrica, Ciência da Computação, Sistemas de Informação ou Redes de Computadores; • Experiência em infraestrutura de TI/OT, redes de computadores ou automação industrial; • Windows Server, Windows Workst",
+      "url": "https://www.vagas.com.br/vagas/v2843339/engenheiro-a-analista-de-automacao-infraestrutura-e-ciberseguranca",
+      "source": "Vagas.com",
+      "published_at": "Hoje",
+      "found_at": "2026-11-16T20:50:39.018391+00:00",
+      "score": 58,
+      "score_breakdown": {
+        "skills": 3,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "linux"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": null,
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
     }
   ],
-  "last_updated": "2026-11-13T18:27:36.694738+00:00",
+  "last_updated": "2026-11-16T20:52:12.566706+00:00",
   "stats": {
     "total": 51,
     "alto_fit": 11,

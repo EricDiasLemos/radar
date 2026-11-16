@@ -80,7 +80,7 @@
       "first_seen": "2026-10-15T15:33:09.229181+00:00",
       "last_seen": "2026-10-15T15:33:09.229181+00:00",
       "message": "Oi Yasmim, obrigado por aceitar!\n\nSobre a vaga de ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR na Tata Consultancy Services: construí do zero uma plataforma interna (Jenkins, SonarQube, Trivy) que sustenta 30+ sistemas em produção, e conduzi uma migração GCP → AWS com Terraform e Ansible sem retrabalho.\n\nPosso te enviar meu currículo?",
-      "priority": 59,
+      "priority": 53,
       "invite_note": "Oi Yasmim! Vi sua vaga de ANALISTA DE SUPORTE A INFRAESTRUTURA JUNIOR na Tata Consultancy Services. Sou DevOps há 3 anos e hoje cuido do CI/CD e da observabilidade de 30+ sistemas em produção. Gostaria de me conectar.",
       "outreach_source": "fallback"
     },
@@ -141,5 +141,5 @@
       "outreach_source": "fallback"
     }
   ],
-  "last_updated": "2026-11-13T18:27:32.633468+00:00"
+  "last_updated": "2026-11-16T20:52:07.979719+00:00"
 }
