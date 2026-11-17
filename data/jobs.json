@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -1248,7 +1248,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00",
+      "verified_at": "2026-11-17T19:41:35.410486+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/C4D0BAQGvYuv9rJJ6zw/company-logo_100_100/company-logo_100_100/0/1631362999645/concremat_logo?e=2147483647&v=beta&t=WNzKh0EKrwI__D5xeTPij9F06GXtCgbUZs4oczIcl8M"
     },
     {
@@ -1811,7 +1811,7 @@
       "title_class": "core",
       "verified_at": "2026-11-16T20:52:07.980668+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-10-30T16:59:31.201236+00:00",
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00",
       "valid_through": "2026-11-27T17:45:27.000Z"
     },
     {
@@ -3625,7 +3625,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-08T17:48:20.525441+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-17T19:41:35.410486+00:00"
     },
     {
       "id": "05b9121b5e6f3345",
@@ -3767,7 +3767,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-11-06T17:51:43.895270+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-17T19:41:35.410486+00:00"
     },
     {
       "id": "efc6caea6d9c635a",
@@ -3909,7 +3909,7 @@
       "target_company": false,
       "priority_skills": [],
       "last_seen_at": "2026-10-14T15:45:27.860377+00:00",
-      "verified_at": "2026-11-13T18:27:32.634283+00:00"
+      "verified_at": "2026-11-17T19:41:35.410486+00:00"
     },
     {
       "id": "5d6b1927f9ade1e4",
@@ -4479,7 +4479,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -4619,7 +4619,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -4760,7 +4760,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -5042,7 +5042,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -5183,7 +5183,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -5324,7 +5324,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "0c5f68b974615cb3",
@@ -5468,7 +5468,7 @@
         "gcp",
         "gke"
       ],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "40301aae370d5ff4",
@@ -5608,7 +5608,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -5749,7 +5749,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "a0872af0a93237c7",
@@ -6034,7 +6034,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "e5ba1f4680d4eec0",
@@ -6321,7 +6321,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "77eec0ba21d85ec8",
@@ -6461,7 +6461,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "97b8d3acfbcc7c61",
@@ -6602,7 +6602,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "f1932deb4bf72967",
@@ -6743,7 +6743,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "f4de3d9d5e9b37fc",
@@ -6884,7 +6884,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "9552003238b70f82",
@@ -7025,7 +7025,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     },
     {
       "id": "144a41e0ec86d7a2",
@@ -7166,13 +7166,295 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-16T20:52:07.966729+00:00"
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+    },
+    {
+      "id": "6e4dd7a8365673ec",
+      "title": "Site Reliability Engineer - Remote Work | REF#309687",
+      "company": "BairesDev",
+      "location": "Belo Horizonte, MG",
+      "salary": "",
+      "description": "At BairesDev®, we've been leading the way in technology projects for over 15 years. We deliver cutting-edge solutions to giants like Google and the most innovative startups in Silicon Valley. Our diverse 4,000+ team, composed of the world's Top 1% of tech talent, works remotely on roles that drive significant impact worldwide. When you apply for this position, you're taking the first step in a process that goes beyond the ordinary. We aim to align your passions and skills with our vacancies, setting you on a path to exceptional career development and success. Site Reliability Engineer at BairesDev We are looking for a Site Reliability Engineer to administrate and provide support for the whole project infrastructure hosted in the cloud while implementing CI/CD pipelines for the automation of the deployments. What You Will Do Ensure high service availability, performance, security, and maintainability. Implement CI/CD pipelines for the automation of the deployments. Automate tools to reduce repeating efforts of processes using scripting. Assess new cloud providers. Create and maintain technical documentation for existing and new processes and policies. Troubleshoot errors - from software to hardware to cloud resources. Here's What We Are Looking For 2+ years of experience as an Infrastructure Engineer or similar. 1+ years of experience with Kubernetes as an SRE engineer or similar. Previous work experience with Ansible, Terraform, and CI/CD pipelines. Experience and familiarity working with different cloud providers. Experience working with monitor/observability tools like Grafana and Prometheus, datadog, new relic. Experience working with bitbucket pipelines is a plus. Advanced English level. How We Make Your Work (and Your Life) Easier 100% remote work (from anywhere). Excellent compensation in USD or your local currency if preferred Hardware and software setup for you to work from home. Flexible hours: create your own schedule. Paid parental leaves, vacations, and national holidays. Innovative and multicultural work environment: collaborate and learn from the global Top 1% of talent. Supportive environment with mentorship, promotions, skill development, and diverse growth opportunities. Join a global team where your unique talents can truly thrive! Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/site-reliability-engineer-remote-work-ref%23309687-at-bairesdev-4491705819",
+      "source": "LinkedIn",
+      "published_at": "2026-11-17",
+      "found_at": "2026-11-17T19:39:40.424510+00:00",
+      "score": 71,
+      "score_breakdown": {
+        "skills": 16,
+        "location": 20,
+        "level": 10,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "ansible",
+        "ci/cd",
+        "datadog",
+        "grafana",
+        "kubernetes",
+        "prometheus",
+        "terraform"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-12-17T17:45:00.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+    },
+    {
+      "id": "5d28905bde5d04bd",
+      "title": "ADMINISTRADOR DE SISTEMAS OPERACIONAIS PLENO I",
+      "company": "G4F",
+      "location": "Belo Horizonte e Região",
+      "salary": "",
+      "description": "A G4F é uma empresa com uma trajetória sólida de 16 anos, dedicada a conectar pessoas, ideias e tecnologia para oferecer soluções inovadoras. Somos mais de 10.000 #greaters atuando em todo o Brasil. #SomosGreaters #Tech Estamos buscando um talento para a posição de ADMINISTRADOR DE SISTEMAS OPERACIONAIS PLENO I Principais Atribuições Administrar ambientes de virtualização e orquestração de sistemas operacionais. Configurar, instalar e expandir ambientes de containers. Garantir a disponibilidade, desempenho e utilização eficiente dos recursos de infraestrutura. Administrar servidores e dispositivos de armazenamento. Monitorar e sustentar ambientes computacionais corporativos. Apoiar a implementação e manutenção de plataformas de infraestrutura e serviços. Experiência Experiência em administração de sistemas operacionais e servidores. Vivência com virtualização, containers e infraestrutura corporativa. Experiência com sustentação, monitoramento e resolução de incidentes em ambientes de servidores. Como referência para triagem RH, recomenda-se perfil com experiência compatível ao nível Pleno Requisitos Técnicos Formação Acadêmica Graduação na área de Tecnologia da Informação; ou Graduação em qualquer área com curso de extensão na área de informática. Conhecimentos Técnicos Administração de sistemas operacionais de servidores. Virtualização de servidores. Containers e orquestração de ambientes. Administração de servidores e storages. Monitoramento e desempenho de ambientes de infraestrutura. Gerenciamento de recursos computacionais. Sustentação e troubleshooting de infraestrutura. Conhecimentos Desejáveis Linux, Windows Server e Unix/Solaris. Redes TCP/IP, IPv4, IPv6, Ethernet, WAN e LAN. Roteamento BGP. Balanceadores de carga F5. Firewalls e soluções Anti-DDoS. Cabeamento estruturado (normas EIA/TIA). UPS, nobreaks e grupos geradores. Python e Shell Script para automação. Administração e diagnóstico de ambientes de rede. Resumo do Perfil Profissional de infraestrutura com foco em virtualização, containers, administração de servidores e sistemas operacionais , responsável por garantir a estabilidade, disponibilidade e performance dos ambientes computacionais. O perfil é fortemente direcionado para administração de ambientes Linux/Windows, virtualização, storages e orquestração de containers, sendo muito aderente a profissionais de Infraestrutura, Plataformas, DevOps Infraestrutura ou Administração de Sistemas. Informações Adicionais 🏢 Atuação Hibrido - Belo Horizonte-MG 🚀 Oportunidades de desenvolvimento profissional 🍔 Vale Alimentação/Refeição | Pluxee 🚌 Vale transporte (Opcional) 💪 Wellhub (Gympass) | Fitness, Esportes, Terapia, Nutrição e Sono 👓 Parceria SESC | Saúde, Lazer, Turismo & Esportes, Assistência Social e Alimentação 📕 Parcerias Educacionais 🤍 Plano de Saúde e Odontológico #VemSerGreater Valorizamos a diversidade, equidade e a inclusão, independentemente de gênero, raça, etnia, orientação sexual, deficiência ou religião, portanto, todas ",
+      "url": "https://br.linkedin.com/jobs/view/administrador-de-sistemas-operacionais-pleno-i-at-g4f-4490943862",
+      "source": "LinkedIn",
+      "published_at": "2026-11-16",
+      "found_at": "2026-11-17T19:40:01.887262+00:00",
+      "score": 70,
+      "score_breakdown": {
+        "skills": 10,
+        "location": 20,
+        "level": 15,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "bgp",
+        "linux",
+        "python",
+        "shell"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-12-16T23:27:41.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQHpoP3ocuyKcA/company-logo_100_100/company-logo_100_100/0/1719257200990/g4fbr_logo?e=2147483647&v=beta&t=IqABD5Rar_HI-RdMjFowQ7IESwi2IJD7-l2LU18fJfQ",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
     }
   ],
-  "last_updated": "2026-11-16T20:52:12.566706+00:00",
+  "last_updated": "2026-11-17T19:41:35.994375+00:00",
   "stats": {
-    "total": 51,
-    "alto_fit": 11,
+    "total": 53,
+    "alto_fit": 13,
     "medio_fit": 29,
     "baixo_fit": 11,
     "enviadas": 0
