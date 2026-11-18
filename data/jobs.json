@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -1811,7 +1811,7 @@
       "title_class": "core",
       "verified_at": "2026-11-16T20:52:07.980668+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00",
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00",
       "valid_through": "2026-11-27T17:45:27.000Z"
     },
     {
@@ -4479,7 +4479,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -4619,7 +4619,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -4760,7 +4760,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -5042,7 +5042,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -5183,7 +5183,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -5324,7 +5324,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "0c5f68b974615cb3",
@@ -5608,7 +5608,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -5749,7 +5749,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "a0872af0a93237c7",
@@ -6034,7 +6034,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "e5ba1f4680d4eec0",
@@ -6321,7 +6321,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "77eec0ba21d85ec8",
@@ -6461,7 +6461,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "97b8d3acfbcc7c61",
@@ -6602,7 +6602,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "f1932deb4bf72967",
@@ -6743,7 +6743,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "f4de3d9d5e9b37fc",
@@ -6884,7 +6884,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "9552003238b70f82",
@@ -7025,7 +7025,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "144a41e0ec86d7a2",
@@ -7166,7 +7166,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "6e4dd7a8365673ec",
@@ -7307,7 +7307,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     },
     {
       "id": "5d28905bde5d04bd",
@@ -7448,14 +7448,155 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-17T19:41:35.394439+00:00"
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
+    },
+    {
+      "id": "7474aae9532d9c0d",
+      "title": "Analista de Infraestrutura Jr",
+      "company": "N/A",
+      "location": "Magé / RJ A empresa aceita candidaturas de Magé e cidades próximas",
+      "salary": "",
+      "description": "Faixa salarial a combinar Magé A empresa aceita candidaturas de Magé e cidades próximas Regime CLT Benefícios Descrição Empresa Vale-alimentação Vale-transporte Descrição : Projetam soluções de tecnologia da informação , identificando a necessidade do cliente. Desenvolve e implanta sistemas de tecnologia da informação ,dimensionando requisitos e funcionalidades dos sistemas . Administra e estabelece padrões para ambiente de TI , elabora planejamento e execução de testes dos sistemas , presta suporte técnico ao cliente , elabora documentação técnica e pesquisa inovações tecnológicas. Outros requisitos : Formação tecnica ou Superior na area de TI. Desejavel certificação ITIL Foundation v4 e fundamentos de nuvem ( AWS Cloud Practitioner ou Azure Fundamentals). Conhecimento solido em administração de sistemas operacionais ( Windows Server e Linux ) , segurança da informação e cabeamento estruturado/roteamento. Dominio em administração de redes de computadores , conhecimento em virtualização e gerenciamento de rotinas de backup. Familiaridade com ferramentas de monitoramento de ativos. O Grupo Scalle é uma empresa que se preocupa com a inclusão, por isso, todas as nossas vagas também são destinadas à Pessoas com deficiência. Empresa Com expertise em prestação de serviços a empresas públicas, o Grupo Scalle tem tradição e notoriedade no mercado a partir da idoneidade, qualidade e tempestividade na execução de contratos. Atendendo demandas do primeiro setor desde 2013, celebramos contratos em todo território nacional, prezando sempre pela qualidade e transparência. Com anos de experiência, apostamos na excelência dos resultados a partir de colaboradores qualificados e integrados a filosofia de nossa política institucional, atrelados a equipamentos com tecnologia de ponta, novos e semi-novos, o que reflete em maior segurança e eficiência para os clientes. Alcançamos os níveis de produtividade e excelência no que fazemos, fruto de um modelo de gestão arrojado e focado em nosso objetivo que é a entrega do serviço perfeito. Acreditamos na inovação constante do mercado e na necessidade de acompanhá-la, esse conceito eleva nossa performance e aumenta nossos desafios frente um mundo tão dinâmico, tecnológico e globalizado. Compartilhar esta vaga: Publicidade",
+      "url": "https://www.vagas.com.br/vagas/v2843787/analista-de-infraestrutura-jr",
+      "source": "Vagas.com",
+      "published_at": "Hoje",
+      "found_at": "2026-11-18T19:16:23.040873+00:00",
+      "score": 52,
+      "score_breakdown": {
+        "skills": 7,
+        "location": 0,
+        "level": 20,
+        "keywords": 10,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "aws",
+        "azure",
+        "linux"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": null,
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-18T19:17:50.642775+00:00"
     }
   ],
-  "last_updated": "2026-11-17T19:41:35.994375+00:00",
+  "last_updated": "2026-11-18T19:17:50.651036+00:00",
   "stats": {
-    "total": 53,
+    "total": 54,
     "alto_fit": 13,
-    "medio_fit": 29,
+    "medio_fit": 30,
     "baixo_fit": 11,
     "enviadas": 0
   }
