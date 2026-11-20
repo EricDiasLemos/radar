@@ -281,7 +281,7 @@
       "valid_through": "2026-11-24T04:33:16.000Z",
       "verified_at": "2026-09-11T03:36:48.273381+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQFl6I0phUCDQg/company-logo_200_200/B4EZo1FC7hIIAI-/0/1761827107300/fullstack_labs_logo?e=2147483647&v=beta&t=ymN7G0aNXSEIG8H3L12ntHO2kgBIEG4ThPv7f-h1BBM",
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "a403ed605fee9ef8",
@@ -419,7 +419,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "cff3ee1c0200d874",
@@ -697,7 +697,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "9ae1438d456c50d8",
@@ -834,7 +834,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "0526892fe6f50daa",
@@ -972,7 +972,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "ac5a1722a0111efe",
@@ -1110,7 +1110,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "1b11ab7a7b2225f0",
@@ -1386,7 +1386,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "fb7995fc604339d4",
@@ -1523,7 +1523,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "5696a0aa5c664d75",
@@ -1663,7 +1663,7 @@
         "gcp"
       ],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "d3380bb6fa0f19cd",
@@ -1811,7 +1811,7 @@
       "title_class": "core",
       "verified_at": "2026-11-16T20:52:07.980668+00:00",
       "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00",
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00",
       "valid_through": "2026-11-27T17:45:27.000Z"
     },
     {
@@ -1950,7 +1950,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "4d6bedeb24327563",
@@ -2088,7 +2088,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "9846840c4d2d9425",
@@ -2226,7 +2226,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "17f965bf47206c65",
@@ -2367,7 +2367,7 @@
         "google cloud"
       ],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "4b7a457739687728",
@@ -2505,7 +2505,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "16467be23ea6e32d",
@@ -2643,7 +2643,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "b321d2b755406c55",
@@ -2781,7 +2781,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "1cec3d1a5a279de9",
@@ -2919,7 +2919,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "08629c51e986c861",
@@ -3056,7 +3056,7 @@
       "target_company": false,
       "priority_skills": [],
       "title_class": "core",
-      "verified_at": "2026-11-16T20:52:07.980668+00:00"
+      "verified_at": "2026-11-20T19:00:55.840970+00:00"
     },
     {
       "id": "cd9e629fa91edbdc",
@@ -4479,7 +4479,7 @@
       "priority_skills": [
         "gcp"
       ],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "6e89bc254d4d6f81",
@@ -4619,7 +4619,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "65f90133779bd3f5",
@@ -4760,7 +4760,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "119351eaf09f1245",
@@ -5042,7 +5042,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "622b4977cf7951d7",
@@ -5183,7 +5183,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "30488359f82da3e6",
@@ -5464,7 +5464,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "e7e43516d263be39",
@@ -5605,7 +5605,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "a0872af0a93237c7",
@@ -5890,7 +5890,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "e5ba1f4680d4eec0",
@@ -6177,7 +6177,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "77eec0ba21d85ec8",
@@ -6317,7 +6317,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "97b8d3acfbcc7c61",
@@ -6599,7 +6599,7 @@
       "title_class": "core",
       "target_company": true,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "f4de3d9d5e9b37fc",
@@ -6740,7 +6740,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "9552003238b70f82",
@@ -6881,7 +6881,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "144a41e0ec86d7a2",
@@ -7022,7 +7022,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "6e4dd7a8365673ec",
@@ -7163,7 +7163,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "5d28905bde5d04bd",
@@ -7304,7 +7304,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "7474aae9532d9c0d",
@@ -7445,7 +7445,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "5fe92a07596cf8d4",
@@ -7586,7 +7586,7 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     },
     {
       "id": "5c724b7045102bf9",
@@ -7726,14 +7726,435 @@
       "title_class": "core",
       "target_company": false,
       "priority_skills": [],
-      "last_seen_at": "2026-11-19T19:25:14.986057+00:00"
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
+    },
+    {
+      "id": "b7c28c650f5e4715",
+      "title": "DevOps Engineer (Azure) - Remote Work",
+      "company": "BairesDev",
+      "location": "Minas Gerais, Brasil",
+      "salary": "",
+      "description": "",
+      "url": "https://br.linkedin.com/jobs/view/devops-engineer-azure-remote-work-at-bairesdev-4491166557",
+      "source": "LinkedIn",
+      "published_at": "2026-11-17",
+      "found_at": "2026-11-20T18:59:06.881667+00:00",
+      "score": 51,
+      "score_breakdown": {
+        "skills": 2,
+        "location": 20,
+        "level": 10,
+        "keywords": 4,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [
+        "azure"
+      ],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4E0BAQGNvQASzrdL_w/company-logo_100_100/company-logo_100_100/0/1687874736484/bairesdev_logo?e=2147483647&v=beta&t=O-1i-F9arEGwUjngSlvE7NWxL-mpYFwN_XZxHy0C03s",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
+    },
+    {
+      "id": "b39de4bdc9d26224",
+      "title": "Analista de Tecnologia da Informação - Foco em Infraestrutura e Segurança",
+      "company": "Sicoob Uberaba",
+      "location": "Uberaba, MG",
+      "salary": "",
+      "description": "",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-tecnologia-da-informa%C3%A7%C3%A3o-foco-em-infraestrutura-e-seguran%C3%A7a-at-sicoob-uberaba-4492705582",
+      "source": "LinkedIn",
+      "published_at": "2026-11-19",
+      "found_at": "2026-11-20T18:59:37.760302+00:00",
+      "score": 62,
+      "score_breakdown": {
+        "skills": 0,
+        "location": 20,
+        "level": 10,
+        "keywords": 2,
+        "salary": 5,
+        "target_company": 15,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "alto",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": null,
+      "company_logo": "https://media.licdn.com/dms/image/v2/C4E0BAQE1pEqnm5JFYg/company-logo_100_100/company-logo_100_100/0/1641997603195/sicoobuberaba_logo?e=2147483647&v=beta&t=A8BVndx4A4J5Y2S6sLQooQ63rexcSGset-8b4cIL47w",
+      "title_class": "core",
+      "target_company": true,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
+    },
+    {
+      "id": "a6ac5d8f1ae453d9",
+      "title": "Analista de Infraestrutura Júnior",
+      "company": "Grupo Friopeças",
+      "location": "Extrema, MG",
+      "salary": "",
+      "description": "Iniciamos nossas atividades em 1994, na cidade de Belo Horizonte, com foco exclusivo no varejo de peças originais. Já em 1998, expandimos nossa atuação para o mercado atacadista. Desde então, estamos solidificando nosso crescimento e credibilidade no mercado. Nosso sucesso se deve em grande parte à nossa estratégia de FOCO NO CLIENTE. Investimos continuamente na capacitação e formação de uma equipe extremamente dedicada à excelência no atendimento. Além disso, valorizamos o fortalecimento de parcerias com fornecedores para garantir as melhores condições de venda dos nossos produtos. Nossa filosofia é oferecer aos clientes os melhores produtos do mercado e garantir agilidade tanto na venda quanto na entrega Responsabilidades e atribuições Atividades: Atuar na manutenção dos equipamentos; Realizar o inventário; Prestar o suporte aos usuários presenciais e remotos; Criar documentações; Realizar o monitoramento do ambiente; Conhecimento em rede de computadores; E outras atividades. Requisitos e qualificações Requisitos: Superior em andamento nas áreas de Ciência da Computação, Sistema da Informação, Análise e Desenvolvimento de Sistemas ou áreas correlatas. Informações adicionais Plano de Saúde Unimed Plano Odontológico Unimed Gympass Parceria com faculdades, Wizard e Sesc Desconto em produtos Convênio farmácia Seguro de Vida Participação nos Lucros ou Resultados Restaurante Interno Programa de treinamentos Fretado Show more Show less",
+      "url": "https://br.linkedin.com/jobs/view/analista-de-infraestrutura-j%C3%BAnior-at-grupo-friope%C3%A7as-4491652764",
+      "source": "LinkedIn",
+      "published_at": "2026-11-19",
+      "found_at": "2026-11-20T18:59:47.254006+00:00",
+      "score": 61,
+      "score_breakdown": {
+        "skills": 0,
+        "location": 20,
+        "level": 20,
+        "keywords": 6,
+        "salary": 5,
+        "target_company": 0,
+        "priority_skills": 0,
+        "title": 10
+      },
+      "skills_match": [],
+      "skills_gap": [
+        "aks",
+        "alertmanager",
+        "ansible",
+        "api",
+        "app engine",
+        "argocd",
+        "aws",
+        "azure",
+        "azure devops",
+        "bash",
+        "bgp",
+        "bigquery",
+        "blue green",
+        "blue-green",
+        "canary",
+        "ci/cd",
+        "circleci",
+        "cisco",
+        "cloud functions",
+        "cloud run",
+        "cloud sql",
+        "cloud storage",
+        "cloudflare",
+        "cloudformation",
+        "cloudwatch",
+        "compute engine",
+        "datadog",
+        "devsecops",
+        "dns",
+        "docker",
+        "docker compose",
+        "docker-compose",
+        "dynatrace",
+        "ebs",
+        "ec2",
+        "ecs",
+        "eks",
+        "elastic ip",
+        "elk",
+        "fastapi",
+        "firewall",
+        "flask",
+        "fortigate",
+        "gcp",
+        "git",
+        "gitea",
+        "github actions",
+        "gitlab ci",
+        "gitleaks",
+        "gitops",
+        "gke",
+        "google cloud",
+        "grafana",
+        "grafana loki",
+        "gunicorn",
+        "helm",
+        "huawei",
+        "iac",
+        "iam",
+        "infraestrutura como codigo",
+        "infrastructure as code",
+        "jenkins",
+        "k3s",
+        "kafka",
+        "kubernetes",
+        "lambda",
+        "linux",
+        "load balancer",
+        "loki",
+        "mikrotik",
+        "n8n",
+        "newrelic",
+        "nginx",
+        "olt",
+        "postgres",
+        "postgresql",
+        "prometheus",
+        "proxmox",
+        "pulumi",
+        "python",
+        "rabbitmq",
+        "rds",
+        "redis",
+        "rest",
+        "rollback",
+        "route53",
+        "s3",
+        "security groups",
+        "shell",
+        "sonarqube",
+        "systemd",
+        "terraform",
+        "trivy",
+        "vault",
+        "vlan",
+        "vmware",
+        "vpc",
+        "vpn",
+        "wireguard",
+        "zabbix",
+        "zero downtime",
+        "zero-downtime"
+      ],
+      "fit_level": "medio",
+      "status": "nova",
+      "applied_at": null,
+      "cover_letter": null,
+      "contact_email": null,
+      "recruiter": null,
+      "valid_through": "2026-12-19T23:41:12.000Z",
+      "company_logo": "https://media.licdn.com/dms/image/v2/D4D0BAQFd5Dmv53L5cA/company-logo_100_100/B4DZ.E.6qgHEAI-/0/1784642513980/friopecas_logo?e=2147483647&v=beta&t=-rqYXnf0nDGSagSLHmAaQejS5bynPexAUs9-TZR50TM",
+      "title_class": "core",
+      "target_company": false,
+      "priority_skills": [],
+      "last_seen_at": "2026-11-20T19:00:55.834462+00:00"
     }
   ],
-  "last_updated": "2026-11-19T19:25:15.629162+00:00",
+  "last_updated": "2026-11-20T19:00:56.940970+00:00",
   "stats": {
-    "total": 55,
-    "alto_fit": 13,
-    "medio_fit": 31,
+    "total": 58,
+    "alto_fit": 14,
+    "medio_fit": 33,
     "baixo_fit": 11,
     "enviadas": 0
   }
